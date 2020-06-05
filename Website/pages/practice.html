@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>TESTING</title>
+	<link rel="stylesheet" type="text/css" href="../stylesheets/stylesheet.css" />
+	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+
+<body>
+<!-- Navbar holder -->
+<!-- <div id="nav-placeholder"></div> -->
+<ul class="navbar__list">
+	<li><a href="/pages/index.html">home</a>
+</li>
+</ul>
+
+
+<!-- OPTION 1: Local ng-app -->
+<!-- <div ng-app="" ng-init="namae='Addi'">
+<p>Input something in the input box:</p>
+<p>Name: <input type="text" ng-model="namae"></p>
+<p>You wrote: {{ namae }}</p>
+</div> -->
+
+
+<!-- OPTION 2: Using separate controller -->
+<!-- <div ng-app="myApp" ng-controller="myCtrl">
+{{ "My name is " + firstName + " " + lastName }}
+</div> -->
+
+
+
+<!-- OPTION 3: Using separate directive and controller!-->
+<div ng-app="myApp">
+
+<testing-one-div></testing-one-div>
+<testing-two-div></testing-two-div>
+
+<div ng-controller="testingController">
+<h1>Made with a CONTROLLER!</h1>
+<p> My favorite word is {{ favWord }}, but what is yours?</p>
+<input type="text" ng-model="yourFavWord">
+<p>Ah, {{ yourFavWord }} eh? {{"ooh " + favWord + " and " + yourFavWord + " tryna fight ooh beech"}}</p>
+</div>
+
+</div>
+
+
+<!-- Scripts at the bottom -->
+<script>
+$(function(){
+  $("#nav-placeholder").load("/pages/nav.html");
+});
+</script>
+<script src="/scripts/myApp.js"></script>
+<script src="/scripts/myCtrl.js"></script>
+
+</body>
+</html>

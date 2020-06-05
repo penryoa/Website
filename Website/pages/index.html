@@ -2,21 +2,22 @@
 <html>
 <head>
 	<title>Addi's Site</title>
-	<link rel="stylesheet" type="text/css" href="stylesheet.css" />
+	<link rel="stylesheet" type="text/css" href="../stylesheets/stylesheet.css" />
+	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+	<script type="text/javascript" src="../scripts/helpers.js"></script>
 </head>
 
 <body>
 
 <!-- Site navigation menu -->
-<ul class="navbar">
-  <li><a href="index.html">Home page</a>
-  <li><a href="release-info.html">Release Info</a>
-</ul>
+<div id="nav-placeholder">
+<script> loadNavbar(); </script>
+</div>
 
 <!-- Main content -->
 <h1>Generic Index Page</h1>
 
-<div id="page_content">
+<div class="pg_content">
 <p> click on the links on the right to do stuff my dude
 
 <p><c1>Testing one font? What do u think?</c1>
@@ -26,9 +27,11 @@
 
 </div>
 
-<!-- Sign and date the page, it's only polite! -->
+<!-- Throw in the update status -->
 <address>Last update: 2020 06 03<br>
   it's a work in progress.</address>
+
+<!-- Scripts at the end -->
 
 
 </body>
