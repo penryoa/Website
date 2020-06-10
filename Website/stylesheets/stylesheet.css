@@ -1,68 +1,123 @@
 /* Some different font imports */
 
-@import url('https://fonts.googleapis.com/css?family=Alegreya Sans SC');
-@import url('https://fonts.googleapis.com/css?family=Cutive Mono');
-@import url('https://fonts.googleapis.com/css?family=Emblema One');
 @import url('https://fonts.googleapis.com/css?family=Crete Round');
+@import url('https://fonts.googleapis.com/css?family=Fugaz One');
+
 
 
 /** {
 	color:black; powderblue,darkmagenta is nice
 	background-color:powderblue; 
 }*/
-
 :root {
 	/*powderblue,darkmagenta is nice*/
 
 	/* Accent colors; darkest to lightest */
-	--a-b: black;
-	--a-1: rgba(158, 41, 66, 1); /* Dark red */
-	--a-2: rgba(41, 152, 158, 0.9); /* medium blue mint */
+	--a-b: rgba(68, 69, 69, 1);
+	--a-1: rgba(62, 21, 33, 1); /* Dark red */
+	/* --a-2: rgba(41, 152, 158, 0.9); /* medium blue mint */
+	--a-2: rgba(33, 131, 128, 1); /* turquoise */
 	--a-3: rgba(28, 37, 65, 1); /* Dark Blue */
-	--a-4: rgba(39, 185, 158, 1); /* normal mint */
-	--a-5: rgba(111, 255, 233, 1); /* Bright blue */
-	--a-6: rgba(200, 255, 233, 1);	/* light mint */
+	/* --a-4: rgba(206, 171, 177, 1); /* dusty rose */
+	/* --a-4: rgba(178, 201, 171, 1); /* cool green */
+	--a-4: rgba(214, 104, 83, 1); /* burnt sienna */
+	--a-5: rgba(201, 201, 201, 1); /* neutral grey blue */
+	--a-6: rgba(197, 224, 216, 1);	/* cool mint */
+	--a-7: rgba(181, 255, 233, 1); /* mint */
 	--a-w: white;
 }
 
 h1 {
 	font-size: 22px;
- 	color: var(--a-1);
+ 	color: var(--a-4);
+ 	font-family: 'Fugaz One';
 }
 
-body{
-	padding-left: 11em;
+h2 {
+	font-size: 22px;
+ 	color: var(--a-2);
+ 	font-family: 'Fugaz One';
+}
+
+body {
+	/*padding-left: 11em;*/
 	font-size: 16px;
-	margin-left: 20px;
-	color: var(--a-w); 
-	background-color: var(--a-2);
+	/*margin-left: 10px;*/
+	color: var(--a-7); 
+	background-color: var(--a-3);
 	font-family: 'Crete Round';
 }
 
-.page_content {
-	margin-left: 15px;
-	font-size: 16px;
+
+/* Clear floats after the columns; doesn't really do much here since we stay in columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
-.navbar__list{
+.column {
+	float: left;
+}
+
+.left {
+	width: 15%;
+}
+
+.right {
+	width: 85%;
+}
+
+@media /*screen and */(max-width: 800px) {
+  .column {
+    width: 100%;
+  }
+
+  body {
+  	font-size-adjust: 0;
+  }
+
+  img#navbar_img {
+  	display: none;
+  }
+
+  img#navbar_small_img {
+  	display: block;
+  }
+}
+
+#navbar_small_img {
+	display: none;
+}
+
+.page_content {
+	/*margin-left: 15px;*/
+	font-size: 16px;
+	/*width: 75%;*/
+}
+
+.navbar__list {
+	/*width: 25%;*/
 	list-style-type: none;
-	padding: 0;
+	padding: 1em;
 	margin: 0;
-	position:absolute;
-	top: 2em;
-	left: 1em;
-	width: 9em;
+	/*position:absolute;*/
+	top: 2em; 
+	left: 1em; 
+	font-family: 'Fugaz One';
+	
 }
 
 .navbar__list li {
-	background: black;
+	background: var(--a-b);
 	margin: 0.5em 0;
 	padding: 0.3em;
-	border-right: 1em solid var(--a-1);
+	border-right: 1em solid var(--a-4);
 }
 
 .navbar__list a {
 	text-decoration: none;
+	display: block;
 }
 
 .navbar__list a:link, a:visited {
@@ -70,31 +125,15 @@ body{
 }
 
 .navbar__list a:hover{
-	color: var(--a-4);
+	color: var(--a-6);
 }
 
 .navbar__list a:active{
-	color: var(--a-5);
+	color: var(--a-7);
 }
 
 address {
     margin-top: 1em;
     padding-top: 1em;
     border-top: thin dashed 
-}
-
-c1 {
-	font-family: 'Cutive Mono';
-}
-
-c2 {
-	font-family: 'Alegreya Sans SC';
-}
-
-c3 {
-	font-family:'Emblema One';
-}
-
-c4 {
-	font-family:'Crete Round';
 }
