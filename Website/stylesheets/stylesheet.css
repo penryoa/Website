@@ -48,6 +48,20 @@ body {
 	font-family: 'Crete Round';
 }
 
+/*
+	Columns for different layouts
+*/
+.column {
+	float: left;
+}
+
+.left_two-column-layout {
+	width: 20%;
+}
+
+.right_two-column-layout {
+	width: 80%;
+}
 
 /* Clear floats after the columns; doesn't really do much here since we stay in columns */
 .row:after {
@@ -56,46 +70,67 @@ body {
   clear: both;
 }
 
-.column {
-	float: left;
-}
 
-.left {
-	width: 15%;
-}
 
-.right {
-	width: 85%;
-}
-
-@media /*screen and */(max-width: 800px) {
-  .column {
-    width: 100%;
-  }
-
-  body {
-  	font-size-adjust: 0;
-  }
-
-  img#navbar_img {
-  	display: none;
-  }
-
-  img#navbar_small_img {
-  	display: block;
-  }
-}
-
-#navbar_small_img {
-	display: none;
-}
-
+/*
+	Different stylings used for content.
+*/
 .page_content {
-	/*margin-left: 15px;*/
-	font-size: 16px;
-	/*width: 75%;*/
+	/*NOTE: currently empty but may be used for indents?*/
 }
 
+.centered-content {
+  max-width: 500px;
+  margin: auto;
+}
+
+
+
+
+/** 
+	A simple bullet list with custom image. 
+
+Previously, my inspiration was:
+http://css-workshop.com/css-ul-custom-bullet-style-with-image/
+
+But then I found unicode and nothing matters lol
+*/
+.simple-list {
+	list-style: none;
+}
+
+.simple-list li {
+	padding-left: 1em;
+}
+
+.simple-list li:before {
+	content: "\26E6";
+	color: var(--a-w);
+	display: inline-block;
+	width: 2em;
+	margin-left: -1em;
+}
+
+.simple-list ul {
+	margin-left: -2em;
+	list-style: none;
+}
+
+.simple-list ul li:before {
+	content: "\FE44";
+	color: var(--a-w);
+	display: inline-block;
+	width: 2em;
+	margin-left: -1em;
+}
+
+
+
+
+
+/*
+	Navigation bar
+*/
 .navbar__list {
 	/*width: 25%;*/
 	list-style-type: none;
@@ -132,6 +167,36 @@ body {
 	color: var(--a-7);
 }
 
+@media screen and (max-width: 800px) {
+  .column {
+    width: 100%;
+  }
+
+  body {
+  	font-size-adjust: 0;
+  }
+
+  img#navbar_img {
+  	display: none;
+  }
+
+  img#navbar_small_img {
+  	display: block;
+  }
+}
+
+#navbar_small_img {
+	display: none;
+}
+
+
+
+
+
+
+/*
+	Used at the end of the page
+*/
 address {
     margin-top: 1em;
     padding-top: 1em;
