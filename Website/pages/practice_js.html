@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head id="headID">
+	<script type="text/javascript" src="../scripts/PageFactory.js"></script>
+	<script>
+	var fac = new PageFactory();
+	fac = fac.createPage("Practicing With JavaScript", "<h1>a pretty simple test eh?</h1>", "StandardContentPage");
+
+	document.getElementById("headID").innerHTML = writeImports();
+	document.title = fac.titleString;
+	fac.writeBody();
+	</script>
+</head>
+</html>

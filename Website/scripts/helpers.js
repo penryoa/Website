@@ -15,10 +15,16 @@ function loadNavbar() {
 	document.write("</ul>");
 	document.write("<img src=\"../items/navbar_img.png\" id=\"navbar_img\" alt=\"some flowers\"width=100%>");
 	document.write("<img src=\"../items/navbar_small_img.png\" id=\"navbar_small_img\" alt=\"some flowers\"width=100%>");
+	// return "</ul>" 
+	// + "<img src=\"../items/navbar_img.png\" id=\"navbar_img\" alt=\"some flowers\"width=100%>" 
+	// + "<img src=\"../items/navbar_small_img.png\" id=\"navbar_small_img\" alt=\"some flowers\"width=100%>";
 }
 
 function loadBasicImports(){
 	document.write("<meta charset=\"utf-8\"/>");
 	document.write("<link rel=\"stylesheet\" type=\"text/css\" href=\"../stylesheets/stylesheet.css\"/>");
 	document.write("<script src=\"https://code.jquery.com/jquery-1.10.2.js\"></script>");
+	// return "<meta charset=\"utf-8\"/>" 
+	// + "<link rel=\"stylesheet\" type=\"text/css\" href=\"../stylesheets/stylesheet.css\"/>"
+	// + "<script src=\"https://code.jquery.com/jquery-1.10.2.js\"></script>";
 }
