@@ -5,16 +5,21 @@ function loadNavbar() {
 		["education & skills", "../pages/resume.html"]
 		];
 
-	document.write("<ul class=\"navbar__list\">");
+	document.write("<nav class=\"navbar__list\">");
 
 	for (var i = 0; i < pageRefs.length; i++) {
 		document.write("\n<li><a href=\"" + pageRefs[i][1] + "\">"+pageRefs[i][0]+"</a>");
 	}
 	// <li><a href="/pages/practice.html">coding practice</a>
 
-	document.write("</ul>");
-	document.write("<img src=\"../items/navbar_img.png\" id=\"navbar_img\" alt=\"some flowers\"width=100%>");
-	document.write("<img src=\"../items/navbar_small_img.png\" id=\"navbar_small_img\" alt=\"some flowers\"width=100%>");
+	document.write("</nav>");
+  // <source media="(min-width:650px)" srcset="img_pink_flowers.jpg">
+  // <source media="(min-width:465px)" srcset="img_white_flower.jpg">
+	document.write("<picture>")
+	
+	document.write("<source media=\"(min-width:701px)\" srcset=\"../items/navbar_img.png\" width=100%>");
+	document.write("<img src=\"../items/navbar_small_img.png\" alt=\"flowers\"width=100%>");
+	document.write("</picture>")
 	// return "</ul>" 
 	// + "<img src=\"../items/navbar_img.png\" id=\"navbar_img\" alt=\"some flowers\"width=100%>" 
 	// + "<img src=\"../items/navbar_small_img.png\" id=\"navbar_small_img\" alt=\"some flowers\"width=100%>";

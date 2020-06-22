@@ -167,7 +167,7 @@ But then I found unicode and nothing matters lol
 	color: var(--a-7);
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 700px) {
   .column {
     width: 100%;
   }
@@ -176,19 +176,19 @@ But then I found unicode and nothing matters lol
   	font-size-adjust: 0;
   }
 
-  img#navbar_img {
+/*  img#navbar_img {
   	display: none;
   }
 
   img#navbar_small_img {
   	display: block;
-  }
+  }*/
 }
 
-#navbar_small_img {
+/*#navbar_small_img {
 	display: none;
 }
-
+*/
 
 
 
