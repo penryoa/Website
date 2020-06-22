@@ -13,18 +13,17 @@
 	/*powderblue,darkmagenta is nice*/
 
 	/* Accent colors; darkest to lightest */
-	--a-b: rgba(68, 69, 69, 1);
-	--a-1: rgba(62, 21, 33, 1); /* Dark red */
-	/* --a-2: rgba(41, 152, 158, 0.9); /* medium blue mint */
-	--a-2: rgba(33, 131, 128, 1); /* turquoise */
-	--a-3: rgba(28, 37, 65, 1); /* Dark Blue */
+	--a-b: rgba(68, 69, 69, 1); /* BAR | dark grey */
+	--a-1: rgba(62, 21, 33, 1); /* X | Dark red */
+	--a-2: rgba(33, 131, 128, 1); /* H2 | turquoise */
+	--a-3: rgba(28, 37, 65, 1); /* BACKGROUND | Dark Blue */
 	/* --a-4: rgba(206, 171, 177, 1); /* dusty rose */
-	/* --a-4: rgba(178, 201, 171, 1); /* cool green */
-	--a-4: rgba(214, 104, 83, 1); /* burnt sienna */
-	--a-5: rgba(201, 201, 201, 1); /* neutral grey blue */
-	--a-6: rgba(197, 224, 216, 1);	/* cool mint */
-	--a-7: rgba(181, 255, 233, 1); /* mint */
-	--a-w: white;
+	--a-4: rgba(214, 104, 83, 1); /* H1&BAR | burnt sienna */
+	--a-5: rgba(201, 201, 201, 1); /* X neutral grey blue */
+	--a-6: rgba(197, 224, 216, 1);	/* HOVER | cool mint */
+	--a-7: rgba(181, 255, 233, 1); /* ACTIVE | mint */
+	--a-w: white; /* TEXT | pure white */
+	--a-l: rgba(97, 155, 138, 0.9); /* dark mint green */
 }
 
 h1 {
@@ -43,7 +42,7 @@ body {
 	/*padding-left: 11em;*/
 	font-size: 16px;
 	/*margin-left: 10px;*/
-	color: var(--a-7); 
+	color: var(--a-w); 
 	background-color: var(--a-3);
 	font-family: 'Crete Round';
 }
@@ -84,6 +83,18 @@ body {
   margin: auto;
 }
 
+.simple_link:link, .simple_link:visited{
+	color: var(--a-l);
+}
+
+.simple_link:hover {
+	color: var(--a-6);
+}
+
+.simple_link:active {
+	color: var(--a-7);
+}
+
 
 
 
@@ -105,7 +116,7 @@ But then I found unicode and nothing matters lol
 
 .simple-list li:before {
 	content: "\26E6";
-	color: var(--a-w);
+	color: var(--a-7);
 	display: inline-block;
 	width: 2em;
 	margin-left: -1em;
@@ -118,7 +129,7 @@ But then I found unicode and nothing matters lol
 
 .simple-list ul li:before {
 	content: "\FE44";
-	color: var(--a-w);
+	color: var(--a-7);
 	display: inline-block;
 	width: 2em;
 	margin-left: -1em;
