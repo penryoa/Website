@@ -4,57 +4,7 @@
 	<script type="text/javascript" src="../scripts/PageFactory.js"></script>
 	<script>
 	var fac = new PageFactory();
-	fac = fac.createPage("The Sitch", 
-		"<h1>about this site</h1>"
-		+ "<div><h2>intentions</h2>"
-			+"<p>I first started making this site at the beginning of June 2020 with some simple intentions:</p>"
-			+"<ul class=\"simple-list\">"
-				+"<li>grow my skills by trying out new tools (like Bootstrap, Angular, etc)</li>"
-				+"<li>show off some of those skills</li>"
-				+"<li>create a platform that feels like \"me\"</li>"
-			+"</ul>"
-			+"<p>There's a ton of things I look forward to doing and I'm only starting out. Having my own website lets me document my journey <em>~in style~</em>.</p></div>"
-		+"<div><h2>plans and features</h2>"
-			+"<p>I plan to develop and release the following features:</p>"
-			+"<ul class=\"simple-list\">"
-				// <!-- <li>interactive travel app
-				// 	<ul>
-				// 		<li>it'd help me plan my trips nicely and save info about the trips I've been on.</li>
-				// 		<li>the main purpose is to use a database</li>
-				// 	</ul>
-				// </li> -->
-				+"<li>an arcade-like mini game"
-					+"<ul>"
-						+"<li>no strong ideas yet. i just want something that lets me further practice object oriented design and makes me laugh.</li>"
-						+"<li>will be written in Java or C++</li>"
-						+"<li>will be open source and possibly on Steam</li>"
-					+"</ul></li>"
-				+"<li>interactive budgeting app</li>"
-				+"<li>gallery of photos of my cats and hamster</li>"
-				+"<li>poem collection</li>"
-				+"<li>original music collection (audio, lyrics, download, etc.)</li>"
-				+"<li>video game project<ul>"
-						+"<li>this will be a full game released independently or through Steam</li>"
-						+"<li>so far it is still in the design process with limited art and music, but I plan on releasing content as I progress.</li>"
-						+"<li>all the music, art, and code will be done by me, so it's a huge project! it'll be a while before it's released.</li>"
-			+ "</ul></li></ul></div>"
-		+"<div><h2>a little anecdote</h2>"
-			+"<p>For my senior project (August 2019 - May 2020), I spent most of my time working with PHP, HTML, and CSS. I was most proud of making two \"buttons\" using only HTML/CSS that would toggle visibility of a section, one above and one below the section to toggle."
-			+"<br><br>So it looked like this:"
-			+"<div class=\"centered-content\">"
-				+"<br>|------------------|"
-				+"<br>|--button 1 --|"
-				+"<br>|------------------|"
-				+"<br>Some content in a div"
-				+"<br>|------------------|"
-				+"<br>|--button 2 --|"
-				+"<br>|------------------|"
-			+"</div>"
-			+"<br>Button 1 and 2 aren't buttons, <i>but tons</i> of fun because they're just HTML checkbox inputs styled as buttons. I used classes and made it so if the content was hidden, Button 2 was also hidden. "
-			+"<br>In retrospect, this isn't super impressive. But at the time, I had no experience and this felt like a huge success. :)</p>"
-		+ "</div>", 
-		"StandardContentPage");
-
+	fac = fac.createPage("The Sitch", "about-this-site", "StandardContentPage");
 
 	document.getElementById("headID").innerHTML = writeImports();
 	document.title = fac.titleString;

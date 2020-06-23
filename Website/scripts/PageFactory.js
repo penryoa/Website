@@ -28,9 +28,9 @@ function writeImports(){
 // TODO: put this in separate file.
 class TwoColumnTemplate {
 
-	constructor(t, c){
-		this.titleString = "Addi | " + t;
-		this.bodyHTML = c;
+	constructor(title, content){
+		this.titleString = "Addi | " + title;
+		this.bodyURL = "../pages/" + content + "_content.html";
 	}
 
 	writeBody(){
@@ -41,9 +41,11 @@ class TwoColumnTemplate {
 			+ "<script> loadNavbar(); </script>"
 			+ "</div>"
 			// <!-- Main content -->
-			+ "<div class=\"column right_two-column-layout pg_content\">"
-			+ this.bodyHTML
-			+ "</div></div></body>");
+			+ "<div id=\"bodyID\" class=\"column right_two-column-layout pg_content\">"
+			+ "</div></div>"
+			+ "<script> load_url(\"" + this.bodyURL + "\");</script>"
+			+ "</body>");
+		
 	}
 
 }
