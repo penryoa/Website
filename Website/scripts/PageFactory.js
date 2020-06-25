@@ -34,17 +34,18 @@ class TwoColumnTemplate {
 	}
 
 	writeBody(){
-		document.write("<body>"
-			+ "<div class=\"row\">"
+		document.write('<body>'
+			+ '<div class="container-fluid">'
+			+ '<div class="row">'
 			// <!-- Site navigation menu -->
-			+ "<div id=\"nav-placeholder\" class=\"column left_two-column-layout\">"
-			+ "<script> loadNavbar(); </script>"
-			+ "</div>"
+			+ '<div id="nav-placeholder" class="col-lg-3 col-md-3 col-sm-12">'
+			+ '<script> loadNavbar(); </script>'
+			+ '</div>'
 			// <!-- Main content -->
-			+ "<div id=\"bodyID\" class=\"column right_two-column-layout pg_content\">"
-			+ "</div></div>"
-			+ "<script> load_url(\"" + this.bodyURL + "\");</script>"
-			+ "</body>");
+			+ '<div id="bodyID" class="col-lg-9 col-md-9 col-sm-12 pg_content">'
+			+ '</div></div>'
+			+ '<script> load_url("' + this.bodyURL + '");</script>'
+			+ '</div></body>');
 		
 	}
 
