@@ -4,49 +4,101 @@
 @import url('https://fonts.googleapis.com/css?family=Fugaz One');
 
 
-
-/** {
+/*
+* {
+	transition: all .85s ease;
 	color:black; powderblue,darkmagenta is nice
 	background-color:powderblue; 
 }*/
-:root {
-	/*powderblue,darkmagenta is nice*/
 
-	/* Accent colors; darkest to lightest */
-	--a-b: rgba(68, 69, 69, 1); /* BAR | dark grey */
-	--a-1: rgba(62, 21, 33, 1); /* X | Dark red */
-	--a-2: rgba(33, 131, 128, 1); /* H2 | turquoise */
-	--a-3: rgba(28, 37, 65, 1); /* BACKGROUND | Dark Blue */
+:root {
+	/*powderblue,darkmagenta,darkslategrey is nice*/
+
+	/* 
+	Accent colors.
+	To use, say rgba(var(--a-[your choice]), [opacity]).
+	I did the colors this way so that I could customize the opacity with ease.
+	*/
+	--a-b: 68, 69, 69; /* BAR | dark grey */
+	--a-1: 62, 21, 33; /* X | Dark red */
+	--a-2: 33, 131, 128; /* H2 | turquoise */
+	--a-3: 28, 37, 65;  /* BACKGROUND | Dark Blue */
 	/* --a-4: rgba(206, 171, 177, 1); /* dusty rose */
-	--a-4: rgba(214, 104, 83, 1); /* H1&BAR | burnt sienna */
-	--a-5: rgba(201, 201, 201, 1); /* X neutral grey blue */
-	--a-6: rgba(197, 224, 216, 1);	/* HOVER | cool mint */
-	--a-7: rgba(181, 255, 233, 1); /* ACTIVE | mint */
-	--a-w: white; /* TEXT | pure white */
-	--a-l: rgba(97, 155, 138, 0.9); /* dark mint green */
+	--a-4: 214, 104, 83; /* H1&BAR | burnt sienna */
+	--a-5: 201, 201, 201; /* transparent bg color | neutral grey blue */
+	--a-6: 197, 224, 216;	/* HOVER | cool mint */
+	--a-7: 181, 255, 233; /* ACTIVE | mint */
+	--a-w: 255, 255, 255; /* TEXT | pure white */
+	--a-l: 97, 155, 138; /* dark mint green */
+}
+
+
+
+body {
+	/*padding-left: 11em;*/
+	/*font-size: 16px;*/
+	/*margin-left: 10px;*/
+	/*font-size: 2vh; /*PROBLEM: based on window size; looks awful. https://stackoverflow.com/questions/16056591/font-scaling-based-on-width-of-container */
+	margin: 0;
+	/*padding: 1em;*/
+	font-size: 1em;
+	color: rgba(var(--a-w), 1); 
+	background-color: rgba(var(--a-3), 1);
+	font-family: 'Crete Round';
 }
 
 h1 {
 	margin-top: 1em;
-	font-size: 22px;
- 	color: var(--a-4);
+	font-size: 1.8em;
+ 	color: rgba(var(--a-4), 1); 
  	font-family: 'Fugaz One';
 }
 
 h2 {
-	font-size: 22px;
- 	color: var(--a-2);
+	font-size: 1.5em;
+ 	color: rgba(var(--a-2), 1); 
  	font-family: 'Fugaz One';
 }
 
-body {
-	/*padding-left: 11em;*/
-	font-size: 16px;
-	/*margin-left: 10px;*/
-	color: var(--a-w); 
-	background-color: var(--a-3);
-	font-family: 'Crete Round';
+h3 {
+	font-size: 1.4em;
+ 	/*color: rgba(var(--a-2), 1); */
+ 	font-family: 'Fugaz One';
 }
+
+p {
+	font-size: 1em;
+}
+
+div.static {
+  position: static;
+}
+
+/*ONLY HERE AS I FIX THIS*/
+#nav-placeholder {
+	padding: 10px 16px; 
+}
+
+.sticky {
+  /* position: -webkit-sticky; /* Safari */
+  position: fixed;
+  top: 0px;
+  width: 100%;
+}
+
+.sticky + .content{
+	/*margin-top: 150px;*/
+ 	padding-top: 60px;
+}
+
+.content {
+	padding: 16px;
+}
+
+/*#nav-placeholder {
+	padding: 1em;
+}*/
+
 
 /*
 	Columns for different layouts
@@ -75,8 +127,67 @@ body {
 /*
 	Different stylings used for content.
 */
-.page_content {
-	/*NOTE: currently empty but may be used for indents?*/
+/*.pg-content {
+	overflow: scroll;
+}
+*/
+.rel {
+	position: relative;
+}
+
+.my-centered {
+  position: absolute;
+  text-align: center;
+  margin: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+
+/*
+   TODO: fix this by setting title in html.
+   that title corresponds to color.
+   use js, yes?
+*/
+.item-accent-bg {
+	margin-top: 1em;
+	background: rgba(var(--a-5), 0.3);
+	/*padding-top: 0.5em;*/
+	padding-bottom: 1em;
+}
+
+.item-accent-bg-2 {
+	margin-top: 1em;
+	background: rgba(var(--a-6), 0.4);
+	/*padding-top: 0.5em;*/
+	padding-bottom: 1em;
+}
+
+.item-accent-bg-3 {
+	margin-top: 1em;
+	background: rgba(var(--a-7), 0.4);
+	/*padding-top: 0.5em;*/
+	padding-bottom: 1em;
+}
+
+.item-accent-bg-4 {
+	margin-top: 1em;
+	background: rgba(var(--a-4), 0.4);
+	/*padding-top: 0.5em;*/
+	padding-bottom: 1em;
+}
+
+.item-accent-bg-5 {
+	margin-top: 1em;
+	background: rgba(var(--a-l), 0.3);
+	/*padding-top: 0.5em;*/
+	padding-bottom: 1em;
+}
+/* --------------------- */
+
+.auto-margin {
+	margin: auto;
 }
 
 .centered-content {
@@ -84,19 +195,144 @@ body {
   margin: auto;
 }
 
+.justified {
+	text-align: justify;
+}
+
+.centered-vertically {
+	/*vertical-align: middle;*/
+	height: auto;
+}
+
+/*
+	TODO: fix redundancy in flex containers
+	(img and tile)
+*/ 
+.flex-con {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.tile__wrap {
+	height: 350px;
+	width: 350px;
+	margin: 1em;
+	position: relative;
+	/*overflow: scroll;*/
+}
+
+.tile__description_layer {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	padding-left: 1.5em;
+	padding-right: 1.5em;
+	padding-top: 1.5em;
+	transition: padding-top 0.5s;
+
+	-webkit-align-items: center;
+	align-items: center;
+
+	-webkit-justify-content: center;
+	justify-content: center;
+}
+
+.tile__description_layer:hover {
+	padding-top: 0.75em;
+}
+
+.img__wrap { 
+  /*max-width: 200px;
+  max-height: 200px;*/
+  height: 400px;
+  margin: 10px;
+  position: relative;
+  /*height: 100%;*/
+  /*text-align: center;*/
+  /*line-height: 75px;*/
+  /*font-size: 30px;*/
+}
+
+.img__description_layer {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	padding-left: 1.5em;
+	padding-right: 1.5em;
+	visibility: hidden;
+	opacity: 0;
+	display: flex;
+	background: rgba(var(--a-4), 0.8); 
+	color: rgba(var(--a-w), 1); 
+	margin: auto;
+	transition: opacity .5s, visibility .5s;
+	transition-timing-function: ease-in-out;
+
+	-webkit-align-items: center;
+	align-items: center;
+
+	-webkit-justify-content: center;
+	justify-content: center;
+}
+
+.img__wrap:hover .img__description_layer{
+	visibility: visible;
+	opacity: 1;
+}
+
+/*.img__description {
+	transition: transform .5s;
+	transition-timing-function: ease;
+	transform: translateY(1em);
+}
+
+.img__wrap:hover .img_description {
+	transition: transform .5s;
+	transform: translateY(0);
+}*/
+
+
+.bg-pic {
+  -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+  filter: grayscale(100%);
+  opacity: 50%;
+  max-height: 150px;
+}
+/*
+.img-right {
+	float: right; 
+	padding: 1em;
+	height: 100%;
+}
+*/
 .simple_link:link, .simple_link:visited{
-	color: var(--a-l);
+	color: rgba(var(--a-l), 1); 
 }
 
 .simple_link:hover {
-	color: var(--a-6);
+	color: rgba(var(--a-6), 1); 
 }
 
 .simple_link:active {
-	color: var(--a-7);
+	color: rgba(var(--a-7), 1); 
 }
 
 
+/* Only for edition purposes so I can see where all the divs are */
+.editing_border {
+	border: 3px solid green;
+}
+
+/* TODO: had to do a specific fix for a header in About Me page; */
+#h2_in_imgs {
+	padding-top: 3em;
+}
 
 
 /** 
@@ -116,8 +352,9 @@ But then I found unicode and nothing matters lol
 }
 
 .simple-list li:before {
+	content: "\2022"; /* in case browsers do not support my preferred bullet */
 	content: "\26E6";
-	color: var(--a-7);
+	color: rgba(var(--a-7), 1); 
 	display: inline-block;
 	width: 2em;
 	margin-left: -1em;
@@ -129,8 +366,9 @@ But then I found unicode and nothing matters lol
 }
 
 .simple-list ul li:before {
+	content: "\25E6"; /* in case browsers do not support my preferred bullet */
 	content: "\FE44";
-	color: var(--a-7);
+	color: rgba(var(--a-7), 1); 
 	display: inline-block;
 	width: 2em;
 	margin-left: -1em;
@@ -143,66 +381,81 @@ But then I found unicode and nothing matters lol
 /*
 	Navigation bar
 */
+/*#navTOP {
+	position: sticky;
+}*/
+
 .navbar__list {
 	/*width: 25%;*/
 	list-style-type: none;
 	padding: 1em;
 /*	margin-left: 2em;
 */	/*position:absolute; this makes it so the picture is after the navbar items */ 
-	top: 2em; 
-	left: 1em; 
+	top: 1em; 
+	left: 1em;
+	bottom: 2em; 
 	font-family: 'Fugaz One';
-	
+
+	/*position: fixed;*/
+  	/*top: 0;*/
+  	width: 100%;
 }
 
+/*.navbar__list_top {
+	position: fixed;
+	padding: 0.5em;
+}*/
+
 .navbar__list li {
-	background: var(--a-b);
+	background: rgba(var(--a-b), 1); 
 	margin: 0.5em 0;
 	padding: 0.3em;
-	border-right: 1em solid var(--a-4);
+	border-right: 1em solid rgba(var(--a-4), 1); 
+}
+
+.navbar__list_top li {
+	display: inline;
 }
 
 .navbar__list a {
 	text-decoration: none;
+}
+
+.navbar__list_left a {
 	display: block;
 }
 
 .navbar__list a:link, a:visited {
-	color: var(--a-w);
+	color: rgba(var(--a-w), 1); 
 }
 
 .navbar__list a:hover{
-	color: var(--a-6);
+	color: rgba(var(--a-6), 1); 
 }
 
 .navbar__list a:active{
-	color: var(--a-7);
+	color: rgba(var(--a-7), 1); 
 }
 
+/* TODO: check if I need this or not */
 @media screen and (max-width: 700px) {
   .column {
     width: 100%;
   }
-
-  body {
-  	font-size-adjust: 0;
-  }
-
-/*  img#navbar_img {
-  	display: none;
-  }
-
-  img#navbar_small_img {
-  	display: block;
-  }*/
 }
 
-/*#navbar_small_img {
-	display: none;
-}
+/*
+TODO: Make this use Bootstrap's small size, not actual px; 
 */
+/*@media screen and (min-width: 768px) {
+	#nav-placeholder {
+		position: fixed;
+	}
 
-
+	#body-placeholder {
+		margin-right: ;
+	}
+}*/
 
 
 

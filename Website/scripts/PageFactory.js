@@ -6,8 +6,10 @@ function PageFactory () {
 	this.createPage = function(myTitle, myContent, type) {
 		var pg;
 
-		if (type=="StandardContentPage"){
+		if (type=='StandardContentPage'){
 			pg = new TwoColumnTemplate(myTitle, myContent);
+		} else if (type=='TopMenu'){
+			pg = new TopNavbarTemplate(myTitle, myContent);
 		}
 
 		return pg;
@@ -20,35 +22,57 @@ function PageFactory () {
 	This is here separately because this code will be used for every layout.
 */
 function writeImports(){
-	document.write("<script type=\"text/javascript\" src=\"../scripts/helpers.js\"></script>"
+	document.write('<script type="text/javascript" src="../scripts/helpers.js"></script>'
 		// include other imports here
-		+ "<script> loadBasicImports(); </script>");
+		+ '<script> loadBasicImports(); </script>');
 }
 
 // TODO: put this in separate file.
 class TwoColumnTemplate {
 
 	constructor(title, content){
-		this.titleString = "Addi | " + title;
-		this.bodyURL = "../pages/" + content + "_content.html";
+		this.titleString = 'Addi | ' + title;
+		this.bodyURL = '../pages/' + content + '_content.html';
 	}
 
 	writeBody(){
-		document.write('<body>'
+		document.write('<body id="bodyID">'
 			+ '<div class="container-fluid">'
 			+ '<div class="row">'
 			// <!-- Site navigation menu -->
-			+ '<div id="nav-placeholder" class="col-lg-3 col-md-3 col-sm-12">'
+			+ '<div id="nav-placeholder" class="col-xl-2 col-lg-3 col-md-3 fixed-top one">'
 			+ '<script> loadNavbar(); </script>'
 			+ '</div>'
 			// <!-- Main content -->
-			+ '<div id="bodyID" class="col-lg-9 col-md-9 col-sm-12 pg_content">'
+			+ '<div id="body-placeholder" class="col-xl-10 offset-xl-2 col-lg-9 offset-lg-3 col-md-9 offset-md-3 two">'
 			+ '</div></div>'
-			+ '<script> load_url("' + this.bodyURL + '");</script>'
+			+ '<script> load_url("' + this.bodyURL + '"); </script>'
 			+ '</div></body>');
 		
 	}
 
+}
+
+class TopNavbarTemplate {
+
+	constructor(title, content){
+		this.titleString = 'Addi | ' + title;
+		this.bodyURL = '../pages/' + content + '_content.html';
+	}
+
+	writeBody(){
+		document.write('<body id="bodyID">'
+			// + '<div class="container-fluid">'
+			// + '<div class="row">'
+			// <!-- Site navigation menu -->
+			+ '<div id="nav-placeholder">'
+			+ '<script> loadNavbarTOP(); </script>'
+			+ '</div>'
+			// <!-- Main content -->
+			+ '<div id="body-placeholder" class="content"></div>'
+			+ '<script> load_url("' + this.bodyURL + '"); handle_sticky(); </script>'
+			+ '</body>');
+	}
 }
 
 /**
