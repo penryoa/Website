@@ -419,7 +419,7 @@ https://codepen.io/designcouch/pen/Atyop
   -o-transition: .25s ease-in-out;
   transition: .25s ease-in-out;
   background-color: rgba(var(--a-w), 1);
-  outline: 1.5px solid rgba(var(--a-3), 1);
+  /*outline: 1.5px solid rgba(var(--a-3), 1);*/
 }
 
 #nav-icon4 span:nth-child(1) {
