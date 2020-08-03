@@ -406,34 +406,34 @@ But then I found unicode and nothing matters lol
 	padding: 0.5em;
 }*/
 
-.navbar__list li {
+.navbar__list_li {
 	background: rgba(var(--a-b), 1); 
 	margin: 0.5em 0;
 	padding: 0.3em;
 	border-right: 1em solid rgba(var(--a-4), 1); 
 }
 
-.navbar__list_top li {
+.navbar__list__li_top {
 	display: inline;
 }
 
-.navbar__list a {
+.navbar__list_li a {
 	text-decoration: none;
 }
 
-.navbar__list_left a {
+.navbar__list_li_left a {
 	display: block;
 }
 
-.navbar__list a:link, a:visited {
+.navbar__list_li a:link, a:visited {
 	color: rgba(var(--a-w), 1); 
 }
 
-.navbar__list a:hover{
+.navbar__list_li a:hover{
 	color: rgba(var(--a-6), 1); 
 }
 
-.navbar__list a:active{
+.navbar__list_li a:active{
 	color: rgba(var(--a-7), 1); 
 }
 
