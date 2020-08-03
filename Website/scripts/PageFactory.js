@@ -47,7 +47,7 @@ class TwoColumnTemplate {
 			// <!-- Main content -->
 			+ '<div id="body-placeholder" class="col-xl-10 offset-xl-2 col-lg-9 offset-lg-3 col-md-9 offset-md-3 two">'
 			+ '</div></div>'
-			+ '<script> load_url("' + this.bodyURL + '"); </script>'
+			+ '<script> load_url("' + this.bodyURL + '"); handle_ham_menu_animation(); </script>'
 			+ '</div></body>');
 		
 	}

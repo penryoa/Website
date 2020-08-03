@@ -1,10 +1,12 @@
 /**
-* loads the navbar into a div; this nav bar will be on the left side.
-*
-* no param, no return.
-*
-* TODO: take in @param {String} orientation. It tells if it's a top navbar, side nav bar, so on.
-*
+loads the navbar into a div; this nav bar will be on the left side.
+
+no param, no return.
+
+TODO: take in @param {String} orientation. It tells if it's a top navbar, side nav bar, so on.
+TODO: should I be calling "document.write"...? I tried to write to innerHTML and it didn't do the trick.
+	  I'll probably find a way to make that work after while though.
+
 */
 function loadNavbar() {
 	var pageRefs = [
@@ -16,9 +18,9 @@ function loadNavbar() {
 
 	document.write('<nav class="navbar-expand-md"><div class="container-fluid"');
 	document.write('<div class="navbar-header">'
-    	+'<div class="btn-bg d-block d-md-none"><button type="button" class="navbar-toggle" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="nav" data-target=".navbar-collapse">'
-    	+'<span class="navbar-toggler-icon"></span>'           
-      	+'</button></div></div>');
+    	+'<div class="btn-bg d-block d-md-none"><div id="nav-icon4" class="navbar-toggle" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="nav" data-target=".navbar-collapse">'
+    	+'<span></span><span></span><span></span>'         
+      	+'</div></div></div>');
 
 	document.write('<div class="collapse navbar-collapse"><ul class="nav navbar-nav navbar__list">')
 
@@ -60,6 +62,16 @@ function load_url(url) {
     // document.getElementById("bodyID").innerHTML='<object type="text/html" data="'+url+'" ></object>';
 	$("#body-placeholder").load(url);
 }
+
+function handle_ham_menu_animation(){
+	$(document).ready(function(){
+		$('#nav-icon1,#nav-icon2,#nav-icon3,#nav-icon4').click(function(){
+			$(this).toggleClass('open');
+		});
+	});	
+}
+
+
 
 /**
 * attempting to handle a sticky navbar at the top
