@@ -14,15 +14,11 @@ function loadNavbar() {
 		["education & skills", "../pages/resume.html"]
 		];
 
-	document.write('<nav class="navbar navbar-expand-md"><div class="container-fluid"');
+	document.write('<nav class="navbar-expand-md"><div class="container-fluid"');
 	document.write('<div class="navbar-header">'
-     	// <!--menu hamburger solo per mobile-->
-    	+'<button type="button" class="navbar-toggle d-block d-md-none" data-toggle="collapse" data-target=".navbar-collapse">'
-    	+'<span class="navbar-toggler-icon"></span>'
-    	// +'<span class="icon-bar"></span>'
-     //    +'<span class="icon-bar"></span>'
-     //    +'<span class="icon-bar"></span>'             
-      	+'</button></div>');
+    	+'<div class="btn-bg d-block d-md-none"><button type="button" class="navbar-toggle" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="nav" data-target=".navbar-collapse">'
+    	+'<span class="navbar-toggler-icon"></span>'           
+      	+'</button></div></div>');
 
 	document.write('<div class="collapse navbar-collapse"><ul class="nav navbar-nav navbar__list">')
 
@@ -33,40 +29,7 @@ function loadNavbar() {
 	document.write('<li><div class="d-none d-md-block"><img src="../items/navbar_img.png" alt="vertical flowers" width=100%></div></li>');
 	document.write('<li><div class="d-block d-md-none"><img src="../items/navbar_small_img.png" alt="horizontal flowers" width=100%></div></li>');
 	document.write('</ul></div></nav>');
-	// <source media="(min-width:650px)" srcset="img_pink_flowers.jpg">
-	// <source media="(min-width:465px)" srcset="img_white_flower.jpg">
-	// document.write("<picture>");
-	
-	
-	// document.write("</picture>");
-	// return "</ul>" 
-	// + "<img src=\"../items/navbar_img.png\" id=\"navbar_img\" alt=\"some flowers\"width=100%>" 
-	// + "<img src=\"../items/navbar_small_img.png\" id=\"navbar_small_img\" alt=\"some flowers\"width=100%>";
 }
-
-/**
-* TODO: make this work.
-* loads the navbar into a div; this nav bar will be on the top.
-*
-* no param, no return.
-*/
-function loadNavbarTOP(){
-	var pageRefs = [
-		["home", "../pages/index.html"],
-		["about this site", "../pages/about-this-site.html"],
-		["about me", "../pages/about-me.html"],
-		["education & skills", "../pages/resume.html"]
-		];
-
-	document.write('<nav id="navbar" class="navbar__list navbar__list_top">');
-
-	for (var i = 0; i < pageRefs.length; i++) {
-		document.write('\n<li><a href="' + pageRefs[i][1] + '">'+pageRefs[i][0]+'</a>');
-	}
-
-	document.write('</nav>');
-}
-
 
 /**
 * loads the basic imports like the stylesheet and JQuery into a div. 
@@ -123,20 +86,42 @@ function load_url(url) {
 // }
 
 
-function handle_navbar() {
-	var navbar = document.getElementById("nav-placeholder");
-	var body = document.getElementById("body-placeholder");
+// function handle_navbar() {
+// 	var navbar = document.getElementById("nav-placeholder");
+// 	var body = document.getElementById("body-placeholder");
 
-	$(document).ready(function () {
-		if ($(window).outerWidth > 768){
-			navbar.classList.add("fixed-top");
-			navbar.classList.add("one");
-			body.classList.add("two");
-		} else {
-			navbar.classList.remove("fixed-top");
-			navbar.classList.remove("one");
-			body.classList.remove("two");
-		}
-	});
-}
+// 	$(document).ready(function () {
+// 		if ($(window).outerWidth > 768){
+// 			navbar.classList.add("fixed-top");
+// 			navbar.classList.add("one");
+// 			body.classList.add("two");
+// 		} else {
+// 			navbar.classList.remove("fixed-top");
+// 			navbar.classList.remove("one");
+// 			body.classList.remove("two");
+// 		}
+// 	});
+// }
 
+/**
+* TODO: make this work.
+* loads the navbar into a div; this nav bar will be on the top.
+*
+* no param, no return.
+*/
+// function loadNavbarTOP(){
+// 	var pageRefs = [
+// 		["home", "../pages/index.html"],
+// 		["about this site", "../pages/about-this-site.html"],
+// 		["about me", "../pages/about-me.html"],
+// 		["education & skills", "../pages/resume.html"]
+// 		];
+
+// 	document.write('<nav id="navbar" class="navbar__list navbar__list_top">');
+
+// 	for (var i = 0; i < pageRefs.length; i++) {
+// 		document.write('\n<li><a href="' + pageRefs[i][1] + '">'+pageRefs[i][0]+'</a>');
+// 	}
+
+// 	document.write('</nav>');
+// }

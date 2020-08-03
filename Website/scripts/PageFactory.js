@@ -8,9 +8,10 @@ function PageFactory () {
 
 		if (type=='StandardContentPage'){
 			pg = new TwoColumnTemplate(myTitle, myContent);
-		} else if (type=='TopMenu'){
-			pg = new TopNavbarTemplate(myTitle, myContent);
-		}
+		} 
+		// else if (type=='TopMenu'){
+		// 	pg = new TopNavbarTemplate(myTitle, myContent);
+		// }
 
 		return pg;
 	}
@@ -53,27 +54,27 @@ class TwoColumnTemplate {
 
 }
 
-class TopNavbarTemplate {
+// class TopNavbarTemplate {
 
-	constructor(title, content){
-		this.titleString = 'Addi | ' + title;
-		this.bodyURL = '../pages/' + content + '_content.html';
-	}
+// 	constructor(title, content){
+// 		this.titleString = 'Addi | ' + title;
+// 		this.bodyURL = '../pages/' + content + '_content.html';
+// 	}
 
-	writeBody(){
-		document.write('<body id="bodyID">'
-			// + '<div class="container-fluid">'
-			// + '<div class="row">'
-			// <!-- Site navigation menu -->
-			+ '<div id="nav-placeholder">'
-			+ '<script> loadNavbarTOP(); </script>'
-			+ '</div>'
-			// <!-- Main content -->
-			+ '<div id="body-placeholder" class="content"></div>'
-			+ '<script> load_url("' + this.bodyURL + '"); handle_sticky(); </script>'
-			+ '</body>');
-	}
-}
+// 	writeBody(){
+// 		document.write('<body id="bodyID">'
+// 			// + '<div class="container-fluid">'
+// 			// + '<div class="row">'
+// 			// <!-- Site navigation menu -->
+// 			+ '<div id="nav-placeholder">'
+// 			+ '<script> loadNavbarTOP(); </script>'
+// 			+ '</div>'
+// 			// <!-- Main content -->
+// 			+ '<div id="body-placeholder" class="content"></div>'
+// 			+ '<script> load_url("' + this.bodyURL + '"); handle_sticky(); </script>'
+// 			+ '</body>');
+// 	}
+// }
 
 /**
 was a class, then a function, kind of anything. 

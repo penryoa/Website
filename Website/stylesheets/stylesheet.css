@@ -79,49 +79,6 @@ div.static {
 	padding: 10px 16px; 
 }
 
-.sticky {
-  /* position: -webkit-sticky; /* Safari */
-  position: fixed;
-  top: 0px;
-  width: 100%;
-}
-
-.sticky + .content{
-	/*margin-top: 150px;*/
- 	padding-top: 60px;
-}
-
-.content {
-	padding: 16px;
-}
-
-/*#nav-placeholder {
-	padding: 1em;
-}*/
-
-
-/*
-	Columns for different layouts
-*/
-/*.column {
-	float: left;
-}
-
-.left_two-column-layout {
-	width: 20%;
-}
-
-.right_two-column-layout {
-	width: 80%;
-}*/
-
-/* Clear floats after the columns; doesn't really do much here since we stay in columns */
-/*.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}*/
-
 
 
 /*
@@ -381,36 +338,21 @@ But then I found unicode and nothing matters lol
 /*
 	Navigation bar
 */
-/*#navTOP {
-	position: sticky;
-}*/
-
 .navbar__list {
-	/*width: 25%;*/
 	list-style-type: none;
 	padding: 1em;
-/*	margin-left: 2em;
-*/	/*position:absolute; this makes it so the picture is after the navbar items */ 
 	top: 1em; 
 	left: 1em;
 	bottom: 2em; 
 	font-family: 'Fugaz One';
-
-	/*position: fixed;*/
-  	/*top: 0;*/
-  	width: 100%;
 }
-
-/*.navbar__list_top {
-	position: fixed;
-	padding: 0.5em;
-}*/
 
 .navbar__list_li {
 	background: rgba(var(--a-b), 1); 
 	margin: 0.5em 0;
-	padding: 0.3em;
+	padding: 0.5em;
 	border-right: 1em solid rgba(var(--a-4), 1); 
+	width: 100%;
 }
 
 .navbar__list__li_top {
@@ -444,20 +386,31 @@ But then I found unicode and nothing matters lol
   }
 }
 
-/*
-TODO: Make this use Bootstrap's small size, not actual px; 
-*/
-/*@media screen and (min-width: 768px) {
+/* TODO: use Bootstrap sizing not manual px; */
+@media screen and (max-width: 767px) {
+	body {
+		margin: 50px 0 0 0;
+	}
+
 	#nav-placeholder {
-		position: fixed;
+		padding: 0 0 0 0;
 	}
 
-	#body-placeholder {
-		margin-right: ;
+	.nav {
+		background-color: rgba(var(--a-b), 0.75);
+		height: 100vh;
 	}
-}*/
 
+	.btn-bg {
+		width: 100vw;
+		background-color: rgba(var(--a-4), 1);
+	}
 
+	.navbar__list_li {
+		background: rgba(var(--a-2), 1); 
+		border-right: 2em solid rgba(var(--a-7), 1); 
+	}
+}
 
 /*
 	Used at the end of the page
