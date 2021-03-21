@@ -1,4 +1,5 @@
 import React from 'react';
+import ResumePDF from '../assets/files/Resume_Addi-Penry.pdf';
 
 const ResumeContent = () => {
     return (
@@ -14,7 +15,7 @@ const ResumeContent = () => {
 
             <div id="resumeDiv">
                 <h2>resume</h2>
-                <object id="resume_obj" data="../items/Resume_Addi-Penry.pdf" type="application/pdf" width="100%" height="500px"/>
+                <object id="resume_obj" data={ResumePDF} type="application/pdf" width="100%" height="500px"/>
             </div>
 
             <div id="codeDiv">

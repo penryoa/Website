@@ -1,54 +1,59 @@
-import React from 'react';
+import React from "react";
+import { withRouter, Link } from "react-router-dom";
+import Flowers_Vert from "../assets/images/navbar_img.png";
+import Flowers_Horiz from "../assets/images/navbar_small_img.png";
 
-const MyNavbar = ({pageRefs}) => {
-    return (
-        <nav className="navbar-expand-md">
-            <div className="container-fluid">
-                <div className="navbar-header">
-                    <div className="btn-bg d-block d-md-none">
-                        <div 
-                            id="nav-icon4" 
-                            className="navbar-toggle" 
-                            data-toggle="collapse" 
-                            role="button" 
-                            aria-expanded="false" 
-                            aria-controls="nav" 
-                            data-target=".navbar-collapse"
-                        >
-                        <span/>
-                        <span/>
-                        <span/>       
-      	                </div>
-                    </div>
-                </div>
-            </div>
+const MyNavbar = ({ isOpen, setOpen }) => {
+  return (
+    <>
+      {isOpen && (
+        <div className="collapse navbar-collapse">
+          <ul className="nav navbar-nav navbar__list">
+            <li
+              className="navbar__list_li navbar__list_li_left"
+              onClick={() => setOpen(!isOpen)}
+            >
+              <Link to="/home">Home</Link>
+            </li>
+            <li
+              className="navbar__list_li navbar__list_li_left"
+              onClick={() => setOpen(!isOpen)}
+            >
+              <Link to="/about-me">About Me</Link>
+            </li>
+            <li
+              className="navbar__list_li navbar__list_li_left"
+              onClick={() => setOpen(!isOpen)}
+            >
+              <Link to="/about-site">About This Site</Link>
+            </li>
+            <li
+              className="navbar__list_li navbar__list_li_left"
+              onClick={() => setOpen(!isOpen)}
+            >
+              <Link to="/professional-plug">Education and Skills</Link>
+            </li>
 
-            <div className="collapse navbar-collapse">
-                <ul className="nav navbar-nav navbar__list">
-                    {pageRefs.forEach(pageIdx => {
-                        return (
-                            <li className="navbar__list_li navbar__list_li_left">
-                                {/* <a href={pageRefs[i][1]}>{pageRefs[i][0]}</a> */}
-                                {pageRefs[0]}
-                            </li>
-                        );
-                    })}
+            <li>
+              <span className="d-none d-md-block">
+                <img src={Flowers_Vert} alt="vertical flowers" width="100%" />
+              </span>
+            </li>
 
-                    <li>
-                        <div className="d-none d-md-block">
-                            <img src="../items/navbar_img.png" alt="vertical flowers" width="100%"/>
-                        </div>
-                    </li>
-
-                    <li>
-                        <div className="d-block d-md-none">
-                            <img src="../items/navbar_small_img.png" alt="horizontal flowers" width="100%"/>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    );
+            <li>
+              <span className="d-block d-md-none">
+                <img
+                  src={Flowers_Horiz}
+                  alt="horizontal flowers"
+                  width="100%"
+                />
+              </span>
+            </li>
+          </ul>
+        </div>
+      )}
+    </>
+  );
 };
 
-export default MyNavbar;
+export default withRouter(MyNavbar);

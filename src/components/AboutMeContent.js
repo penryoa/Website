@@ -1,17 +1,26 @@
 import React from 'react';
+import Img_Michi from "../assets/images/michi.JPG";
+import Img_Me from '../assets/images/me.jpeg';
+import Img_Art_Sun from '../assets/images/art_sun-n-moon.jpg';
+import Img_Dragon from "../assets/images/creepy_dragon.JPEG";
+import Img_Art_Hand from "../assets/images/art_hand.jpg";
+import Img_Window from "../assets/images/brooklyn_window.jpg";
+import Img_Mykie from "../assets/images/cute_mykie.JPG";
+import Img_Art_Flowers from "../assets/images/art_flowers.jpg";
+import Img_Roxas from "../assets/images/RoxasAndMeBeech.JPG";
 
 const AboutMeContent = () => {
     return (
-        <div>
+        <>
             <div class="container rel">
-                <img class="bg-pic" src="../items/michi.JPG" alt="aesthetic hamster background" width="100%"/>
+                <img class="bg-pic" src={Img_Michi} alt="aesthetic hamster background" width="100%"/>
                 <h1 class="my-centered">about me</h1>
             </div>
 
-            <div class="item-accent-bg">
+            <div class="bg-5">
                 <div class="flex-con padded">
                     <h2>hello, bienvenue, and <b>こんにちは!</b></h2>
-                    {/* <img class="img-right" src="../items/me.jpeg" height="100%" width="30%"> */}
+                    {/* <img class="img-right" src="../assets/images/me.jpeg" height="100%" width="30%"> */}
                     <div class="justified">
                         <p>
                             I'm Addi, a software developer from Indiana. I like to be on my toes and thrown into unfamiliar things, so I moved straight from Indiana to New York City out of college. I have a hodgepodge of interests and hobbies and not enough time to tend to them all. I'm a motorcyclist, musician, avid tea drinker, and aspiring game developer. Cats are pretty great and thankfully I have two: Dragon and Mykie (which are featured in pictures below, as any animal parent is required to do). 
@@ -21,7 +30,7 @@ const AboutMeContent = () => {
             </div>
 
             <div class="flex-con auto-margin">	
-                <div class="tile__wrap item-accent-bg">
+                <div class="tile__wrap bg-5">
                     <div class="tile__description_layer justified">
                         <h3>music</h3>
                         <p>
@@ -31,7 +40,7 @@ const AboutMeContent = () => {
                         </p>
                     </div>
                 </div>
-                <div class="tile__wrap item-accent-bg-4">
+                <div class="tile__wrap bg-4">
                     <div class="tile__description_layer justified">
                         <h3>languages</h3>
                         <p>
@@ -40,7 +49,7 @@ const AboutMeContent = () => {
                         </p>
                     </div>
                 </div>
-                <div class="tile__wrap item-accent-bg-2">
+                <div class="tile__wrap bg-6">
                     <div class="tile__description_layer justified">
                         <h3>motorcycles</h3>
                         <p>
@@ -49,7 +58,7 @@ const AboutMeContent = () => {
                         </p>
                     </div>
                 </div>
-                <div class="tile__wrap item-accent-bg-3">
+                <div class="tile__wrap bg-7">
                     <div class="tile__description_layer justified">
                         <h3>creativity</h3>
                         <p>
@@ -58,7 +67,7 @@ const AboutMeContent = () => {
                         </p>
                     </div>
                 </div>
-                <div class="tile__wrap item-accent-bg-5">
+                <div class="tile__wrap bg-1">
                     <div class="tile__description_layer justified">
                         <h3>video games</h3>
                         <p>
@@ -70,62 +79,62 @@ const AboutMeContent = () => {
             </div>
 
 
-            <div class="item-accent-bg">
+            <div class="bg-5">
                 <div class="padded centered-h">
                     <p>Enjoy some random pictures of cats, art, and so on. (:</p>
                 </div>
                 <div class="flex-con">
                     <div class="img__wrap">
-                        <img src="../items/me.jpeg" alt="just me" height="100%"/>
+                        <img src={Img_Me} alt="just me" height="100%"/>
                         <div class="img__description_layer">
                             <p class="img__description">'Tis little old me.</p>
                         </div>
                     </div>
                     <div class="img__wrap">
-                        <img src="../items/art_sun-n-moon.jpg" alt="art - sun and moon" height="100%"/>
+                        <img src={Img_Art_Sun} alt="art - sun and moon" height="100%"/>
                         <div class="img__description_layer">
                             <p class="img__description">A painting of mine from 2015.</p>
                         </div>
                     </div>
                     <div class="img__wrap">
-                        <img src="../items/creepy_dragon.JPEG" alt="my lil boyo Dragon" height="100%"/>
+                        <img src={Img_Dragon} alt="my lil boyo Dragon" height="100%"/>
                         <div class="img__description_layer">
                             <p class="img__description justified">This is Dragon, aka Mr. Dragon. He's a strange guy, sometimes even creepy. His biggest fear is starvation by an empty food bowl.</p>
                         </div>
                     </div>
                     <div class="img__wrap">
-                        <img src="../items/art_hand.jpg" alt="art - hand of time" height="100%"/>
+                        <img src={Img_Art_Hand} alt="art - hand of time" height="100%"/>
                         <div class="img__description_layer">
                             <p class="img__description">A painting of mine from 2017. Kind of makes me think of the "hand of time" in a weird way.</p>
                         </div>
                     </div>
                     <div class="img__wrap">
-                        <img src="../items/brooklyn_window.jpg" alt="view from brooklyn apt" height="100%"/>
+                        <img src={Img_Window} alt="view from brooklyn apt" height="100%"/>
                         <div class="img__description_layer">
                             <p class="img__description">I moved to Brooklyn and the cats have loved the open windows!</p>
                         </div>
                     </div>
                     <div class="img__wrap">
-                        <img src="../items/cute_mykie.JPG" alt="my lil lady Mykie" height="100%"/>
+                        <img src={Img_Mykie} alt="my lil lady Mykie" height="100%"/>
                         <div class="img__description_layer">
                             <p class="img__description">This is Mykie, aka Mykie Lady. Her hobbies include lounging outdoors or by windows. She only lets you know you're giving her too much attention when she is completely annoyed.</p>
                         </div>
                     </div>
                     <div class="img__wrap">
-                        <img src="../items/art_flowers.jpg" alt="art - simple flowers" height="100%"/>
+                        <img src={Img_Art_Flowers} alt="art - simple flowers" height="100%"/>
                         <div class="img__description_layer">
                             <p class="img__description">Just some flowers I painted. :)</p>
                         </div>
                     </div>
                     <div class="img__wrap">
-                        <img src="../items/RoxasAndMeBeech.JPG" alt="my motorcycle Roxas and I" height="100%"/>
+                        <img src={Img_Roxas} alt="my motorcycle Roxas and I" height="100%"/>
                         <div class="img__description_layer">
                             <p class="img__description">My boy Roxas. He's a stud with that glistening pearl coat.</p>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </>
     );
 };
 
