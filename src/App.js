@@ -12,35 +12,47 @@ const App = () => {
   const [isOpen, setOpen] = useState(false);
 
   return (
-    <div className="wrapper">
+    <>
       <BrowserRouter>
-        <div className="sticky w-full bg-3">
+        <div className="sticky z-11 w-full bg-3 t-0">
           <Hamburger toggled={isOpen} toggle={setOpen} rounded />
         </div>
-        <div className="md:flex">
-          <div className={isOpen ? "flex-grow-1" : ""}>
+        <div className="flex-con flex-start">
+          <div
+            className={
+              "w-full md:w-1/4 " + (isOpen && "sticky flex-sticky z-10 t-50")
+            }
+          >
             <MyNavbar isOpen={isOpen} setOpen={setOpen} />
           </div>
+          <Switch>
+            <Route exact path="/home">
+              <div className={isOpen && "w-full md:w-3/4"}>
+                <HomeContent />
+              </div>
+            </Route>
+            <Route exact path="/about-me">
+              <div className={isOpen && "w-full md:w-3/4"}>
+                <AboutMeContent />
+              </div>
+            </Route>
+            <Route exact path="/about-site">
+              <div className={isOpen && "w-full md:w-3/4"}>
+                <AboutSiteContent />
+              </div>
+            </Route>
+            <Route exact path="/professional-plug">
+              <div className={isOpen && "w-full md:w-3/4"}>
+                <ResumeContent />
+              </div>
+            </Route>
+            <Route path="/">
+              <Redirect to="/home" />
+            </Route>
+          </Switch>
         </div>
-        <Switch>
-          <Route exact path="/home">
-            <HomeContent />
-          </Route>
-          <Route exact path="/about-me">
-            <AboutMeContent />
-          </Route>
-          <Route exact path="/about-site">
-            <AboutSiteContent />
-          </Route>
-          <Route exact path="/professional-plug">
-            <ResumeContent />
-          </Route>
-          <Route path="/">
-            <Redirect to="/home" />
-          </Route>
-        </Switch>
       </BrowserRouter>
-    </div>
+    </>
   );
 };
 

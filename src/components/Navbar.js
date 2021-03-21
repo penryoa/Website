@@ -7,8 +7,8 @@ const MyNavbar = ({ isOpen, setOpen }) => {
   return (
     <>
       {isOpen && (
-        <div className="collapse navbar-collapse">
-          <ul className="nav navbar-nav navbar__list">
+        <div>
+          <ul className="nav navbar__list">
             <li
               className="navbar__list_li navbar__list_li_left"
               onClick={() => setOpen(!isOpen)}
@@ -35,13 +35,13 @@ const MyNavbar = ({ isOpen, setOpen }) => {
             </li>
 
             <li>
-              <span className="d-none d-md-block">
+              <span className="d-none md:d-block">
                 <img src={Flowers_Vert} alt="vertical flowers" width="100%" />
               </span>
             </li>
 
             <li>
-              <span className="d-block d-md-none">
+              <span className="d-block md:d-none">
                 <img
                   src={Flowers_Horiz}
                   alt="horizontal flowers"
