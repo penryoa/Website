@@ -380,7 +380,6 @@ But then I found unicode and nothing matters lol
   margin: 0.5em 0;
   padding: 0.5em;
   border-right: 1em solid rgba(var(--a-4), 1);
-  /* width: 90%; */
 }
 
 .navbar__list__li_top {
@@ -439,6 +438,17 @@ a:visited {
 
 .t-50 {
   top: 48px;
+}
+
+.sec-collapsed {
+  transition: max-width 0s linear;
+  overflow: hidden;
+  max-width: 0;
+}
+
+.sec-collapsed.show {
+  max-width: 100%;
+  transition: max-width 0.5s linear;
 }
 
 @media screen and (min-width: 1250px) {

@@ -20,7 +20,8 @@ const App = () => {
         <div className="flex-con flex-start">
           <div
             className={
-              "w-full md:w-1/4 " + (isOpen && "sticky flex-sticky z-10 t-50")
+              "w-full md:w-1/4 sec-collapsed " +
+              (isOpen && "sticky flex-sticky z-10 t-50 show")
             }
           >
             <MyNavbar isOpen={isOpen} setOpen={setOpen} />
