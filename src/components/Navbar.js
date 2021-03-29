@@ -9,28 +9,16 @@ const MyNavbar = ({ isOpen, setOpen }) => {
       {isOpen && (
         <div>
           <ul className="nav navbar__list">
-            <li
-              className="navbar__list_li navbar__list_li_left"
-              onClick={() => setOpen(!isOpen)}
-            >
+            <li className="navbar__list_li" onClick={() => setOpen(!isOpen)}>
               <Link to="/home">Home</Link>
             </li>
-            <li
-              className="navbar__list_li navbar__list_li_left"
-              onClick={() => setOpen(!isOpen)}
-            >
+            <li className="navbar__list_li" onClick={() => setOpen(!isOpen)}>
               <Link to="/about-me">About Me</Link>
             </li>
-            <li
-              className="navbar__list_li navbar__list_li_left"
-              onClick={() => setOpen(!isOpen)}
-            >
+            <li className="navbar__list_li" onClick={() => setOpen(!isOpen)}>
               <Link to="/about-site">About This Site</Link>
             </li>
-            <li
-              className="navbar__list_li navbar__list_li_left"
-              onClick={() => setOpen(!isOpen)}
-            >
+            <li className="navbar__list_li" onClick={() => setOpen(!isOpen)}>
               <Link to="/professional-plug">Education and Skills</Link>
             </li>
 
@@ -42,11 +30,7 @@ const MyNavbar = ({ isOpen, setOpen }) => {
 
             <li>
               <span className="d-block md:d-none">
-                <img
-                  src={Flowers_Horiz}
-                  alt="horizontal flowers"
-                  width="100%"
-                />
+                <img src={Flowers_Horiz} alt="horizontal flowers" width="90%" />
               </span>
             </li>
           </ul>

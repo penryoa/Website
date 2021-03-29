@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Redirect, Route, Switch, BrowserRouter } from "react-router-dom";
 import MyNavbar from "./components/Navbar";
 import HomeContent from "./components/HomeContent";
@@ -17,7 +17,7 @@ const App = () => {
         <div className="sticky z-11 w-full bg-3 t-0">
           <Hamburger toggled={isOpen} toggle={setOpen} rounded />
         </div>
-        <div className="flex-con flex-start">
+        <div className="flex-con flex-start px-1">
           <div
             className={
               "w-full md:w-1/4 sec-collapsed " +

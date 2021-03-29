@@ -58,7 +58,6 @@ body {
   /*margin-left: 10px;*/
   /*font-size: 2vh; /*PROBLEM: based on window size; looks awful. https://stackoverflow.com/questions/16056591/font-scaling-based-on-width-of-container */
   margin: 0;
-  /*padding: 1em;*/
   font-size: 1em;
   color: rgba(var(--a-w), 1);
   background-color: rgba(var(--a-3), 1);
@@ -180,7 +179,6 @@ div.static {
   margin: auto;
 }
 
-/* TODO: Check if I need this. Hopefully don't.*/
 .centered-content {
   max-width: 500px;
   margin: auto;
@@ -305,8 +303,13 @@ div.static {
   max-height: 150px;
 }
 
-.padded {
-  padding: 1em 1em 1em 1em;
+.p-1 {
+  padding: 1em;
+}
+
+.px-1 {
+  padding-left: 1em;
+  padding-right: 1em;
 }
 
 /*
@@ -380,6 +383,8 @@ But then I found unicode and nothing matters lol
   margin: 0.5em 0;
   padding: 0.5em;
   border-right: 1em solid rgba(var(--a-4), 1);
+  display: block;
+  max-height: 24px;
 }
 
 .navbar__list__li_top {
@@ -404,8 +409,7 @@ a:visited {
 }
 
 .display-block,
-.md\:d-block,
-.navbar__list_li_left a {
+.md\:d-block {
   display: block;
 }
 
@@ -441,14 +445,84 @@ a:visited {
 }
 
 .sec-collapsed {
-  transition: max-width 0s linear;
+  transition: max-width 0s;
   overflow: hidden;
   max-width: 0;
 }
 
 .sec-collapsed.show {
   max-width: 100%;
-  transition: max-width 0.5s linear;
+  transition: max-width 1s;
+}
+
+.navbar__list_li a {
+  animation-duration: 0.5s;
+  animation-name: slidein;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+@keyframes slidein {
+  from {
+    margin-right: 100%;
+  }
+  to {
+    margin-right: 0%;
+  }
+}
+
+.word-carousel {
+  overflow: hidden;
+  font-weight: 100;
+}
+
+.word-carousel > div {
+  overflow: hidden;
+  position: relative;
+  float: right;
+  height: 1.5em;
+  height: 65px;
+  /* padding-top: 10px;
+  margin-top: -10px; */
+}
+
+.word-carousel > div > ul > li {
+  display: block;
+  font-weight: 700;
+  padding: 0 10px;
+  height: 45px;
+  margin-bottom: 45px;
+}
+
+.word-flip {
+  animation: word-flip 4s cubic-bezier(0.23, 1, 0.32, 1.2) infinite;
+}
+
+@keyframes word-flip {
+  0% {
+    margin-top: -270px;
+  }
+  5% {
+    margin-top: -180px;
+  }
+  33% {
+    margin-top: -180px;
+  }
+  38% {
+    margin-top: -90px;
+  }
+  66% {
+    margin-top: -90px;
+  }
+  71% {
+    margin-top: 0px;
+  }
+  99.99% {
+    margin-top: 0px;
+  }
+  100% {
+    margin-top: -270px;
+  }
 }
 
 @media screen and (min-width: 1250px) {
@@ -459,7 +533,7 @@ a:visited {
   }
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 992px) {
   #nav-placeholder {
     padding: 0 0 0 0;
   }
@@ -470,9 +544,17 @@ a:visited {
 
   .nav {
     background-color: rgba(var(--a-b), 0.75);
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     padding-top: 1em;
     margin-block-start: 0;
+    left: 0;
+    right: 0;
+    top: 48px;
+    position: fixed;
+    overflow: scroll;
+    max-width: 100%;
+    /* overscroll-behavior: contain; */
   }
 
   .btn-bg {
@@ -483,6 +565,7 @@ a:visited {
   .navbar__list_li {
     background: rgba(var(--a-2), 1);
     border-right: 2em solid rgba(var(--a-7), 1);
+    max-width: 90%;
   }
 
   .w-1\/4 {

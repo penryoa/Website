@@ -25,9 +25,16 @@ const AboutMeContent = () => {
       </div>
 
       <div class="bg-5">
-        <div class="flex-con flex-center padded">
-          <h2>
-            hello, bienvenue, and <b>こんにちは!</b>
+        <div class="flex-con flex-center p-1">
+          <h2 class="word-carousel">
+            <span>Word swipe animation: </span>
+            <div>
+              <ul class="word-flip">
+                <li>hello!</li>
+                <li>こんにちは!</li>
+                <li>bienvenue</li>
+              </ul>
+            </div>
           </h2>
           {/* <img class="img-right" src="../assets/images/me.jpeg" height="100%" width="30%"> */}
           <div class="justified">
@@ -126,7 +133,7 @@ const AboutMeContent = () => {
       </div>
 
       <div class="bg-5">
-        <div class="padded centered-h">
+        <div class="p-1 centered-h">
           <p>Enjoy some random pictures of cats, art, and so on. (:</p>
         </div>
         <div class="flex-con flex-center">
