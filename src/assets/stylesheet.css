@@ -39,6 +39,7 @@ POTENTIAL USE:
 	To use, say rgba(var(--a-[your choice]), [opacity]).
 	I did the colors this way so that I could customize the opacity with ease.
 	*/
+  --black: 0, 0, 0;
   --a-b: 68, 69, 69; /* BAR | dark grey */
   --a-1: 62, 21, 33; /* X | Dark red */
   --a-2: 33, 131, 128; /* H2 | turquoise */
@@ -52,17 +53,17 @@ POTENTIAL USE:
   --a-l: 97, 155, 138; /* dark mint green */
 }
 
-body {
-  /*padding-left: 11em;*/
-  /*font-size: 16px;*/
-  /*margin-left: 10px;*/
-  /*font-size: 2vh; /*PROBLEM: based on window size; looks awful. https://stackoverflow.com/questions/16056591/font-scaling-based-on-width-of-container */
+body,
+html {
   margin: 0;
   font-size: 1em;
   color: rgba(var(--a-w), 1);
   background-color: rgba(var(--a-3), 1);
   font-family: "Crete Round";
-  /* overflow-x: auto; */
+}
+
+* {
+  box-sizing: border-box;
 }
 
 h1 {
@@ -92,11 +93,6 @@ div.static {
   position: static;
 }
 
-/*ONLY HERE AS I FIX THIS*/
-#nav-placeholder {
-  padding: 10px 16px;
-}
-
 /*
 	Different stylings used for content.
 */
@@ -121,6 +117,10 @@ div.static {
   align-self: flex-start;
 }
 
+.z-1 {
+  z-index: 1;
+}
+
 .z-10 {
   z-index: 10;
 }
@@ -140,10 +140,23 @@ div.static {
 }
 
 /*
+ ----------------------------------------------------------------------
 	Our background colors
 */
 .mt-1 {
   margin-top: 1em;
+}
+
+.bg-1 {
+  background: rgba(var(--a-l), 0.3);
+}
+
+.bg-3 {
+  background: rgba(var(--a-3), 1);
+}
+
+.bg-4 {
+  background: rgba(var(--a-4), 0.4);
 }
 
 .bg-5 {
@@ -158,58 +171,37 @@ div.static {
   background: rgba(var(--a-7), 0.4);
 }
 
-.bg-4 {
-  background: rgba(var(--a-4), 0.4);
-}
-
-.bg-1 {
-  background: rgba(var(--a-l), 0.3);
-}
-
-.bg-3 {
-  background: rgba(var(--a-3), 1);
-}
-
 .bg-black {
   background: rgba(var(--a-b), 1);
 }
-/* --------------------- */
 
-.auto-margin {
-  margin: auto;
+.bg-true-black {
+  background: rgba(var(--black), 1);
 }
 
-.centered-content {
-  max-width: 500px;
-  margin: auto;
-}
-
-.centered-img {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
-}
-
+/*
+-----------------------------------------------------------------------
+  TEXT/FONT
+*/
 .justified {
   text-align: justify;
 }
 
-.centered-vertically {
-  /*vertical-align: middle;*/
-  height: auto;
+.text-centered {
+  text-align: center;
 }
 
-.centered-h {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 40%;
+.font-lg {
+  font-size: large;
+}
+
+.m-auto {
+  margin: auto;
 }
 
 /*
-	TODO: fix redundancy in flex containers
-	(img and tile)
+------------------------------------------------------------------------------
+  FLEX
 */
 .flex-center {
   justify-content: center;
@@ -230,7 +222,6 @@ div.static {
   width: 350px;
   margin: 1em;
   position: relative;
-  /*overflow: scroll;*/
 }
 
 .tile__description_layer {
@@ -256,15 +247,9 @@ div.static {
 }
 
 .img__wrap {
-  /*max-width: 200px;
-  max-height: 200px;*/
   height: 400px;
   margin: 10px;
   position: relative;
-  /*height: 100%;*/
-  /*text-align: center;*/
-  /*line-height: 75px;*/
-  /*font-size: 30px;*/
 }
 
 .img__description_layer {
@@ -303,8 +288,16 @@ div.static {
   max-height: 150px;
 }
 
+/* 
+ ------------------------------------------------------------------------------
+  PADDING
+*/
 .p-1 {
   padding: 1em;
+}
+
+.p-2 {
+  padding: 2em;
 }
 
 .px-1 {
@@ -312,8 +305,19 @@ div.static {
   padding-right: 1em;
 }
 
+.px-5 {
+  padding-left: 5em;
+  padding-right: 5em;
+}
+
+.py-2 {
+  padding-top: 2em;
+  padding-bottom: 2em;
+}
+
 /*
-	Links
+ -----------------------------------------------------------------------------
+	LINKS AND LIST
 */
 .simple_link:link,
 .simple_link:visited {
@@ -370,6 +374,13 @@ But then I found unicode and nothing matters lol
 /*
 	Navigation bar
 */
+.nav {
+  background: rgba(var(--black), 1);
+  margin-block-start: 0;
+  margin-block-end: 0;
+  height: calc(100vh - 48px);
+}
+
 .navbar__list {
   list-style-type: none;
   padding-left: 1em;
@@ -380,19 +391,22 @@ But then I found unicode and nothing matters lol
 
 .navbar__list_li {
   background: rgba(var(--a-b), 1);
-  margin: 0.5em 0;
-  padding: 0.5em;
+  margin-bottom: 0.5em;
   border-right: 1em solid rgba(var(--a-4), 1);
   display: block;
-  max-height: 24px;
-}
-
-.navbar__list__li_top {
-  display: inline;
+  /* max-height: 24px; */
+  /* padding: 1em; */
+  height: 2em;
+  padding: 0.25em 0.25em 0 0.5em;
 }
 
 .navbar__list_li a {
   text-decoration: none;
+  animation-duration: 0.5s;
+  animation-name: slidein;
+  overflow: hidden;
+  white-space: nowrap;
+  /* padding: 0 0 0.5em; */
 }
 
 .navbar__list_li a:link,
@@ -408,32 +422,35 @@ a:visited {
   color: rgba(var(--a-7), 1);
 }
 
-.display-block,
-.md\:d-block {
+/*
+Width and displays
+*/
+.max-w-full {
+  max-width: 100%;
+}
+
+.display-block {
   display: block;
 }
 
-/*
-	Width and displays
-*/
-.md\:d-none {
-  display: none;
+.w-1\/2 {
+  width: 50%;
 }
 
-.md\:w-full {
-  width: 100%;
-}
-
-.md\:w-1\/4 {
+.w-1\/4 {
   width: 25%;
 }
 
-.md\:w-3\/4 {
-  width: 75%;
+.w-full {
+  width: 100%;
 }
 
-.md-flex {
-  display: flex;
+.d-none {
+  display: none;
+}
+
+.d-block {
+  display: block;
 }
 
 .t-0 {
@@ -444,6 +461,18 @@ a:visited {
   top: 48px;
 }
 
+.col-2 > div {
+  max-width: 50%;
+}
+
+.rounded-md {
+  border-radius: 15px;
+}
+
+/*
+  ---------------------------------------------------------------------------------
+  ANIMATION
+*/
 .sec-collapsed {
   transition: max-width 0s;
   overflow: hidden;
@@ -453,13 +482,6 @@ a:visited {
 .sec-collapsed.show {
   max-width: 100%;
   transition: max-width 1s;
-}
-
-.navbar__list_li a {
-  animation-duration: 0.5s;
-  animation-name: slidein;
-  overflow: hidden;
-  white-space: nowrap;
 }
 
 @keyframes slidein {
@@ -473,29 +495,27 @@ a:visited {
 
 .word-carousel {
   overflow: hidden;
-  font-weight: 100;
+  padding: 0 20px 0 20px;
+  font-size: 55px;
+  height: 80px;
 }
 
 .word-carousel > div {
   overflow: hidden;
   position: relative;
   float: right;
-  height: 1.5em;
-  height: 65px;
-  /* padding-top: 10px;
-  margin-top: -10px; */
 }
 
 .word-carousel > div > ul > li {
   display: block;
-  font-weight: 700;
   padding: 0 10px;
   height: 45px;
   margin-bottom: 45px;
+  text-align: center;
 }
 
 .word-flip {
-  animation: word-flip 4s cubic-bezier(0.23, 1, 0.32, 1.2) infinite;
+  animation: word-flip 5s cubic-bezier(0.23, 1, 0.32, 1.2) infinite;
 }
 
 @keyframes word-flip {
@@ -525,6 +545,68 @@ a:visited {
   }
 }
 
+/*
+--------------------------------------------------------------------------------
+  FUN THINGS
+*/
+.moon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+
+.moon.moon-h2 {
+  margin-top: 50px;
+  box-shadow: 20px 15px 0 0 rgba(var(--a-2), 1),
+    25px 20px 10px 5px rgba(var(--a-2), 0.4);
+}
+
+.moon.moon-h1 {
+  margin-top: 40px;
+  box-shadow: 20px 15px 0 0 rgba(var(--a-4), 1),
+    25px 20px 10px 5px rgba(var(--a-4), 0.4);
+}
+
+.shadow-2 {
+  box-shadow: 0 0 10px 5px rgba(var(--a-2), 0.4);
+}
+
+.chevron {
+  position: relative;
+  text-align: center;
+  padding: 12px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  /* opacity: 50%; */
+  z-index: 0;
+  /* height: 60px;
+  width: 200px; */
+}
+.chevron:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 50%;
+  background: rgba(var(--a-5), 0.4);
+  transform: skew(0deg, 3deg);
+}
+.chevron:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 50%;
+  background: rgba(var(--a-5), 0.4);
+  transform: skew(0deg, -3deg);
+}
+
+/* 
+-----------------------------------------------------------------------------------
+  SCREEN-SPECIFIC SIZING
+*/
 @media screen and (min-width: 1250px) {
   .max-w-1250-px {
     background: rgba(var(--a-b), 1);
@@ -533,11 +615,36 @@ a:visited {
   }
 }
 
-@media screen and (max-width: 992px) {
-  #nav-placeholder {
-    padding: 0 0 0 0;
+@media screen and (min-width: 992px) {
+  .md\:d-none {
+    display: none;
   }
 
+  .md\:w-full {
+    width: 100%;
+  }
+
+  .md\:w-1\/4 {
+    width: 25%;
+  }
+
+  .md\:w-3\/4 {
+    width: 75%;
+  }
+
+  .md\:d-block {
+    display: block;
+  }
+
+  .max-w-md {
+    max-width: 80%;
+  }
+  .md\:h-full {
+    height: 100%;
+  }
+}
+
+@media screen and (max-width: 992px) {
   .column {
     width: 100%;
   }
@@ -566,22 +673,6 @@ a:visited {
     background: rgba(var(--a-2), 1);
     border-right: 2em solid rgba(var(--a-7), 1);
     max-width: 90%;
-  }
-
-  .w-1\/4 {
-    width: 25%;
-  }
-
-  .w-full {
-    width: 100%;
-  }
-
-  .d-none {
-    display: none;
-  }
-
-  .d-block {
-    display: block;
   }
 }
 

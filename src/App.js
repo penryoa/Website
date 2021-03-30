@@ -14,36 +14,36 @@ const App = () => {
   return (
     <>
       <BrowserRouter>
-        <div className="sticky z-11 w-full bg-3 t-0">
+        <div className="sticky z-11 w-full bg-true-black t-0">
           <Hamburger toggled={isOpen} toggle={setOpen} rounded />
         </div>
-        <div className="flex-con flex-start px-1">
+        <div className="flex-con flex-start">
           <div
             className={
               "w-full md:w-1/4 sec-collapsed " +
-              (isOpen && "sticky flex-sticky z-10 t-50 show")
+              (isOpen && "sticky flex-sticky z-10 t-50 show md:h-full")
             }
           >
             <MyNavbar isOpen={isOpen} setOpen={setOpen} />
           </div>
           <Switch>
             <Route exact path="/home">
-              <div className={isOpen && "w-full md:w-3/4"}>
+              <div className={"p-1 " + (isOpen && "w-full md:w-3/4")}>
                 <HomeContent />
               </div>
             </Route>
             <Route exact path="/about-me">
-              <div className={isOpen && "w-full md:w-3/4"}>
+              <div className={"p-1 " + (isOpen && "w-full md:w-3/4")}>
                 <AboutMeContent />
               </div>
             </Route>
             <Route exact path="/about-site">
-              <div className={isOpen && "w-full md:w-3/4"}>
+              <div className={"p-1 " + (isOpen && "w-full md:w-3/4")}>
                 <AboutSiteContent />
               </div>
             </Route>
             <Route exact path="/professional-plug">
-              <div className={isOpen && "w-full md:w-3/4"}>
+              <div className={"p-1 " + (isOpen && "w-full md:w-3/4")}>
                 <ResumeContent />
               </div>
             </Route>
