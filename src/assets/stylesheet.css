@@ -179,6 +179,17 @@ div.static {
   background: rgba(var(--black), 1);
 }
 
+.cool_bg {
+  background: radial-gradient(ellipse at top, rgba(var(--a-1), 1), transparent),
+    radial-gradient(ellipse at right, rgba(var(--a-1), 0.5), transparent);
+}
+
+.dotted-border {
+  border-color: rgba(var(--a-w), 1);
+  border-style: dotted;
+  border-width: thick;
+}
+
 /*
 -----------------------------------------------------------------------
   TEXT/FONT
@@ -390,9 +401,14 @@ But then I found unicode and nothing matters lol
 }
 
 .navbar__list_li {
-  background: rgba(var(--a-b), 1);
+  /* background: rgba(var(--a-b), 1); */
+  background: linear-gradient(
+    0.25turn,
+    rgba(var(--a-b), 1) 70%,
+    rgba(var(--black), 1)
+  );
   margin-bottom: 0.5em;
-  border-right: 1em solid rgba(var(--a-4), 1);
+  /* border-right: 1em solid rgba(var(--a-4), 1); */
   display: block;
   /* max-height: 24px; */
   /* padding: 1em; */
@@ -589,7 +605,13 @@ Width and displays
   left: 0;
   height: 100%;
   width: 50%;
-  background: rgba(var(--a-5), 0.4);
+  /* background: rgba(var(--a-5), 0.4); */
+  background: radial-gradient(
+      ellipse at right,
+      rgba(var(--a-5), 0.4),
+      transparent
+    ),
+    radial-gradient(ellipse at left, rgba(var(--a-2), 1), transparent);
   transform: skew(0deg, 3deg);
 }
 .chevron:after {
@@ -599,7 +621,13 @@ Width and displays
   right: 0;
   height: 100%;
   width: 50%;
-  background: rgba(var(--a-5), 0.4);
+  /* background: rgba(var(--a-5), 0.4); */
+  background: radial-gradient(
+      ellipse at left,
+      rgba(var(--a-5), 0.4),
+      transparent
+    ),
+    radial-gradient(ellipse at right, rgba(var(--a-2), 1), transparent);
   transform: skew(0deg, -3deg);
 }
 
