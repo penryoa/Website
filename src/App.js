@@ -28,22 +28,22 @@ const App = () => {
           </div>
           <Switch>
             <Route exact path="/home">
-              <div className={"p-1 " + (isOpen && "w-full md:w-3/4")}>
+              <div className={"w-full p-1 " + (isOpen && "w-full md:w-3/4")}>
                 <HomeContent />
               </div>
             </Route>
             <Route exact path="/about-me">
-              <div className={"p-1 " + (isOpen && "w-full md:w-3/4")}>
+              <div className={"w-full p-1 " + (isOpen && "w-full md:w-3/4")}>
                 <AboutMeContent />
               </div>
             </Route>
             <Route exact path="/about-site">
-              <div className={"p-1 " + (isOpen && "w-full md:w-3/4")}>
+              <div className={"w-full p-1 " + (isOpen && "w-full md:w-3/4")}>
                 <AboutSiteContent />
               </div>
             </Route>
             <Route exact path="/professional-plug">
-              <div className={"p-1 " + (isOpen && "w-full md:w-3/4")}>
+              <div className={"w-full p-1 " + (isOpen && "w-full md:w-3/4")}>
                 <ResumeContent />
               </div>
             </Route>
