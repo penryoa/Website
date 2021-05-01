@@ -38,6 +38,7 @@
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "autoprefixer": "^9.7.3",
+    "aws-sdk": "^2.897.0",
     "babel-preset-react": "^6.24.1",
     "env-cmd": "^10.0.1",
     "final-form": "^4.18.7",

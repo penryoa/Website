@@ -7,7 +7,7 @@ const HomeContent = () => {
         <h1 className="word-carousel carousel-h1">
           <div>
             <ul className="word-flip">
-              <li>welcome, friends!</li>
+              <li>welcome!</li>
               <li>よろしくね!</li>
               <li>bienvenue!</li>
             </ul>
@@ -29,7 +29,7 @@ const HomeContent = () => {
           Explore the menu to see some cool things!
         </p>
       </div>
-      <address>Last update: 2021 03 28</address>
+      <address>Last update: 2021 04 30</address>
     </div>
   );
 };

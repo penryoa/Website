@@ -138,7 +138,7 @@ const AboutMeContent = () => {
         </div>
       </div>
 
-      <div className="cool_bg dotted-border rounded-md">
+      <div className="cool_bg soft-border rounded-md">
         <div className="p-1 text-centered">
           <p>Enjoy some random pictures of things that make me smile (:</p>
         </div>

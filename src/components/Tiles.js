@@ -11,6 +11,17 @@ function SquareTile({ title, content, bg_color = 1 }) {
   );
 }
 
+function SquareHalfTile({ title = null, content, bg_color = 1 }) {
+  return (
+    <div className={"dotted-border half_tile__wrap bg-" + bg_color}>
+      <div className="tile__description_layer justified">
+        {title && <h3>{title}</h3>}
+        {content}
+      </div>
+    </div>
+  );
+}
+
 function ImageTile({ img_src, alt_text, desc_text }) {
   return (
     <div className="img__wrap">
@@ -22,4 +33,4 @@ function ImageTile({ img_src, alt_text, desc_text }) {
   );
 }
 
-export { SquareTile, ImageTile };
+export { SquareTile, SquareHalfTile, ImageTile };
