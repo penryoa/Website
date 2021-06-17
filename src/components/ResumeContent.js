@@ -1,5 +1,5 @@
 import React from "react";
-import ResumePDF from "../assets/files/Resume_Addi-Penry.pdf";
+import ResumePDF from "../assets/files/Resume_Addi-Penry_Public.pdf";
 import { SquareTile } from "./Tiles";
 
 const ResumeContent = () => {
