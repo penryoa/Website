@@ -71,14 +71,13 @@ const AboutMeContent = () => {
               title="languages"
               content={
                 <p>
-                  I started learning French about eight years ago and studied
-                  for three years. I'd love to get back into it and take a trip
-                  to Canada!
+                  I was consistently learning French from 2015 to 2018. I'd love
+                  to get back into it and take a trip to Canada.
                   <br />
                   Japanese has been my target language for around two years now,
                   though time was impossible to find the first year of studying.
                   My long-term goal is to get through at least the JLPT N5 and
-                  N4, ideally even N3.
+                  N4, ideally N3 too.
                 </p>
               }
               bg_color={4}
@@ -88,7 +87,7 @@ const AboutMeContent = () => {
               title="motorcycles"
               content={
                 <p>
-                  Roxas, my bike, is a 2007 Honda Shadow. I've had him for three
+                  Roxas, my bike, is a 2007 Honda Shadow. I've had him for four
                   years. In that time, I've taken plenty of day trips and even
                   some that require four or five hours on the road at a time.
                   Highly recommend it.
@@ -109,11 +108,10 @@ const AboutMeContent = () => {
               title="creativity"
               content={
                 <p>
-                  My left and right brain are both hyperactive most of the time
-                  and creative things tend to be the best way to calm either
-                  side. I really like playing with tons of different mediums -
-                  poems, writing songs, painting, drawing, papercraft, coding,
-                  world building, and even interior design.
+                  Creativity calms my hyperactive brain. I really like playing
+                  with tons of different mediums - poems, writing songs,
+                  painting, drawing, papercraft, coding, world building, and
+                  even interior design.
                 </p>
               }
               bg_color={7}
@@ -123,13 +121,12 @@ const AboutMeContent = () => {
               title="video games"
               content={
                 <p>
-                  I'm a sucker for Nintendo games. Growing up with N64 and Super
-                  Nintendo led to a pretty inevitable obsession with Zelda games
-                  especially. Outside of Nintendo, my games of choice are
-                  simple: Skyrim, Fallout, Kingdom Hearts, and dabbling
-                  otherwise. I've watched many more games be played than I've
-                  played myself honestly, the best ones being Fran Bow and other
-                  horror/spooky games.
+                  Growing up with N64 and Super Nintendo led to an inevitable
+                  obsession with Nintendo games, especially Zelda. Outside of
+                  Nintendo, my games of choice are simple: Skyrim, Fallout,
+                  Kingdom Hearts, and dabbling otherwise. I've watched many more
+                  games be played than I've played myself honestly, the best
+                  ones being Fran Bow and other horror/spooky games.
                 </p>
               }
               bg_color={1}
