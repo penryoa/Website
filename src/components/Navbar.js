@@ -23,13 +23,13 @@ const MyNavbar = ({ isOpen, setOpen }) => {
             </li>
 
             <li>
-              <span className="d-none md:d-block">
+              <span className="hidden md:block">
                 <img src={Flowers_Vert} alt="vertical flowers" width="100%" />
               </span>
             </li>
 
             <li>
-              <span className="d-block md:d-none">
+              <span className="block md:hidden">
                 <img src={Flowers_Horiz} alt="horizontal flowers" width="90%" />
               </span>
             </li>

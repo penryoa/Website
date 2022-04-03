@@ -14,14 +14,14 @@ const App = () => {
   return (
     <>
       <BrowserRouter>
-        <div className="sticky z-11 w-full bg-true-black t-0">
+        <div className="sticky z-30 w-full bg-black t-0">
           <Hamburger toggled={isOpen} toggle={setOpen} rounded />
         </div>
-        <div className="flex-con flex-start">
+        <div className="flex flex-wrap justify-start">
           <div
             className={
               "w-full md:w-1/4 sec-collapsed " +
-              (isOpen && "sticky flex-sticky z-10 t-50 show md:h-full")
+              (isOpen && "sticky self-start z-20 top-12 show md:h-full")
             }
           >
             <MyNavbar isOpen={isOpen} setOpen={setOpen} />

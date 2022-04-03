@@ -15,10 +15,10 @@ import Img_Mykie_Sink from "../assets/images/mykie_sink.jpg";
 import Img_Bird_Bryant from "../assets/images/bird_in_bryant.jpg";
 import Img_Bird_Foot from "../assets/images/bird_on_foot.jpg";
 
-const AboutMeContent = () => {
+export default function AboutMeContent() {
   return (
     <>
-      <div className="m-auto max-w-full flex-con flex-center">
+      <div className="m-auto max-w-full flex flex-wrap justify-center">
         <h2 className="word-carousel carousel-h2">
           <div>
             <ul className="word-flip">
@@ -31,8 +31,8 @@ const AboutMeContent = () => {
         <div className="moon moon-h2" />
       </div>
 
-      <div className="chevron">
-        <div className="p-1 rel z-1 text-center px-5">
+      <div className=" bg-pink-400">
+        <div className="p-1 relative text-center px-5">
           <p>
             I'm Addi, a software developer from Indiana. I like to be on my toes
             and thrown into unfamiliar things, so I moved straight from Indiana
@@ -48,7 +48,7 @@ const AboutMeContent = () => {
 
       <div className="py-2">
         <div className="max-w-md m-auto">
-          <div className="flex-con flex-center m-auto">
+          <div className="flex flex-wrap justify-center m-auto">
             <SquareTile
               title="music"
               content={
@@ -136,10 +136,10 @@ const AboutMeContent = () => {
       </div>
 
       <div className="cool_bg soft-border rounded-md">
-        <div className="p-1 text-centered">
+        <div className="p-1 text-center">
           <p>Enjoy some random pictures of things that make me smile (:</p>
         </div>
-        <div className="flex-con flex-center">
+        <div className="flex flex-wrap justify-center">
           {/* ROW 1 */}
           <ImageTile
             img_src={Img_Me}
@@ -224,6 +224,4 @@ const AboutMeContent = () => {
       </div>
     </>
   );
-};
-
-export default AboutMeContent;
+}

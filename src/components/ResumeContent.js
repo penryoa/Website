@@ -2,16 +2,19 @@ import React from "react";
 import ResumePDF from "../assets/files/Resume_Addi-Penry_Public.pdf";
 import { SquareTile } from "./Tiles";
 
-const ResumeContent = () => {
+export default function ResumeContent() {
   return (
     <>
-      <h1 className="text-centered">education & skills</h1>
-      <div className="flex-con flex-start">
-        <div id="education_code_div" className="flex-col">
+      <h1 className="text-center">education & skills</h1>
+      <div className="flex flex-wrap justify-start">
+        <div
+          id="education_code_div"
+          className="flex flex-col lg:flex-row lg:justify-center"
+        >
           <SquareTile
             title="education"
             content={
-              <p className="text-centered font-lg">
+              <p className="text-center font-lg">
                 B.S. in Computer Science, 2020
                 <br />
                 Rose-Hulman Institute of Technology
@@ -80,7 +83,7 @@ const ResumeContent = () => {
           />
         </div>
 
-        <div id="resumeDiv" className="flex-1 px-2 h-w-nav">
+        <div className="flex-1 px-2 h-w-nav sticky top-12 self-start">
           <object
             id="resume_obj"
             data={ResumePDF}
@@ -93,6 +96,4 @@ const ResumeContent = () => {
       </div>
     </>
   );
-};
-
-export default ResumeContent;
+}

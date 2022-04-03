@@ -3,7 +3,7 @@ import React from "react";
 function SquareTile({ title, content, bg_color = 1 }) {
   return (
     <div className={"dotted-border tile__wrap bg-" + bg_color}>
-      <div className="tile__description_layer justified">
+      <div className="tile__description_layer text-justify">
         <h3>{title}</h3>
         {content}
       </div>
@@ -14,7 +14,7 @@ function SquareTile({ title, content, bg_color = 1 }) {
 function SquareHalfTile({ title = null, content, bg_color = 1 }) {
   return (
     <div className={"dotted-border half_tile__wrap bg-" + bg_color}>
-      <div className="tile__description_layer justified">
+      <div className="tile__description_layer text-justify">
         {title && <h3>{title}</h3>}
         {content}
       </div>
@@ -27,7 +27,7 @@ function ImageTile({ img_src, alt_text, desc_text }) {
     <div className="img__wrap">
       <img src={img_src} alt={alt_text} height="100%" />
       <div className="img__description_layer">
-        <p className="img__description justified">{desc_text}</p>
+        <p className="img__description text-justify">{desc_text}</p>
       </div>
     </div>
   );

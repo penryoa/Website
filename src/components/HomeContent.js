@@ -1,9 +1,9 @@
 import React from "react";
 
-const HomeContent = () => {
+export default function HomeContent() {
   return (
     <div>
-      <div className="m-auto max-w-full flex-con flex-center p-2">
+      <div className="m-auto max-w-full flex flex-wrap justify-center p-2">
         <h1 className="word-carousel carousel-h1">
           <div>
             <ul className="word-flip">
@@ -15,7 +15,7 @@ const HomeContent = () => {
         </h1>
         <div className="moon moon-h1" />
       </div>
-      <div className="p-2 bg-5 rounded-md font-lg">
+      <div className="p-2 bg-7 rounded-md font-lg">
         <p>
           I'm a software developer based in NYC.
           <br />
@@ -32,6 +32,4 @@ const HomeContent = () => {
       <address>Last update: 2021 04 30</address>
     </div>
   );
-};
-
-export default HomeContent;
+}

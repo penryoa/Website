@@ -1,13 +1,12 @@
 import React from "react";
 import Image_Cat from "../assets/images/cat.png";
 import { SquareTile, SquareHalfTile } from "./Tiles";
-import Image_Waves from "../assets/images/nice_waves.svg";
 
-const AboutSiteContent = () => {
+export default function AboutSiteContent() {
   return (
     <div>
-      <div className="flex-con flex-start">
-        <div className="min-w-1/2 align-bottom">
+      <div className="flex flex-wrap justify-start">
+        <div className="min-w-1/2 self-end">
           <img src={Image_Cat} alt="cat outline" width="100%" />
         </div>
         <div className="font-lg flex-1 min-w-1/3">
@@ -45,9 +44,9 @@ const AboutSiteContent = () => {
         </div>
       </div>
 
-      <div className="rounded-md soft-border p-1 bg-true-black">
+      <div className="rounded-md soft-border p-1 bg-black">
         <h2>potential features to implement</h2>
-        <div className="rounded-md soft-border p-1 bg-3 flex-con flex-center">
+        <div className="rounded-md soft-border p-1 bg-3 flex flex-wrap justify-center">
           <div className="min-w-1/4">
             <SquareHalfTile bg_color={6} title="interactive budgeting app" />
             <SquareHalfTile
@@ -107,6 +106,4 @@ const AboutSiteContent = () => {
       </div>
     </div>
   );
-};
-
-export default AboutSiteContent;
+}
