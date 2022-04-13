@@ -1,36 +1,44 @@
 import React from "react";
 
-function SquareTile({ title, content, bg_color = 1 }) {
+export function SquareTile({ title, content, color, halfTile = false }) {
   return (
-    <div className={"dotted-border tile__wrap bg-" + bg_color}>
-      <div className="tile__description_layer text-justify">
-        <h3>{title}</h3>
+    <div
+      className={`dotted-border bg-opacity-40 w-80 m-4 relative ${
+        color ? "bg-accent-" + color : ""
+      } ${halfTile ? "h-40" : "h-80"}`}
+    >
+      <div
+        className={`absolute top-0 bottom-0 left-0 right-0 items-center justify-center text-justify transition-[padding-top] ease-in-out duration-500 ${
+          title && "px-6 pt-6 hover:pt-3"
+        }`}
+      >
+        <h3>{title || ""}</h3>
         {content}
       </div>
     </div>
   );
 }
 
-function SquareHalfTile({ title = null, content, bg_color = 1 }) {
+export function ImageGallery({ images }) {
   return (
-    <div className={"dotted-border half_tile__wrap bg-" + bg_color}>
-      <div className="tile__description_layer text-justify">
-        {title && <h3>{title}</h3>}
-        {content}
-      </div>
+    <div className="flex flex-wrap justify-center">
+      {images.map((image, idx) => (
+        <div
+          key={`aboutMeImages.${idx}`}
+          className="[height:40vh] flex-grow relative"
+        >
+          <img
+            className="max-h-full min-w-full object-cover align-bottom"
+            src={image.src}
+            alt={image.altText}
+          />
+          <p className="absolute inset-0 px-6 py-3 opacity-0 hover:opacity-100 transition-opacity duration-500 ease-in-out">
+            <span className="text-white text-justify bg-accent-1/80 p-1 text-base [font-variant:small-caps]">
+              {image.descText}
+            </span>
+          </p>
+        </div>
+      ))}
     </div>
   );
 }
-
-function ImageTile({ img_src, alt_text, desc_text }) {
-  return (
-    <div className="img__wrap">
-      <img src={img_src} alt={alt_text} height="100%" />
-      <div className="img__description_layer">
-        <p className="img__description text-justify">{desc_text}</p>
-      </div>
-    </div>
-  );
-}
-
-export { SquareTile, SquareHalfTile, ImageTile };

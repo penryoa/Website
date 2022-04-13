@@ -1,7 +1,7 @@
 {
   "name": "personal-react-site-addi",
   "version": "1.0.0",
-  "description": "my (Addi) personal website made with react",
+  "description": "my personal website made with react",
   "scripts": {
     "start": "npx tailwindcss -i ./src/assets/tailwind.css -o ./src/assets/styles.css && set PORT=3001 && react-scripts start",
     "test": "react-scripts test",

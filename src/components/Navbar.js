@@ -4,23 +4,27 @@ import Flowers_Vert from "../assets/images/navbar_img.png";
 import Flowers_Horiz from "../assets/images/navbar_small_img.png";
 
 const MyNavbar = ({ isOpen, setOpen }) => {
+  const pages = [
+    { to: "/home", title: "Home" },
+    { to: "/about-me", title: "About Me" },
+    { to: "/about-site", title: "About Site" },
+    { to: "/professional-plug", title: "Education and Skills" },
+  ];
+
   return (
     <>
       {isOpen && (
         <div>
-          <ul className="nav navbar__list">
-            <li className="navbar__list_li" onClick={() => setOpen(!isOpen)}>
-              <Link to="/home">Home</Link>
-            </li>
-            <li className="navbar__list_li" onClick={() => setOpen(!isOpen)}>
-              <Link to="/about-me">About Me</Link>
-            </li>
-            <li className="navbar__list_li" onClick={() => setOpen(!isOpen)}>
-              <Link to="/about-site">About This Site</Link>
-            </li>
-            <li className="navbar__list_li" onClick={() => setOpen(!isOpen)}>
-              <Link to="/professional-plug">Education and Skills</Link>
-            </li>
+          <ul className="bg-secondary [margin-block-start:0] [margin-block-end:0] h-screen navbar__list">
+            {pages.map((page, idx) => (
+              <li
+                key={`navBarItem.${idx}`}
+                className="navbar__list_li"
+                onClick={() => setOpen(!isOpen)}
+              >
+                <Link to={page.to}>{page.title}</Link>
+              </li>
+            ))}
 
             <li>
               <span className="hidden md:block">
