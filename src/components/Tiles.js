@@ -4,7 +4,7 @@ export function SquareTile({ title, content, color, halfTile = false }) {
   return (
     <div
       className={`dotted-border bg-opacity-40 w-80 m-4 relative ${
-        color ? "bg-accent-" + color : ""
+        color || ""
       } ${halfTile ? "h-40" : "h-80"}`}
     >
       <div
@@ -33,7 +33,7 @@ export function ImageGallery({ images }) {
             alt={image.altText}
           />
           <p className="absolute inset-0 px-6 py-3 opacity-0 hover:opacity-100 transition-opacity duration-500 ease-in-out">
-            <span className="text-white text-justify bg-accent-1/80 p-1 text-base [font-variant:small-caps]">
+            <span className="text-tNeutral-50 text-justify bg-accent-1/80 p-1 [font-variant:small-caps]">
               {image.descText}
             </span>
           </p>

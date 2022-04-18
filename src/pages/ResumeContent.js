@@ -1,5 +1,6 @@
 import React from "react";
 import ResumePDF from "../assets/files/Resume_Addi-Penry_Public.pdf";
+import StyledLink from "../components/StyledLink";
 import { SquareTile } from "../components/Tiles";
 
 export default function ResumeContent() {
@@ -34,33 +35,18 @@ export default function ResumeContent() {
                 through my work and not able to be shared. The best example of
                 accurate sample code is this website, as can be found on my
                 GitHub and&nbsp;
-                <a
-                  className="simple_link"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  href="https://github.com/penryoa/Website"
-                >
+                <StyledLink href="https://github.com/penryoa/Website">
                   linked here for your convenience.&nbsp;
-                </a>
+                </StyledLink>
                 I have some (shitty) sample code from a few years ago as well,
                 found&nbsp;
-                <a
-                  className="simple_link"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  href="https://github.com/penryoa/rose-hulman_backup"
-                >
+                <StyledLink href="https://github.com/penryoa/rose-hulman_backup">
                   here&nbsp;
-                </a>
+                </StyledLink>
                 and&nbsp;
-                <a
-                  className="simple_link"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  href="https://github.com/KixorTech/CourseUp/tree/staging"
-                >
-                  here.&nbsp;
-                </a>{" "}
+                <StyledLink href="https://github.com/KixorTech/CourseUp/tree/staging">
+                  here&nbsp;
+                </StyledLink>{" "}
               </p>
             }
             color={5}

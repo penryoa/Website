@@ -2,168 +2,36 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer components {
-  :root {
-    --accent-neutral-dark: 68, 69, 69;
-    --accent-neutral-medium: 201, 201, 201;
-    --accent-neutral-light: 197, 224, 216;
-    --accent-1: 214, 104, 83;
-    --accent-2: 33, 131, 128;
-    --accent-3: 97, 155, 138;
-    --accent-4: 181, 255, 233;
-    --bg-primary: 28, 37, 65;
-    --bg-secondary: 0, 0, 0;
-    --text-primary: 255, 255, 255;
+@layer base {
+  .header-font-family {
+    font-family: "Fugaz One";
   }
-  .theme-light {
-    --accent-neutral-dark: 68, 69, 69;
-    --accent-neutral-medium: 201, 201, 201;
-    --accent-neutral-light: 197, 224, 216;
-    --accent-1: 214, 104, 83;
-    --accent-2: 33, 131, 128;
-    --accent-3: 97, 155, 138;
-    --accent-4: 181, 255, 233;
-    --bg-primary: 200, 124, 151;
-    --bg-secondary: 255, 255, 255;
-    --text-primary: 0, 0, 0;
+  .body-font-family {
+    font-family: "Crete Round";
   }
   body,
   html {
-    @apply m-0 text-primary bg-primary text-base;
-    font-family: "Crete Round";
+    @apply m-0 py-4 text-tBase-50 body-font-family;
+  }
+  body {
+    @apply bg-gradient-to-br from-tBase-800 via-tBase-900 to-tBase-800;
   }
   h1 {
-    @apply mt-1 text-2xl text-accent-1;
-    font-family: "Fugaz One";
+    @apply mt-1 text-3xl text-tAccent1-500 header-font-family;
   }
   h2 {
-    @apply text-xl text-accent-2;
-    font-family: "Fugaz One";
+    @apply text-2xl text-tAccent2-500 header-font-family;
   }
   h3 {
-    @apply text-lg;
-    font-family: "Fugaz One";
+    @apply text-lg header-font-family;
   }
   p {
     @apply text-sm;
   }
-  .cool_bg {
-    background: radial-gradient(
-        ellipse at top,
-        rgba(var(--accent-3), 1),
-        transparent
-      ),
-      radial-gradient(ellipse at right, rgba(var(--accent-3), 0.5), transparent);
-  }
-
-  /* ================= !!!! REPLACE ======================= */
-  .simple_link:link,
-  .simple_link:visited {
-    @apply text-accent-3;
-  }
-  .simple_link:hover {
-    @apply text-accent-neutral-light;
-  }
-  .simple_link:active {
-    @apply text-accent-4;
-  }
   .angled-list > div {
-    @apply pl-0;
-    transition: padding 0.5s;
+    @apply pl-0 transition-all duration-500;
   }
   .angled-list > div:hover {
     @apply pl-3;
-  }
-  /*
-	Navigation bar
-*/
-  .nav {
-    @apply bg-secondary;
-    margin-block-start: 0;
-    margin-block-end: 0;
-    height: calc(100vh - 48px);
-  }
-  .h-w-nav {
-    height: calc(100vh - 48px);
-  }
-  .fugaz-one {
-    font-family: "Fugaz One";
-  }
-  .navbar__list_li {
-    @apply block mb-2;
-    background: linear-gradient(
-      0.25turn,
-      rgba(var(--accent-neutral-dark), 1) 70%,
-      rgba(var(--bg-secondary), 1)
-    );
-    height: 2em;
-    padding: 0.25em 0.25em 0 0.5em;
-  }
-  .navbar__list_li a {
-    @apply overflow-hidden whitespace-nowrap;
-    text-decoration: none;
-    animation-duration: 0.5s;
-    animation-name: slidein;
-  }
-  .navbar__list_li a:link,
-  a:visited {
-    @apply text-primary;
-  }
-  .navbar__list_li a:hover {
-    @apply text-accent-neutral-light;
-  }
-  .navbar__list_li a:active {
-    @apply text-accent-4;
-  }
-  /* Sizing */
-  .min-w-1\/4 {
-    min-width: 25%;
-  }
-  .min-w-1\/3 {
-    min-width: 33%;
-  }
-  .min-w-1\/2 {
-    min-width: 50%;
-  }
-  .max-w-1\/2 {
-    max-width: 50%;
-  }
-  /* Used at the end of the page */
-  address {
-    @apply mt-4 pt-4;
-    border-top: thin dashed;
-  }
-  /* FUN THINGS */
-  .moon {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-  }
-  .moon.moon-h2 {
-    margin-top: 50px;
-    box-shadow: 20px 15px 0 0 rgba(var(--accent-2), 1),
-      25px 20px 10px 5px rgba(var(--accent-2), 0.4);
-  }
-  .moon.moon-h1 {
-    margin-top: 40px;
-    box-shadow: 20px 15px 0 0 rgba(var(--accent-1), 1),
-      25px 20px 10px 5px rgba(var(--accent-1), 0.4);
-  }
-  .sec-collapsed {
-    @apply overflow-hidden max-w-0;
-    transition: max-width 0s;
-  }
-  .sec-collapsed.show {
-    @apply max-w-full;
-    transition: max-width 1s;
-  }
-  @media (max-width: 768px) {
-    .nav {
-      @apply bg-accent-neutral-dark bg-opacity-75 w-full h-full pt-4 left-0 right-0 top-12 fixed overflow-scroll max-w-full;
-      margin-block-start: 0;
-    }
-    .navbar__list_li {
-      @apply px-4 bg-accent-2;
-    }
   }
 }

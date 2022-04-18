@@ -4,6 +4,7 @@ import { XIcon } from "@heroicons/react/outline";
 import { withRouter, Link } from "react-router-dom";
 import Flowers_Vert from "../assets/images/navbar_img.png";
 import Flowers_Horiz from "../assets/images/navbar_small_img.png";
+import StyledLink from "./StyledLink";
 
 function Navbar({ open, onClose }) {
   const pages = [
@@ -55,7 +56,7 @@ function Navbar({ open, onClose }) {
                   <div className="absolute top-0 right-0 -mr-8 flex pt-4 pl-2 sm:-mr-10 sm:pl-4">
                     <button
                       type="button"
-                      className="rounded-md text-gray-300 hover:text-white focus:outline-none"
+                      className="rounded-md text-gray-300 hover:text-tNeutral-50 focus:outline-none"
                       onClick={onClose}
                     >
                       <span className="sr-only">Close panel</span>
@@ -63,14 +64,19 @@ function Navbar({ open, onClose }) {
                     </button>
                   </div>
                 </Transition.Child>
-                <ul className="bg-secondary pt-4 h-screen list-none px-1 fugaz-one">
+                <ul className="bg-tNeutral-900 pt-6 h-screen list-none px-1 header-font-family">
                   {pages.map((page, idx) => (
                     <li
                       key={`navBarItem.${idx}`}
-                      className="navbar__list_li"
+                      className="block mb-2 h-8 pt-1 pr-1 pb-2 transition-all bg-gradient-to-r from-tNeutral-500"
                       onClick={onClose}
                     >
-                      <Link to={page.to}>{page.title}</Link>
+                      <Link
+                        className="overflow-hidden whitespace-nowrap text-tNeutral-50 visited:text-tNeutral-50 hover:text-accentNeutral-light active:textAccent4"
+                        to={page.to}
+                      >
+                        {page.title}
+                      </Link>
                     </li>
                   ))}
 

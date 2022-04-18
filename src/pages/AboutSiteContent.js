@@ -17,25 +17,25 @@ export default function AboutSiteContent() {
           </p>
           <div className="angled-list">
             <div>
-              <p className="p-2 bg-accent-4 bg-opacity-40 rounded-md w-full">
+              <p className="p-2 bg-tAccent4-500 rounded-md w-full">
                 grow my skills by trying out new tools
               </p>
             </div>
 
             <div className="ml-2">
-              <p className="p-2 bg-neutral-medium bg-opacity-30 rounded-md w-full">
+              <p className="p-2 bg-tBase-500 rounded-md w-full">
                 show off whatever skills I've developed
               </p>
             </div>
 
             <div className="ml-4">
-              <p className="p-2 bg-accent-1 bg-opacity-40 rounded-md w-full">
+              <p className="p-2 bg-tAccent1-600 rounded-md w-full">
                 create a place to express my passion projects
               </p>
             </div>
 
             <div className="ml-6">
-              <p className="p-2 bg-accent-neutral-light bg-opacity-40 rounded-md w-full">
+              <p className="p-2 bg-tAccent3-700 rounded-md w-full">
                 have fun tinkering around as I see fit
               </p>
             </div>
@@ -48,12 +48,12 @@ export default function AboutSiteContent() {
         <div className="rounded-md soft-border p-1 bg-theme-neutral flex flex-wrap justify-center">
           <div className="min-w-1/4">
             <SquareTile
-              color={"accent-neutral-medium"}
+              color="bg-tAccent2-700/80"
               title="interactive budgeting app"
               halfTile
             />
             <SquareTile
-              color={1}
+              color="bg-tAccent3-700/80"
               title="toggle for theme colors and language"
               halfTile
             />
@@ -61,7 +61,7 @@ export default function AboutSiteContent() {
 
           <div className="min-w-1/4">
             <SquareTile
-              color={4}
+              color="bg-tAccent4-700/80"
               title="an arcade-like mini game"
               content={
                 <ul>
@@ -78,7 +78,7 @@ export default function AboutSiteContent() {
 
           <div className="min-w-1/4">
             <SquareTile
-              color={5}
+              color="bg-tAccent1-700/80"
               title="video game project"
               content={
                 <ul>
@@ -100,9 +100,13 @@ export default function AboutSiteContent() {
           </div>
 
           <div className="min-w-1/4">
-            <SquareTile color={6} title="poem collection" halfTile />
             <SquareTile
-              color={4}
+              color="bg-tAccent2-700/80"
+              title="poem collection"
+              halfTile
+            />
+            <SquareTile
+              color="bg-tAccent4-700/80"
               title="original music collection (audio, lyrics, download, etc.)"
               halfTile
             />

@@ -5,7 +5,7 @@
   "scripts": {
     "prebuild": "npm run build:tailwind",
     "build": "react-scripts build",
-    "build:tailwind": "postcss tailwindcss -o ./src/assets/custom.css ./src/assets/generated.css",
+    "build:tailwind": "postcss tailwindcss -i src/assets/custom.css -o src/assets/generated.css",
     "watch:tailwind": "postcss -w src/assets/custom.css -o src/assets/generated.css",
     "start": "set PORT=3001 && react-scripts start",
     "dev": "run-p watch:tailwind start",

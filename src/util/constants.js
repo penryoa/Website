@@ -17,7 +17,7 @@ import Img_Bird_Foot from "../assets/images/bird_on_foot.jpg";
 export const aboutMeTiles = [
   {
     title: "music",
-    color: 2,
+    color: "bg-tAccent2-700/80",
     content: (
       <p>
         Piano is by far my favorite instrument to play. When I was around 7 or
@@ -33,7 +33,7 @@ export const aboutMeTiles = [
   },
   {
     title: "languages",
-    color: 4,
+    color: "bg-tAccent4-700/80",
     content: (
       <p>
         I was consistently learning French from 2015 to 2018. I'd love to get
@@ -47,7 +47,7 @@ export const aboutMeTiles = [
   },
   {
     title: "motorcycles",
-    color: 1,
+    color: "bg-tAccent1-700/80",
     content: (
       <p>
         Roxas, my bike, is a 2007 Honda Shadow. I've had him for four years. In
@@ -65,7 +65,7 @@ export const aboutMeTiles = [
   },
   {
     title: "creativity",
-    color: 3,
+    color: "bg-tAccent3-700/80",
     content: (
       <p>
         Creativity calms my hyperactive brain. I really like playing with tons
@@ -76,7 +76,7 @@ export const aboutMeTiles = [
   },
   {
     title: "video games",
-    color: 4,
+    color: "bg-tAccent4-700/80",
     content: (
       <p>
         Growing up with N64 and Super Nintendo led to an inevitable obsession
