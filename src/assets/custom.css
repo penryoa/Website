@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
+@layer components {
   :root {
     --accent-neutral-dark: 68, 69, 69;
     --accent-neutral-medium: 201, 201, 201;
@@ -86,11 +86,7 @@
   .h-w-nav {
     height: calc(100vh - 48px);
   }
-  .navbar__list {
-    list-style-type: none;
-    padding-left: 1em;
-    padding-right: 1em;
-    left: 1em;
+  .fugaz-one {
     font-family: "Fugaz One";
   }
   .navbar__list_li {

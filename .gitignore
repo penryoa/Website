@@ -1,6 +1,5 @@
 node_modules/*
 
 package-lock.json
-package.json
 
-src/assets/styles.css
+src/assets/generated.css

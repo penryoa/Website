@@ -1,57 +1,57 @@
 import React, { useState } from "react";
 import { Redirect, Route, Switch, BrowserRouter } from "react-router-dom";
-import MyNavbar from "./components/Navbar";
-import HomeContent from "./components/HomeContent";
-import AboutSiteContent from "./components/AboutSiteContent";
-import AboutMeContent from "./components/AboutMeContent";
-import ResumeContent from "./components/ResumeContent";
-import { Turn as Hamburger } from "hamburger-react";
+import HomeContent from "./pages/HomeContent";
+import AboutSiteContent from "./pages/AboutSiteContent";
+import AboutMeContent from "./pages/AboutMeContent";
+import ResumeContent from "./pages/ResumeContent";
+import Navbar from "./components/Navbar";
+import SkullIcon from "./assets/SkullIcon";
 
 const App = () => {
   // const themeHook=useState("navy");
-  const [isOpen, setOpen] = useState(false);
+  const [open, setOpen] = useState(false);
+  const BodyElement = ({ children }) => (
+    <div className="max-w-7xl px-1 md:px-4 slashed-zero stacked-fractions">
+      {children}
+    </div>
+  );
 
   return (
     <>
       <BrowserRouter>
-        <div className="sticky z-30 w-full bg-secondary t-0">
-          <Hamburger toggled={isOpen} toggle={setOpen} rounded />
-        </div>
-        <div className="flex flex-wrap justify-start slashed-zero stacked-fractions">
-          <div
-            className={
-              "w-full md:w-1/4 sec-collapsed " +
-              (isOpen && "sticky self-start z-20 top-12 show md:h-full")
-            }
-          >
-            <MyNavbar isOpen={isOpen} setOpen={setOpen} />
-          </div>
-          <Switch>
-            <Route exact path="/">
-              <div className={"w-full p-1 " + (isOpen && "md:w-3/4")}>
-                <HomeContent />
-              </div>
-            </Route>
-            <Route exact path="/about-me">
-              <div className={"w-full p-1 " + (isOpen && "md:w-3/4")}>
-                <AboutMeContent />
-              </div>
-            </Route>
-            <Route exact path="/about-site">
-              <div className={"w-full p-1 " + (isOpen && "md:w-3/4")}>
-                <AboutSiteContent />
-              </div>
-            </Route>
-            <Route exact path="/professional-plug">
-              <div className={"w-full p-1 " + (isOpen && "md:w-3/4")}>
-                <ResumeContent />
-              </div>
-            </Route>
-            <Route path="*">
-              <Redirect to="/" />
-            </Route>
-          </Switch>
-        </div>
+        <button
+          className="fixed top-4 left-4 z-40"
+          onClick={() => setOpen(true)}
+        >
+          <SkullIcon />
+        </button>
+        <Navbar open={open} onClose={() => setOpen(false)} />
+
+        <Switch>
+          <Route exact path="/">
+            <BodyElement>
+              <HomeContent />
+            </BodyElement>
+          </Route>
+          <Route exact path="/about-me">
+            <BodyElement>
+              <AboutMeContent />
+            </BodyElement>
+          </Route>
+          <Route exact path="/about-site">
+            <BodyElement>
+              <AboutSiteContent />
+            </BodyElement>
+          </Route>
+          <Route exact path="/professional-plug">
+            <BodyElement>
+              <ResumeContent />
+            </BodyElement>
+          </Route>
+          <Route path="*">
+            <Redirect to="/" />
+          </Route>
+        </Switch>
       </BrowserRouter>
     </>
   );
