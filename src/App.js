@@ -11,7 +11,7 @@ const App = () => {
   // const themeHook=useState("navy");
   const [open, setOpen] = useState(false);
   const BodyElement = ({ children }) => (
-    <div className="max-w-7xl px-1 md:px-4 slashed-zero stacked-fractions">
+    <div className="max-w-7xl mx-auto px-1 md:px-4 slashed-zero stacked-fractions">
       {children}
     </div>
   );

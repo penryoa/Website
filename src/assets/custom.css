@@ -11,27 +11,24 @@
   }
   body,
   html {
-    @apply m-0 py-4 text-tBase-50 body-font-family;
+    @apply m-0 py-4 text-base text-tBase-50 body-font-family;
   }
   body {
     @apply bg-gradient-to-br from-tBase-800 via-tBase-900 to-tBase-800;
   }
   h1 {
-    @apply mt-1 text-3xl text-tAccent1-500 header-font-family;
+    @apply mt-6 mb-4 text-3xl text-tAccent1-500 header-font-family text-center;
   }
   h2 {
-    @apply text-2xl text-tAccent2-500 header-font-family;
+    @apply mt-4 mb-3 text-2xl text-tAccent2-500 header-font-family text-center;
   }
   h3 {
-    @apply text-lg header-font-family;
+    @apply mt-3 mb-2 text-lg header-font-family text-center;
   }
-  p {
-    @apply text-sm;
+  ::selection {
+    @apply bg-tBase-300 text-tBase-700;
   }
-  .angled-list > div {
-    @apply pl-0 transition-all duration-500;
-  }
-  .angled-list > div:hover {
-    @apply pl-3;
+  ::-moz-selection {
+    @apply bg-tBase-300 text-tBase-700;
   }
 }

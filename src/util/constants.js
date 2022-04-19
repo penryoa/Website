@@ -21,13 +21,11 @@ export const aboutMeTiles = [
     content: (
       <p>
         Piano is by far my favorite instrument to play. When I was around 7 or
-        8, I started playing by ear and never stopped.
+        8, I started playing by ear and never stopped. I've semi-recently picked
+        up acoustic guitar as well.
         <br />
         I've been singing as long as I can remember as well and grew up in
         different choirs.
-        <br />
-        My newest instrument is acoustic guitar, which has only been around a
-        year or so. Definitely not super skilled, but still enjoying it!
       </p>
     ),
   },
@@ -50,13 +48,12 @@ export const aboutMeTiles = [
     color: "bg-tAccent1-700/80",
     content: (
       <p>
-        Roxas, my bike, is a 2007 Honda Shadow. I've had him for four years. In
-        that time, I've taken plenty of day trips and even some that require
-        four or five hours on the road at a time. Highly recommend it.
+        Roxas, my bike, is a 2007 Honda Shadow. I've had him for four years anf
+        have taken plenty of day trips as well as a handful of longer ones.
         <br />
-        At one point, I had to take my dad on the back of my bike in the pouring
-        rain at night. He had a full gas canister in his lap. I prefer more
-        leisurely rides than that.
+        Once, I had to take my dad on the back of my bike in the pouring rain at
+        night. He had a full gas canister in his lap. I prefer more leisurely
+        rides than that.
       </p>
     ),
   },
@@ -83,8 +80,7 @@ export const aboutMeTiles = [
         with Nintendo games, especially Zelda. Outside of Nintendo, my games of
         choice are simple: Skyrim, Fallout, Kingdom Hearts, and dabbling
         otherwise. I've watched many more games be played than I've played
-        myself honestly, the best ones being Fran Bow and other horror/spooky
-        games.
+        myself honestly, especially horror/scary games like Fran Bow.
       </p>
     ),
   },

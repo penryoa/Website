@@ -3,6 +3,25 @@ import Image_Cat from "../assets/images/cat.png";
 import { SquareTile } from "../components/Tiles";
 
 export default function AboutSiteContent() {
+  const angledListItems = [
+    {
+      color: "bg-tAccent4-500",
+      content: "grow my skills by trying out new tools",
+    },
+    {
+      color: "bg-tBase-500",
+      content: "show off whatever skills I've developed",
+    },
+    {
+      color: "bg-tAccent1-600",
+      content: "create a place to express my passion projects",
+    },
+    {
+      color: "bg-tAccent3-700",
+      content: "have fun tinkering around as I see fit",
+    },
+  ];
+
   return (
     <div>
       <div className="flex flex-wrap justify-start">
@@ -15,31 +34,18 @@ export default function AboutSiteContent() {
             I first started making this site at the beginning of June 2020 with
             some simple goals:
           </p>
-          <div className="angled-list">
-            <div>
-              <p className="p-2 bg-tAccent4-500 rounded-md w-full">
-                grow my skills by trying out new tools
+          {angledListItems.map((item, idx) => (
+            <div
+              key={`angledList.${idx}`}
+              className={`ml-${
+                idx * 2
+              } pl-0 py-1 text-lg select-none transition-all duration-500 hover:pl-3`}
+            >
+              <p className={`p-2 rounded-md w-full ${item.color}`}>
+                {item.content}
               </p>
             </div>
-
-            <div className="ml-2">
-              <p className="p-2 bg-tBase-500 rounded-md w-full">
-                show off whatever skills I've developed
-              </p>
-            </div>
-
-            <div className="ml-4">
-              <p className="p-2 bg-tAccent1-600 rounded-md w-full">
-                create a place to express my passion projects
-              </p>
-            </div>
-
-            <div className="ml-6">
-              <p className="p-2 bg-tAccent3-700 rounded-md w-full">
-                have fun tinkering around as I see fit
-              </p>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
 
