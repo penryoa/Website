@@ -6,6 +6,10 @@ module.exports = {
   theme: {
     extend: {
       colors: colorTheme,
+      fontFamily: {
+        heading: ["Fugaz One", "cursive"],
+        sans: ["Crete Round", "cursive"],
+      },
     },
   },
   plugins: [],

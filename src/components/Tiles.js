@@ -1,18 +1,26 @@
 import React from "react";
 
-export function SquareTile({ title, content, color, halfTile = false }) {
+export function SquareTile({
+  title,
+  border,
+  content,
+  color,
+  halfTile = false,
+}) {
   return (
     <div
-      className={`dotted-border bg-opacity-40 w-80 mx-4 mb-4 relative ${
+      className={`w-80 relative mx-4 mb-4 rounded-tr-xl rounded-bl-xl ${
         color || ""
-      } ${halfTile ? "h-40" : "h-80"}`}
+      } ${halfTile ? "h-40" : "h-80"} ${
+        border ? "outline-dotted outline-2 outline-offset-1 " + border : ""
+      }`}
     >
       <div
         className={`absolute top-0 bottom-0 left-0 right-0 items-center justify-center text-justify transition-[padding-top] ease-in-out duration-500 ${
           title && "px-6 pt-6 hover:pt-3"
         }`}
       >
-        <h3 className="mt-0">{title || ""}</h3>
+        {title && <h3 className="mt-0">{title}</h3>}
         {content}
       </div>
     </div>
@@ -25,7 +33,7 @@ export function ImageGallery({ images }) {
       {images.map((image, idx) => (
         <li
           key={`imageGallery.${idx}`}
-          className="[height:40vh] flex-grow relative"
+          className="[width:40vh] sm:w-auto sm:[height:40vh] flex-grow relative"
         >
           <img
             alt={image.altText}

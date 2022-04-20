@@ -1,26 +1,23 @@
 import React from "react";
-import _ from "lodash";
-import resolveConfig from "tailwindcss/resolveConfig";
-import tailwindConfig from "./tailwind.config.js";
+import { getTailwindClass } from "../util/tailwindClassHandler";
 
 export default function SkullIcon({ size = "w-12 h-12" }) {
-  const fullConfig = resolveConfig(tailwindConfig);
   return (
     <svg
-      className={`${size} rounded-full bg-tBase-900/50 hover:bg-tAccent1-600/50`}
+      className={`${size} rounded-full bg-tBase-900/70 hover:bg-tAccent1-600/50`}
       viewBox="0 0 32 32"
       xmlns="http://www.w3.org/2000/svg"
     >
       <linearGradient id="skullGrad">
         <stop
           style={{
-            stopColor: _.get(fullConfig, "theme.colors.tBase.50", "white"),
+            stopColor: getTailwindClass("theme.colors.tBase.50", "white"),
           }}
           offset="0%"
         />
         <stop
           style={{
-            stopColor: _.get(fullConfig, "theme.colors.tAccent1.500", "salmon"),
+            stopColor: getTailwindClass("theme.colors.tAccent1.500", "salmon"),
           }}
           offset="100%"
         />

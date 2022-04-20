@@ -1,29 +1,29 @@
+@import "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css";
+@import url("https://fonts.googleapis.com/css2?family=Crete+Round:ital@0;1&family=Fugaz+One&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
-  .header-font-family {
-    font-family: "Fugaz One";
-  }
-  .body-font-family {
-    font-family: "Crete Round";
+  #root {
+    @apply h-full;
   }
   body,
   html {
-    @apply m-0 py-4 text-base text-tBase-50 body-font-family;
+    @apply m-0 py-4 text-base text-tBase-50 font-sans;
   }
   body {
     @apply bg-gradient-to-br from-tBase-800 via-tBase-900 to-tBase-800;
   }
   h1 {
-    @apply mt-6 mb-4 text-3xl text-tAccent1-500 header-font-family text-center;
+    @apply mt-6 mb-4 text-3xl text-tAccent1-500 font-heading text-center;
   }
   h2 {
-    @apply mt-4 mb-3 text-2xl text-tAccent2-500 header-font-family text-center;
+    @apply mt-4 mb-3 text-2xl text-tAccent2-500 font-heading text-center;
   }
   h3 {
-    @apply mt-3 mb-2 text-lg header-font-family text-center;
+    @apply mt-3 mb-2 text-lg font-heading text-center;
   }
   ::selection {
     @apply bg-tBase-300 text-tBase-700;

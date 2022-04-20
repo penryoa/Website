@@ -1,18 +1,11 @@
 import React, { Fragment } from "react";
 import { Dialog, Transition } from "@headlessui/react";
-import { XIcon } from "@heroicons/react/outline";
-import { withRouter, Link } from "react-router-dom";
+import { SparklesIcon, XIcon } from "@heroicons/react/outline";
+import { Link } from "react-router-dom";
 import Flowers_Vert from "../assets/images/navbar_img.png";
-import Flowers_Horiz from "../assets/images/navbar_small_img.png";
+import { pages } from "../util/constants";
 
-function Navbar({ open, onClose }) {
-  const pages = [
-    { to: "/home", title: "Home" },
-    { to: "/about-me", title: "About Me" },
-    { to: "/about-site", title: "About Site" },
-    { to: "/professional-plug", title: "Education and Skills" },
-  ];
-
+export default function Navbar({ open, onClose }) {
   return (
     <Transition.Root show={open} as={Fragment}>
       <Dialog
@@ -63,42 +56,51 @@ function Navbar({ open, onClose }) {
                     </button>
                   </div>
                 </Transition.Child>
-                <ul className="bg-tBase-950 pt-6 h-screen list-none px-1 header-font-family">
+                <div className="bg-tBase-950 pt-6 h-screen px-1 font-heading select-none">
+                  <div className="pb-3 flex justify-center items-center gap-3">
+                    <span className="text-2xl text-tAccent2-300 flex items-baseline">
+                      ~<SparklesIcon className="h-5 w-5" />
+                    </span>
+                    <a
+                      className="text-4xl text-tAccent1-500 hover:text-tAccent1-300 fa fa-github"
+                      target="_blank"
+                      rel="noreferrer noopener"
+                      href="https://github.com/penryoa"
+                    >
+                      <span className="sr-only">GitHub</span>
+                    </a>
+                    <h2>addi penry</h2>
+                    <a
+                      className="text-3xl rounded-md px-1 bg-tAccent1-500 text-tBase-900 hover:bg-tAccent1-300 fa fa-linkedin"
+                      target="_blank"
+                      rel="noreferrer noopener"
+                      href="https://www.linkedin.com/in/addi-penry/"
+                    >
+                      <span className="sr-only">LinkedIn</span>
+                    </a>
+                    <span className="text-2xl text-tAccent2-300 flex items-baseline">
+                      <SparklesIcon className="h-5 w-5" />~
+                    </span>
+                  </div>
                   {pages.map((page, idx) => (
-                    <li
+                    <Link
                       key={`navBarItem.${idx}`}
-                      className="block m-2 p-2 h-8 transition-all bg-gradient-to-r from-tBase-700"
+                      className="block m-2 p-2 h-8 transition-all bg-gradient-to-r from-tBase-700 overflow-hidden whitespace-nowrap visited:text-inherit hover:text-tAccent3-200 active:text-tAccent3-pop"
+                      to={page.to}
                       onClick={onClose}
                     >
-                      <Link
-                        className="overflow-hidden whitespace-nowrap visited:text-inherit hover:text-tAccent3-200 active:text-tAccent3-pop"
-                        to={page.to}
-                      >
-                        {page.title}
-                      </Link>
-                    </li>
+                      {page.title}
+                    </Link>
                   ))}
 
-                  <li>
-                    <span className="hidden md:block">
-                      <img
-                        src={Flowers_Vert}
-                        alt="vertical flowers"
-                        width="100%"
-                      />
-                    </span>
-                  </li>
-
-                  <li>
-                    <span className="block md:hidden">
-                      <img
-                        src={Flowers_Horiz}
-                        alt="horizontal flowers"
-                        width="90%"
-                      />
-                    </span>
-                  </li>
-                </ul>
+                  <span className="block">
+                    <img
+                      src={Flowers_Vert}
+                      alt="vertical flowers"
+                      width="100%"
+                    />
+                  </span>
+                </div>
               </div>
             </Transition.Child>
           </div>
@@ -107,5 +109,3 @@ function Navbar({ open, onClose }) {
     </Transition.Root>
   );
 }
-
-export default withRouter(Navbar);

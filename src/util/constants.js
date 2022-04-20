@@ -5,18 +5,30 @@ import Img_Art_Sun from "../assets/images/art_sun-n-moon.jpg";
 import Img_Dragon from "../assets/images/creepy_dragon.JPEG";
 import Img_Art_Hand from "../assets/images/art_hand.jpg";
 import Img_Cloudy from "../assets/images/cloudy_nyc.jpg";
-import Img_Mykie from "../assets/images/cute_mykie.JPG";
 import Img_Mushrooms from "../assets/images/mushrooms.jpg";
 import Img_Roxas from "../assets/images/RoxasAndMeBeech.JPG";
 import Img_Bridges from "../assets/images/bridges_nyc.jpg";
 import Img_South_Cove from "../assets/images/south_cove.jpg";
-import Img_Mykie_Sink from "../assets/images/mykie_sink.jpg";
+import Img_Mykie_Box from "../assets/images/mykie_box.jpg";
 import Img_Bird_Bryant from "../assets/images/bird_in_bryant.jpg";
 import Img_Bird_Foot from "../assets/images/bird_on_foot.jpg";
+import { MusicNoteIcon } from "@heroicons/react/solid";
+import StyledLink from "../components/StyledLink";
+
+export const pages = [
+  { to: "/home", title: "Home" },
+  { to: "/about-me", title: "About Me" },
+  { to: "/blog", title: "Blog" },
+];
+
+export const aboutMeTabs = [
+  { to: "hobbies", title: "Hobbies" },
+  { to: "work", title: "Education/Work" },
+  { to: "images", title: "Image Gallery" },
+];
 
 export const aboutMeTiles = [
   {
-    title: "music",
     color: "bg-tAccent2-700/80",
     content: (
       <p>
@@ -28,9 +40,9 @@ export const aboutMeTiles = [
         different choirs.
       </p>
     ),
+    title: "music",
   },
   {
-    title: "languages",
     color: "bg-tAccent4-700/80",
     content: (
       <p>
@@ -42,9 +54,9 @@ export const aboutMeTiles = [
         goal is to get through at least the JLPT N5 and N4, ideally N3 too.
       </p>
     ),
+    title: "languages",
   },
   {
-    title: "motorcycles",
     color: "bg-tAccent1-700/80",
     content: (
       <p>
@@ -56,12 +68,12 @@ export const aboutMeTiles = [
         rides than that.
       </p>
     ),
+    title: "motorcycles",
   },
   {
     content: <img className="h-full" src={Img_Skull} alt="skull" />,
   },
   {
-    title: "creativity",
     color: "bg-tAccent3-700/80",
     content: (
       <p>
@@ -70,9 +82,9 @@ export const aboutMeTiles = [
         papercraft, coding, world building, and even interior design.
       </p>
     ),
+    title: "creativity",
   },
   {
-    title: "video games",
     color: "bg-tAccent4-700/80",
     content: (
       <p>
@@ -83,81 +95,235 @@ export const aboutMeTiles = [
         myself honestly, especially horror/scary games like Fran Bow.
       </p>
     ),
+    title: "video games",
   },
 ];
 
 export const aboutMeImages = [
   {
-    src: Img_Me,
     altText: "just me",
     descText: "Obligatory selfie ft. Dragon perched on my shoulder",
+    src: Img_Me,
   },
   {
-    src: Img_Art_Sun,
     altText: "art - sun and moon",
     descText: "A painting of mine from 2015.",
+    src: Img_Art_Sun,
   },
   {
-    src: Img_Mykie,
     altText: "my lil lady Mykie",
     descText:
       "This is Mykie, aka Mykie Lady. \
-  Her hobbies include lounging outdoors or by windows. She only lets you know you're giving her \
-  too much attention when she is completely annoyed.",
+    Her hobbies include lounging outdoors or by windows. She only lets you know you're giving her \
+    too much attention when she is completely annoyed.",
+    src: Img_Mykie_Box,
   },
   {
-    src: Img_Dragon,
     altText: "my lil boyo Dragon",
     descText:
       "This is Dragon, aka Mr. Dragon. \
-  He's a strange guy, sometimes even creepy. His biggest fear is starvation by an empty food bowl.",
+    He's a strange guy, sometimes even creepy. His biggest fear is starvation by an empty food bowl.",
+    src: Img_Dragon,
   },
   {
-    src: Img_Bridges,
     altText: "bridges in NYC",
     descText: "Taken from one of the many scenic waterviews in Manhattan.",
+    src: Img_Bridges,
   },
   {
-    src: Img_Roxas,
     altText: "my motorcycle Roxas and I",
     descText: "My boy Roxas. He's a stud with that glistening pearl coat.",
+    src: Img_Roxas,
   },
   {
-    src: Img_Mushrooms,
     altText: "mushrooms",
     descText:
       "Very aesthetically pleasing fly amanita mushrooms in North Carolina",
+    src: Img_Mushrooms,
   },
   {
-    src: Img_Cloudy,
     altText: "cloudy NYC",
     descText: "Just a cloudy day in NYC.",
+    src: Img_Cloudy,
   },
   {
-    src: Img_Bird_Bryant,
     altText: "bird in the park",
     descText: "Pigeons are very fun to be around (:",
+    src: Img_Bird_Bryant,
   },
   {
-    src: Img_Mykie_Sink,
-    altText: "mykie in the sink",
-    descText: "Sometimes you just want to ~sink~ into a deep sleep, amiright?",
-  },
-  {
-    src: Img_Bird_Foot,
     altText: "bird on my foot",
     descText:
       "I can't get over this one - a bird just decided to hang out on my foot while I read! SO CUTE.",
+    src: Img_Bird_Foot,
   },
   {
-    src: Img_South_Cove,
     altText: "south cove park",
     descText: "Stumbled upon a really neat park in NYC!",
+    src: Img_South_Cove,
   },
   {
-    src: Img_Art_Hand,
     altText: "art - hand of time",
     descText:
       'A painting of mine from 2017. Kind of makes me think of the "hand of time" in a weird way.',
+    src: Img_Art_Hand,
+  },
+];
+
+export const goals = [
+  {
+    color: "bg-tAccent4-500",
+    content: "grow my skills by trying out new tools",
+  },
+  {
+    color: "bg-tBase-500",
+    content: "show off whatever skills I've developed",
+  },
+  {
+    color: "bg-tAccent1-600",
+    content: "create a place to express my passion projects",
+  },
+  {
+    color: "bg-tAccent3-700",
+    content: "have fun tinkering around as I see fit",
+  },
+];
+
+export const features = [
+  {
+    border: "border-tAccent2-600",
+    color: "bg-tAccent2-700/80",
+    title: "interactive budgeting app",
+  },
+  {
+    border: "border-tAccent3-600",
+    color: "bg-tAccent3-700/80",
+    title: "toggle for theme colors and language",
+  },
+  {
+    border: "border-tAccent4-600",
+    color: "bg-tAccent4-700/80",
+    content: (
+      <ul>
+        <li>
+          no strong ideas yet. I just want something that lets me further
+          practice object oriented design and makes me laugh.
+        </li>
+        <li>will be written in Java or C++</li>
+        <li>will be open source and possibly on Steam</li>
+      </ul>
+    ),
+    title: <>an arcade-like mini game</>,
+  },
+  {
+    border: "border-tAccent1-600",
+    color: "bg-tAccent1-700/80",
+    content: (
+      <ul>
+        <li>
+          this will be a full game released independently or through Steam
+        </li>
+        <li>
+          so far it is still in the design process with limited art and music,
+          but I may release some content as I progress.
+        </li>
+        <li>
+          all the music, art, and code will be done by me, so it's a huge
+          project! it'd be a while before it's done.
+        </li>
+      </ul>
+    ),
+    title: "video game project",
+  },
+  {
+    border: "border-tAccent2-600",
+    color: "bg-tAccent2-700/80",
+    title: (
+      <span className="flex">
+        <MusicNoteIcon className="h-6 w-6 pr-1 text-tAccent4-300" />
+        poem collection
+      </span>
+    ),
+  },
+  {
+    border: "border-tAccent4-600",
+    color: "bg-tAccent4-700/80",
+    content: <p>(audio, lyrics, download, etc.)</p>,
+    title: (
+      <span className="flex">
+        <MusicNoteIcon className="h-6 w-6 pr-1 text-tAccent4-300" />
+        original music collection
+      </span>
+    ),
+  },
+];
+
+export const educationAndSkills = [
+  {
+    color: "bg-tAccent2-700/80",
+    content: (
+      <p className="text-center font-lg">
+        B.S. in Computer Science, 2020
+        <br />
+        Rose-Hulman Institute of Technology
+        <br />
+        Terre Haute, IN
+      </p>
+    ),
+    title: "education",
+  },
+  {
+    color: "bg-tAccent3-700/80",
+    content: (
+      <p>
+        Given how much it helps me when others have open-source code, I try to
+        do the same when appropriate. Most code I've written is through my work
+        and not able to be shared. The best example of accurate sample code is
+        this website, as can be found on my GitHub and&nbsp;
+        <StyledLink href="https://github.com/penryoa/Website">
+          linked here for your convenience.&nbsp;
+        </StyledLink>
+        I have some (shitty) sample code from a few years ago as well,
+        found&nbsp;
+        <StyledLink href="https://github.com/penryoa/rose-hulman_backup">
+          here&nbsp;
+        </StyledLink>
+        and&nbsp;
+        <StyledLink href="https://github.com/KixorTech/CourseUp/tree/staging">
+          here.&nbsp;
+        </StyledLink>
+      </p>
+    ),
+    title: "coding",
+  },
+  {
+    color: "bg-tAccent4-600/80",
+    content: (
+      <p>
+        I love working on front end apps like this site. Being able to tackle
+        full-stack development is definitely my preferred way to operate so I
+        can keep variety in what I do.
+        <br />
+        One of the biggest things I'm passionate about is good documentation.
+        I'm very organized and enjoy making my code neat and documenation
+        thorough.
+      </p>
+    ),
+    title: "specialites",
+  },
+  {
+    color: "bg-tAccent1-700/80",
+    content: (
+      <p>
+        You can click here to{" "}
+        <StyledLink
+          href="./public/Resume_Addi-Penry_Public.pdf"
+          download="Addi_Penry_Resume_20210706"
+        >
+          download my resume.
+        </StyledLink>
+      </p>
+    ),
+    title: "resume",
   },
 ];
