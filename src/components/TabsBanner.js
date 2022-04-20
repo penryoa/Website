@@ -37,7 +37,7 @@ export default function TabsBanner({ tabs }) {
             <option
               key={`dropdownTabs.${idx}`}
               value={tab.to}
-              className="bg-tBase-950 hover:bg-none checked:bg-tAccent3-500"
+              className="bg-tBase-950 hover:bg-tAccent3-200 checked:bg-tAccent3-500"
             >
               {tab.title}
             </option>

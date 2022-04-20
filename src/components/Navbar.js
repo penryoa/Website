@@ -71,7 +71,7 @@ export default function Navbar({ open, onClose }) {
                     </a>
                     <h2>addi penry</h2>
                     <a
-                      className="text-3xl rounded-md px-1 bg-tAccent1-500 text-tBase-900 hover:bg-tAccent1-300 fa fa-linkedin"
+                      className="text-2xl rounded-md px-1 bg-tAccent1-500 text-tBase-950 hover:bg-tAccent1-300 fa fa-linkedin"
                       target="_blank"
                       rel="noreferrer noopener"
                       href="https://www.linkedin.com/in/addi-penry/"
