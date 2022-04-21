@@ -98,6 +98,7 @@ export default function Navbar({ open, onClose }) {
                       src={Flowers_Vert}
                       alt="vertical flowers"
                       width="100%"
+                      // className={dark ? "invert-0" : "invert"}
                     />
                   </span>
                 </div>

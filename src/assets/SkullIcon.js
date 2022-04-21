@@ -4,7 +4,7 @@ import { getTailwindClass } from "../util/tailwindClassHandler";
 export default function SkullIcon({ size = "w-12 h-12" }) {
   return (
     <svg
-      className={`${size} rounded-full bg-tBase-900/70 hover:bg-tAccent1-600/50`}
+      className={`${size} rounded-full bg-tBase-500/70 hover:bg-tAccent1-600/50`}
       viewBox="0 0 32 32"
       xmlns="http://www.w3.org/2000/svg"
     >
