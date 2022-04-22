@@ -3,7 +3,7 @@ function withOpacityValue(variable) {
     if (opacityValue === undefined) {
       return `rgb(var(${variable}))`;
     }
-    return `rgb(var(${variable}) / ${opacityValue})`;
+    return `rgb(var(${variable}), ${opacityValue})`;
   };
 }
 
@@ -21,8 +21,6 @@ function getColors(base = false) {
         allColors[`t${t}${aIdx}`] = {};
       }
       const val = colorRanges[rIdx];
-      // If using hex:
-      // allColors[`t${t}${aIdx}`][val] = `var(--t${t}${aIdx}-${val})`;
       // If using rgb:
       allColors[`t${t}${aIdx}`][val] = withOpacityValue(
         `--t${t}${aIdx}-${val}`
