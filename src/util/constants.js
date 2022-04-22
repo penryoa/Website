@@ -20,7 +20,7 @@ import {
 import { ColorSwatchIcon, NewspaperIcon } from "@heroicons/react/outline";
 
 // ===== ADD YOUR THEMES HERE =====
-export const themes = ["default"];
+export const themes = ["default", "pickle", "pride", "rose"];
 // ================================
 
 export const pages = [
@@ -50,7 +50,7 @@ export const aboutMeTiles = [
         different choirs.
       </p>
     ),
-    title: "music",
+    title: <p className="text-tAccent2-800 dark:text-tAccent2-200">music</p>,
   },
   {
     color: "bg-tAccent4-300/80 dark:bg-tAccent4-700/80",
@@ -64,7 +64,9 @@ export const aboutMeTiles = [
         at least the JLPT N5 and N4, ideally N3 too.
       </p>
     ),
-    title: "languages",
+    title: (
+      <p className="text-tAccent4-800 dark:text-tAccent4-200">languages</p>
+    ),
   },
   {
     color: "bg-tAccent1-300/80 dark:bg-tAccent1-700/80",
@@ -78,7 +80,9 @@ export const aboutMeTiles = [
         for at a younger age, it would have saved me SO much turmoil.
       </p>
     ),
-    title: "autism/adhd",
+    title: (
+      <p className="text-tAccent1-800 dark:text-tAccent1-200">autism/adhd</p>
+    ),
   },
   {
     color: "bg-tAccent3-300/80 dark:bg-tAccent3-700/80",
@@ -89,10 +93,18 @@ export const aboutMeTiles = [
         papercraft, coding, world building, and even interior design.
       </p>
     ),
-    title: "creativity",
+    title: (
+      <p className="text-tAccent3-800 dark:text-tAccent3-200">creativity</p>
+    ),
   },
   {
-    content: <img className="h-full" src={Img_Skull} alt="skull" />,
+    content: (
+      <img
+        alt="skull"
+        className="h-full invert-0 dark:invert"
+        src={Img_Skull}
+      />
+    ),
   },
   {
     color: "bg-tAccent4-300/80 dark:bg-tAccent4-700/80",
@@ -105,7 +117,7 @@ export const aboutMeTiles = [
         myself honestly, especially horror/scary games like Fran Bow.
       </p>
     ),
-    title: "video games",
+    title: <p className="text-tAccent4-800 dark:text-tAccent4-200">gaming</p>,
   },
   {
     color: "bg-tAccent2-300/80 dark:bg-tAccent2-700/80",
@@ -119,7 +131,9 @@ export const aboutMeTiles = [
         rides than that.
       </p>
     ),
-    title: "motorcycles",
+    title: (
+      <p className="text-tAccent2-800 dark:text-tAccent2-200">motorcycles</p>
+    ),
   },
   {
     color: "bg-tAccent1-300/80 dark:bg-tAccent1-700/80",
@@ -132,7 +146,7 @@ export const aboutMeTiles = [
         of my collection, with the rest dispersed througout my home.
       </p>
     ),
-    title: "rocks",
+    title: <p className="text-tAccent1-800 dark:text-tAccent1-200">rocks</p>,
   },
   {
     color: "bg-tAccent3-300/80 dark:bg-tAccent3-700/80",
@@ -144,7 +158,7 @@ export const aboutMeTiles = [
         the end, right?
       </p>
     ),
-    title: "coding",
+    title: <p className="text-tAccent3-800 dark:text-tAccent3-200">coding</p>,
   },
 ];
 

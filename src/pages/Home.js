@@ -5,7 +5,7 @@ import { SquareTile } from "../components/Tiles";
 import { goals, features, pDefault } from "../util/constants";
 
 export default function Home() {
-  // just here so tailwind loads it in: "ml-0 ml-2 ml-4 ml-6 ml-8"
+  // just here so tailwind loads it in: "sm:ml-0 sm:ml-2 sm:ml-4 sm:ml-6 sm:ml-8"
   return (
     <div>
       <div className="m-auto max-w-full flex justify-center items-center gap-2">
@@ -25,11 +25,17 @@ export default function Home() {
         Explore the menu to see some cool things!
       </p>
 
-      <div className="flex flex-wrap justify-start">
-        <div className="min-w-1/2 self-end">
-          <img src={Image_Cat} alt="cat outline" width="100%" />
+
+      <div className="flex flex-col lg:flex-row flex-wrap justify-start">
+        <div className="max-w-lg self-center lg:self-end">
+          <img
+            className="invert-0 dark:invert"
+            src={Image_Cat}
+            alt="cat outline"
+            width="100%"
+          />
         </div>
-        <div className="font-lg flex-1 min-w-1/3">
+        <div className="font-lg flex-1">
           <h1>about this site</h1>
           <p>
             I first started making this site at the beginning of June 2020 with
@@ -38,7 +44,7 @@ export default function Home() {
           {goals.map((item, idx) => (
             <div
               key={`angledList.${idx}`}
-              className={`ml-${
+              className={`sm:ml-${
                 idx * 2
               } pl-0 py-1 text-lg select-none transition-all duration-500 hover:pl-3`}
             >
