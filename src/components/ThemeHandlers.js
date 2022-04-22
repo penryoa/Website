@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { Switch } from "@headlessui/react";
 import { themes } from "../util/constants";
+import { MoonIcon } from "@heroicons/react/outline";
 
 export function ThemeSelector() {
   return (
-    <div className="flex gap-1 items-baseline w-1/2">
+    <div className="flex gap-2 items-baseline w-1/2">
       <label>Theme</label>
       <select
         className="flex-grow py-1 font-sans rounded-md bg-gradient-to-r dark:from-tAccent3-600 dark:to-tAccent3-700 from-tAccent3-400 to-tAccent3-300 focus:outline-none"
@@ -40,14 +41,14 @@ export function DarkModeToggle() {
 
   return (
     <Switch.Group>
-      <div className="flex items-center">
-        <Switch.Label className="mr-4">Dark Mode</Switch.Label>
+      <div className="flex items-center gap-2">
+        <MoonIcon className="h-6 w-6 text-tBase-950 dark:text-tBase-50" />
         <Switch
           checked={enabled}
           onChange={setEnabled}
           className={`${
-            enabled ? "bg-blue-600" : "bg-gray-200"
-          } relative inline-flex items-center h-6 rounded-full w-11 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500`}
+            enabled ? "bg-tAccent1-500" : "bg-tAccent1-100"
+          } relative inline-flex items-center h-6 rounded-full w-11 transition-colors focus:outline-none`}
         >
           <span
             className={`${

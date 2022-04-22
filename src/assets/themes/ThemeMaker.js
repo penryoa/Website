@@ -1,5 +1,7 @@
 const Values = require("values.js");
 
+// TODO: FINISH TRYING TO MAKE THIS WORK
+
 function generatePalette(steps, color) {
   const generator = new Values();
   if (!generator.setColor(color)) {

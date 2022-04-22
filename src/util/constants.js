@@ -12,8 +12,12 @@ import Img_South_Cove from "../assets/images/south_cove.jpg";
 import Img_Mykie_Box from "../assets/images/mykie_box.jpg";
 import Img_Bird_Bryant from "../assets/images/bird_in_bryant.jpg";
 import Img_Bird_Foot from "../assets/images/bird_on_foot.jpg";
-import { MusicNoteIcon } from "@heroicons/react/solid";
-import StyledLink from "../components/StyledLink";
+import {
+  DocumentTextIcon,
+  MusicNoteIcon,
+  TerminalIcon,
+} from "@heroicons/react/solid";
+import { ColorSwatchIcon, NewspaperIcon } from "@heroicons/react/outline";
 
 // ===== ADD YOUR THEMES HERE =====
 export const themes = ["default"];
@@ -22,7 +26,6 @@ export const themes = ["default"];
 export const pages = [
   { to: "/home", title: "Home" },
   { to: "/about-me", title: "About Me" },
-  // { to: "/blog", title: "Blog" }, //  TODO: add in once ready
 ];
 
 export const aboutMeTabs = [
@@ -30,6 +33,9 @@ export const aboutMeTabs = [
   { to: "work", title: "Education/Work" },
   { to: "images", title: "Image Gallery" },
 ];
+
+export const pDefault =
+  "text-justify p-5 bg-tBase-300 dark:bg-tBase-700 rounded-tr-xl rounded-bl-xl";
 
 export const aboutMeTiles = [
   {
@@ -53,9 +59,9 @@ export const aboutMeTiles = [
         I was consistently learning French from 2015 to 2018. I'd love to get
         back into it and take a trip to Canada.
         <br />
-        Japanese has been my target language for around two years now, though
-        time was impossible to find the first year of studying. My long-term
-        goal is to get through at least the JLPT N5 and N4, ideally N3 too.
+        Japanese has been my target language for ~3 years now, though studying
+        was inconsistent in the beginning. My long-term goal is to get through
+        at least the JLPT N5 and N4, ideally N3 too.
       </p>
     ),
     title: "languages",
@@ -64,18 +70,15 @@ export const aboutMeTiles = [
     color: "bg-tAccent1-300/80 dark:bg-tAccent1-700/80",
     content: (
       <p>
-        Roxas, my bike, is a 2007 Honda Shadow. I've had him for four years anf
-        have taken plenty of day trips as well as a handful of longer ones.
+        At the late age of 24, I finally sought out and received an ASD
+        diagnosis after nearly a year of researching. Turns out it was also ADHD
+        and anxiety (as one may surmise).
         <br />
-        Once, I had to take my dad on the back of my bike in the pouring rain at
-        night. He had a full gas canister in his lap. I prefer more leisurely
-        rides than that.
+        I'm very passionate about ASD acceptance. If I had known what to look
+        for at a younger age, it would have saved me SO much turmoil.
       </p>
     ),
-    title: "motorcycles",
-  },
-  {
-    content: <img className="h-full" src={Img_Skull} alt="skull" />,
+    title: "autism/adhd",
   },
   {
     color: "bg-tAccent3-300/80 dark:bg-tAccent3-700/80",
@@ -89,6 +92,9 @@ export const aboutMeTiles = [
     title: "creativity",
   },
   {
+    content: <img className="h-full" src={Img_Skull} alt="skull" />,
+  },
+  {
     color: "bg-tAccent4-300/80 dark:bg-tAccent4-700/80",
     content: (
       <p>
@@ -100,6 +106,45 @@ export const aboutMeTiles = [
       </p>
     ),
     title: "video games",
+  },
+  {
+    color: "bg-tAccent2-300/80 dark:bg-tAccent2-700/80",
+    content: (
+      <p>
+        Roxas, my bike, is a 2007 Honda Shadow. I've had him for four years anf
+        have taken plenty of day trips as well as a handful of longer ones.
+        <br />
+        Once, I had to take my dad on the back of my bike in the pouring rain at
+        night. He had a full gas canister in his lap. I prefer more leisurely
+        rides than that.
+      </p>
+    ),
+    title: "motorcycles",
+  },
+  {
+    color: "bg-tAccent1-300/80 dark:bg-tAccent1-700/80",
+    content: (
+      <p>
+        I love rocks. That's all. (:
+        <br />
+        I've been collecting rocks and stones as long as I've been conscious. I
+        also have a mini zen garden on my desk that I use to display a fraction
+        of my collection, with the rest dispersed througout my home.
+      </p>
+    ),
+    title: "rocks",
+  },
+  {
+    color: "bg-tAccent3-300/80 dark:bg-tAccent3-700/80",
+    content: (
+      <p>
+        I mean, I picked my career for a reason. I love the process, the
+        challenges, and the results of coding. It <i>does</i> sometimes make me
+        forget to eat or sleep because I'm hyperfocused, but it's worth it in
+        the end, right?
+      </p>
+    ),
+    title: "coding",
   },
 ];
 
@@ -176,39 +221,64 @@ export const aboutMeImages = [
 
 export const goals = [
   {
-    color: "bg-tAccent4-500",
+    color: "bg-tAccent4-400 dark:bg-tAccent4-600",
     content: "grow my skills by trying out new tools",
   },
   {
-    color: "bg-tBase-500",
+    color: "bg-tAccent3-400 dark:bg-tAccent3-600",
     content: "show off whatever skills I've developed",
   },
   {
-    color: "bg-tAccent1-500",
+    color: "bg-tAccent2-400 dark:bg-tAccent2-600",
     content: "create a place to express my passion projects",
   },
   {
-    color: "bg-tAccent3-500",
+    color: "bg-tAccent1-400 dark:bg-tAccent1-600",
     content: "have fun tinkering around as I see fit",
   },
 ];
 
 export const features = [
   {
-    border: "border-tAccent2-600",
-    color: "bg-tAccent2-300/80 dark:bg-tAccent2-700/80",
-    title: "interactive budgeting app",
-  },
-  {
-    border: "border-tAccent3-600",
-    color: "bg-tAccent3-300/80 dark:bg-tAccent3-700/80",
-    title: "toggle for theme colors and language",
-  },
-  {
-    border: "border-tAccent4-600",
     color: "bg-tAccent4-300/80 dark:bg-tAccent4-700/80",
     content: (
-      <ul>
+      <p>
+        I have a lot to say and would benefit greatly from having and
+        semi-maintaining a blog.
+        <br />
+        It'd mainly be for my own use really. It's like a timecapsule for your
+        thoughts. Very cool.
+      </p>
+    ),
+    title: (
+      <p className="flex text-tAccent4-800 dark:text-tAccent4-200">
+        <NewspaperIcon className="h-7 w-7 pr-2" />
+        personal blog
+      </p>
+    ),
+  },
+  {
+    color: "bg-tAccent3-300/80 dark:bg-tAccent3-700/80",
+    content: (
+      <p>
+        I've already gotten around to adding a way to toggle themes, but I still
+        need to clean up the process of making and using them. <br />
+        As for language, I am a native English speaker aiming to learn Japanese
+        and eventually get back to French. It'd be good practice to translate
+        this site.
+      </p>
+    ),
+    title: (
+      <p className="flex text-tAccent3-800 dark:text-tAccent3-200">
+        <ColorSwatchIcon className="h-7 w-7 pr-2" />
+        toggle for theme/language
+      </p>
+    ),
+  },
+  {
+    color: "bg-tAccent2-300/80 dark:bg-tAccent2-700/80",
+    content: (
+      <ul className="list-disc">
         <li>
           no strong ideas yet. I just want something that lets me further
           practice object oriented design and makes me laugh.
@@ -217,13 +287,17 @@ export const features = [
         <li>will be open source and possibly on Steam</li>
       </ul>
     ),
-    title: <>an arcade-like mini game</>,
+    title: (
+      <p className="flex text-tAccent2-800 dark:text-tAccent2-200">
+        <TerminalIcon className="h-7 w-7 pr-2" />
+        an arcade-like mini game
+      </p>
+    ),
   },
   {
-    border: "border-tAccent1-600",
     color: "bg-tAccent1-300/80 dark:bg-tAccent1-700/80",
     content: (
-      <ul>
+      <ul className="list-disc">
         <li>
           this will be a full game released independently or through Steam
         </li>
@@ -237,97 +311,48 @@ export const features = [
         </li>
       </ul>
     ),
-    title: "video game project",
+    title: (
+      <p className="text-tAccent1-800 dark:text-tAccent1-200">
+        <span className="text-xl fa fa-gamepad pr-2" />
+        video game project
+      </p>
+    ),
   },
   {
-    border: "border-tAccent2-600",
     color: "bg-tAccent2-300/80 dark:bg-tAccent2-700/80",
+    content: (
+      <p>
+        I am already standing at around 100 pages in my current poetry book I am
+        working on, which includes my own art and "photography".
+        <p className="text-tAccent2-800 dark:text-tAccent2-100">
+          (I am not a photographer)
+        </p>
+      </p>
+    ),
     title: (
-      <span className="flex">
-        <MusicNoteIcon className="h-6 w-6 pr-1 text-tAccent4-700 dark:text-tAccent4-300" />
+      <span className="flex text-tAccent2-800 dark:text-tAccent2-200">
+        <DocumentTextIcon className="h-7 w-7 pr-2" />
         poem collection
       </span>
     ),
   },
   {
-    border: "border-tAccent4-600",
     color: "bg-tAccent4-300/80 dark:bg-tAccent4-700/80",
-    content: <p>(audio, lyrics, download, etc.)</p>,
+    content: (
+      <p>
+        (audio, lyrics, download, etc.)
+        <br />
+        I tend to improv a lot of piano pieces that I think would be worth
+        sharing, and I also have completed songs I've worked on consistently.
+        <br />
+        I'd like to find a way to more officially produce and release them.
+      </p>
+    ),
     title: (
-      <span className="flex">
-        <MusicNoteIcon className="h-6 w-6 pr-1 text-tAccent4-700 dark:text-tAccent4-300" />
+      <span className="flex text-tAccent4-800 dark:text-tAccent4-200">
+        <MusicNoteIcon className="h-7 w-7 pr-2" />
         original music collection
       </span>
     ),
-  },
-];
-
-export const educationAndSkills = [
-  {
-    color: "bg-tAccent2-300/80 dark:bg-tAccent2-700/80",
-    content: (
-      <p className="text-center font-lg">
-        B.S. in Computer Science, 2020
-        <br />
-        Rose-Hulman Institute of Technology
-        <br />
-        Terre Haute, IN
-      </p>
-    ),
-    title: "education",
-  },
-  {
-    color: "bg-tAccent3-300/80 dark:bg-tAccent3-700/80",
-    content: (
-      <p>
-        Given how much it helps me when others have open-source code, I try to
-        do the same when appropriate. Most code I've written is through my work
-        and not able to be shared. The best example of accurate sample code is
-        this website, as can be found on my GitHub and&nbsp;
-        <StyledLink href="https://github.com/penryoa/Website">
-          linked here for your convenience.&nbsp;
-        </StyledLink>
-        I have some (shitty) sample code from a few years ago as well,
-        found&nbsp;
-        <StyledLink href="https://github.com/penryoa/rose-hulman_backup">
-          here&nbsp;
-        </StyledLink>
-        and&nbsp;
-        <StyledLink href="https://github.com/KixorTech/CourseUp/tree/staging">
-          here.&nbsp;
-        </StyledLink>
-      </p>
-    ),
-    title: "coding",
-  },
-  {
-    color: "bg-tAccent4-400/80 dark:bg-tAccent4-600/80",
-    content: (
-      <p>
-        I love working on front end apps like this site. Being able to tackle
-        full-stack development is definitely my preferred way to operate so I
-        can keep variety in what I do.
-        <br />
-        One of the biggest things I'm passionate about is good documentation.
-        I'm very organized and enjoy making my code neat and documenation
-        thorough.
-      </p>
-    ),
-    title: "specialites",
-  },
-  {
-    color: "bg-tAccent1-300/80 dark:bg-tAccent1-700/80",
-    content: (
-      <p>
-        You can click here to{" "}
-        <StyledLink
-          href="./public/Resume_Addi-Penry_Public.pdf"
-          download="Addi_Penry_Resume_20210706"
-        >
-          download my resume.
-        </StyledLink>
-      </p>
-    ),
-    title: "resume",
   },
 ];

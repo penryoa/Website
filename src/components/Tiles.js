@@ -9,7 +9,7 @@ export function SquareTile({
 }) {
   return (
     <div
-      className={`w-80 relative mx-4 mb-4 rounded-tr-xl rounded-bl-xl ${
+      className={`w-80 relative mx-1 sm:mx-2 md:mx-4 mb-4 rounded-tr-xl rounded-bl-xl ${
         color || ""
       } ${halfTile ? "h-40" : "h-80"} ${
         border ? "outline-dotted outline-2 outline-offset-1 " + border : ""

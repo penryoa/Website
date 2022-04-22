@@ -14,7 +14,7 @@ import Navbar from "./components/Navbar";
 import SkullIcon from "./assets/SkullIcon";
 import { HandIcon } from "@heroicons/react/outline";
 import TabsBanner from "./components/TabsBanner";
-import { aboutMeTabs } from "./util/constants";
+import { aboutMeTabs, pDefault } from "./util/constants";
 
 const App = () => {
   // const themeHook=useState("navy");
@@ -35,16 +35,12 @@ const App = () => {
         <HandIcon className="ml-2 h-8 w-8 text-inherit" />
       </h1>
 
-      <p className="p-4 text-center px-5 bg-tBase-300 dark:bg-tBase-700 rounded-tr-xl rounded-bl-xl">
-        I'm Addi, a software developer from Indiana. I like to be on my toes and
-        thrown into unfamiliar things, so I moved straight from Indiana to New
-        York City out of college. I have a hodgepodge of interests and hobbies
-        and not enough time to tend to them all. I'm a motorcyclist, musician,
-        avid tea drinker, and aspiring game developer. Cats are pretty great and
-        thankfully I have two: Dragon and Mykie (which are featured in pictures
-        below, as any animal parent is required to do).
+      <p className={pDefault}>
+        I'm Addi, a software developer from the Midwest who landed in NYC and
+        finally NC. I have a hodgepodge of interests and hobbies and not enough
+        time to tend to them all. I'm a motorcyclist, musician, avid tea
+        drinker, and aspiring game developer.
       </p>
-      {/* TODO: navbar here */}
       <TabsBanner tabs={aboutMeTabs} />
       <Outlet />
     </>

@@ -2,7 +2,6 @@ import React from "react";
 import { getTailwindClass } from "../util/tailwindClassHandler";
 
 export default function SkullIcon({ size = "w-12 h-12" }) {
-  // TODO: find a way to have different colors in gradient for light mode
   return (
     <svg
       className={`${size} rounded-full bg-tBase-500/70 hover:bg-tAccent1-400/50 dark:hover:bg-tAccent1-600/50`}

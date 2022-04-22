@@ -2,7 +2,7 @@ import React from "react";
 import { StarIcon } from "@heroicons/react/solid";
 import Image_Cat from "../assets/images/cat.png";
 import { SquareTile } from "../components/Tiles";
-import { goals, features } from "../util/constants";
+import { goals, features, pDefault } from "../util/constants";
 
 export default function Home() {
   // just here so tailwind loads it in: "ml-0 ml-2 ml-4 ml-6 ml-8"
@@ -12,13 +12,13 @@ export default function Home() {
         <h1>welcome!</h1>
         <StarIcon className="h-8 w-8 text-tAccent1-300 dark:text-tAccent1-700" />
       </div>
-      <p className="m-2 p-2 bg-tBase-300 dark:bg-tBase-700 rounded-tr-xl rounded-bl-xl">
-        I'm a software developer based in NYC.
+      <p className={pDefault}>
+        I'm a software developer based in NC.
         <br />
         <br />
         This site is kind of my catalogue of things I care about, my own
         projects, my education/experience, and so on. It's always improving and
-        growing, so check back if you're ever curious what some 23 year-old
+        growing, so check back if you're ever curious what some 24 year-old
         developer is up to.
         <br />
         <br />
@@ -57,7 +57,7 @@ export default function Home() {
         ))}
       </div>
 
-      <div className="mt-4 py-4 border-t border-dashed text-sm">
+      <div className="mt-4 py-4 border-t border-dashed border-tBase-950 dark:border-tBase-50 text-sm">
         Last update: 2021 04 30
       </div>
     </div>
