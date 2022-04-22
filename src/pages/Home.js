@@ -25,6 +25,7 @@ export default function Home() {
         Explore the menu to see some cool things!
       </p>
 
+
       <div className="flex flex-col lg:flex-row flex-wrap justify-start">
         <div className="max-w-lg self-center lg:self-end">
           <img
