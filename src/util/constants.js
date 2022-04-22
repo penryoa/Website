@@ -29,7 +29,7 @@ export const aboutMeTabs = [
 
 export const aboutMeTiles = [
   {
-    color: "bg-tAccent2-700/80",
+    color: "bg-tAccent2-300/80 dark:bg-tAccent2-700/80",
     content: (
       <p>
         Piano is by far my favorite instrument to play. When I was around 7 or
@@ -43,7 +43,7 @@ export const aboutMeTiles = [
     title: "music",
   },
   {
-    color: "bg-tAccent4-700/80",
+    color: "bg-tAccent4-300/80 dark:bg-tAccent4-700/80",
     content: (
       <p>
         I was consistently learning French from 2015 to 2018. I'd love to get
@@ -57,7 +57,7 @@ export const aboutMeTiles = [
     title: "languages",
   },
   {
-    color: "bg-tAccent1-700/80",
+    color: "bg-tAccent1-300/80 dark:bg-tAccent1-700/80",
     content: (
       <p>
         Roxas, my bike, is a 2007 Honda Shadow. I've had him for four years anf
@@ -74,7 +74,7 @@ export const aboutMeTiles = [
     content: <img className="h-full" src={Img_Skull} alt="skull" />,
   },
   {
-    color: "bg-tAccent3-700/80",
+    color: "bg-tAccent3-300/80 dark:bg-tAccent3-700/80",
     content: (
       <p>
         Creativity calms my hyperactive brain. I really like playing with tons
@@ -85,7 +85,7 @@ export const aboutMeTiles = [
     title: "creativity",
   },
   {
-    color: "bg-tAccent4-700/80",
+    color: "bg-tAccent4-300/80 dark:bg-tAccent4-700/80",
     content: (
       <p>
         Growing up with N64 and Super Nintendo led to an inevitable obsession
@@ -180,11 +180,11 @@ export const goals = [
     content: "show off whatever skills I've developed",
   },
   {
-    color: "bg-tAccent1-600",
+    color: "bg-tAccent1-500",
     content: "create a place to express my passion projects",
   },
   {
-    color: "bg-tAccent3-700",
+    color: "bg-tAccent3-500",
     content: "have fun tinkering around as I see fit",
   },
 ];
@@ -192,17 +192,17 @@ export const goals = [
 export const features = [
   {
     border: "border-tAccent2-600",
-    color: "bg-tAccent2-700/80",
+    color: "bg-tAccent2-300/80 dark:bg-tAccent2-700/80",
     title: "interactive budgeting app",
   },
   {
     border: "border-tAccent3-600",
-    color: "bg-tAccent3-700/80",
+    color: "bg-tAccent3-300/80 dark:bg-tAccent3-700/80",
     title: "toggle for theme colors and language",
   },
   {
     border: "border-tAccent4-600",
-    color: "bg-tAccent4-700/80",
+    color: "bg-tAccent4-300/80 dark:bg-tAccent4-700/80",
     content: (
       <ul>
         <li>
@@ -217,7 +217,7 @@ export const features = [
   },
   {
     border: "border-tAccent1-600",
-    color: "bg-tAccent1-700/80",
+    color: "bg-tAccent1-300/80 dark:bg-tAccent1-700/80",
     content: (
       <ul>
         <li>
@@ -237,21 +237,21 @@ export const features = [
   },
   {
     border: "border-tAccent2-600",
-    color: "bg-tAccent2-700/80",
+    color: "bg-tAccent2-300/80 dark:bg-tAccent2-700/80",
     title: (
       <span className="flex">
-        <MusicNoteIcon className="h-6 w-6 pr-1 text-tAccent4-300" />
+        <MusicNoteIcon className="h-6 w-6 pr-1 text-tAccent4-700 dark:text-tAccent4-300" />
         poem collection
       </span>
     ),
   },
   {
     border: "border-tAccent4-600",
-    color: "bg-tAccent4-700/80",
+    color: "bg-tAccent4-300/80 dark:bg-tAccent4-700/80",
     content: <p>(audio, lyrics, download, etc.)</p>,
     title: (
       <span className="flex">
-        <MusicNoteIcon className="h-6 w-6 pr-1 text-tAccent4-300" />
+        <MusicNoteIcon className="h-6 w-6 pr-1 text-tAccent4-700 dark:text-tAccent4-300" />
         original music collection
       </span>
     ),
@@ -260,7 +260,7 @@ export const features = [
 
 export const educationAndSkills = [
   {
-    color: "bg-tAccent2-700/80",
+    color: "bg-tAccent2-300/80 dark:bg-tAccent2-700/80",
     content: (
       <p className="text-center font-lg">
         B.S. in Computer Science, 2020
@@ -273,7 +273,7 @@ export const educationAndSkills = [
     title: "education",
   },
   {
-    color: "bg-tAccent3-700/80",
+    color: "bg-tAccent3-300/80 dark:bg-tAccent3-700/80",
     content: (
       <p>
         Given how much it helps me when others have open-source code, I try to
@@ -297,7 +297,7 @@ export const educationAndSkills = [
     title: "coding",
   },
   {
-    color: "bg-tAccent4-600/80",
+    color: "bg-tAccent4-400/80 dark:bg-tAccent4-600/80",
     content: (
       <p>
         I love working on front end apps like this site. Being able to tackle
@@ -312,7 +312,7 @@ export const educationAndSkills = [
     title: "specialites",
   },
   {
-    color: "bg-tAccent1-700/80",
+    color: "bg-tAccent1-300/80 dark:bg-tAccent1-700/80",
     content: (
       <p>
         You can click here to{" "}

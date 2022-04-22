@@ -35,7 +35,7 @@ const App = () => {
         <HandIcon className="ml-2 h-8 w-8 text-inherit" />
       </h1>
 
-      <p className="p-4 text-center px-5 bg-tBase-700 rounded-tr-xl rounded-bl-xl">
+      <p className="p-4 text-center px-5 bg-tBase-300 dark:bg-tBase-700 rounded-tr-xl rounded-bl-xl">
         I'm Addi, a software developer from Indiana. I like to be on my toes and
         thrown into unfamiliar things, so I moved straight from Indiana to New
         York City out of college. I have a hodgepodge of interests and hobbies

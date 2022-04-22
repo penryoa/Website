@@ -6,15 +6,66 @@
 @tailwind utilities;
 
 @layer base {
-  #root {
-    @apply h-full;
+  :root,
+  [data-theme="default"] {
+    --tBase-50: 255, 255, 255;
+    --tBase-100: 226, 231, 243;
+    --tBase-200: 184, 194, 224;
+    --tBase-300: 155, 169, 212;
+    --tBase-400: 126, 145, 203;
+    --tBase-500: 84, 108, 182;
+    --tBase-600: 61, 82, 143;
+    --tBase-700: 43, 57, 100;
+    --tBase-800: 28, 37, 65;
+    --tBase-900: 12, 16, 29;
+    --tBase-950: 7, 10, 18;
+    --tAccent1-100: 247, 225, 221;
+    --tAccent1-200: 239, 195, 186;
+    --tAccent1-300: 230, 164, 152;
+    --tAccent1-400: 222, 134, 117;
+    --tAccent1-500: 214, 104, 83;
+    --tAccent1-600: 171, 83, 66;
+    --tAccent1-700: 128, 62, 50;
+    --tAccent1-800: 86, 42, 33;
+    --tAccent1-900: 43, 21, 17;
+    --tAccent1-pop: 255, 76, 41;
+    --tAccent2-100: 211, 230, 230;
+    --tAccent2-200: 166, 205, 204;
+    --tAccent2-300: 122, 181, 179;
+    --tAccent2-400: 77, 156, 153;
+    --tAccent2-500: 33, 131, 128;
+    --tAccent2-600: 26, 105, 102;
+    --tAccent2-700: 20, 79, 77;
+    --tAccent2-800: 13, 52, 51;
+    --tAccent2-900: 7, 26, 26;
+    --tAccent2-pop: 0, 163, 158;
+    --tAccent3-100: 241, 217, 230;
+    --tAccent3-200: 228, 179, 205;
+    --tAccent3-300: 214, 140, 180;
+    --tAccent3-400: 201, 102, 155;
+    --tAccent3-500: 187, 64, 130;
+    --tAccent3-600: 150, 51, 104;
+    --tAccent3-700: 112, 38, 78;
+    --tAccent3-800: 75, 26, 52;
+    --tAccent3-900: 37, 13, 26;
+    --tAccent3-pop: 250, 0, 133;
+    --tAccent4-100: 220, 237, 232;
+    --tAccent4-200: 185, 218, 210;
+    --tAccent4-300: 150, 200, 187;
+    --tAccent4-400: 115, 181, 165;
+    --tAccent4-500: 80, 163, 142;
+    --tAccent4-600: 64, 130, 114;
+    --tAccent4-700: 48, 98, 85;
+    --tAccent4-800: 32, 65, 57;
+    --tAccent4-900: 16, 33, 28;
+    --tAccent4-pop: 0, 245, 184;
   }
   body,
   html {
-    @apply m-0 py-4 text-base text-tBase-50 font-sans;
+    @apply m-0 py-4 text-base text-tBase-950 dark:text-tBase-50 font-sans;
   }
   body {
-    @apply bg-gradient-to-br from-tBase-800 via-tBase-900 to-tBase-800;
+    @apply h-full bg-gradient-to-br from-tBase-200 via-tBase-100 to-tBase-200 dark:from-tBase-800 dark:via-tBase-900 dark:to-tBase-800;
   }
   h1 {
     @apply mt-6 mb-4 text-3xl text-tAccent1-500 font-heading text-center;
@@ -26,9 +77,9 @@
     @apply mt-3 mb-2 text-lg font-heading text-center;
   }
   ::selection {
-    @apply bg-tBase-300 text-tBase-700;
+    @apply bg-tBase-700 text-tBase-300 dark:bg-tBase-300 dark:text-tBase-700;
   }
   ::-moz-selection {
-    @apply bg-tBase-300 text-tBase-700;
+    @apply bg-tBase-700 text-tBase-300 dark:bg-tBase-300 dark:text-tBase-700;
   }
 }

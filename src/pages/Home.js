@@ -10,9 +10,9 @@ export default function Home() {
     <div>
       <div className="m-auto max-w-full flex justify-center items-center gap-2">
         <h1>welcome!</h1>
-        <StarIcon className="h-8 w-8 text-tAccent1-700" />
+        <StarIcon className="h-8 w-8 text-tAccent1-300 dark:text-tAccent1-700" />
       </div>
-      <p className="m-2 p-2 bg-tBase-700 rounded-tr-xl rounded-bl-xl">
+      <p className="m-2 p-2 bg-tBase-300 dark:bg-tBase-700 rounded-tr-xl rounded-bl-xl">
         I'm a software developer based in NYC.
         <br />
         <br />

@@ -41,7 +41,7 @@ export function ImageGallery({ images }) {
             src={image.src}
           />
           <p className="absolute inset-0 px-6 py-3 opacity-0 hover:opacity-100 transition-opacity duration-500 ease-in-out">
-            <span className="text-justify bg-tAccent2-700/80 p-1 [font-variant:small-caps]">
+            <span className="text-justify bg-tAccent2-300/80 dark:bg-tAccent2-700/80 p-1 [font-variant:small-caps]">
               {image.descText}
             </span>
           </p>

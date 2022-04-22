@@ -4,13 +4,14 @@ import { getTailwindClass } from "../util/tailwindClassHandler";
 export default function SkullIcon({ size = "w-12 h-12" }) {
   return (
     <svg
-      className={`${size} rounded-full bg-tBase-500/70 hover:bg-tAccent1-600/50`}
+      className={`${size} rounded-full bg-tBase-500/70 hover:bg-tAccent1-400/50 dark:hover:bg-tAccent1-600/50`}
       viewBox="0 0 32 32"
       xmlns="http://www.w3.org/2000/svg"
     >
       <linearGradient id="skullGrad">
         <stop
           style={{
+            // TODO: customize for dark, or just make 500 in another color
             stopColor: getTailwindClass("theme.colors.tBase.50", "white"),
           }}
           offset="0%"
