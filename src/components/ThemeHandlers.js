@@ -9,7 +9,9 @@ export function ThemeSelector() {
       <label>Theme</label>
       <select
         className="flex-grow py-1 font-sans rounded-md bg-gradient-to-r dark:from-tAccent3-600 dark:to-tAccent3-700 from-tAccent3-400 to-tAccent3-300 focus:outline-none"
-        value={document.getElementById("mainHTML").getAttribute("data-theme")}
+        defaultValue={document
+          .getElementById("mainHTML")
+          .getAttribute("data-theme")}
         onChange={(e) =>
           document
             .getElementById("mainHTML")
