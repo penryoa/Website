@@ -1,0 +1,35 @@
+@import "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css";
+@import url("https://fonts.googleapis.com/css2?family=Crete+Round:ital@0;1&family=Fugaz+One&display=swap");
+
+/* IMPORT THEME CSS FILES HERE */
+@import "./themes/default.css";
+/* --------------------------- */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body,
+  html {
+    @apply m-0 py-4 text-base text-tBase-950 dark:text-tBase-50 font-sans;
+  }
+  body {
+    @apply h-full bg-gradient-to-br from-tBase-200 via-tBase-100 to-tBase-200 dark:from-tBase-800 dark:via-tBase-900 dark:to-tBase-800;
+  }
+  h1 {
+    @apply mt-6 mb-4 text-3xl text-tAccent1-500 font-heading text-center;
+  }
+  h2 {
+    @apply mt-4 mb-3 text-2xl text-tAccent2-500 font-heading text-center;
+  }
+  h3 {
+    @apply mt-3 mb-2 text-lg font-heading text-center;
+  }
+  ::selection {
+    @apply bg-tBase-700 text-tBase-300 dark:bg-tBase-300 dark:text-tBase-700;
+  }
+  ::-moz-selection {
+    @apply bg-tBase-700 text-tBase-300 dark:bg-tBase-300 dark:text-tBase-700;
+  }
+}
