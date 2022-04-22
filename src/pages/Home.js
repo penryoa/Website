@@ -58,7 +58,7 @@ export default function Home() {
       </div>
 
       <div className="mt-4 py-4 border-t border-dashed border-tBase-950 dark:border-tBase-50 text-sm">
-        Last update: 2021 04 30
+        Last update: 2022 04 21
       </div>
     </div>
   );

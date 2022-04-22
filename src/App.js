@@ -17,7 +17,6 @@ import TabsBanner from "./components/TabsBanner";
 import { aboutMeTabs, pDefault } from "./util/constants";
 
 const App = () => {
-  // const themeHook=useState("navy");
   const [open, setOpen] = useState(false);
   const BodyLayout = () => (
     <div className="max-w-7xl mx-auto px-1 md:px-4 slashed-zero stacked-fractions">
