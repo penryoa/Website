@@ -70,7 +70,8 @@
     "react-text-mask": "^5.4.3",
     "redux": "^4.2.0",
     "redux-thunk": "^2.3.0",
-    "text-mask-addons": "^3.8.0"
+    "text-mask-addons": "^3.8.0",
+    "values.js": "^2.1.1"
   },
   "browserslist": {
     "production": [

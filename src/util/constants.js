@@ -15,10 +15,14 @@ import Img_Bird_Foot from "../assets/images/bird_on_foot.jpg";
 import { MusicNoteIcon } from "@heroicons/react/solid";
 import StyledLink from "../components/StyledLink";
 
+// ===== ADD YOUR THEMES HERE =====
+export const themes = ["default"];
+// ================================
+
 export const pages = [
   { to: "/home", title: "Home" },
   { to: "/about-me", title: "About Me" },
-  { to: "/blog", title: "Blog" },
+  // { to: "/blog", title: "Blog" }, //  TODO: add in once ready
 ];
 
 export const aboutMeTabs = [

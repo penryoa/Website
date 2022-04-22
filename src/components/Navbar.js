@@ -4,6 +4,7 @@ import { SparklesIcon, XIcon } from "@heroicons/react/outline";
 import { Link } from "react-router-dom";
 import Flowers_Vert from "../assets/images/navbar_img.png";
 import { pages } from "../util/constants";
+import { DarkModeToggle, ThemeSelector } from "./ThemeHandlers";
 
 export default function Navbar({ open, onClose }) {
   return (
@@ -92,6 +93,11 @@ export default function Navbar({ open, onClose }) {
                       {page.title}
                     </Link>
                   ))}
+
+                  <div className="flex flex-wrap gap-2 my-3 justify-evenly">
+                    <ThemeSelector />
+                    <DarkModeToggle />
+                  </div>
 
                   <span className="block">
                     <img

@@ -1,6 +1,10 @@
 @import "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css";
 @import url("https://fonts.googleapis.com/css2?family=Crete+Round:ital@0;1&family=Fugaz+One&display=swap");
+
+/* IMPORT THEME CSS FILES HERE */
 @import "./themes/default.css";
+/* --------------------------- */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
