@@ -20,7 +20,7 @@ import {
 import { ColorSwatchIcon, NewspaperIcon } from "@heroicons/react/outline";
 
 // ===== ADD YOUR THEMES HERE =====
-export const themes = ["default", "pickle", "pride", "rose"];
+export const themes = ["default", "pickle", "pride", "riften", "rose"];
 // ================================
 
 export const pages = [
