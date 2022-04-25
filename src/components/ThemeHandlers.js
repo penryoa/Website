@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Switch } from "@headlessui/react";
-import { themes } from "../util/constants";
 import { MoonIcon } from "@heroicons/react/outline";
+import { themes } from "../util/constants";
+import { getThemeCookie, setThemeCookie } from "../util/cookies";
 
 export function ThemeSelector() {
   return (
@@ -9,14 +10,13 @@ export function ThemeSelector() {
       <label>Theme</label>
       <select
         className="flex-grow py-1 font-sans rounded-md bg-gradient-to-r dark:from-tAccent3-600 dark:to-tAccent3-700 from-tAccent3-400 to-tAccent3-300 focus:outline-none"
-        defaultValue={document
-          .getElementById("mainHTML")
-          .getAttribute("data-theme")}
-        onChange={(e) =>
+        defaultValue={getThemeCookie().themeName}
+        onChange={(e) => {
+          setThemeCookie({ ...getThemeCookie(), themeName: e.target.value });
           document
             .getElementById("mainHTML")
-            .setAttribute("data-theme", e.target.value)
-        }
+            .setAttribute("data-theme", e.target.value);
+        }}
       >
         {themes.map((theme, idx) => (
           <option
@@ -32,10 +32,11 @@ export function ThemeSelector() {
 }
 
 export function DarkModeToggle() {
-  const classAttr = document.getElementById("mainHTML").getAttribute("class");
-  const [enabled, setEnabled] = useState(classAttr && classAttr === "dark");
+  const [enabled, setEnabled] = useState(getThemeCookie().darkMode);
 
   useEffect(() => {
+    console.log("enabled is now", enabled);
+    setThemeCookie({ ...getThemeCookie(), darkMode: enabled });
     document
       .getElementById("mainHTML")
       .setAttribute("class", enabled ? "dark" : "");
