@@ -1,6 +1,5 @@
 # How to Make Your Own Theme!
 
-
 ## Decide on Colors and a Name
 
 All you need for making a new theme is one base color and four accent colors. These are extrapolated into:
@@ -79,7 +78,7 @@ What I do to best create a theme for now (will eventually be automated):
 
 Todo:
 
-- Allow fonts and icons to change with themes
+- Allow icons to change with themes
 - Automate steps 1-3 as listed above from a config file with just the theme name and 5 main colors
 - Finalize a theme generator
 
@@ -88,3 +87,6 @@ Done:
 - Allow light/dark theme to be toggled
 - Allow different themes to be selected
 - Generate the dark and light themes from one set of colors
+- Save theme preferences via cookies
+- Provide ~5 themes
+- Allow fonts to change with themes

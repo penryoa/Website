@@ -20,13 +20,14 @@ import { getThemeCookie } from "./util/cookies";
 const App = () => {
   const [open, setOpen] = useState(false);
   useEffect(() => {
-    console.log("new cookie", document.cookie);
+    const themeCookie = getThemeCookie();
+    console.log("initially getting cookie", themeCookie);
     document
       .getElementById("mainHTML")
-      .setAttribute("data-theme", getThemeCookie().themeName);
+      .setAttribute("data-theme", themeCookie.themeName);
     document
       .getElementById("mainHTML")
-      .setAttribute("class", getThemeCookie().darkMode ? "dark" : "");
+      .setAttribute("class", themeCookie.darkMode);
   }, []);
   const BodyLayout = () => {
     return (

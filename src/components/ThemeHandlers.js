@@ -32,14 +32,17 @@ export function ThemeSelector() {
 }
 
 export function DarkModeToggle() {
-  const [enabled, setEnabled] = useState(getThemeCookie().darkMode);
+  const [enabled, setEnabled] = useState(getThemeCookie().darkMode === "dark");
 
   useEffect(() => {
     console.log("enabled is now", enabled);
-    setThemeCookie({ ...getThemeCookie(), darkMode: enabled });
+    setThemeCookie({
+      ...getThemeCookie(),
+      darkMode: enabled ? "dark" : "light",
+    });
     document
       .getElementById("mainHTML")
-      .setAttribute("class", enabled ? "dark" : "");
+      .setAttribute("class", enabled ? "dark" : "light");
   }, [enabled]);
 
   return (

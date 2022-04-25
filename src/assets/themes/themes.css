@@ -161,6 +161,8 @@
     --tAccent4-pop: 235 99 78;
   }
   [data-theme="riften"] {
+    --tFontBody: "Futura Condensed PT";
+    --tFontHeading: "Viner Hand ITC";
     --tBase-50: 216 223 233;
     --tBase-100: 220 226 232;
     --tBase-200: 186 196 210;

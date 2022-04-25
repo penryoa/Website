@@ -1,17 +1,16 @@
 export function setThemeCookie({ themeName, darkMode }) {
   document.cookie = `themeName=${themeName}`;
-  document.cookie = `darkMode=${darkMode === "true"}`;
+  document.cookie = `darkMode=${darkMode}`;
   console.log(
     "given name and mode creates cookie",
     themeName,
     darkMode,
-    darkMode === "true" ? "dark mode str = true" : "dark mode str != true",
     document.cookie
   );
 }
 
 export function getThemeCookie() {
-  const myTheme = { themeName: "default", darkMode: true };
+  const myTheme = { themeName: "default", darkMode: "dark" };
   let decodedCookie = decodeURIComponent(document.cookie);
   let ca = decodedCookie.split(";");
   console.log("cookie:", document.cookie, "decoded:", decodedCookie);
