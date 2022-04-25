@@ -1,0 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Crete+Round:ital@0;1&family=Fugaz+One&display=swap");
+
+@font-face {
+  font-family: "Futura Condensed PT";
+  src: url("./fonts/futura/FuturaCondensedPT-Medium.woff2") format("woff2"),
+    url("./fonts/futura/FuturaCondensedPT-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+  size-adjust: 130%;
+}
+
+@font-face {
+  font-family: "Viner Hand ITC";
+  src: url("./fonts/viner/VinerHandITC.woff2") format("woff2"),
+    url("./fonts/viner/VinerHandITC.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}

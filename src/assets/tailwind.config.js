@@ -48,8 +48,8 @@ module.exports = {
         ...getColors(),
       },
       fontFamily: {
-        heading: ["Fugaz One", "cursive"],
-        sans: ["Crete Round", "cursive"],
+        heading: ["var(--tFontHeading)", "var(--tFontHeadingType)"],
+        sans: ["var(--tFontBody)", "var(--tFontBodyType)"],
       },
     },
   },

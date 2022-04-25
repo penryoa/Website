@@ -1,5 +1,5 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
-@import url("https://fonts.googleapis.com/css2?family=Crete+Round:ital@0;1&family=Fugaz+One&display=swap");
+@import url("./fonts.css");
 @import url("./themes/themes.css");
 
 @tailwind base;
@@ -28,5 +28,14 @@
   }
   ::-moz-selection {
     @apply bg-tBase-700 text-tBase-300 dark:bg-tBase-300 dark:text-tBase-700;
+  }
+}
+
+@layer utilities {
+  html {
+    --tFontBody: "Crete Round";
+    --tFontBodyType: "sans";
+    --tFontHeading: "Fugaz One";
+    --tFontHeadingType: "sans";
   }
 }

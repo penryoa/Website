@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Outlet,
   Route,
@@ -15,18 +15,33 @@ import SkullIcon from "./assets/SkullIcon";
 import { HandIcon } from "@heroicons/react/outline";
 import TabsBanner from "./components/TabsBanner";
 import { aboutMeTabs, pDefault } from "./util/constants";
+import { getThemeCookie } from "./util/cookies";
 
 const App = () => {
   const [open, setOpen] = useState(false);
-  const BodyLayout = () => (
-    <div className="max-w-7xl mx-auto px-1 md:px-4 slashed-zero stacked-fractions">
-      <button className="fixed top-4 left-4 z-40" onClick={() => setOpen(true)}>
-        <SkullIcon />
-      </button>
-      <Outlet />
-    </div>
-  );
-
+  useEffect(() => {
+    const themeCookie = getThemeCookie();
+    console.log("initially getting cookie", themeCookie);
+    document
+      .getElementById("mainHTML")
+      .setAttribute("data-theme", themeCookie.themeName);
+    document
+      .getElementById("mainHTML")
+      .setAttribute("class", themeCookie.darkMode);
+  }, []);
+  const BodyLayout = () => {
+    return (
+      <div className="max-w-7xl mx-auto px-1 md:px-4 slashed-zero stacked-fractions">
+        <button
+          className="fixed top-4 left-4 z-40"
+          onClick={() => setOpen(true)}
+        >
+          <SkullIcon />
+        </button>
+        <Outlet />
+      </div>
+    );
+  };
   const AboutMeLayout = () => (
     <>
       <h1 className="flex items-center justify-center">
