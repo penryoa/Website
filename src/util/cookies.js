@@ -1,6 +1,6 @@
 export function setThemeCookie({ themeName, darkMode }) {
-  document.cookie = `themeName=${themeName}`;
-  document.cookie = `darkMode=${darkMode}`;
+  document.cookie = `themeName=${themeName}; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/`;
+  document.cookie = `darkMode=${darkMode}; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/`;
   console.log(
     "given name and mode creates cookie",
     themeName,

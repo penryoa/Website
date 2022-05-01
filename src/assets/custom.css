@@ -29,6 +29,9 @@
   ::-moz-selection {
     @apply bg-tBase-700 text-tBase-300 dark:bg-tBase-300 dark:text-tBase-700;
   }
+  select {
+    -webkit-appearance: menulist;
+  }
 }
 
 @layer utilities {
