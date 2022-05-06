@@ -32,7 +32,7 @@ const App = () => {
   }, []);
   const BodyLayout = () => {
     return (
-      <div className="max-w-7xl mx-auto px-1 md:px-4">
+      <div className="max-w-7xl mx-auto px-1 md:px-4 slashed-zero stacked-fractions">
         <button
           className="fixed top-4 left-4 z-40"
           onClick={() => setOpen(true)}

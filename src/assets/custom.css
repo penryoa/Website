@@ -42,3 +42,12 @@
     --tFontHeadingType: "sans";
   }
 }
+
+@layer utilities {
+  html {
+    --tFontBody: "Crete Round";
+    --tFontBodyType: "sans";
+    --tFontHeading: "Fugaz One";
+    --tFontHeadingType: "sans";
+  }
+}
