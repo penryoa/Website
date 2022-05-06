@@ -9,7 +9,7 @@ export function ThemeSelector() {
     <div className="flex gap-2 items-baseline w-1/2">
       <label>Theme</label>
       <select
-        className="flex-grow py-1 font-sans rounded-md bg-gradient-to-r dark:from-tAccent3-600 dark:to-tAccent3-700 from-tAccent3-400 to-tAccent3-300 focus:outline-none"
+        className="flex-grow py-1 font-sans rounded-md bg-gradient-to-r from-tAccent3-300 to-tAccent3-200 dark:from-tAccent3-600 dark:to-tAccent3-700 focus:outline-none"
         defaultValue={getThemeCookie().themeName}
         onChange={(e) => {
           setThemeCookie({ ...getThemeCookie(), themeName: e.target.value });
@@ -35,7 +35,6 @@ export function DarkModeToggle() {
   const [enabled, setEnabled] = useState(getThemeCookie().darkMode === "dark");
 
   useEffect(() => {
-    console.log("enabled is now", enabled);
     setThemeCookie({
       ...getThemeCookie(),
       darkMode: enabled ? "dark" : "light",
@@ -53,7 +52,7 @@ export function DarkModeToggle() {
           checked={enabled}
           onChange={setEnabled}
           className={`${
-            enabled ? "bg-tAccent1-500" : "bg-tAccent1-100"
+            enabled ? "bg-tAccent1-600" : "bg-tAccent1-200"
           } relative inline-flex items-center h-6 rounded-full w-11 transition-colors focus:outline-none`}
         >
           <span

@@ -1,19 +1,12 @@
 export function setThemeCookie({ themeName, darkMode }) {
-  document.cookie = `themeName=${themeName}`;
-  document.cookie = `darkMode=${darkMode}`;
-  console.log(
-    "given name and mode creates cookie",
-    themeName,
-    darkMode,
-    document.cookie
-  );
+  document.cookie = `themeName=${themeName}; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/`;
+  document.cookie = `darkMode=${darkMode}; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/`;
 }
 
 export function getThemeCookie() {
-  const myTheme = { themeName: "default", darkMode: "dark" };
+  const myTheme = { themeName: "hydrangeas", darkMode: "dark" };
   let decodedCookie = decodeURIComponent(document.cookie);
   let ca = decodedCookie.split(";");
-  console.log("cookie:", document.cookie, "decoded:", decodedCookie);
   for (let i = 0; i < ca.length; i++) {
     let c = ca[i];
     while (c.charAt(0) === " ") {
@@ -26,6 +19,5 @@ export function getThemeCookie() {
       myTheme.darkMode = c.substring("darkMode=".length, c.length);
     }
   }
-  console.log("returning", myTheme);
   return myTheme;
 }

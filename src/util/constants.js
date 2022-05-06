@@ -20,7 +20,7 @@ import {
 import { ColorSwatchIcon, NewspaperIcon } from "@heroicons/react/outline";
 
 // ===== ADD YOUR THEMES HERE =====
-export const themes = ["default", "pickle", "pride", "riften", "rose"];
+export const themes = ["hydrangeas", "pickle", "pride", "riften", "rose"];
 // ================================
 
 export const pages = [
@@ -76,7 +76,7 @@ export const aboutMeTiles = [
         diagnosis after nearly a year of researching. Turns out it was also ADHD
         and anxiety (as one may surmise).
         <br />
-        I'm very passionate about ASD acceptance. If I had known what to look
+        I'm very passionate about autism acceptance. If I had known what to look
         for at a younger age, it would have saved me SO much turmoil.
       </p>
     ),
@@ -123,7 +123,7 @@ export const aboutMeTiles = [
     color: "bg-tAccent2-300/80 dark:bg-tAccent2-700/80",
     content: (
       <p>
-        Roxas, my bike, is a 2007 Honda Shadow. I've had him for four years anf
+        Roxas, my bike, is a 2007 Honda Shadow. I've had him for four years and
         have taken plenty of day trips as well as a handful of longer ones.
         <br />
         Once, I had to take my dad on the back of my bike in the pouring rain at

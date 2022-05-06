@@ -2,7 +2,7 @@ import React, { Fragment } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { SparklesIcon, XIcon } from "@heroicons/react/outline";
 import { Link } from "react-router-dom";
-import Flowers_Vert from "../assets/images/navbar_img.png";
+import FlowersVertical from "../assets/svgs/FlowersVertical";
 import { pages } from "../util/constants";
 import { DarkModeToggle, ThemeSelector } from "./ThemeHandlers";
 
@@ -86,26 +86,19 @@ export default function Navbar({ open, onClose }) {
                   {pages.map((page, idx) => (
                     <Link
                       key={`navBarItem.${idx}`}
-                      className="block m-2 p-2 h-8 transition-all bg-gradient-to-r from-tBase-300 dark:from-tBase-700 to-tBase-100 dark:to-tBase-900 overflow-hidden whitespace-nowrap visited:text-inherit hover:text-tAccent3-800 dark:hover:text-tAccent3-200 active:text-tAccent3-pop"
+                      className="block m-2 p-2 h-8 rounded-tl-md rounded-bl-md transition-all bg-gradient-to-r from-tBase-300 dark:from-tBase-700 to-transparent overflow-hidden whitespace-nowrap visited:text-inherit hover:text-tAccent3-800 dark:hover:text-tAccent3-200 active:text-tAccent3-pop"
                       to={page.to}
                       onClick={onClose}
                     >
                       {page.title}
                     </Link>
                   ))}
-
                   <div className="flex flex-wrap gap-2 my-3 justify-evenly">
                     <ThemeSelector />
                     <DarkModeToggle />
                   </div>
-
                   <span className="block">
-                    <img
-                      src={Flowers_Vert}
-                      alt="vertical flowers"
-                      width="100%"
-                      className="invert dark:invert-0"
-                    />
+                    <FlowersVertical />
                   </span>
                 </div>
               </div>

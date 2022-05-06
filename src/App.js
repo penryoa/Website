@@ -11,11 +11,12 @@ import Work from "./pages/AboutMe/Work";
 import Hobbies from "./pages/AboutMe/Hobbies";
 import Images from "./pages/AboutMe/Images";
 import Navbar from "./components/Navbar";
-import SkullIcon from "./assets/SkullIcon";
+import SkullIcon from "./assets/svgs/SkullIcon";
 import { HandIcon } from "@heroicons/react/outline";
 import TabsBanner from "./components/TabsBanner";
 import { aboutMeTabs, pDefault } from "./util/constants";
 import { getThemeCookie } from "./util/cookies";
+import { ArrowUpIcon } from "@heroicons/react/solid";
 
 const App = () => {
   const [open, setOpen] = useState(false);
@@ -39,6 +40,20 @@ const App = () => {
           <SkullIcon />
         </button>
         <Outlet />
+        <button
+          className={`fixed bottom-4 [left:50%] z-40 bg-tAccent1-500/40 group hover:bg-tAccent1-700/40 dark:hover:bg-tAccent1-300/40 rounded-full ${
+            document.body.scrollTop > 40 ||
+            document.documentElement.scrollTop > 40
+              ? "block"
+              : "none"
+          }`}
+          onClick={() => {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+          }}
+        >
+          <ArrowUpIcon className="h-8 w-8 text-tAccent3-500 group-hover:text-tAccent3-pop p-1" />
+        </button>
       </div>
     );
   };

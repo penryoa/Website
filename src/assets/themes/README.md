@@ -51,7 +51,7 @@ In `src/util/constants.js`, you should see a section looking like this:
 
 ```js
 // ===== ADD YOUR THEMES HERE =====
-export const themes = ["default", ...];
+export const themes = ["hydrangeas", ...];
 // ================================
 ```
 
@@ -79,8 +79,7 @@ What I do to best create a theme for now (will eventually be automated):
 Todo:
 
 - Allow icons to change with themes
-- Automate steps 1-3 as listed above from a config file with just the theme name and 5 main colors
-- Finalize a theme generator
+- Finalize a theme generator (automate steps 1-3 as listed above from a config file with just the theme name and 5 main colors)
 
 Done:
 

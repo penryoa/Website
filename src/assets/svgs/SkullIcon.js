@@ -1,5 +1,5 @@
 import React from "react";
-import { getTailwindClass } from "../util/tailwindClassHandler";
+import { getTailwindClass } from "../../util/tailwindClassHandler";
 
 export default function SkullIcon({ size = "w-12 h-12" }) {
   return (

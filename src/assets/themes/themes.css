@@ -1,7 +1,8 @@
 @tailwind base;
 
 @layer base {
-  [data-theme="default"] {
+  [data-theme="default"],
+  [data-theme="hydrangeas"] {
     --tBase-50: 235 232 250;
     --tBase-100: 226 231 243;
     --tBase-200: 184 194 224;
