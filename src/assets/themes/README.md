@@ -51,7 +51,7 @@ In `src/util/constants.js`, you should see a section looking like this:
 
 ```js
 // ===== ADD YOUR THEMES HERE =====
-export const themes = ["default", ...];
+export const themes = ["hydrangeas", ...];
 // ================================
 ```
 

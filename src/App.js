@@ -11,7 +11,7 @@ import Work from "./pages/AboutMe/Work";
 import Hobbies from "./pages/AboutMe/Hobbies";
 import Images from "./pages/AboutMe/Images";
 import Navbar from "./components/Navbar";
-import SkullIcon from "./assets/SkullIcon";
+import SkullIcon from "./assets/svgs/SkullIcon";
 import { HandIcon } from "@heroicons/react/outline";
 import TabsBanner from "./components/TabsBanner";
 import { aboutMeTabs, pDefault } from "./util/constants";
