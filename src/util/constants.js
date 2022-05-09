@@ -1,28 +1,28 @@
 import React from "react";
-import Img_Skull from "../assets/images/skull_transparent_bg.png";
-import Img_Me from "../assets/images/mother_of_dragon.jpg";
-import Img_Art_Sun from "../assets/images/art_sun-n-moon.jpg";
-import Img_Dragon from "../assets/images/creepy_dragon.JPEG";
-import Img_Art_Hand from "../assets/images/art_hand.jpg";
-import Img_Cloudy from "../assets/images/cloudy_nyc.jpg";
-import Img_Mushrooms from "../assets/images/mushrooms.jpg";
-import Img_Roxas from "../assets/images/RoxasAndMeBeech.JPG";
-import Img_Bridges from "../assets/images/bridges_nyc.jpg";
-import Img_South_Cove from "../assets/images/south_cove.jpg";
-import Img_Mykie_Box from "../assets/images/mykie_box.jpg";
-import Img_Bird_Bryant from "../assets/images/bird_in_bryant.jpg";
-import Img_Bird_Foot from "../assets/images/bird_on_foot.jpg";
+import { ColorSwatchIcon, NewspaperIcon } from "@heroicons/react/outline";
 import {
   DocumentTextIcon,
   MusicNoteIcon,
   TerminalIcon,
 } from "@heroicons/react/solid";
-import { ColorSwatchIcon, NewspaperIcon } from "@heroicons/react/outline";
+import Img_Art_Hand from "../assets/images/art_hand.jpg";
+import Img_Art_Sun from "../assets/images/art_sun-n-moon.jpg";
+import Img_Bird_Bryant from "../assets/images/bird_in_bryant.jpg";
+import Img_Bird_Foot from "../assets/images/bird_on_foot.jpg";
+import Img_Bridges from "../assets/images/bridges_nyc.jpg";
+import Img_Cloudy from "../assets/images/cloudy_nyc.jpg";
+import Img_Dragon from "../assets/images/creepy_dragon.JPEG";
+import Img_Me from "../assets/images/mother_of_dragon.jpg";
+import Img_Mushrooms from "../assets/images/mushrooms.jpg";
+import Img_Mykie_Box from "../assets/images/mykie_box.jpg";
+import Img_Roxas from "../assets/images/RoxasAndMeBeech.JPG";
+import Img_Skull from "../assets/images/skull_transparent_bg.png";
+import Img_South_Cove from "../assets/images/south_cove.jpg";
 
-// ===== ADD YOUR THEMES HERE =====
+// ===== THEMES =====
 export const themes = ["hydrangeas", "pickle", "pride", "riften", "rose"];
-// ================================
 
+// ===== NAVIGATION =====
 export const pages = [
   { to: "/home", title: "Home" },
   { to: "/about-me", title: "About Me" },
@@ -34,9 +34,25 @@ export const aboutMeTabs = [
   { to: "images", title: "Image Gallery" },
 ];
 
+// ===== STYLING =====
 export const pDefault =
   "text-justify p-5 bg-tBase-300 dark:bg-tBase-700 rounded-tr-xl rounded-bl-xl";
 
+// ===== TAGS =====
+export const tagMusic = 1;
+export const tagLanguage = 2;
+export const tagCoding = 3;
+export const tagTravel = 4;
+export const tagBrain = 5;
+export const tagStory = 6;
+export const tagAnimal = 7;
+export const tagRecipe = 8;
+export const tagProductivity = 9;
+export const tagJapan = 10;
+export const tagBook = 11;
+export const tagOpinion = 12;
+
+// ===== INFO BLOCKS ======
 export const aboutMeTiles = [
   {
     color: "bg-tAccent2-300/80 dark:bg-tAccent2-700/80",

@@ -9,7 +9,7 @@
 @layer base {
   body,
   html {
-    @apply m-0 py-4 text-base text-tBase-950 dark:text-tBase-50 font-sans;
+    @apply m-0 text-base text-tBase-950 dark:text-tBase-50 font-sans;
   }
   body {
     @apply h-full bg-gradient-to-br from-tBase-200 via-tBase-100 to-tBase-200 dark:from-tBase-800 dark:via-tBase-900 dark:to-tBase-800;

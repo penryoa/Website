@@ -1,35 +1,49 @@
 import React, { useEffect, useState } from "react";
+import Select from "react-select";
 import {
   Outlet,
   Route,
   BrowserRouter,
   Routes,
   Navigate,
+  useParams,
 } from "react-router-dom";
-import Home from "./pages/Home";
-import Work from "./pages/AboutMe/Work";
+import { AnnotationIcon, HandIcon } from "@heroicons/react/outline";
+import { ArrowUpIcon, SearchCircleIcon } from "@heroicons/react/solid";
+import SkullIcon from "./assets/svgs/SkullIcon";
 import Hobbies from "./pages/AboutMe/Hobbies";
 import Images from "./pages/AboutMe/Images";
+import Work from "./pages/AboutMe/Work";
+import BlogHome from "./pages/Blog/Home";
+import Article from "./pages/Blog/Article";
+import Home from "./pages/Home";
 import Navbar from "./components/Navbar";
-import SkullIcon from "./assets/svgs/SkullIcon";
-import { HandIcon } from "@heroicons/react/outline";
 import TabsBanner from "./components/TabsBanner";
-import { aboutMeTabs, pDefault } from "./util/constants";
+import { aboutMeTabs, pDefault, tagAnimal, tagMusic } from "./util/constants";
 import { getThemeCookie } from "./util/cookies";
-import { ArrowUpIcon } from "@heroicons/react/solid";
 
 const App = () => {
   const [open, setOpen] = useState(false);
+  // const [scrollPosition, setScrollPosition] = useState(0);
+  // const handleScroll = () => {
+  //   const position = window.pageYOffset;
+  //   setScrollPosition(position);
+  // };
+
   useEffect(() => {
     const themeCookie = getThemeCookie();
-    console.log("initially getting cookie", themeCookie);
     document
       .getElementById("mainHTML")
       .setAttribute("data-theme", themeCookie.themeName);
     document
       .getElementById("mainHTML")
       .setAttribute("class", themeCookie.darkMode);
+    // window.addEventListener("scroll", handleScroll, { passive: true });
+    // return () => {
+    //   window.removeEventListener("scroll", handleScroll);
+    // };
   }, []);
+
   const BodyLayout = () => {
     return (
       <div className="max-w-7xl mx-auto px-1 md:px-4">
@@ -57,6 +71,7 @@ const App = () => {
       </div>
     );
   };
+
   const AboutMeLayout = () => (
     <>
       <h1 className="flex items-center justify-center">
@@ -75,6 +90,37 @@ const App = () => {
     </>
   );
 
+  const BlogLayout = () => {
+    return (
+      <>
+        <div className="flex justify-center md:-mx-2">
+          <div className="bg-tBase-950 dark:bg-tBase-200 text-tBase-50 dark:text-tBase-950 w-full flex items-center justify-end sm:justify-between rounded-3xl my-2 py-3 px-6 sm:px-20 lg:[width:50em] xl:[width:70em]">
+            <p className="text-xl hidden sm:flex font-heading items-center gap-2">
+              <AnnotationIcon className="h-7 w-7 text-tAccent1-300 dark:text-tAccent1-700" />
+              the calmplex corner
+            </p>
+            <div className="flex items-center gap-2">
+              <SearchCircleIcon className="h-5 w-5" />
+              <Select
+                className="w-40 md:w-60 text-tBase-950 dark:text-tBase-50 "
+                options={[
+                  { value: tagMusic, label: "Music" },
+                  { value: tagAnimal, label: "Animal" },
+                ]}
+              />
+            </div>
+          </div>
+        </div>
+        <Outlet className=" top-20" />
+      </>
+    );
+  };
+
+  const BlogArticle = () => {
+    let { articleId } = useParams();
+    return <Article aId={articleId} />;
+  };
+
   return (
     <BrowserRouter>
       <Navbar open={open} onClose={() => setOpen(false)} />
@@ -87,7 +133,10 @@ const App = () => {
             <Route path="work" element={<Work />} />
             <Route path="images" element={<Images />} />
           </Route>
-          <Route path="blog" element={<h1 className="h-screen">To Do!</h1>} />
+          <Route path="blog" element={<BlogLayout />}>
+            <Route index element={<BlogHome />} />
+            <Route path=":articleId" element={<BlogArticle />} />
+          </Route>
         </Route>
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
