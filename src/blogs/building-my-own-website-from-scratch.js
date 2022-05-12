@@ -3,19 +3,19 @@ import React from "react";
 // TODO: move to db
 export const articleMetadata = {
   tags: [3, 6],
-  title: "Building My Own Website From Nothing",
-  url: "building-my-own-website-from-nothing",
+  title: "Building My Own Website From Scratch",
+  url: "building-my-own-website-from-scratch",
   titleImageClassName: "bg-[url('/public/images/computer.jpg')]",
   writtenBy: "Addi Penry",
-  writtenAt: "2022-05-21",
+  writtenAt: "2022-05-11",
   content: (
     <div className="blog">
       <p>
         In spring of 2020, people were more eager to pay up for toilet paper
         than a freshly graduated computer science student like myself looking
         for a job. Despite applying to different companies as often as I could,
-        I wasn't hearing back from anyone (or those that did get back to me
-        explained how The Times™ prevented them from taking anyone new).
+        I wasn't hearing back from anyone (or those who responded explained how
+        The Times™ prevented them from taking anyone new).
       </p>
       <p>
         I took an odd route in college and in the job searching process, to be
@@ -28,9 +28,10 @@ export const articleMetadata = {
           forcing my way through the rigorous learning and socializing that
           would be required of an internship.{" "}
         </b>
-        After all, I attended an insanely-priced private education - one that
-        will leave me in debt for many years to come. Wasn't this enough proof
-        that I can handle whatever is thrown at me?
+        After all, I attended an insanely-challenging and insanely-priced
+        private education - one that will leave me in debt for many years to
+        come. Wasn't this enough proof that I can handle whatever is thrown at
+        me?
       </p>
       <p>
         Knowing that my resume would <i>appear</i> lacking, I decided that the

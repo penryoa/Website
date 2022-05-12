@@ -53,13 +53,39 @@ export const tagJapan = 10;
 export const tagBook = 11;
 export const tagOpinion = 12;
 export const tagData = {
+  [tagMusic]: {
+    colorText:
+      "text-tAccent3-300 dark:text-tAccent3-700 hover:text-tAccent3-pop",
+    colorBg: "bg-tAccent3-700 dark:bg-tAccent3-300",
+    label: "Music",
+  },
+  [tagLanguage]: {
+    colorText:
+      "text-tAccent4-300 dark:text-tAccent4-700 hover:text-tAccent4-pop",
+    colorBg: "bg-tAccent4-700 dark:bg-tAccent4-300",
+    label: "Language",
+  },
   [tagCoding]: {
-    colorText: "text-tAccent1-700 dark:text-tAccent1-300",
+    colorText:
+      "text-tAccent1-700 dark:text-tAccent1-300 hover:text-tAccent1-pop",
     colorBg: "bg-tAccent1-300 dark:bg-tAccent1-700",
     label: "Coding/Tech",
   },
+  [tagTravel]: {
+    colorText:
+      "text-tAccent2-700 dark:text-tAccent2-300 hover:text-tAccent2-pop",
+    colorBg: "bg-tAccent1-300 dark:bg-tAccent1-700",
+    label: "Travel",
+  },
+  [tagBrain]: {
+    colorText:
+      "text-tAccent1-300 dark:text-tAccent1-700 hover:text-tAccent1-pop",
+    colorBg: "bg-tAccent4-700 dark:bg-tAccent4-300",
+    label: "Brain",
+  },
   [tagStory]: {
-    colorText: "text-tAccent2-300 dark:text-tAccent2-700",
+    colorText:
+      "text-tAccent2-300 dark:text-tAccent2-700 hover:text-tAccent2-pop",
     colorBg: "bg-tAccent2-700 dark:bg-tAccent2-300",
     label: "Story",
   },

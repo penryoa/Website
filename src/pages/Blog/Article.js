@@ -2,17 +2,17 @@ import React, { useEffect } from "react";
 import _ from "lodash";
 import { useDispatch, useSelector } from "react-redux";
 import { getArticleAction } from "../../redux/article.actions";
-import { EmojiSadIcon } from "@heroicons/react/outline";
+import { EmojiSadIcon, LinkIcon } from "@heroicons/react/outline";
 import { bDefault, tagData } from "../../util/constants";
 
 export default function Article({ articleUrl }) {
   const { article, loading, error } = useSelector((state) => state.article);
   const dispatch = useDispatch();
   useEffect(() => {
-    if (!article && !loading && !error) {
+    if ((!article || article.url !== articleUrl) && !loading && !error) {
       dispatch(getArticleAction(articleUrl));
     }
-  }, []);
+  }, [article]);
 
   return (
     <>
@@ -40,7 +40,19 @@ export default function Article({ articleUrl }) {
                 : ""
             }
           >
-            <h1 className="bg-tAccent1-900 dark:bg-tAccent1-200">
+            <h1
+              className="bg-tAccent1-900 dark:bg-tAccent1-200 flex gap-2 items-baseline justify-center group select-none focus:text-tAccent1-pop"
+              onClick={() => {
+                navigator.clipboard.writeText(
+                  "http://www.thecalmplexcoder.com/blog/" +
+                    _.get(article, "url")
+                );
+              }}
+            >
+              <span className="translate-x-12 -translate-y-9 px-1 text-tBase-50 bg-tBase-950 text-base invisible group-active:visible transition duration-300">
+                Copied!
+              </span>
+              <LinkIcon className="invisible group-hover:visible h-6 w-6" />
               {_.get(article, "title")}
             </h1>
           </div>
@@ -50,17 +62,18 @@ export default function Article({ articleUrl }) {
                 <p>Written by</p>
                 <p className="text-tAccent2-700 dark:text-tAccent2-300">
                   {_.get(article, "writtenBy")}
-                </p>{" "}
+                </p>
                 <p>On</p>
                 <p className="text-tAccent2-700 dark:text-tAccent2-300">
                   {_.get(article, "writtenAt")}
                 </p>
               </div>
-              <div className="flex items-center">
-                Tags:{" "}
+              <div className="flex items-center gap-2">
+                Tags:
                 {_.get(article, "tags", []).map((tag) => (
                   <div
-                    className={`px-2 py-1 m-1 ${bDefault} ${_.get(
+                    key={"tag-" + tag}
+                    className={`px-2 py-1 m-1 select-none ${bDefault} ${_.get(
                       tagData,
                       `${tag}.colorText`,
                       ""
