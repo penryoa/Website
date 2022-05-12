@@ -26,6 +26,7 @@ export const themes = ["hydrangeas", "pickle", "pride", "riften", "rose"];
 export const pages = [
   { to: "/home", title: "Home" },
   { to: "/about-me", title: "About Me" },
+  { to: "/blog", title: "The Calmplex Corner Blog" },
 ];
 
 export const aboutMeTabs = [
@@ -35,8 +36,8 @@ export const aboutMeTabs = [
 ];
 
 // ===== STYLING =====
-export const pDefault =
-  "text-justify p-5 bg-tBase-300 dark:bg-tBase-700 rounded-tr-xl rounded-bl-xl";
+export const bDefault = " rounded-tr-xl rounded-bl-xl ";
+export const pDefault = `text-justify p-5 bg-tBase-300 dark:bg-tBase-700 rounded-tr-xl ${bDefault}`;
 
 // ===== TAGS =====
 export const tagMusic = 1;
@@ -51,6 +52,26 @@ export const tagProductivity = 9;
 export const tagJapan = 10;
 export const tagBook = 11;
 export const tagOpinion = 12;
+export const tagData = {
+  [tagCoding]: {
+    colorText: "text-tAccent1-700 dark:text-tAccent1-300",
+    colorBg: "bg-tAccent1-300 dark:bg-tAccent1-700",
+    label: "Coding/Tech",
+  },
+  [tagStory]: {
+    colorText: "text-tAccent2-300 dark:text-tAccent2-700",
+    colorBg: "bg-tAccent2-700 dark:bg-tAccent2-300",
+    label: "Story",
+  },
+};
+
+// ===== FUNCTIONS =====
+export const appendScript = (scriptToAppend) => {
+  const script = document.createElement("script");
+  script.src = scriptToAppend;
+  script.async = true;
+  document.body.appendChild(script);
+};
 
 // ===== INFO BLOCKS ======
 export const aboutMeTiles = [
@@ -192,16 +213,13 @@ export const aboutMeImages = [
   {
     altText: "my lil lady Mykie",
     descText:
-      "This is Mykie, aka Mykie Lady. \
-    Her hobbies include lounging outdoors or by windows. She only lets you know you're giving her \
-    too much attention when she is completely annoyed.",
+      "This is Mykie, aka Mykie Lady. Her hobbies include lounging outdoors or by windows. She only lets you know you're giving her too much attention when she is completely annoyed.",
     src: Img_Mykie_Box,
   },
   {
     altText: "my lil boyo Dragon",
     descText:
-      "This is Dragon, aka Mr. Dragon. \
-    He's a strange guy, sometimes even creepy. His biggest fear is starvation by an empty food bowl.",
+      "This is Dragon, aka Mr. Dragon. He's a strange guy, sometimes even creepy. His biggest fear is starvation by an empty food bowl.",
     src: Img_Dragon,
   },
   {
@@ -351,13 +369,13 @@ export const features = [
   {
     color: "bg-tAccent2-300/80 dark:bg-tAccent2-700/80",
     content: (
-      <p>
+      <div>
         I am already standing at around 100 pages in my current poetry book I am
         working on, which includes my own art and "photography".
-        <p className="text-tAccent2-800 dark:text-tAccent2-100">
+        <p className="text-tAccent2-800 dark:text-tAccent2-100 italic">
           (I am not a photographer)
         </p>
-      </p>
+      </div>
     ),
     title: (
       <span className="flex text-tAccent2-800 dark:text-tAccent2-200">

@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import Select from "react-select";
 import {
   Outlet,
   Route,
@@ -7,14 +6,16 @@ import {
   Routes,
   Navigate,
   useParams,
+  useNavigate,
 } from "react-router-dom";
+import Select from "react-select";
 import { AnnotationIcon, HandIcon } from "@heroicons/react/outline";
 import { ArrowUpIcon, SearchCircleIcon } from "@heroicons/react/solid";
 import SkullIcon from "./assets/svgs/SkullIcon";
 import Hobbies from "./pages/AboutMe/Hobbies";
 import Images from "./pages/AboutMe/Images";
 import Work from "./pages/AboutMe/Work";
-import BlogHome from "./pages/Blog/Home";
+import BlogHome from "./pages/Blog/BlogHome";
 import Article from "./pages/Blog/Article";
 import Home from "./pages/Home";
 import Navbar from "./components/Navbar";
@@ -24,11 +25,11 @@ import { getThemeCookie } from "./util/cookies";
 
 const App = () => {
   const [open, setOpen] = useState(false);
-  // const [scrollPosition, setScrollPosition] = useState(0);
-  // const handleScroll = () => {
-  //   const position = window.pageYOffset;
-  //   setScrollPosition(position);
-  // };
+  const [scrollPosition, setScrollPosition] = useState(0);
+  const handleScroll = () => {
+    const position = window.pageYOffset;
+    setScrollPosition(position);
+  };
 
   useEffect(() => {
     const themeCookie = getThemeCookie();
@@ -38,10 +39,10 @@ const App = () => {
     document
       .getElementById("mainHTML")
       .setAttribute("class", themeCookie.darkMode);
-    // window.addEventListener("scroll", handleScroll, { passive: true });
-    // return () => {
-    //   window.removeEventListener("scroll", handleScroll);
-    // };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   const BodyLayout = () => {
@@ -55,15 +56,14 @@ const App = () => {
         </button>
         <Outlet />
         <button
-          className={`fixed bottom-4 [left:50%] z-40 bg-tAccent1-500/40 group hover:bg-tAccent1-700/40 dark:hover:bg-tAccent1-300/40 rounded-full ${
-            document.body.scrollTop > 40 ||
-            document.documentElement.scrollTop > 40
-              ? "block"
-              : "none"
+          className={`fixed [left:50%] bottom-4 transition transform ease-in-out delay-200 duration-1000 z-40 bg-tAccent1-500/40 group hover:bg-tAccent1-700/40 dark:hover:bg-tAccent1-300/40 rounded-full ${
+            scrollPosition > 40 ? "translate-y-0" : "translate-y-12"
           }`}
           onClick={() => {
-            document.body.scrollTop = 0;
-            document.documentElement.scrollTop = 0;
+            window.scrollTo({
+              top: 0,
+              behavior: "smooth",
+            });
           }}
         >
           <ArrowUpIcon className="h-8 w-8 text-tAccent3-500 group-hover:text-tAccent3-pop p-1" />
@@ -91,18 +91,25 @@ const App = () => {
   );
 
   const BlogLayout = () => {
+    const navigate = useNavigate();
     return (
       <>
         <div className="flex justify-center md:-mx-2">
           <div className="bg-tBase-950 dark:bg-tBase-200 text-tBase-50 dark:text-tBase-950 w-full flex items-center justify-end sm:justify-between rounded-3xl my-2 py-3 px-6 sm:px-20 lg:[width:50em] xl:[width:70em]">
-            <p className="text-xl hidden sm:flex font-heading items-center gap-2">
-              <AnnotationIcon className="h-7 w-7 text-tAccent1-300 dark:text-tAccent1-700" />
-              the calmplex corner
-            </p>
+            <button
+              className="group hidden sm:flex items-center gap-2 select-none"
+              onClick={() => navigate("/blog")}
+            >
+              <AnnotationIcon className="h-7 w-7 text-tAccent1-300 dark:text-tAccent1-700 group-hover:text-tAccent1-500 dark:group-hover:text-tAccent1-900" />
+              <p className="text-xl font-heading group-hover:text-tBase-200 dark:group-hover:text-tBase-600">
+                the calmplex corner
+              </p>
+            </button>
             <div className="flex items-center gap-2">
-              <SearchCircleIcon className="h-5 w-5" />
+              <SearchCircleIcon className="h-6 w-6" />
               <Select
-                className="w-40 md:w-60 text-tBase-950 dark:text-tBase-50 "
+                placeholder="Search..."
+                className="w-40 md:w-60 text-tBase-950"
                 options={[
                   { value: tagMusic, label: "Music" },
                   { value: tagAnimal, label: "Animal" },
@@ -118,7 +125,7 @@ const App = () => {
 
   const BlogArticle = () => {
     let { articleId } = useParams();
-    return <Article aId={articleId} />;
+    return <Article articleUrl={articleId} />;
   };
 
   return (
