@@ -22,6 +22,7 @@ import Navbar from "./components/Navbar";
 import TabsBanner from "./components/TabsBanner";
 import { aboutMeTabs, pDefault, tagAnimal, tagMusic } from "./util/constants";
 import { getThemeCookie } from "./util/cookies";
+import { ArrowUpIcon } from "@heroicons/react/solid";
 
 const App = () => {
   const [open, setOpen] = useState(false);
