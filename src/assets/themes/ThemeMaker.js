@@ -19,8 +19,6 @@ function generatePalette(steps, color) {
       {}
     );
 
-  console.log(palette);
-
   return palette;
 }
 

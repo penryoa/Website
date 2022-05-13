@@ -9,7 +9,7 @@
 @layer base {
   body,
   html {
-    @apply m-0 py-4 text-base text-tBase-950 dark:text-tBase-50 font-sans;
+    @apply m-0 text-base text-tBase-950 dark:text-tBase-50 font-sans;
   }
   body {
     @apply h-full bg-gradient-to-br from-tBase-200 via-tBase-100 to-tBase-200 dark:from-tBase-800 dark:via-tBase-900 dark:to-tBase-800;
@@ -32,14 +32,17 @@
   select {
     -webkit-appearance: menulist;
   }
-}
-
-@layer utilities {
-  html {
-    --tFontBody: "Crete Round";
-    --tFontBodyType: "sans";
-    --tFontHeading: "Fugaz One";
-    --tFontHeadingType: "sans";
+  .loader {
+    @apply border-t-tBase-400 border-tBase-500 h-32 w-32 border-[16px] border-t-[16px] rounded-full;
+    animation: spin 2s linear infinite;
+  }
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
   }
 }
 
@@ -49,5 +52,21 @@
     --tFontBodyType: "sans";
     --tFontHeading: "Fugaz One";
     --tFontHeadingType: "sans";
+  }
+  .blog {
+    @apply pt-4 pb-10;
+  }
+  .blog p {
+    @apply mt-6;
+  }
+  @media screen(sm) {
+    .blog p {
+      @apply mt-8 text-lg;
+    }
+  }
+  @media screen(md) {
+    .blog p {
+      @apply mt-10;
+    }
   }
 }

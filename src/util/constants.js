@@ -1,31 +1,32 @@
 import React from "react";
-import Img_Skull from "../assets/images/skull_transparent_bg.png";
-import Img_Me from "../assets/images/mother_of_dragon.jpg";
-import Img_Art_Sun from "../assets/images/art_sun-n-moon.jpg";
-import Img_Dragon from "../assets/images/creepy_dragon.JPEG";
-import Img_Art_Hand from "../assets/images/art_hand.jpg";
-import Img_Cloudy from "../assets/images/cloudy_nyc.jpg";
-import Img_Mushrooms from "../assets/images/mushrooms.jpg";
-import Img_Roxas from "../assets/images/RoxasAndMeBeech.JPG";
-import Img_Bridges from "../assets/images/bridges_nyc.jpg";
-import Img_South_Cove from "../assets/images/south_cove.jpg";
-import Img_Mykie_Box from "../assets/images/mykie_box.jpg";
-import Img_Bird_Bryant from "../assets/images/bird_in_bryant.jpg";
-import Img_Bird_Foot from "../assets/images/bird_on_foot.jpg";
+import { ColorSwatchIcon, NewspaperIcon } from "@heroicons/react/outline";
 import {
   DocumentTextIcon,
   MusicNoteIcon,
   TerminalIcon,
 } from "@heroicons/react/solid";
-import { ColorSwatchIcon, NewspaperIcon } from "@heroicons/react/outline";
+import Img_Art_Hand from "../assets/images/art_hand.jpg";
+import Img_Art_Sun from "../assets/images/art_sun-n-moon.jpg";
+import Img_Bird_Bryant from "../assets/images/bird_in_bryant.jpg";
+import Img_Bird_Foot from "../assets/images/bird_on_foot.jpg";
+import Img_Bridges from "../assets/images/bridges_nyc.jpg";
+import Img_Cloudy from "../assets/images/cloudy_nyc.jpg";
+import Img_Dragon from "../assets/images/creepy_dragon.JPEG";
+import Img_Me from "../assets/images/mother_of_dragon.jpg";
+import Img_Mushrooms from "../assets/images/mushrooms.jpg";
+import Img_Mykie_Box from "../assets/images/mykie_box.jpg";
+import Img_Roxas from "../assets/images/RoxasAndMeBeech.JPG";
+import Img_Skull from "../assets/images/skull_transparent_bg.png";
+import Img_South_Cove from "../assets/images/south_cove.jpg";
 
-// ===== ADD YOUR THEMES HERE =====
+// ===== THEMES =====
 export const themes = ["hydrangeas", "pickle", "pride", "riften", "rose"];
-// ================================
 
+// ===== NAVIGATION =====
 export const pages = [
   { to: "/home", title: "Home" },
   { to: "/about-me", title: "About Me" },
+  { to: "/blog", title: "The Calmplex Corner Blog" },
 ];
 
 export const aboutMeTabs = [
@@ -34,9 +35,107 @@ export const aboutMeTabs = [
   { to: "images", title: "Image Gallery" },
 ];
 
-export const pDefault =
-  "text-justify p-5 bg-tBase-300 dark:bg-tBase-700 rounded-tr-xl rounded-bl-xl";
+// ===== STYLING =====
+export const bDefault = " rounded-tr-xl rounded-bl-xl ";
+export const pDefault = `text-justify p-5 bg-tBase-300 dark:bg-tBase-700 rounded-tr-xl ${bDefault}`;
 
+// ===== TAGS =====
+export const tagMusic = 1;
+export const tagLanguage = 2;
+export const tagCoding = 3;
+export const tagTravel = 4;
+export const tagBrain = 5;
+export const tagStory = 6;
+export const tagAnimal = 7;
+export const tagDIY = 8;
+export const tagProductivity = 9;
+export const tagJapan = 10;
+export const tagBook = 11;
+export const tagOpinion = 12;
+export const tagData = {
+  [tagMusic]: {
+    colorText: "text-tAccent3-300",
+    colorBg: "bg-tAccent3-700",
+    label: "Music",
+    value: tagMusic,
+  },
+  [tagLanguage]: {
+    colorText: "text-tAccent4-300",
+    colorBg: "bg-tAccent4-700",
+    label: "Language",
+    value: tagLanguage,
+  },
+  [tagCoding]: {
+    colorText: "text-tAccent1-800",
+    colorBg: "bg-tAccent1-500",
+    label: "Coding/Tech",
+    value: tagCoding,
+  },
+  [tagTravel]: {
+    colorText: "text-tAccent2-800",
+    colorBg: "bg-tAccent1-400",
+    label: "Travel",
+    value: tagTravel,
+  },
+  [tagBrain]: {
+    colorText: "text-tAccent1-300 ",
+    colorBg: "bg-tAccent4-700",
+    label: "Brain",
+    value: tagBrain,
+  },
+  [tagStory]: {
+    colorText: "text-tAccent2-300",
+    colorBg: "bg-tAccent2-700",
+    label: "Story",
+    value: tagStory,
+  },
+  [tagAnimal]: {
+    colorText: "text-tAccent2-800",
+    colorBg: "bg-tAccent2-200",
+    label: "Music",
+    value: tagAnimal,
+  },
+  [tagDIY]: {
+    colorText: "text-tAccent2-700",
+    colorBg: "bg-tAccent4-200",
+    label: "DIY",
+    value: tagDIY,
+  },
+  [tagProductivity]: {
+    colorText: "text-tAccent1-800",
+    colorBg: "bg-tAccent3-500",
+    label: "Productivity",
+    value: tagProductivity,
+  },
+  [tagJapan]: {
+    colorText: "text-tAccent2-400",
+    colorBg: "bg-tAccent1-800",
+    label: "Japan",
+    value: tagJapan,
+  },
+  [tagBook]: {
+    colorText: "text-tAccent2-700 ",
+    colorBg: "bg-tAccent3-200",
+    label: "Books",
+    value: tagBook,
+  },
+  [tagOpinion]: {
+    colorText: "text-tAccent2-300",
+    colorBg: "bg-tAccent4-700",
+    label: "Opinion",
+    value: tagOpinion,
+  },
+};
+
+// ===== FUNCTIONS =====
+export const appendScript = (scriptToAppend) => {
+  const script = document.createElement("script");
+  script.src = scriptToAppend;
+  script.async = true;
+  document.body.appendChild(script);
+};
+
+// ===== INFO BLOCKS ======
 export const aboutMeTiles = [
   {
     color: "bg-tAccent2-300/80 dark:bg-tAccent2-700/80",
@@ -176,16 +275,13 @@ export const aboutMeImages = [
   {
     altText: "my lil lady Mykie",
     descText:
-      "This is Mykie, aka Mykie Lady. \
-    Her hobbies include lounging outdoors or by windows. She only lets you know you're giving her \
-    too much attention when she is completely annoyed.",
+      "This is Mykie, aka Mykie Lady. Her hobbies include lounging outdoors or by windows. She only lets you know you're giving her too much attention when she is completely annoyed.",
     src: Img_Mykie_Box,
   },
   {
     altText: "my lil boyo Dragon",
     descText:
-      "This is Dragon, aka Mr. Dragon. \
-    He's a strange guy, sometimes even creepy. His biggest fear is starvation by an empty food bowl.",
+      "This is Dragon, aka Mr. Dragon. He's a strange guy, sometimes even creepy. His biggest fear is starvation by an empty food bowl.",
     src: Img_Dragon,
   },
   {
@@ -335,13 +431,13 @@ export const features = [
   {
     color: "bg-tAccent2-300/80 dark:bg-tAccent2-700/80",
     content: (
-      <p>
+      <div>
         I am already standing at around 100 pages in my current poetry book I am
         working on, which includes my own art and "photography".
-        <p className="text-tAccent2-800 dark:text-tAccent2-100">
+        <p className="text-tAccent2-800 dark:text-tAccent2-100 italic">
           (I am not a photographer)
         </p>
-      </p>
+      </div>
     ),
     title: (
       <span className="flex text-tAccent2-800 dark:text-tAccent2-200">
