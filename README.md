@@ -5,6 +5,7 @@ The site can be accessed by [thecalmplexcoder.com](http://www.thecalmplexcoder.c
 
 ## Next Goals
 
-- Blog page
-- Contact page
-- Check out HTML5Up; show JMB Netlify
+- Write a few more articles in the blog
+- Search in blog header (use url maybe?)
+- Build and incorporate backend
+- Create a contact page

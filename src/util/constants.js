@@ -47,47 +47,83 @@ export const tagTravel = 4;
 export const tagBrain = 5;
 export const tagStory = 6;
 export const tagAnimal = 7;
-export const tagRecipe = 8;
+export const tagDIY = 8;
 export const tagProductivity = 9;
 export const tagJapan = 10;
 export const tagBook = 11;
 export const tagOpinion = 12;
 export const tagData = {
   [tagMusic]: {
-    colorText:
-      "text-tAccent3-300 dark:text-tAccent3-700 hover:text-tAccent3-pop",
-    colorBg: "bg-tAccent3-700 dark:bg-tAccent3-300",
+    colorText: "text-tAccent3-300",
+    colorBg: "bg-tAccent3-700",
     label: "Music",
+    value: tagMusic,
   },
   [tagLanguage]: {
-    colorText:
-      "text-tAccent4-300 dark:text-tAccent4-700 hover:text-tAccent4-pop",
-    colorBg: "bg-tAccent4-700 dark:bg-tAccent4-300",
+    colorText: "text-tAccent4-300",
+    colorBg: "bg-tAccent4-700",
     label: "Language",
+    value: tagLanguage,
   },
   [tagCoding]: {
-    colorText:
-      "text-tAccent1-700 dark:text-tAccent1-300 hover:text-tAccent1-pop",
-    colorBg: "bg-tAccent1-300 dark:bg-tAccent1-700",
+    colorText: "text-tAccent1-800",
+    colorBg: "bg-tAccent1-500",
     label: "Coding/Tech",
+    value: tagCoding,
   },
   [tagTravel]: {
-    colorText:
-      "text-tAccent2-700 dark:text-tAccent2-300 hover:text-tAccent2-pop",
-    colorBg: "bg-tAccent1-300 dark:bg-tAccent1-700",
+    colorText: "text-tAccent2-800",
+    colorBg: "bg-tAccent1-400",
     label: "Travel",
+    value: tagTravel,
   },
   [tagBrain]: {
-    colorText:
-      "text-tAccent1-300 dark:text-tAccent1-700 hover:text-tAccent1-pop",
-    colorBg: "bg-tAccent4-700 dark:bg-tAccent4-300",
+    colorText: "text-tAccent1-300 ",
+    colorBg: "bg-tAccent4-700",
     label: "Brain",
+    value: tagBrain,
   },
   [tagStory]: {
-    colorText:
-      "text-tAccent2-300 dark:text-tAccent2-700 hover:text-tAccent2-pop",
-    colorBg: "bg-tAccent2-700 dark:bg-tAccent2-300",
+    colorText: "text-tAccent2-300",
+    colorBg: "bg-tAccent2-700",
     label: "Story",
+    value: tagStory,
+  },
+  [tagAnimal]: {
+    colorText: "text-tAccent2-800",
+    colorBg: "bg-tAccent2-200",
+    label: "Music",
+    value: tagAnimal,
+  },
+  [tagDIY]: {
+    colorText: "text-tAccent2-700",
+    colorBg: "bg-tAccent4-200",
+    label: "DIY",
+    value: tagDIY,
+  },
+  [tagProductivity]: {
+    colorText: "text-tAccent1-800",
+    colorBg: "bg-tAccent3-500",
+    label: "Productivity",
+    value: tagProductivity,
+  },
+  [tagJapan]: {
+    colorText: "text-tAccent2-400",
+    colorBg: "bg-tAccent1-800",
+    label: "Japan",
+    value: tagJapan,
+  },
+  [tagBook]: {
+    colorText: "text-tAccent2-700 ",
+    colorBg: "bg-tAccent3-200",
+    label: "Books",
+    value: tagBook,
+  },
+  [tagOpinion]: {
+    colorText: "text-tAccent2-300",
+    colorBg: "bg-tAccent4-700",
+    label: "Opinion",
+    value: tagOpinion,
   },
 };
 

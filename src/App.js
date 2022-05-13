@@ -25,11 +25,6 @@ import { getThemeCookie } from "./util/cookies";
 
 const App = () => {
   const [open, setOpen] = useState(false);
-  const [scrollPosition, setScrollPosition] = useState(0);
-  const handleScroll = () => {
-    const position = window.pageYOffset;
-    setScrollPosition(position);
-  };
 
   useEffect(() => {
     const themeCookie = getThemeCookie();
@@ -39,15 +34,11 @@ const App = () => {
     document
       .getElementById("mainHTML")
       .setAttribute("class", themeCookie.darkMode);
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
   }, []);
 
   const BodyLayout = () => {
     return (
-      <div className="max-w-7xl mx-auto px-1 md:px-4 slashed-zero stacked-fractions">
+      <div className="max-w-6xl mx-auto px-1 md:px-4 slashed-zero stacked-fractions">
         <button
           className="fixed top-4 left-4 z-40"
           onClick={() => setOpen(true)}
@@ -56,9 +47,7 @@ const App = () => {
         </button>
         <Outlet />
         <button
-          className={`fixed [left:50%] bottom-4 transition transform ease-in-out delay-200 duration-1000 z-40 bg-tAccent1-500/40 group hover:bg-tAccent1-700/40 dark:hover:bg-tAccent1-300/40 rounded-full ${
-            scrollPosition > 40 ? "translate-y-0" : "translate-y-12"
-          }`}
+          className="fixed [left:50%] bottom-4 z-40 bg-tAccent1-500/40 group hover:bg-tAccent1-700/40 dark:hover:bg-tAccent1-300/40 rounded-full"
           onClick={() => {
             window.scrollTo({
               top: 0,
@@ -66,7 +55,7 @@ const App = () => {
             });
           }}
         >
-          <ArrowUpIcon className="h-8 w-8 text-tAccent3-500 group-hover:text-tAccent3-pop p-1" />
+          <ArrowUpIcon className="h-8 w-8 text-tAccent3-300 dark:text-tAccent3-700 group-hover:text-tAccent3-pop p-1" />
         </button>
       </div>
     );
@@ -108,12 +97,9 @@ const App = () => {
             <div className="flex items-center gap-2">
               <SearchCircleIcon className="h-6 w-6" />
               <Select
-                placeholder="Search..."
+                placeholder="search..."
                 className="w-40 md:w-60 text-tBase-950"
-                options={[
-                  { value: tagMusic, label: "Music" },
-                  { value: tagAnimal, label: "Animal" },
-                ]}
+                options={[{ value: "test", label: "Work in progress!" }]}
               />
             </div>
           </div>

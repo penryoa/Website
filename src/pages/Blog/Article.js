@@ -3,11 +3,17 @@ import _ from "lodash";
 import { useDispatch, useSelector } from "react-redux";
 import { getArticleAction } from "../../redux/article.actions";
 import { EmojiSadIcon, LinkIcon } from "@heroicons/react/outline";
-import { bDefault, tagData } from "../../util/constants";
+import Tag from "../../components/Tag";
 
 export default function Article({ articleUrl }) {
   const { article, loading, error } = useSelector((state) => state.article);
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    // Sometimes the page doesn't start at the top
+    window.scrollTo({ top: 0 });
+  }, []);
+
   useEffect(() => {
     if ((!article || article.url !== articleUrl) && !loading && !error) {
       dispatch(getArticleAction(articleUrl));
@@ -41,7 +47,7 @@ export default function Article({ articleUrl }) {
             }
           >
             <h1
-              className="bg-tAccent1-900 dark:bg-tAccent1-200 flex gap-2 items-baseline justify-center group select-none focus:text-tAccent1-pop"
+              className="bg-tAccent1-900 dark:bg-tAccent1-200 flex gap-1 md:gap-2 items-baseline justify-center group select-none"
               onClick={() => {
                 navigator.clipboard.writeText(
                   "http://www.thecalmplexcoder.com/blog/" +
@@ -49,11 +55,13 @@ export default function Article({ articleUrl }) {
                 );
               }}
             >
-              <span className="translate-x-12 -translate-y-9 px-1 text-tBase-50 bg-tBase-950 text-base invisible group-active:visible transition duration-300">
-                Copied!
-              </span>
-              <LinkIcon className="invisible group-hover:visible h-6 w-6" />
-              {_.get(article, "title")}
+              <div>
+                <span className="-translate-y-8 px-1 text-tBase-50 bg-tBase-950 text-base hidden group-active:fixed group-active:block transition duration-300">
+                  Copied!
+                </span>
+                <LinkIcon className="invisible group-hover:visible h-6 w-6" />
+              </div>
+              <p className="pr-6">{_.get(article, "title")}</p>
             </h1>
           </div>
           <div className="max-w-5xl mx-auto">
@@ -70,17 +78,8 @@ export default function Article({ articleUrl }) {
               </div>
               <div className="flex items-center gap-2">
                 Tags:
-                {_.get(article, "tags", []).map((tag) => (
-                  <div
-                    key={"tag-" + tag}
-                    className={`px-2 py-1 m-1 select-none ${bDefault} ${_.get(
-                      tagData,
-                      `${tag}.colorText`,
-                      ""
-                    )} ${_.get(tagData, `${tag}.colorBg`, "")}`}
-                  >
-                    {_.get(tagData, `${tag}.label`, "Unknown Tag")}
-                  </div>
+                {_.get(article, "tags", []).map((tagId) => (
+                  <Tag key={`tag-${tagId}-display`} tagId={tagId} />
                 ))}
               </div>
             </div>
