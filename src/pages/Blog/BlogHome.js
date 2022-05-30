@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import _ from "lodash";
 import Select from "react-select";
 import makeAnimated from "react-select/animated";
-import { bDefault, tagData } from "../../util/constants";
+import { tagData } from "../../util/constants";
 import StyledLink from "../../components/StyledLink";
 import Tag from "../../components/Tag";
 import { FilterIcon } from "@heroicons/react/solid";
@@ -46,7 +46,7 @@ export default function BlogHome() {
             return (
               <div
                 key={`articles-for-tag-${tagId}`}
-                className={`${bDefault} bg-tBase-200 dark:bg-tBase-700 p-4 m-2 w-full sm:w-[20em] `}
+                className="border-default bg-tBase-200 dark:bg-tBase-700 p-4 m-2 w-full sm:w-[20em]"
               >
                 <h2 className="text-tBase-800 dark:text-tBase-200">
                   {_.get(tagData, `${tagId}.label`)}

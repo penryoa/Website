@@ -5,20 +5,6 @@ import {
   MusicNoteIcon,
   TerminalIcon,
 } from "@heroicons/react/solid";
-import Img_Art_Hand from "../assets/images/art_hand.jpg";
-import Img_Art_Sun from "../assets/images/art_sun-n-moon.jpg";
-import Img_Bird_Bryant from "../assets/images/bird_in_bryant.jpg";
-import Img_Bird_Foot from "../assets/images/bird_on_foot.jpg";
-import Img_Bridges from "../assets/images/bridges_nyc.jpg";
-import Img_Cloudy from "../assets/images/cloudy_nyc.jpg";
-import Img_Dragon from "../assets/images/creepy_dragon.JPEG";
-import Img_Me from "../assets/images/mother_of_dragon.jpg";
-import Img_Mushrooms from "../assets/images/mushrooms.jpg";
-import Img_Mykie_Box from "../assets/images/mykie_box.jpg";
-import Img_Roxas from "../assets/images/RoxasAndMeBeech.JPG";
-import Img_Skull from "../assets/images/skull_transparent_bg.png";
-import Img_South_Cove from "../assets/images/south_cove.jpg";
-
 // ===== THEMES =====
 export const themes = ["hydrangeas", "pickle", "pride", "riften", "rose"];
 
@@ -34,10 +20,6 @@ export const aboutMeTabs = [
   { to: "work", title: "Education/Work" },
   { to: "images", title: "Image Gallery" },
 ];
-
-// ===== STYLING =====
-export const bDefault = " rounded-tr-xl rounded-bl-xl ";
-export const pDefault = `text-justify p-5 bg-tBase-300 dark:bg-tBase-700 rounded-tr-xl ${bDefault}`;
 
 // ===== TAGS =====
 export const tagMusic = 1;
@@ -127,14 +109,6 @@ export const tagData = {
   },
 };
 
-// ===== FUNCTIONS =====
-export const appendScript = (scriptToAppend) => {
-  const script = document.createElement("script");
-  script.src = scriptToAppend;
-  script.async = true;
-  document.body.appendChild(script);
-};
-
 // ===== INFO BLOCKS ======
 export const aboutMeTiles = [
   {
@@ -201,7 +175,7 @@ export const aboutMeTiles = [
       <img
         alt="skull"
         className="h-full invert-0 dark:invert"
-        src={Img_Skull}
+        src={"/public/images/skull_transparent_bg.png"}
       />
     ),
   },
@@ -265,67 +239,67 @@ export const aboutMeImages = [
   {
     altText: "just me",
     descText: "Obligatory selfie ft. Dragon perched on my shoulder",
-    src: Img_Me,
+    src: "/public/images/mother_of_dragon.jpg",
   },
   {
     altText: "art - sun and moon",
     descText: "A painting of mine from 2015.",
-    src: Img_Art_Sun,
+    src: "/public/images/art_sun-n-moon.jpg",
   },
   {
     altText: "my lil lady Mykie",
     descText:
       "This is Mykie, aka Mykie Lady. Her hobbies include lounging outdoors or by windows. She only lets you know you're giving her too much attention when she is completely annoyed.",
-    src: Img_Mykie_Box,
+    src: "/public/images/mykie_box.jpg",
   },
   {
     altText: "my lil boyo Dragon",
     descText:
       "This is Dragon, aka Mr. Dragon. He's a strange guy, sometimes even creepy. His biggest fear is starvation by an empty food bowl.",
-    src: Img_Dragon,
+    src: "/public/images/creepy_dragon.JPEG",
   },
   {
     altText: "bridges in NYC",
     descText: "Taken from one of the many scenic waterviews in Manhattan.",
-    src: Img_Bridges,
+    src: "/public/images/bridges_nyc.jpg",
   },
   {
     altText: "my motorcycle Roxas and I",
     descText: "My boy Roxas. He's a stud with that glistening pearl coat.",
-    src: Img_Roxas,
+    src: "/public/images/RoxasAndMeBeech.JPG",
   },
   {
     altText: "mushrooms",
     descText:
       "Very aesthetically pleasing fly amanita mushrooms in North Carolina",
-    src: Img_Mushrooms,
+    src: "/public/images/mushrooms.jpg",
   },
   {
     altText: "cloudy NYC",
     descText: "Just a cloudy day in NYC.",
-    src: Img_Cloudy,
+    src: "/public/images/cloudy_nyc.jpg",
   },
   {
     altText: "bird in the park",
     descText: "Pigeons are very fun to be around (:",
-    src: Img_Bird_Bryant,
+    src: "/public/images/bird_in_bryant.jpg",
   },
   {
     altText: "bird on my foot",
     descText:
       "I can't get over this one - a bird just decided to hang out on my foot while I read! SO CUTE.",
-    src: Img_Bird_Foot,
+    src: "/public/images/bird_on_foot.jpg",
   },
   {
     altText: "south cove park",
     descText: "Stumbled upon a really neat park in NYC!",
-    src: Img_South_Cove,
+    src: "/public/images/south_cove.jpg",
   },
   {
     altText: "art - hand of time",
     descText:
       'A painting of mine from 2017. Kind of makes me think of the "hand of time" in a weird way.',
-    src: Img_Art_Hand,
+    src: "/public/images/art_hand.jpg",
   },
 ];
 

@@ -1,8 +1,7 @@
 import React from "react";
 import { StarIcon } from "@heroicons/react/solid";
-import Image_Cat from "../assets/images/cat.png";
 import { SquareTile } from "../components/Tiles";
-import { goals, features, pDefault } from "../util/constants";
+import { goals, features } from "../util/constants";
 
 export default function Home() {
   // just here so tailwind loads it in: "sm:ml-0 sm:ml-2 sm:ml-4 sm:ml-6 sm:ml-8"
@@ -12,7 +11,7 @@ export default function Home() {
         <h1>welcome!</h1>
         <StarIcon className="h-8 w-8 text-tAccent1-300 dark:text-tAccent1-700" />
       </div>
-      <p className={pDefault}>
+      <p className="p-default">
         I'm a software developer based in NC.
         <br />
         <br />
@@ -25,12 +24,11 @@ export default function Home() {
         Explore the menu to see some cool things!
       </p>
 
-
       <div className="flex flex-col lg:flex-row flex-wrap justify-start">
         <div className="max-w-lg self-center lg:self-end">
           <img
             className="invert-0 dark:invert"
-            src={Image_Cat}
+            src="/public/images/cat.png"
             alt="cat outline"
             width="100%"
           />

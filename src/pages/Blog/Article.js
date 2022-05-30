@@ -10,11 +10,6 @@ export default function Article({ articleUrl }) {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    // Sometimes the page doesn't start at the top
-    window.scrollTo({ top: 0 });
-  }, []);
-
-  useEffect(() => {
     if ((!article || article.url !== articleUrl) && !loading && !error) {
       dispatch(getArticleAction(articleUrl));
     }
