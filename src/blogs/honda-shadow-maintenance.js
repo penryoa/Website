@@ -215,8 +215,7 @@ export const articleMetadata = {
           <p>
             Loosen the nut on the brake fluid drain so the fluid can move
             through. Rapidly pump the front break to build pressure until you
-            meet resistance. Then pull the brake in tightly and smoothly. That
-            being said, pour in brake fluid to its container as the old is
+            meet resistance. Then pull the brake in tightly and smoothly. Pour in brake fluid to its container as the old is
             flushed out.
           </p>
         </div>
