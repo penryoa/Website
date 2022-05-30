@@ -1,18 +1,18 @@
 import React from "react";
 
-export function SquareTile({
-  title,
-  border,
-  content,
-  color,
-  halfTile = false,
-}) {
+/**
+ * Creates a single square tile that is 320 x 320 px
+ * @param {object} params
+ * @param {string} params.color the full className string representing the bg/text colors
+ * @param {} params.content the html content of the tile
+ * @param {string} params.title the title of the tile
+ * @returns
+ */
+export function SquareTile({ title, content, color }) {
   return (
     <div
-      className={`w-80 relative mx-1 sm:mx-2 md:mx-4 mb-4 rounded-tr-xl rounded-bl-xl ${
+      className={`w-80 h-80 relative mx-1 sm:mx-2 md:mx-4 mb-4 rounded-tr-xl rounded-bl-xl ${
         color || ""
-      } ${halfTile ? "h-40" : "h-80"} ${
-        border ? "outline-dotted outline-2 outline-offset-1 " + border : ""
       }`}
     >
       <div
@@ -27,6 +27,15 @@ export function SquareTile({
   );
 }
 
+/**
+ * Creates an auto-adjusting image gallery based on the screen width
+ * @param {object} params
+ * @param {list} params.images all the images to display in the gallery
+ * @param {string} params.images[0].altText the text to be displayed if the image doesn't load
+ * @param {string} params.images[0].descText the text displayed upon hover (desktop) or click (mobile)
+ * @param {string} params.images[0].src the path (in '/public') to the image
+ * @returns
+ */
 export function ImageGallery({ images }) {
   return (
     <ul className="flex flex-wrap justify-center">

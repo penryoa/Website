@@ -18,7 +18,7 @@
     @apply mt-6 mb-4 text-3xl text-tAccent1-500 font-heading text-center;
   }
   h2 {
-    @apply mt-4 mb-3 text-2xl text-tAccent2-500 font-heading text-center;
+    @apply mt-4 mb-3 text-2xl text-tAccent2-600 dark:text-tAccent2-300 font-heading text-center;
   }
   h3 {
     @apply mt-3 mb-2 text-lg font-heading text-center;
@@ -43,6 +43,25 @@
     100% {
       transform: rotate(360deg);
     }
+  }
+  .border-default,
+  .p-default {
+    @apply rounded-tr-xl rounded-bl-xl;
+  }
+  .p-default {
+    @apply text-justify p-5 bg-tBase-300 dark:bg-tBase-700 rounded-tr-xl;
+  }
+  ul .star {
+    list-style: none;
+  }
+  .star > li {
+    padding: 0 0 5px 0;
+  }
+  .star > li:before {
+    font-family: "FontAwesome";
+    content: "\f005";
+    padding: 0 5px 0 0;
+    @apply text-tAccent1-700 dark:text-tAccent1-300;
   }
 }
 

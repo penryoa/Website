@@ -20,7 +20,7 @@ import Article from "./pages/Blog/Article";
 import Home from "./pages/Home";
 import Navbar from "./components/Navbar";
 import TabsBanner from "./components/TabsBanner";
-import { aboutMeTabs, pDefault } from "./util/constants";
+import { aboutMeTabs } from "./util/constants";
 import { getThemeCookie } from "./util/cookies";
 
 const App = () => {
@@ -68,7 +68,7 @@ const App = () => {
         <HandIcon className="ml-2 h-8 w-8 text-inherit" />
       </h1>
 
-      <p className={pDefault}>
+      <p className="p-default">
         I'm Addi, a software developer from the Midwest who landed in NYC and
         finally NC. I have a hodgepodge of interests and hobbies and not enough
         time to tend to them all. I'm a motorcyclist, musician, avid tea

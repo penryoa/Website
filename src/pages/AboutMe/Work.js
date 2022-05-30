@@ -2,7 +2,6 @@ import { AcademicCapIcon } from "@heroicons/react/outline";
 import { DownloadIcon } from "@heroicons/react/solid";
 import React from "react";
 import StyledLink from "../../components/StyledLink";
-import { pDefault } from "../../util/constants";
 
 export default function Work() {
   return (
@@ -20,7 +19,7 @@ export default function Work() {
           <p className="text-base text-slate-500">May 2020</p>
           <p></p>
         </div>
-        <p className={`${pDefault} md:w-1/2 m-4`}>
+        <p className="p-default md:w-1/2 m-4">
           I graduated from a very rigorous technical college in 2020. I'm
           talking 10-weeks per semester - and not even semesters, but trimesters
           (more commonly called "quarters" with summer considered).
@@ -30,7 +29,7 @@ export default function Work() {
         </p>
       </div>
       <h2>current endeavors</h2>
-      <p className={`${pDefault} m-4`}>
+      <p className="p-default m-4">
         I'm currently at my job of two years as a Software Engineer, usually
         doing full stack but skewed towards the front end. I'm passionate about
         good documentation, clean code, and organization as a whole.
