@@ -6,7 +6,14 @@ import {
   TerminalIcon,
 } from "@heroicons/react/solid";
 // ===== THEMES =====
-export const themes = ["hydrangeas", "pickle", "pride", "riften", "rose"];
+export const themes = [
+  "hydrangeas",
+  "pride",
+  "pickle",
+  "456",
+  "riften",
+  "rose",
+];
 
 // ===== NAVIGATION =====
 export const pages = [

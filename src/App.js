@@ -22,6 +22,7 @@ import Navbar from "./components/Navbar";
 import TabsBanner from "./components/TabsBanner";
 import { aboutMeTabs } from "./util/constants";
 import { getThemeCookie } from "./util/cookies";
+import { searchArticleByTitle } from "./redux/article.request";
 
 const App = () => {
   const [open, setOpen] = useState(false);
@@ -89,7 +90,10 @@ const App = () => {
               className="group hidden sm:flex items-center gap-2 select-none"
               onClick={() => navigate("/blog")}
             >
-              <AnnotationIcon className="h-7 w-7 text-tAccent1-300 dark:text-tAccent1-700 group-hover:text-tAccent1-500 dark:group-hover:text-tAccent1-900" />
+              <AnnotationIcon
+                className="h-7 w-7 tex
+              t-tAccent1-300 dark:text-tAccent1-700 group-hover:text-tAccent1-500 dark:group-hover:text-tAccent1-900"
+              />
               <p className="text-xl font-heading group-hover:text-tBase-200 dark:group-hover:text-tBase-600">
                 the calmplex corner
               </p>
@@ -100,6 +104,9 @@ const App = () => {
                 placeholder="search..."
                 className="w-40 md:w-60 text-tBase-950"
                 options={[{ value: "test", label: "Work in progress!" }]}
+                onKeyDown={(e) =>
+                  console.log(searchArticleByTitle(e.target.value))
+                }
               />
             </div>
           </div>
