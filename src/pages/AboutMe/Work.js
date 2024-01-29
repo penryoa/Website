@@ -57,7 +57,7 @@ export default function Work() {
         <StyledLink
           className=" block w-96 text-tAccent1-100 text-lg rounded-lg m-5 p-5 bg-tAccent1-500 hover:bg-tAccent1-300 dark:hover:bg-tAccent1-700"
           href="../../../public/Resume_Addi-Penry_Public.pdf"
-          download="Addi_Penry_Resume_20210706"
+          download="Addi_Penry_Resume_2024"
         >
           <span className="flex">
             <DownloadIcon className="h-8 w-8 pr-3" />

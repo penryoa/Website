@@ -39,7 +39,7 @@ export const articleMetadata = {
         I also wanted to be as realistic as possible in showcasing who I am and
         what I can do. Then it hit me:
       </p>
-      <div className="text-center md:text-lg text-tBase-800 dark:text-tBase-200">
+      <div className="text-center sm:text-lg text-tBase-800 dark:text-tBase-200">
         I should make my own website.
       </div>
       <p>

@@ -3,12 +3,12 @@ import _ from "lodash";
 // Note: this is a temporary solution until I have a db going
 import { articleMetadata as BuildingMyOwnWebsiteMetadata } from "../blogs/building-my-own-website-from-scratch";
 import { articleMetadata as HondaShadowMetadata } from "../blogs/honda-shadow-maintenance";
-import { articleMetadata as OopsNDGayMetadata } from "../blogs/oops-im-neurodivergent-and-gay";
+import { articleMetadata as CookingForTheGoils } from "../blogs/cooking-for-the-goils";
 
 const articlesToShow = [
   BuildingMyOwnWebsiteMetadata,
   HondaShadowMetadata,
-  OopsNDGayMetadata,
+  CookingForTheGoils,
 ];
 // ===============================
 

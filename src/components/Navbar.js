@@ -6,6 +6,7 @@ import FlowersVertical from "../assets/svgs/FlowersVertical";
 import { pages } from "../util/constants";
 import { DarkModeToggle, ThemeSelector } from "./ThemeHandlers";
 
+// Customized from Headless UI
 export default function Navbar({ open, onClose }) {
   return (
     <Transition.Root show={open} as={Fragment}>

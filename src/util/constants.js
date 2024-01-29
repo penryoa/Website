@@ -1,5 +1,5 @@
 import React from "react";
-import { ColorSwatchIcon, NewspaperIcon } from "@heroicons/react/outline";
+import { ColorSwatchIcon, ServerIcon } from "@heroicons/react/outline";
 import {
   DocumentTextIcon,
   MusicNoteIcon,
@@ -10,7 +10,7 @@ export const themes = [
   "hydrangeas",
   "pride",
   "pickle",
-  "456",
+  "dreamy",
   "riften",
   "rose",
 ];
@@ -136,12 +136,12 @@ export const aboutMeTiles = [
     color: "bg-tAccent4-300/80 dark:bg-tAccent4-700/80",
     content: (
       <p>
-        I was consistently learning French from 2015 to 2018. I'd love to get
-        back into it and take a trip to Canada.
-        <br />
         Japanese has been my target language for ~3 years now, though studying
-        was inconsistent in the beginning. My long-term goal is to get through
-        at least the JLPT N5 and N4, ideally N3 too.
+        was inconsistent in the beginning. After passing the JLPT N4 in Dec.
+        2023, my current goal is N3.
+        <br />I was consistently learning French from 2015 to 2018. I'd love to
+        get back into it and take a trip to Canada. More than anything, I'll
+        probably start on Chinese next, though.
       </p>
     ),
     title: (
@@ -152,9 +152,9 @@ export const aboutMeTiles = [
     color: "bg-tAccent1-300/80 dark:bg-tAccent1-700/80",
     content: (
       <p>
-        At the late age of 24, I finally sought out and received an ASD
-        diagnosis after nearly a year of researching. Turns out it was also ADHD
-        and anxiety (as one may surmise).
+        At the (kind of late) age of 24, I finally sought out and received an
+        ASD diagnosis after nearly a year of researching. Turns out it was also
+        ADHD and anxiety.
         <br />
         I'm very passionate about autism acceptance. If I had known what to look
         for at a younger age, it would have saved me SO much turmoil.
@@ -170,7 +170,8 @@ export const aboutMeTiles = [
       <p>
         Creativity calms my hyperactive brain. I really like playing with tons
         of different mediums - poems, writing songs, painting, drawing,
-        papercraft, coding, world building, and even interior design.
+        papercraft, coding, world building, fashion, interior design, and the
+        list probably goes on.
       </p>
     ),
     title: (
@@ -192,7 +193,7 @@ export const aboutMeTiles = [
       <p>
         Growing up with N64 and Super Nintendo led to an inevitable obsession
         with Nintendo games, especially Zelda. Outside of Nintendo, my games of
-        choice are simple: Skyrim, Fallout, Kingdom Hearts, and dabbling
+        choice are simple: BG3, some Bethesda, Kingdom Hearts, and dabbling
         otherwise. I've watched many more games be played than I've played
         myself honestly, especially horror/scary games like Fran Bow.
       </p>
@@ -203,8 +204,8 @@ export const aboutMeTiles = [
     color: "bg-tAccent2-300/80 dark:bg-tAccent2-700/80",
     content: (
       <p>
-        Roxas, my bike, is a 2007 Honda Shadow. I've had him for four years and
-        have taken plenty of day trips as well as a handful of longer ones.
+        Roxas, my bike, is a 2007 Honda Shadow. I've had him since 2019 and have
+        taken plenty of day trips as well as a handful of longer ones.
         <br />
         Once, I had to take my dad on the back of my bike in the pouring rain at
         night. He had a full gas canister in his lap. I prefer more leisurely
@@ -219,23 +220,24 @@ export const aboutMeTiles = [
     color: "bg-tAccent1-300/80 dark:bg-tAccent1-700/80",
     content: (
       <p>
-        I love rocks. That's all. (:
-        <br />
-        I've been collecting rocks and stones as long as I've been conscious. I
-        also have a mini zen garden on my desk that I use to display a fraction
-        of my collection, with the rest dispersed througout my home.
+        To be as brief as possible, I definitely like to watch shows and movies.
+        Cartoons/anime (like Avatar), comedies (like Some Like It Hot),
+        horror/thriller (like Hush), and reality (like Big Brother) tend to be
+        my go-to's. The most recent interest is Critical Role!
       </p>
     ),
-    title: <p className="text-tAccent1-800 dark:text-tAccent1-200">rocks</p>,
+    title: (
+      <p className="text-tAccent1-800 dark:text-tAccent1-200">movies/shows</p>
+    ),
   },
   {
     color: "bg-tAccent3-300/80 dark:bg-tAccent3-700/80",
     content: (
       <p>
-        I mean, I picked my career for a reason. I love the process, the
+        I mean, I picked my career for a reason. I enjoy the process, the
         challenges, and the results of coding. It <i>does</i> sometimes make me
-        forget to eat or sleep because I'm hyperfocused, but it's worth it in
-        the end, right?
+        forget to eat or sleep because I'm hyperfocused, but what's new. I
+        prefer to be more on the UI/design side but remain full-stack.
       </p>
     ),
     title: <p className="text-tAccent3-800 dark:text-tAccent3-200">coding</p>,
@@ -334,17 +336,16 @@ export const features = [
     color: "bg-tAccent4-300/80 dark:bg-tAccent4-700/80",
     content: (
       <p>
-        I have a lot to say and would benefit greatly from having and
-        semi-maintaining a blog.
-        <br />
-        It'd mainly be for my own use really. It's like a timecapsule for your
-        thoughts. Very cool.
+        Because this is a personal site and it's not necessarily always fun to
+        code in my free time, I haven't implemented a backend yet. But if I want
+        this to better represent my skills, I really should at least create and
+        call a DB at minimum.
       </p>
     ),
     title: (
       <p className="flex text-tAccent4-800 dark:text-tAccent4-200">
-        <NewspaperIcon className="h-7 w-7 pr-2" />
-        personal blog
+        <ServerIcon className="h-7 w-7 pr-2" />
+        backend
       </p>
     ),
   },
@@ -354,9 +355,9 @@ export const features = [
       <p>
         I've already gotten around to adding a way to toggle themes, but I still
         need to clean up the process of making and using them. <br />
-        As for language, I am a native English speaker aiming to learn Japanese
-        and eventually get back to French. It'd be good practice to translate
-        this site.
+        As for language, I am a native English speaker learning Japanese and
+        eventually I want to pick French back up, and start others. It'd be good
+        practice to translate this site.
       </p>
     ),
     title: (
@@ -369,38 +370,30 @@ export const features = [
   {
     color: "bg-tAccent2-300/80 dark:bg-tAccent2-700/80",
     content: (
-      <ul className="list-disc">
-        <li>
-          no strong ideas yet. I just want something that lets me further
-          practice object oriented design and makes me laugh.
-        </li>
-        <li>will be written in Java or C++</li>
-        <li>will be open source and possibly on Steam</li>
-      </ul>
+      <p>
+        Again, this is just a personal site, so I've not really done much work
+        in terms of security. It'd be fun to take some time to make some updates
+        in that department, as well as practice some networking by SSHing into
+        my Raspberry Pi to start the site up. Stuff like that.
+      </p>
     ),
     title: (
       <p className="flex text-tAccent2-800 dark:text-tAccent2-200">
         <TerminalIcon className="h-7 w-7 pr-2" />
-        an arcade-like mini game
+        more networking/security
       </p>
     ),
   },
   {
     color: "bg-tAccent1-300/80 dark:bg-tAccent1-700/80",
     content: (
-      <ul className="list-disc">
-        <li>
-          this will be a full game released independently or through Steam
-        </li>
-        <li>
-          so far it is still in the design process with limited art and music,
-          but I may release some content as I progress.
-        </li>
-        <li>
-          all the music, art, and code will be done by me, so it's a huge
-          project! it'd be a while before it's done.
-        </li>
-      </ul>
+      <p>
+        Let's see if this AuDHDer will find the motivation to develop a full
+        game independently lol. So far it is still in the design process with
+        limited art and music, but I may release some content as I progress. All
+        the music, art, and code would be done by me, so it's a really big
+        undertaking.
+      </p>
     ),
     title: (
       <p className="text-tAccent1-800 dark:text-tAccent1-200">
@@ -410,14 +403,15 @@ export const features = [
     ),
   },
   {
-    color: "bg-tAccent2-300/80 dark:bg-tAccent2-700/80",
+    color: "bg-tAccent4-300/80 dark:bg-tAccent4-700/80",
     content: (
       <div>
         I am already standing at around 100 pages in my current poetry book I am
-        working on, which includes my own art and "photography".
-        <p className="text-tAccent2-800 dark:text-tAccent2-100 italic">
-          (I am not a photographer)
-        </p>
+        working on, which includes my own art and photos.
+        <br />
+        It mainly focuses on very vulnerable topics and I'm even considering
+        publishing it. It's a bigger project, but it's pretty exciting to me.
+        Cathartic, morelike.
       </div>
     ),
     title: (
@@ -428,7 +422,7 @@ export const features = [
     ),
   },
   {
-    color: "bg-tAccent4-300/80 dark:bg-tAccent4-700/80",
+    color: "bg-tBase-300/80 dark:bg-tBase-700/80",
     content: (
       <p>
         (audio, lyrics, download, etc.)
@@ -436,7 +430,8 @@ export const features = [
         I tend to improv a lot of piano pieces that I think would be worth
         sharing, and I also have completed songs I've worked on consistently.
         <br />
-        I'd like to find a way to more officially produce and release them.
+        I've produced one song, but the learning curve feels pretty steep to me.
+        So I'm working on album one of three that I've conceptualized!
       </p>
     ),
     title: (
