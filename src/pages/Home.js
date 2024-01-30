@@ -12,16 +12,12 @@ export default function Home() {
         <StarIcon className="h-8 w-8 text-tAccent1-300 dark:text-tAccent1-700" />
       </div>
       <p className="p-default">
-        I'm a software developer based in NC.
+        I'm Addi, a full-stack software engineer based in North Carolina. This
+        site is kind of my catalogue of things I care about, miscellaneous
+        projects, my education/experience, and so on.
         <br />
         <br />
-        This site is kind of my catalogue of things I care about, my own
-        projects, my education/experience, and so on. It's always improving and
-        growing, so check back if you're ever curious what some 24 year-old
-        developer is up to.
-        <br />
-        <br />
-        Explore the menu to see some cool things!
+        Explore the menu to see some other things!
       </p>
 
       <div className="flex flex-col lg:flex-row flex-wrap justify-start">
