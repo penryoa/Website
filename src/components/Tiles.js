@@ -135,7 +135,7 @@ export function ExpandableTile({
       <div
         className={
           isExpanded
-            ? "p-2 text-base rounded-b-md md:text-lg bg-tBase-100 dark:bg-tBase-800"
+            ? "p-2 text-base rounded-b-md md:text-lg bg-tBase-100 dark:bg-tBase-800 border-x-2 border-b-2 border-tBase-300 dark:border-tBase-600 border-dotted"
             : "hidden"
         }
       >
