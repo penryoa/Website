@@ -1,11 +1,29 @@
 import { AcademicCapIcon } from "@heroicons/react/outline";
 import { DownloadIcon } from "@heroicons/react/solid";
-import React from "react";
+import React, { useState } from "react";
 import StyledLink from "../../components/StyledLink";
 
 export default function Work() {
+  const [isLoadingVideo, setIsLoadingVideo] = useState(true);
   return (
     <div className="max-w-5xl mx-auto pt-2">
+      <div className="w-full">
+        <video
+          className={`w-full ${isLoadingVideo && "hidden"}`}
+          controls
+          src="/public/AddiPenryElevatorPitch.mp4"
+          onLoad={setTimeout(() => setIsLoadingVideo(false), 500)}
+        />
+        <img
+          alt={"cat_meow"}
+          className={
+            isLoadingVideo ? "w-24 invert-0 dark:invert mx-auto" : "hidden"
+          }
+          src="/public/catmeow.gif"
+        />
+      </div>
+
+      <h2>education</h2>
       <div className="flex flex-wrap md:flex-nowrap">
         <div className="bg-tAccent2-100 m-2 p-2 rounded-sm border-2 ring-2 border-tBase-50 dark:border-tBase-950 ring-tBase-500 text-center ring-offset-2 ring-offset-tBase-50 dark:ring-offset-tBase-950 text-slate-800 w-full md:w-1/2">
           <p className="text-xl text-red-900">
@@ -25,14 +43,16 @@ export default function Work() {
           (more commonly called "quarters" with summer considered).
           <br />
           Though it was immensely stressful, I did learn a lot that I carry with
-          me today. I feel as though I earned more than one degree in a way.
+          me today. I genuinely feel like I earned more than one degree.
         </p>
       </div>
+
       <h2>current endeavors</h2>
       <p className="p-default m-4">
-        I'm currently at my job of two years as a Software Engineer, usually
-        doing full stack but skewed towards the front end. I'm passionate about
-        good documentation, clean code, and organization as a whole.
+        I'm currently looking for work after four years as a Full Stack Software
+        Engineer, usually skewed towards the front end or specs/data design. I'm
+        passionate about good documentation, clean code, and organization as a
+        whole.
         <br />
         <br />
         Given how much it helps me when others have open-source code, I try to
@@ -42,14 +62,13 @@ export default function Work() {
         <StyledLink href="https://github.com/penryoa/Website">
           linked here for your convenience.&nbsp;
         </StyledLink>
-        I have some (shitty) sample code from a few years ago as well,
-        found&nbsp;
+        I have some (shitty) sample code from college as well, found&nbsp;
         <StyledLink href="https://github.com/penryoa/rose-hulman_backup">
-          here&nbsp;
+          here (code I wrote in classes)&nbsp;
         </StyledLink>
         and&nbsp;
         <StyledLink href="https://github.com/KixorTech/CourseUp/tree/staging">
-          here.&nbsp;
+          here (code for my client in my senior year).&nbsp;
         </StyledLink>
       </p>
 
