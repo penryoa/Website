@@ -70,10 +70,15 @@ const App = () => {
       </h1>
 
       <p className="p-default">
-        I'm Addi, a software developer from the Midwest who landed in NYC and
-        finally NC. I have a hodgepodge of interests and hobbies and not enough
-        time to tend to them all. I'm a motorcyclist, musician, avid tea
+        I'm Addi, a software developer from the Midwest who landed in NYC for a
+        bit and finally NC. I have a hodgepodge of interests and hobbies and not
+        enough time to tend to them all. I'm a motorcyclist, musician, avid tea
         drinker, and aspiring game developer.
+        <br />
+        <br />
+        Want to know more about what I do in my free time? My development
+        experience? Snoop on pics I've taken? Well, it's all here, so check it
+        out!
       </p>
       <TabsBanner tabs={aboutMeTabs} />
       <Outlet />

@@ -136,12 +136,12 @@ export const aboutMeTiles = [
     color: "bg-tAccent4-300/80 dark:bg-tAccent4-700/80",
     content: (
       <p>
-        Japanese has been my target language for ~3 years now, though studying
-        was inconsistent in the beginning. After passing the JLPT N4 in Dec.
-        2023, my current goal is N3.
-        <br />I was consistently learning French from 2015 to 2018. I'd love to
-        get back into it and take a trip to Canada. More than anything, I'll
-        probably start on Chinese next, though.
+        Japanese has been my target language for ~4 years now, though studying
+        was inconsistent in the beginning. Despite being mostly self-taught, I
+        passed the JLPT N4 in Dec. 2023! So fun.
+        <br />
+        I'd love to resume my French studies (stopped after 3 years) at some
+        point too. Realistically, I'll probably start on Chinese next, though.
       </p>
     ),
     title: (
@@ -152,16 +152,16 @@ export const aboutMeTiles = [
     color: "bg-tAccent1-300/80 dark:bg-tAccent1-700/80",
     content: (
       <p>
-        At the (kind of late) age of 24, I finally sought out and received an
-        ASD diagnosis after nearly a year of researching. Turns out it was also
-        ADHD and anxiety.
+        Roxas, my bike, is a 2007 Honda Shadow. I've had him since 2019 and have
+        taken plenty of day trips as well as a handful of longer ones.
         <br />
-        I'm very passionate about autism acceptance. If I had known what to look
-        for at a younger age, it would have saved me SO much turmoil.
+        Once, I had to take my dad on the back of my bike in the pouring rain at
+        night. He had a full gas canister in his lap. I prefer more leisurely
+        rides than that.
       </p>
     ),
     title: (
-      <p className="text-tAccent1-800 dark:text-tAccent1-200">autism/adhd</p>
+      <p className="text-tAccent1-800 dark:text-tAccent1-200">motorcycles</p>
     ),
   },
   {
@@ -204,16 +204,16 @@ export const aboutMeTiles = [
     color: "bg-tAccent2-300/80 dark:bg-tAccent2-700/80",
     content: (
       <p>
-        Roxas, my bike, is a 2007 Honda Shadow. I've had him since 2019 and have
-        taken plenty of day trips as well as a handful of longer ones.
+        At the (kind of late) age of 24, I finally sought out and received an
+        ASD diagnosis after nearly a year of researching. Turns out it was also
+        ADHD and anxiety.
         <br />
-        Once, I had to take my dad on the back of my bike in the pouring rain at
-        night. He had a full gas canister in his lap. I prefer more leisurely
-        rides than that.
+        I'm very passionate about autism acceptance. If I had known what to look
+        for at a younger age, it would have saved me SO much turmoil.
       </p>
     ),
     title: (
-      <p className="text-tAccent2-800 dark:text-tAccent2-200">motorcycles</p>
+      <p className="text-tAccent2-800 dark:text-tAccent2-200">autism/adhd</p>
     ),
   },
   {

@@ -58,6 +58,7 @@ export default function Navbar({ open, onClose }) {
                     </button>
                   </div>
                 </Transition.Child>
+                {/* CUSTOM CODE STARTS HERE */}
                 <div className="bg-tBase-50 dark:bg-tBase-950 pt-6 h-screen px-1 font-heading select-none">
                   <div className="pb-3 flex justify-center items-center gap-3">
                     <span className="text-2xl text-tAccent2-700 dark:text-tAccent2-300 flex items-baseline">
@@ -102,6 +103,7 @@ export default function Navbar({ open, onClose }) {
                     <FlowersVertical />
                   </span>
                 </div>
+                {/* CUSTOM CODE ENDS HERE */}
               </div>
             </Transition.Child>
           </div>
