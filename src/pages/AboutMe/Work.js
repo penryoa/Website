@@ -3,6 +3,10 @@ import { DownloadIcon } from "@heroicons/react/solid";
 import React, { useState } from "react";
 import StyledLink from "../../components/StyledLink";
 
+/**
+ * The page called Images, representing my experience and education
+ * @returns
+ */
 export default function Work() {
   const [isLoadingVideo, setIsLoadingVideo] = useState(true);
   return (
@@ -25,7 +29,7 @@ export default function Work() {
 
       <h2>education</h2>
       <div className="flex flex-wrap md:flex-nowrap">
-        <div className="bg-tAccent2-100 m-2 p-2 rounded-sm border-2 ring-2 border-tBase-50 dark:border-tBase-950 ring-tBase-500 text-center ring-offset-2 ring-offset-tBase-50 dark:ring-offset-tBase-950 text-slate-800 w-full md:w-1/2">
+        <div className="bg-tAccent2-100 m-2 p-2 rounded-sm border-2 ring-2 border-tBase-50 dark:border-tBase-950 ring-tBase-500 text-center ring-offset-2 ring-offset-tBase-50 dark:ring-offset-tBase-950 text-slate-800 w-full md:w-1/2 flex flex-col justify-center">
           <p className="text-xl text-red-900">
             Rose-Hulman Institute of Technology
           </p>
@@ -38,12 +42,16 @@ export default function Work() {
           <p></p>
         </div>
         <p className="p-default md:w-1/2 m-4">
-          I graduated from a very rigorous technical college in 2020. I'm
-          talking 10-weeks per semester - and not even semesters, but trimesters
-          (more commonly called "quarters" with summer considered).
+          I graduated from the very rigorous technical college Rose-Hulman in
+          2020. I'm talking 10-weeks per semester - and not even semesters, but
+          quarters. From writing my own parsing language to a Java application
+          that turns Java files into an accurate UML diagram, I learned much
+          about OO design, software patterns, data design, etc.
           <br />
           Though it was immensely stressful, I did learn a lot that I carry with
-          me today. I genuinely feel like I earned more than one degree.
+          me today. I genuinely feel like I earned more than one degree. Now, it
+          makes a great barometer for stress (and you never want to be
+          Rose-stressed)!
         </p>
       </div>
 
@@ -57,8 +65,8 @@ export default function Work() {
         <br />
         Given how much it helps me when others have open-source code, I try to
         do the same when appropriate. Most code I've written is through my work
-        and not able to be shared. The best example of accurate sample code is
-        this website, as can be found on my GitHub and&nbsp;
+        and not able to be shared. The best example of (mostly) accurate sample
+        code is this website, as can be found on my GitHub and&nbsp;
         <StyledLink href="https://github.com/penryoa/Website">
           linked here for your convenience.&nbsp;
         </StyledLink>

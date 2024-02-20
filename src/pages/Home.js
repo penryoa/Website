@@ -3,6 +3,10 @@ import { StarIcon } from "@heroicons/react/solid";
 import { SquareTile } from "../components/Tiles";
 import { goals, features } from "../util/constants";
 
+/**
+ * A page called Home, which operates as the landing page for the website
+ * @returns
+ */
 export default function Home() {
   // just here so tailwind loads it in: "sm:ml-0 sm:ml-2 sm:ml-4 sm:ml-6 sm:ml-8"
   return (

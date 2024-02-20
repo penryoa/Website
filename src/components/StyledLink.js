@@ -1,5 +1,4 @@
 import React from "react";
-import _ from "lodash";
 import { Link } from "react-router-dom";
 
 export default function StyledLink({ useRRD = false, children, ...props }) {

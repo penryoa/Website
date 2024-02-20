@@ -1,20 +1,28 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import _ from "lodash";
 import { useDispatch, useSelector } from "react-redux";
 import { getArticleAction } from "../../redux/article.actions";
-import { EmojiSadIcon, HeartIcon, LinkIcon } from "@heroicons/react/outline";
+import { EmojiSadIcon, LinkIcon } from "@heroicons/react/outline";
 import Tag from "../../components/Tag";
 
+/**
+ * Generates a single article from the URL
+ * @param {object} params
+ * @param {string} params.articleUrl the URL of the article to generate
+ * @returns
+ */
 export default function Article({ articleUrl }) {
   const { article, loading, error } = useSelector((state) => state.article);
   const dispatch = useDispatch();
-  const [showAlert, triggerCopiedAlert] = useState(false);
 
+  // I only want to dispatch this when I don't have the article itself,
+  // and I especially don't want this to keep tr
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     if ((!article || article.url !== articleUrl) && !loading && !error) {
       dispatch(getArticleAction(articleUrl));
     }
-  }, [article]);
+  }, [article, articleUrl, dispatch, error, loading]);
 
   return (
     <>
@@ -79,57 +87,7 @@ export default function Article({ articleUrl }) {
                 ))}
               </div>
             </div>
-
             <div className="p-2">{_.get(article, "content")}</div>
-
-            <div className="mt-4 pb-10 py-4 border-t border-dashed border-tBase-300 dark:border-tBase-500 text-lg">
-              <ul className="w-full flex flex-col sm:flex-row sm:justify-around italic space-y-4 sm:space-y-0">
-                <li className="flex flex-col items-center">
-                  <LinkIcon
-                    className="p-1 m-1 text-tAccent1-100 bg-tAccent1-500 hover:bg-tAccent1-600 active:bg-tAccent1-pop rounded-full h-10 w-10"
-                    onClick={() => {
-                      navigator.clipboard.writeText(
-                        "http://www.thecalmplexcoder.com/blog/" +
-                          _.get(article, "url")
-                      );
-                      triggerCopiedAlert(true);
-                    }}
-                  />
-                  share
-                </li>
-                <li className="flex flex-col items-center">
-                  <a
-                    className="w-10 h-10 text-tAccent2-100 text-center p-1 m-auto text-xl bg-tAccent2-500 hover:bg-tAccent2-600 active:bg-tAccent2-pop rounded-full fa fa-envelope"
-                    href={`mailto:addipenry@gmail.com?subject=Regarding the Article "${_.get(
-                      article,
-                      "title"
-                    )}"`}
-                  />
-                  talk to me
-                </li>
-                <li className="flex flex-col items-center">
-                  <HeartIcon
-                    className="p-1 m-1 text-tAccent3-100 bg-tAccent3-500 hover:bg-tAccent3-600 active:bg-tAccent3-pop rounded-full h-10 w-10"
-                    onClick={() => {
-                      navigator.clipboard.writeText(
-                        "http://www.thecalmplexcoder.com/blog/" +
-                          _.get(article, "url")
-                      );
-                      triggerCopiedAlert(true);
-                    }}
-                  />
-                  show some love
-                </li>
-              </ul>
-            </div>
-            {/* {showAlert && (
-              <div
-                className="transition duration-300 ease-in-out hidden "
-                onAnimationEnd={() => triggerCopiedAlert(false)}
-              >
-                "Hiiiiiii"
-              </div>
-            )} */}
           </div>
         </>
       )}

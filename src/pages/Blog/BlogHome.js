@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import _ from "lodash";
 import Select from "react-select";
 import makeAnimated from "react-select/animated";
@@ -8,6 +8,10 @@ import Tag from "../../components/Tag";
 import { FilterIcon } from "@heroicons/react/solid";
 import { getArticlesForTag } from "../../redux/article.request";
 
+/**
+ * A page called BlogHome, which operates as the landing page for the blog
+ * @returns
+ */
 export default function BlogHome() {
   const [filteredTags, setFilteredTags] = useState(_.values(tagData));
   const animatedComponents = makeAnimated();
@@ -65,7 +69,12 @@ export default function BlogHome() {
                     </StyledLink>
                   ))
                 ) : (
-                  <p className="text-tBase-500">No articles... yet 👀</p>
+                  <p className="text-tBase-500">
+                    No articles... yet{" "}
+                    <span role="img" aria-label="eyes-emoji">
+                      👀
+                    </span>
+                  </p>
                 )}
               </div>
             );

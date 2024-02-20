@@ -1,10 +1,6 @@
-import {
-  ArrowDownIcon,
-  ArrowUpIcon,
-  ChevronDownIcon,
-  ChevronUpIcon,
-} from "@heroicons/react/solid";
 import React, { useState } from "react";
+import { random } from "lodash";
+import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/solid";
 
 /**
  * Creates a single square tile that is 320 x 320 px
@@ -43,15 +39,29 @@ export function SquareTile({ title, content, color }) {
  * @returns
  */
 export function ImageGallery({ images }) {
+  // because there could be multiple ImageGalleries, we want to further ensure it'll be a unique id
+  const randNum = random(10000);
   return (
     <ul className="flex flex-wrap justify-center">
       {images.map((image, idx) => (
-        <ImageDisplay image={image} idx={idx} />
+        <ImageDisplay
+          key={`imgDisplay-${randNum}-${idx}`}
+          image={image}
+          idx={`${randNum}-${idx}`}
+        />
       ))}
     </ul>
   );
 }
 
+/**
+ * Creates an image display that first uses a loading gif,
+ * handmade by yours truly (:
+ * @param {object} params
+ * @param {} params.image the image to display
+ * @param {number} params.idx the number to use for the id
+ * @returns
+ */
 function ImageDisplay({ image, idx }) {
   const [isLoading, setIsLoading] = useState(true);
 
@@ -77,7 +87,7 @@ function ImageDisplay({ image, idx }) {
               : "max-h-full min-w-full object-cover align-bottom"
           }
           src={image.src}
-          onLoad={setTimeout(() => setIsLoading(false), 500)}
+          onLoad={() => setTimeout(() => setIsLoading(false), 500)}
         />
         <p
           className={

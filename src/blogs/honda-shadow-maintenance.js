@@ -55,6 +55,7 @@ export const articleMetadata = {
           <img
             className="border-default md:max-w-sm"
             src="/public/images/motorcycle/sabrina.gif"
+            alt="sabrina choking on fumes"
           />
         </a>
       </div>
