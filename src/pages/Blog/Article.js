@@ -15,9 +15,6 @@ export default function Article({ articleUrl }) {
   const { article, loading, error } = useSelector((state) => state.article);
   const dispatch = useDispatch();
 
-  // I only want to dispatch this when I don't have the article itself,
-  // and I especially don't want this to keep tr
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     if ((!article || article.url !== articleUrl) && !loading && !error) {
       dispatch(getArticleAction(articleUrl));
