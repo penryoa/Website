@@ -52,7 +52,7 @@ export default function Article({ articleUrl }) {
             }
           >
             <h1
-              className="bg-tAccent1-900 dark:bg-tAccent1-200 flex gap-1 md:gap-2 items-baseline justify-center group select-none"
+              className="bg-tAccent1-900 dark:bg-tAccent1-200 flex gap-1 md:gap-2 items-baseline justify-center group select-none py-2"
               onClick={() => {
                 navigator.clipboard.writeText(
                   "http://www.thecalmplexcoder.com/blog/" +
@@ -60,13 +60,7 @@ export default function Article({ articleUrl }) {
                 );
               }}
             >
-              <div>
-                <span className="-translate-y-8 px-1 text-tBase-50 bg-tBase-950 text-base hidden group-active:fixed group-active:block transition duration-300">
-                  Copied!
-                </span>
-                <LinkIcon className="invisible group-hover:visible h-6 w-6" />
-              </div>
-              <p className="pr-6">{_.get(article, "title")}</p>
+              {_.get(article, "title")}
             </h1>
           </div>
           <div className="max-w-5xl mx-auto">
@@ -91,9 +85,9 @@ export default function Article({ articleUrl }) {
 
             <div className="p-2">{_.get(article, "content")}</div>
 
-            <div className="mt-4 pb-10 py-4 border-t border-dashed border-tBase-300 dark:border-tBase-500 text-lg">
-              <ul className="w-full flex flex-col sm:flex-row sm:justify-around italic space-y-4 sm:space-y-0">
-                <li className="flex flex-col items-center">
+            <div className="pt-6 pb-12 border-t border-dashed border-tBase-300 dark:border-tBase-500 text-lg">
+              <ul className="w-full flex flex-col sm:flex-row italic space-y-4 sm:space-y-0">
+                <li className="flex-1 flex flex-col items-center group">
                   <LinkIcon
                     className="p-1 m-1 text-tAccent1-100 bg-tAccent1-500 hover:bg-tAccent1-600 active:bg-tAccent1-pop rounded-full h-10 w-10"
                     onClick={() => {
@@ -104,9 +98,9 @@ export default function Article({ articleUrl }) {
                       setShowCopiedBanner(true);
                     }}
                   />
-                  share
+                  <div className="group-hover:animate-bounce">share</div>
                 </li>
-                <li className="flex flex-col items-center">
+                <li className="flex-1 flex flex-col items-center group">
                   <a
                     className="w-10 h-10 text-tAccent2-100 text-center p-1 m-auto text-xl bg-tAccent2-500 hover:bg-tAccent2-600 active:bg-tAccent2-pop rounded-full fa fa-envelope"
                     href={`mailto:addipenry@gmail.com?subject=Regarding the Article "${_.get(
@@ -116,14 +110,16 @@ export default function Article({ articleUrl }) {
                   >
                     <span className="hidden">talk to me</span>
                   </a>
-                  talk to me
+                  <div className="group-hover:animate-bounce">talk to me</div>
                 </li>
-                <li className="flex flex-col items-center">
+                <li className="flex-1 flex flex-col items-center group">
                   <HeartIcon
                     className="p-1 m-1 text-tAccent3-100 bg-tAccent3-500 hover:bg-tAccent3-600 active:bg-tAccent3-pop rounded-full h-10 w-10"
                     onClick={() => console.log("call KH")}
                   />
-                  show some love
+                  <div className="group-hover:animate-bounce">
+                    show some love
+                  </div>
                 </li>
               </ul>
             </div>
@@ -131,7 +127,7 @@ export default function Article({ articleUrl }) {
             <Banner
               open={showCopiedBanner}
               onClose={() => setShowCopiedBanner(false)}
-              textContent="Copied!"
+              textContent="Copied the link!"
             />
           </div>
         </>

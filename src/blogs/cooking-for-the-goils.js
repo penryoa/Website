@@ -85,13 +85,13 @@ export const articleMetadata = {
       <div className="text-center mt-2 w-full">
         <div className="w-full flex flex-wrap md:flex-nowrap">
           <div className="flex flex-col align-middle items-center w-full md:m-1 md:w-1/2 p-4 rounded-md text-tAccent2-800 dark:text-tAccent2-200 bg-tAccent2-400 dark:bg-tAccent2-600">
-            <HeartIcon className="h-8 w-8" />
+            <HeartIcon className="h-8 w-8 animate-pulse" />
             <b>Cravings</b>
             <b />
             <i>what do I find myself actually craving?</i>
           </div>
           <div className="flex flex-col align-middle items-center w-full md:m-1 md:w-1/2 p-4 rounded-md text-tAccent1-800 dark:text-tAccent1-200 bg-tAccent1-400 dark:bg-tAccent1-600">
-            <SunIcon className="h-8 w-8" />
+            <SunIcon className="h-8 w-8 animate-pulse" />
             <b>Aesthetics</b>
             <b />
             <i>if it isn't in a cute bowl, why eat it?</i>
@@ -100,13 +100,13 @@ export const articleMetadata = {
 
         <div className="w-full flex flex-wrap md:flex-nowrap">
           <div className="flex flex-col align-middle items-center w-full md:m-1 md:w-1/2 p-4 rounded-md text-tAccent4-800 dark:text-tAccent4-200 bg-tAccent4-400 dark:bg-tAccent4-600">
-            <GlobeIcon className="h-8 w-8" />
+            <GlobeIcon className="h-8 w-8 animate-pulse" />
             <b>Consciencious</b>
             <b />
             <i>why waste if I could not waste?</i>
           </div>
           <div className="flex flex-col align-middle items-center w-full md:m-1 md:w-1/2 p-4 rounded-md text-tAccent3-800 dark:text-tAccent3-200 bg-tAccent3-400 dark:bg-tAccent3-600">
-            <MapIcon className="h-8 w-8" />
+            <MapIcon className="h-8 w-8 animate-pulse" />
             <b>Assembly</b>
             <b />
             <i>lots of little treats {">"} one big thing</i>
