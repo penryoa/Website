@@ -6,7 +6,14 @@ import FlowersVertical from "../assets/svgs/FlowersVertical";
 import { pages } from "../util/constants";
 import { DarkModeToggle, ThemeSelector } from "./ThemeHandlers";
 
-// Customized from Headless UI
+/**
+ * Customized from Headless UI, this nav bar is a full screen overlay and menu
+ * @author Addi Penry, Headless UI
+ * @param {} params
+ * @param {boolean} params.open indicates whether or not the menu is open
+ * @param {function} params.onClose the callback when we close the menu
+ * @returns
+ */
 export default function Navbar({ open, onClose }) {
   return (
     <Transition.Root show={open} as={Fragment}>

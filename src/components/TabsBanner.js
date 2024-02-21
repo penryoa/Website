@@ -1,8 +1,14 @@
 import React from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 
+/**
+ * A banner of horizontal tabs that collapses to a dropdown when in mobile.
+ * NOTE: This will only work if each of the tabs are not parents themselves
+ * @param {object} params
+ * @param {list} params.tabs
+ * @returns
+ */
 export default function TabsBanner({ tabs }) {
-  // NOTE: This will only work if each of the child tabs are not parents themselves
   const navigator = useNavigate();
   const currentPath = useLocation().pathname.split("/").pop();
 
