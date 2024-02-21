@@ -114,8 +114,57 @@ export default function Article({ articleUrl }) {
                 </li>
                 <li className="flex-1 flex flex-col items-center group">
                   <HeartIcon
+                    id="showLove"
+                    key="showLove"
                     className="p-1 m-1 text-tAccent3-100 bg-tAccent3-500 hover:bg-tAccent3-600 active:bg-tAccent3-pop rounded-full h-10 w-10"
-                    onClick={() => console.log("call KH")}
+                    onClick={() => {
+                      const colorCycle = [
+                        "text-red-500",
+                        "text-orange-500",
+                        "text-yellow-500",
+                        "text-green-500",
+                        "text-blue-500",
+                        "text-purple-500",
+                      ];
+                      var colorCycleIdx = 0;
+                      const e = document.getElementById("showLove");
+                      const oldClassName = e.getAttribute("class");
+                      console.log("OLD CLASSNAME:", oldClassName);
+                      e.setAttribute(
+                        "class",
+                        oldClassName.replace(
+                          /text-tAccent[1234]-100/,
+                          colorCycle[0]
+                        )
+                      );
+
+                      const loveInterval = setInterval(() => {
+                        const oldClassName = e.getAttribute("class");
+                        console.log(
+                          `Love! Current idx: ${colorCycleIdx}. OLD CLASSNAME: ${oldClassName}`
+                        );
+                        colorCycleIdx = (colorCycleIdx + 1) % colorCycle.length;
+                        e.setAttribute(
+                          "class",
+                          oldClassName.replace(
+                            /text-\w*-500/,
+                            colorCycle[colorCycleIdx]
+                          )
+                        );
+                      }, 100);
+
+                      setTimeout(() => {
+                        clearInterval(loveInterval);
+                        const oldClassName = e.getAttribute("class");
+                        e.setAttribute(
+                          "class",
+                          oldClassName.replace(
+                            /text-\w*-500/,
+                            "text-tAccent3-100"
+                          )
+                        );
+                      }, 8000);
+                    }}
                   />
                   <div className="group-hover:animate-bounce">
                     show some love
