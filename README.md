@@ -3,7 +3,7 @@
 This is an ongoing project that was started at the beginning of June 2020, so it is always improving!
 The site can be accessed by [thecalmplexcoder.com](http://www.thecalmplexcoder.com).
 
-The website is very much intended for personal use and not necessarily a beacon of professionalism. As Trixie and Katya says, "Because it's our <website>, and not yours."
+The website is very much intended for personal use and not necessarily a beacon of professionalism. As Trixie and Katya says, "Because it's our [website], and not yours."
 
 ## New Features to Implement
 - Write a few more articles in the blog to fill it out
