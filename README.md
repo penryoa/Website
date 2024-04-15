@@ -12,7 +12,6 @@ The site can be accessed by [thecalmplexcoder.com](http://www.thecalmplexcoder.c
 
 ## Known Bugs/Malpractices
 - Inconsistent formatting and use of the JsDocs; want to use TypeScript to establish types and standardize JsDocs formatting
-- React Components should be in .jsx files as a best practice
 - The multi-select on the blog landing page: when you delete all tags and add one back in, it shows dramatically larger for some reason
 - The background repeats awkwardly at shorter screen heights; not a huge priority to fix, but on the list nonetheless
 - Instead of having the photos and articles in the repo, use their paths on the server to grab them
