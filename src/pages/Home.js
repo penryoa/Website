@@ -16,7 +16,7 @@ export default function Home() {
         <StarIcon className="h-8 w-8 text-tAccent1-300 dark:text-tAccent1-700" />
       </div>
       <p className="p-default">
-        I'm Addi, a full-stack software engineer based in North Carolina. This
+        I'm Addi, a full-stack software engineer currently based in North Carolina. This
         site is kind of my catalogue of things I care about, miscellaneous
         projects, my education/experience, and so on.
         <br />

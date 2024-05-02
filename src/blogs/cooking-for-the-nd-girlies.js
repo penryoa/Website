@@ -12,8 +12,8 @@ import { ExpandableTile } from "../components/Tiles";
 // TODO: move to db
 export const articleMetadata = {
   tags: [5, 9],
-  title: "Cooking (For the Goils)",
-  url: "cooking-for-the-goils",
+  title: "Cooking (For the ND Girles)",
+  url: "cooking-for-the-nd-girlies",
   titleImageClassName: "bg-[url('/public/images/food/cherry_sando.jpg')]",
   writtenBy: "Addi Penry",
   writtenAt: "2024-01-28",
@@ -21,12 +21,7 @@ export const articleMetadata = {
     <div className="blog">
       <p>
         I actually took some time away from having a job during December of
-        2023. Having a job for 3 1/2 years meant, for me, inevitable burnout
-        that strikes in waves. TLDR, I've spent most of my life in varying
-        degrees of survival mode, but since 2020, I've been able to prioritize
-        building a sense of self, emotional intelligence, and executive
-        functioning skills. And what's the hardest executive functioning skill
-        for me, you ask?
+        2023. I really wanted to reassess what career direction to take, and when I don't have the answer to something, I obsess over it. In this time, I prioritized building emotional intelligence and executive functioning skills, yet what executive functioning skill was still plaguing me?
       </p>
       <div className="py-3 flex justify-center items-center gap-3 text-xl text-tAccent2-700 dark:text-tAccent2-300">
         <span className="flex items-baseline">

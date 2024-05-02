@@ -4,10 +4,10 @@
   "description": "my personal website made with react",
   "scripts": {
     "prebuild": "npm run build:tailwind",
-    "build": "react-scripts build",
+    "build": "react-scripts --openssl-legacy-provider build",
     "build:tailwind": "postcss tailwindcss -i src/assets/custom.css -o src/assets/generated.css",
     "watch:tailwind": "postcss -w src/assets/custom.css -o src/assets/generated.css",
-    "start": "set PORT=3001 && react-scripts start",
+    "start": "set PORT=3001 && react-scripts --openssl-legacy-provider start",
     "dev": "run-p watch:tailwind start",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
@@ -25,7 +25,7 @@
   "bugs": {
     "url": "https://github.com/penryoa/Website/issues"
   },
-  "homepage": "https://thecalmplexcoder.com/",
+  "homepage": "https://github.com/penryoa/Website#readme",
   "devDependencies": {
     "@babel/plugin-proposal-class-properties": "^7.10.4",
     "@babel/preset-env": "^7.11.5",

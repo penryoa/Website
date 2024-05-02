@@ -58,7 +58,7 @@ export default function Work() {
       <h2>current endeavors</h2>
       <p className="p-default m-4">
         I'm currently looking for work after four years as a Full Stack Software
-        Engineer, usually skewed towards the front end or specs/data design. I'm
+        Engineer, preferably skewed towards the front end or specs/data design. I'm
         passionate about good documentation, clean code, and organization as a
         whole.
         <br />
@@ -70,31 +70,31 @@ export default function Work() {
         <StyledLink href="https://github.com/penryoa/Website">
           linked here for your convenience.&nbsp;
         </StyledLink>
-        I have some (shitty) sample code from college as well, found&nbsp;
-        <StyledLink href="https://github.com/penryoa/rose-hulman_backup">
-          here (code I wrote in classes)&nbsp;
+        Any other code is best explained on&nbsp;
+        <StyledLink href="https://github.com/penryoa">
+          my GitHub landing page&nbsp;
         </StyledLink>
-        and&nbsp;
-        <StyledLink href="https://github.com/KixorTech/CourseUp/tree/staging">
-          here (code for my client in my senior year).&nbsp;
+        , though I especially want to point out that I've started on my own project called&nbsp;
+        <StyledLink href="https://github.com/Language-Output-Generator">
+        Language Output Generator (LOG)!&nbsp;
         </StyledLink>
       </p>
 
       <div className="mt-5 flex flex-wrap justify-center gap-4">
         <StyledLink
           className=" block w-96 text-tAccent1-100 text-lg rounded-lg m-5 p-5 bg-tAccent1-500 hover:bg-tAccent1-300 dark:hover:bg-tAccent1-700"
-          href="../../../public/Resume_Addi-Penry_Public.pdf"
-          download="Addi_Penry_Resume_2024"
+          href="../../../public/AddiPenryResumePublic.pdf"
+          download="Addi-Penry-Resume-2024"
         >
           <span className="flex">
             <DownloadIcon className="h-8 w-8 pr-3" />
-            Download My Resume
+            Download My (Public) Resume
           </span>
         </StyledLink>
         <StyledLink
           className=" block w-96 text-tAccent1-100 text-lg rounded-lg m-5 p-5 bg-tAccent1-500 hover:bg-tAccent1-300 dark:hover:bg-tAccent1-700"
           href="../../../public/Autism_Acceptance_Month.pdf"
-          download="Autism_Acceptance_Month"
+          download="Autism-Acceptance-Month"
         >
           <span className="flex">
             <DownloadIcon className="h-8 w-8 pr-3" />
