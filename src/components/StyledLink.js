@@ -1,7 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export default function StyledLink({ useRRD = false, children, ...props }) {
+/**
+ * Returns an anchor element or Link element that operates as a stylized link
+ * @author Addi Penry
+ * @param {object} params
+ * @param {*} params.children the element that goes within the link
+ * @param {boolean} [params.useRRD] whether or not the link should use React Router Dom
+ * @param {*} [params.props] any additional styling props
+ */
+export default function StyledLink({ children, useRRD = false, ...props }) {
   if (useRRD) {
     return (
       <Link

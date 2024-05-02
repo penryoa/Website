@@ -1,10 +1,14 @@
 import React from "react";
 import { getTailwindClass } from "../../util/tailwindClassHandler";
 
-export default function SkullIcon({ size = "w-12 h-12" }) {
+/**
+ * Creates the skull icon used as a menu toggle
+ * @author Addi Penry
+ */
+export default function SkullIcon() {
   return (
     <svg
-      className={`${size} rounded-full bg-tBase-500/70 hover:bg-tAccent1-400/50 dark:hover:bg-tAccent1-600/50`}
+      className="w-12 h-12 rounded-full bg-tBase-500/70 hover:bg-tAccent1-400/50 dark:hover:bg-tAccent1-600/50"
       viewBox="0 0 32 32"
       xmlns="http://www.w3.org/2000/svg"
     >

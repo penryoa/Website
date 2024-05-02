@@ -12,15 +12,25 @@ const articlesToShow = [
 ];
 // ===============================
 
+/**
+ * Gets the articles with metadata including a specific tag.
+ * TODO: turn this into an actual request using a DB.
+ * @author Addi Penry
+ * @param {number} tag
+ */
 export function getArticlesForTag(tag) {
-  // TODO: turn into actual request with db
   return articlesToShow.filter((item) => {
     return item.tags.includes(tag);
   });
 }
 
+/**
+ * Gets the article by its URL.
+ * TODO: turn this into an actual request using a DB.
+ * @author Addi Penry
+ * @param {string} url
+ */
 export function getArticleRequest(url) {
-  // TODO: turn into actual request with db
   window.scrollTo({ top: 0 });
   return _.get(
     _.filter(articlesToShow, (article) => article.url === url),
@@ -29,6 +39,12 @@ export function getArticleRequest(url) {
   );
 }
 
+/**
+ * Finds articles with a specific keyword in the title.
+ * TODO: finish implementing this using a DB.
+ * @author Addi Penry
+ * @param {string} keyword
+ */
 export function searchArticleByTitle(keyword) {
   return articlesToShow.filter((article) => article.title.includes(keyword));
 }

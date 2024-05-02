@@ -5,6 +5,7 @@ import {
   MusicNoteIcon,
   TerminalIcon,
 } from "@heroicons/react/solid";
+
 // ===== THEMES =====
 export const themes = [
   "hydrangeas",
@@ -333,7 +334,7 @@ export const goals = [
 
 export const features = [
   {
-    color: "bg-tAccent4-300/80 dark:bg-tAccent4-700/80",
+    color: "bg-tBase-300/80 dark:bg-tBase-700/80",
     content: (
       <p>
         Because this is a personal site and it's not necessarily always fun to
@@ -343,7 +344,7 @@ export const features = [
       </p>
     ),
     title: (
-      <p className="flex text-tAccent4-800 dark:text-tAccent4-200">
+      <p className="flex text-tBase-800 dark:text-tBase-200">
         <ServerIcon className="h-7 w-7 pr-2" />
         backend
       </p>
@@ -415,7 +416,7 @@ export const features = [
       </div>
     ),
     title: (
-      <span className="flex text-tAccent2-800 dark:text-tAccent2-200">
+      <span className="flex text-tAccent4-800 dark:text-tAccent4-200">
         <DocumentTextIcon className="h-7 w-7 pr-2" />
         poem collection
       </span>
@@ -435,7 +436,7 @@ export const features = [
       </p>
     ),
     title: (
-      <span className="flex text-tAccent4-800 dark:text-tAccent4-200">
+      <span className="flex text-tBase-800 dark:text-tBase-200">
         <MusicNoteIcon className="h-7 w-7 pr-2" />
         original music collection
       </span>

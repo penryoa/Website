@@ -6,7 +6,12 @@ const initialState = {
   article: null,
 };
 
-const ArticleReducer = (state = initialState, action) => {
+/**
+ * Updates the Redux state based on the incoming action
+ * @param {object} state indicates the current state of the ArticleReducer
+ * @param {object} action the new action that has taken place
+ */
+function ArticleReducer(state = initialState, action) {
   switch (action.type) {
     case actionTypes.GET_ARTICLE + "_REQUEST": {
       return {
@@ -31,6 +36,6 @@ const ArticleReducer = (state = initialState, action) => {
       return state;
     }
   }
-};
+}
 
 export default ArticleReducer;

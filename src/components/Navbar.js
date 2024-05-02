@@ -12,7 +12,6 @@ import { DarkModeToggle, ThemeSelector } from "./ThemeHandlers";
  * @param {} params
  * @param {boolean} params.open indicates whether or not the menu is open
  * @param {function} params.onClose the callback when we close the menu
- * @returns
  */
 export default function Navbar({ open, onClose }) {
   return (

@@ -5,7 +5,7 @@ import { goals, features } from "../util/constants";
 
 /**
  * A page called Home, which operates as the landing page for the website
- * @returns
+ * @author Addi Penry
  */
 export default function Home() {
   // just here so tailwind loads it in: "sm:ml-0 sm:ml-2 sm:ml-4 sm:ml-6 sm:ml-8"

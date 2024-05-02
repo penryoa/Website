@@ -4,6 +4,10 @@ import { MoonIcon } from "@heroicons/react/outline";
 import { themes } from "../util/constants";
 import { getThemeCookie, setThemeCookie } from "../util/cookies";
 
+/**
+ * The dropdown for theme selection, saving the preference as a cookie
+ * @author Addi Penry
+ */
 export function ThemeSelector() {
   return (
     <div className="flex gap-2 items-baseline w-1/2">
@@ -31,6 +35,10 @@ export function ThemeSelector() {
   );
 }
 
+/**
+ * The dropdown for toggling dark mode, saving the preference as a cookie
+ * @author Addi Penry
+ */
 export function DarkModeToggle() {
   const [enabled, setEnabled] = useState(getThemeCookie().darkMode === "dark");
 

@@ -1,8 +1,19 @@
+/**
+ * Saves the new theme and mode preferences as cookies
+ * @author Addi Penry
+ * @param {object} params
+ * @param {string} params.themeName the name of the theme
+ * @param {string} params.darkMode the dark mode selection, "dark" or "light"
+ */
 export function setThemeCookie({ themeName, darkMode }) {
   document.cookie = `themeName=${themeName}; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/`;
   document.cookie = `darkMode=${darkMode}; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/`;
 }
 
+/**
+ * Gets the theme from the saved cookies
+ * @author Addi Penry
+ */
 export function getThemeCookie() {
   const myTheme = { themeName: "hydrangeas", darkMode: "dark" };
   let decodedCookie = decodeURIComponent(document.cookie);

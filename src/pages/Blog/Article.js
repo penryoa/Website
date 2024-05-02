@@ -12,7 +12,6 @@ import { Banner } from "../../components/Banner";
  * @author Addi Penry
  * @param {object} params
  * @param {string} params.articleUrl the URL of the article to generate
- * @returns
  */
 export default function Article({ articleUrl }) {
   const { article, loading, error } = useSelector((state) => state.article);
@@ -44,7 +43,7 @@ export default function Article({ articleUrl }) {
           <div
             className={
               _.get(article, "titleImageClassName")
-                ? `py-20 md:py-24 xl:py-32 md:bg-contain bg-cover md:bg-fixed bg-blend-darken bg-no-repeat ${_.get(
+                ? `rounded-lg py-20 md:py-24 xl:py-32 md:bg-contain bg-cover md:bg-fixed bg-no-repeat bg-center bg-blend-darken h-full w-full ${_.get(
                     article,
                     "titleImageClassName"
                   )}`
@@ -52,7 +51,7 @@ export default function Article({ articleUrl }) {
             }
           >
             <h1
-              className="bg-tAccent1-900 dark:bg-tAccent1-200 flex gap-1 md:gap-2 items-baseline justify-center group select-none py-2"
+              className="bg-tAccent1-900/70 dark:bg-tAccent1-200/50 w-full border-y-2 border-tBase-100 dark:border-tBase-900 backdrop-blur-sm text-tBase-100 dark:text-tBase-800 py-2"
               onClick={() => {
                 navigator.clipboard.writeText(
                   "http://www.thecalmplexcoder.com/blog/" +
@@ -151,7 +150,7 @@ export default function Article({ articleUrl }) {
                             colorCycle[colorCycleIdx]
                           )
                         );
-                      }, 100);
+                      }, 75);
 
                       setTimeout(() => {
                         clearInterval(loveInterval);
@@ -163,7 +162,7 @@ export default function Article({ articleUrl }) {
                             "text-tAccent3-100"
                           )
                         );
-                      }, 8000);
+                      }, 5000);
                     }}
                   />
                   <div className="group-hover:animate-bounce">

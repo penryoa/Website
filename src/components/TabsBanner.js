@@ -6,7 +6,6 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
  * NOTE: This will only work if each of the tabs are not parents themselves
  * @param {object} params
  * @param {list} params.tabs
- * @returns
  */
 export default function TabsBanner({ tabs }) {
   const navigator = useNavigate();

@@ -4,7 +4,7 @@ import { aboutMeTiles } from "../../util/constants";
 
 /**
  * The page called Hobbies, intended to list out my hobbies and interests
- * @returns
+ * @author Addi Penry
  */
 export default function Hobbies() {
   return (

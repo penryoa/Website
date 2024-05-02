@@ -4,7 +4,7 @@ import { aboutMeImages } from "../../util/constants";
 
 /**
  * The page called Images, intended to display some of my personal photos
- * @returns
+ * @author Addi Penry
  */
 export default function Images() {
   return (

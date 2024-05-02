@@ -4,11 +4,11 @@ import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/solid";
 
 /**
  * Creates a single square tile that is 320 x 320 px
+ * @author Addi Penry
  * @param {object} params
  * @param {string} params.color the full className string representing the bg/text colors
  * @param {} params.content the html content of the tile
  * @param {string} params.title the title of the tile
- * @returns
  */
 export function SquareTile({ title, content, color }) {
   return (
@@ -31,12 +31,12 @@ export function SquareTile({ title, content, color }) {
 
 /**
  * Creates an auto-adjusting image gallery based on the screen width
+ * @author Addi Penry
  * @param {object} params
  * @param {list} params.images all the images to display in the gallery
  * @param {string} params.images[0].altText the text to be displayed if the image doesn't load
  * @param {string} params.images[0].descText the text displayed upon hover (desktop) or click (mobile)
  * @param {string} params.images[0].src the path (in '/public') to the image
- * @returns
  */
 export function ImageGallery({ images }) {
   // because there could be multiple ImageGalleries, we want to further ensure it'll be a unique id
@@ -55,12 +55,11 @@ export function ImageGallery({ images }) {
 }
 
 /**
- * Creates an image display that first uses a loading gif,
- * handmade by yours truly (:
+ * Creates an image display that uses a self-made gif while loading
+ * @author Addi Penry
  * @param {object} params
  * @param {} params.image the image to display
  * @param {number} params.idx the number to use for the id
- * @returns
  */
 function ImageDisplay({ image, idx }) {
   const [isLoading, setIsLoading] = useState(true);
@@ -107,12 +106,12 @@ function ImageDisplay({ image, idx }) {
 
 /**
  * Creates a full-width tile with a title bar that can be toggled to be hidden
+ * @author Addi Penry
  * @param {object} params
  * @param {string} params.color the full className string representing the bg/text colors
  * @param {} params.content the html content of the tile
  * @param {boolean} params.defaultToExpanded the default setting for whether or not the tile is expanded
  * @param {string} params.title the title of the tile
- * @returns
  */
 export function ExpandableTile({
   title,

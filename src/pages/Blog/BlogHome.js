@@ -10,7 +10,7 @@ import { getArticlesForTag } from "../../redux/article.request";
 
 /**
  * A page called BlogHome, which operates as the landing page for the blog
- * @returns
+ * @author Addi Penry
  */
 export default function BlogHome() {
   const [filteredTags, setFilteredTags] = useState(_.values(tagData));

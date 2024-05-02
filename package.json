@@ -25,7 +25,7 @@
   "bugs": {
     "url": "https://github.com/penryoa/Website/issues"
   },
-  "homepage": "https://github.com/penryoa/Website#readme",
+  "homepage": "https://thecalmplexcoder.com/",
   "devDependencies": {
     "@babel/plugin-proposal-class-properties": "^7.10.4",
     "@babel/preset-env": "^7.11.5",

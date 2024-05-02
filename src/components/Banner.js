@@ -2,11 +2,11 @@ import React, { useEffect } from "react";
 
 /**
  * A banner that, when params.open is true, will drop down a temporary banner in the top right corner
+ * @author Addi Penry
  * @param {object} params
  * @param {boolean} params.open
  * @param {function} params.onClose
  * @param {number} params.timeoutMs
- * @return
  */
 export function Banner({ open, onClose, textContent, timeoutMs = 4000 }) {
   useEffect(() => {

@@ -5,7 +5,7 @@ import StyledLink from "../../components/StyledLink";
 
 /**
  * The page called Images, representing my experience and education
- * @returns
+ * @author Addi Penry
  */
 export default function Work() {
   const [isLoadingVideo, setIsLoadingVideo] = useState(true);
