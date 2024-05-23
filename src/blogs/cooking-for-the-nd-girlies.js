@@ -49,12 +49,11 @@ export const articleMetadata = {
         <li>
           With my exteroception sensitivities, I see knives or graters being
           used and feel it against my skin. The impact of that phantom feeling
-          depends on my mental and physical state generally (bad day? tired? so
-          on), so if you catch me on a bad day, I am inable to even chop my own
+          depends on my mental and physical state generally, so if you catch me on a bad day, I am inable to even chop my own
           veggies without risk of an anxiety attack.
         </li>
         <li>
-          Speaking of anxiety, I'm super prone to burnout and decision fatigue,
+          Speaking of anxiety, I'm prone to burnout and decision fatigue,
           which means my abilities at any given time can severely limit what I
           can do and I have to be extra careful.
         </li>

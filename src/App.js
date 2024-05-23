@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef, useCallback } from "react";
+import { useDispatch } from "react-redux";
 import {
   Outlet,
   Route,
@@ -20,12 +21,12 @@ import Article from "./pages/Blog/Article";
 import Home from "./pages/Home";
 import Navbar from "./components/Navbar";
 import TabsBanner from "./components/TabsBanner";
+import { searchArticleByTitle } from "./redux/article.request";
 import { aboutMeTabs } from "./util/constants";
 import { getThemeCookie } from "./util/cookies";
-import { searchArticleByTitle } from "./redux/article.request";
 
 const App = () => {
-  const [open, setOpen] = useState(false);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const themeCookie = getThemeCookie();
@@ -42,7 +43,7 @@ const App = () => {
       <div className="max-w-6xl mx-auto px-1 md:px-4 slashed-zero stacked-fractions">
         <button
           className="fixed top-4 left-4 z-40"
-          onClick={() => setOpen(true)}
+          onClick={() => dispatch({"type":"TOGGLE"})}
         >
           <SkullIcon />
         </button>
@@ -71,14 +72,8 @@ const App = () => {
 
       <p className="p-default">
         I'm Addi, a software developer from the Midwest who landed in NYC for a
-        bit and finally NC. I have a hodgepodge of interests and hobbies and not
-        enough time to tend to them all. I'm a motorcyclist, musician, avid tea
-        drinker, and aspiring game developer.
-        <br />
-        <br />
-        Want to know more about what I do in my free time? My development
-        experience? Snoop on pics I've taken? Well, it's all here, so check it
-        out!
+        bit and currently reside in NC. I have a hodgepodge of interests and hobbies and not
+        enough time to tend to them all. Feel free to snoop to learn more about it!
       </p>
       <TabsBanner tabs={aboutMeTabs} />
       <Outlet />
@@ -128,7 +123,7 @@ const App = () => {
 
   return (
     <BrowserRouter>
-      <Navbar open={open} onClose={() => setOpen(false)} />
+      <Navbar />
       <Routes>
         <Route path="/" element={<BodyLayout />}>
           <Route index element={<Home />} />

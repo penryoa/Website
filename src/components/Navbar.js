@@ -5,15 +5,18 @@ import { Link } from "react-router-dom";
 import FlowersVertical from "../assets/svgs/FlowersVertical";
 import { pages } from "../util/constants";
 import { DarkModeToggle, ThemeSelector } from "./ThemeHandlers";
+import { useDispatch, useSelector } from "react-redux";
 
 /**
  * Customized from Headless UI, this nav bar is a full screen overlay and menu
  * @author Addi Penry, Headless UI
- * @param {} params
- * @param {boolean} params.open indicates whether or not the menu is open
- * @param {function} params.onClose the callback when we close the menu
  */
-export default function Navbar({ open, onClose }) {
+export default function Navbar() {
+  // Accessing the Redux store
+  const dispatch = useDispatch();
+  const { open } = useSelector((state) => state.navbar);
+  const onClose = () => dispatch({"type":"TOGGLE"});
+
   return (
     <Transition.Root show={open} as={Fragment}>
       <Dialog

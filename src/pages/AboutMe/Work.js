@@ -1,6 +1,6 @@
 import { AcademicCapIcon } from "@heroicons/react/outline";
 import { DownloadIcon } from "@heroicons/react/solid";
-import React, { useState } from "react";
+import React from "react";
 import StyledLink from "../../components/StyledLink";
 
 /**
@@ -8,23 +8,10 @@ import StyledLink from "../../components/StyledLink";
  * @author Addi Penry
  */
 export default function Work() {
-  const [isLoadingVideo, setIsLoadingVideo] = useState(true);
   return (
     <div className="max-w-5xl mx-auto pt-2">
       <div className="w-full">
-        <video
-          className={`w-full ${isLoadingVideo && "hidden"}`}
-          controls
-          src="/public/AddiPenryElevatorPitch.mp4"
-          onLoad={setTimeout(() => setIsLoadingVideo(false), 500)}
-        />
-        <img
-          alt={"cat_meow"}
-          className={
-            isLoadingVideo ? "w-24 invert-0 dark:invert mx-auto" : "hidden"
-          }
-          src="/public/catmeow.gif"
-        />
+      <iframe src="https://drive.google.com/file/d/1w9je75QmSPS8B5Q-KAagTxlPH8gQZpZ1/preview" className="mx-auto max-w-full w-[426px] h-[240px] sm:w-[852px] sm:h-[480px] shadow-lg shadow-bg-500" allow="autoplay" />
       </div>
 
       <h2>education</h2>
