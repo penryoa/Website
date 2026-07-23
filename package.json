@@ -4,9 +4,9 @@
   "description": "my personal website made with react",
   "scripts": {
     "prebuild": "npm run build:tailwind",
-    "build:tailwind": "postcss tailwindcss -i src/assets/custom.css -o src/assets/generated.css",
+    "build:tailwind": "postcss src/assets/custom.css -o src/assets/generated.css",
     "watch:tailwind": "postcss -w src/assets/custom.css -o src/assets/generated.css",
-    "start": "set PORT=3001 && react-scripts --openssl-legacy-provider start",
+    "start": "react-scripts start",
     "dev": "run-p watch:tailwind start",
     "lint": "eslint ."
   },
