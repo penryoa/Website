@@ -2,11 +2,11 @@ import React from "react";
 
 export default function FlowersVertical() {
   // ====== ATTRIBUTION: Botanical flowers vector created by orchidart - www.freepik.com
-  const petalFill = "fill-tAccent1-100 dark:fill-tAccent1-500";
+  const petalFill = "fill-purple-100 dark:fill-purple-500";
   return (
     <svg
       id="flowers_vertical"
-      className="w-full fill-tBase-300 dark:fill-tBase-700"
+      className="w-full fill-red-300 dark:fill-red-700"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 1037.58 1653.56"
     >

@@ -15,7 +15,7 @@ export default function StyledLink({ children, useRRD = false, ...props }) {
       <Link
         className={
           props.className ||
-          "hover:underline hover:underline-offset-1 text-tAccent3-800 visited:text-tAccent3-800 dark:text-tAccent3-200 dark:visited:text-tAccent3-200 dark:hover:text-tAccent3-500 hover:text-tAccent3-500 active:text-tAccent3-pop"
+          "hover:underline hover:underline-offset-1 text-fuchsia-800 visited:text-fuchsia-800 dark:text-fuchsia-200 dark:visited:text-fuchsia-200 dark:hover:text-fuchsia-500 hover:text-fuchsia-500 active:text-fuchsia-700"
         }
         {...props}
       >
@@ -27,7 +27,7 @@ export default function StyledLink({ children, useRRD = false, ...props }) {
     <a
       className={
         props.className ||
-        "hover:underline hover:underline-offset-1 text-tAccent3-800 visited:text-tAccent3-800 dark:text-tAccent3-200 dark:visited:text-tAccent3-200 dark:hover:text-tAccent3-500 hover:text-tAccent3-500 active:text-tAccent3-pop"
+        "hover:underline hover:underline-offset-1 text-fuchsia-800 visited:text-fuchsia-800 dark:text-fuchsia-200 dark:visited:text-fuchsia-200 dark:hover:text-fuchsia-500 hover:text-fuchsia-500 active:text-fuchsia-700"
       }
       target="_blank"
       rel="noopener noreferrer"

@@ -15,7 +15,7 @@ export default function TabsBanner({ tabs }) {
     <>
       <div className="block sm:hidden">
         <select
-          className="my-3 py-2 rounded-md text-lg bg-gradient-to-r dark:from-tAccent3-600 dark:to-tAccent3-700 from-tAccent3-400 to-tAccent3-300 focus:outline-none w-full"
+          className="my-3 py-2 rounded-md text-lg bg-gradient-to-r dark:from-fuchsia-600 dark:to-fuchsia-700 from-fuchsia-400 to-fuchsia-300 focus:outline-none w-full"
           onChange={(e) => navigator(e.target.value)}
           value={currentPath}
         >
@@ -23,7 +23,7 @@ export default function TabsBanner({ tabs }) {
             <option
               key={`dropdownTabs.${idx}`}
               value={tab.to}
-              className="dark:bg-tBase-950 dark:hover:bg-tAccent3-200 bg-tBase-50 hover:bg-tAccent3-800 checked:bg-tAccent3-500"
+              className="dark:bg-red-950 dark:hover:bg-fuchsia-200 bg-red-50 hover:bg-fuchsia-800 checked:bg-fuchsia-500"
             >
               {tab.title}
             </option>
@@ -31,14 +31,14 @@ export default function TabsBanner({ tabs }) {
         </select>
       </div>
       <div className="hidden sm:block">
-        <div className="py-2 my-4 flex justify-center items-baseline gap-4 bg-tBase-50/80 dark:bg-tBase-950/80 rounded-lg">
+        <div className="py-2 my-4 flex justify-center items-baseline gap-4 bg-red-50/80 dark:bg-red-950/80 rounded-lg">
           {tabs.map((tab, idx) => (
             <Link
               key={`horizontalTabs.${idx}`}
               className={`${
                 tab.to === currentPath
-                  ? "bg-tAccent3-500"
-                  : "hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-tAccent3-700 dark:hover:from-tAccent3-300 hover:to-tAccent3-500 active:text-tAccent3-pop hover:border-tAccent3-600 dark:hover:border-tAccent3-400 active:border-tAccent3-pop"
+                  ? "bg-fuchsia-500"
+                  : "hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-fuchsia-700 dark:hover:from-fuchsia-300 hover:to-fuchsia-500 active:text-fuchsia-500 hover:border-fuchsia-600 dark:hover:border-fuchsia-400 active:border-fuchsia-800"
               }  rounded-sm p-2 border-b-2 border-transparent `}
               to={tab.to}
             >

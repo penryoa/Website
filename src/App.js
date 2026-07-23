@@ -10,46 +10,41 @@ import {
   useNavigate,
 } from "react-router-dom";
 import Select from "react-select";
-import { AnnotationIcon, HandIcon } from "@heroicons/react/outline";
-import { ArrowUpIcon, SearchCircleIcon } from "@heroicons/react/solid";
-import SkullIcon from "./assets/svgs/SkullIcon";
-import Hobbies from "./pages/AboutMe/Hobbies";
-import Images from "./pages/AboutMe/Images";
-import Work from "./pages/AboutMe/Work";
-import BlogHome from "./pages/Blog/BlogHome";
-import Article from "./pages/Blog/Article";
-import Home from "./pages/Home";
+import { ArrowUpIcon, MapIcon, SparklesIcon } from "@heroicons/react/solid";
 import Navbar from "./components/Navbar";
-import TabsBanner from "./components/TabsBanner";
-import { searchArticleByTitle } from "./redux/article.request";
-import { aboutMeTabs } from "./util/constants";
-import { getThemeCookie } from "./util/cookies";
+import HomePage from "./pages/Home";
+import FilmPage from "./pages/Film";
+import OccultPage from "./pages/Occult";
+import WebPage from "./pages/Web";
+import MePage from "./pages/Me";
 
 const App = () => {
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    const themeCookie = getThemeCookie();
-    document
-      .getElementById("mainHTML")
-      .setAttribute("data-theme", themeCookie.themeName);
-    document
-      .getElementById("mainHTML")
-      .setAttribute("class", themeCookie.darkMode);
-  }, []);
-
-  const BodyLayout = () => {
+  const CorePageLayout = (PageLayout) => {
     return (
-      <div className="max-w-6xl mx-auto px-1 md:px-4 slashed-zero stacked-fractions">
+      <div className="min-h-screen bg-linear-to-t from-red-50 to-purple-300 dark:from-black dark:to-red-900">
+        <div className="h-full w-full bg-[url(/public/images/paper.jpg)] opacity-25 bg-cover bg-repeat">
+        </div>
+        <div className="max-w-7xl mx-auto relative py-4 h-full">
+          <PageLayout />
+        </div>
+      </div>
+    )
+  };
+
+  const PagesLayout = () => {
+    return (
+      <div className="slashed-zero stacked-fractions">
         <button
           className="fixed top-4 left-4 z-40"
-          onClick={() => dispatch({"type":"TOGGLE"})}
+          onClick={() => dispatch({"type":"MENU_TOGGLE"})}
         >
-          <SkullIcon />
+          <SparklesIcon className="w-12 h-12 p-2 text-white rounded-full bg-red-500/70 hover:bg-purple-400/50 dark:hover:bg-purple-600/50" />
         </button>
         <Outlet />
         <button
-          className="fixed [left:50%] bottom-4 z-40 bg-tAccent1-500/40 group hover:bg-tAccent1-700/40 dark:hover:bg-tAccent1-300/40 rounded-full"
+          className="fixed left:[50%] bottom-4 z-40 bg-purple-500/40 group hover:bg-purple-700/40 dark:hover:bg-purple-300/40 rounded-full"
           onClick={() => {
             window.scrollTo({
               top: 0,
@@ -57,86 +52,22 @@ const App = () => {
             });
           }}
         >
-          <ArrowUpIcon className="h-8 w-8 text-tAccent3-300 dark:text-tAccent3-700 group-hover:text-tAccent3-pop p-1" />
+          <ArrowUpIcon className="h-8 w-8 text-orange-300 dark:text-orange-700 group-hover:text-orange-500 p-1" />
         </button>
       </div>
     );
-  };
-
-  const AboutMeLayout = () => (
-    <>
-      <h1 className="flex items-center justify-center">
-        hello there
-        <HandIcon className="ml-2 h-8 w-8 text-inherit" />
-      </h1>
-
-      <p className="p-default">
-        I'm Addi, a software developer from the Midwest who landed in NYC for a
-        bit and currently reside in NC. I have a hodgepodge of interests and hobbies and not
-        enough time to tend to them all. Feel free to snoop to learn more about it!
-      </p>
-      <TabsBanner tabs={aboutMeTabs} />
-      <Outlet />
-    </>
-  );
-
-  const BlogLayout = () => {
-    const navigate = useNavigate();
-    return (
-      <>
-        <div className="flex justify-center md:-mx-2">
-          <div className="bg-tBase-950 dark:bg-tBase-200 text-tBase-50 dark:text-tBase-950 w-full flex items-center justify-end sm:justify-between rounded-3xl my-2 py-3 px-6 sm:px-20 lg:[width:50em] xl:[width:70em]">
-            <button
-              className="group hidden sm:flex items-center gap-2 select-none"
-              onClick={() => navigate("/blog")}
-            >
-              <AnnotationIcon
-                className="h-7 w-7 tex
-              t-tAccent1-300 dark:text-tAccent1-700 group-hover:text-tAccent1-500 dark:group-hover:text-tAccent1-900"
-              />
-              <p className="text-xl font-heading group-hover:text-tBase-200 dark:group-hover:text-tBase-600">
-                the calmplex corner
-              </p>
-            </button>
-            <div className="flex items-center gap-2">
-              <SearchCircleIcon className="h-6 w-6" />
-              <Select
-                placeholder="search..."
-                className="w-40 md:w-60 text-tBase-950"
-                options={[{ value: "test", label: "Work in progress!" }]}
-                onKeyDown={(e) =>
-                  console.log(searchArticleByTitle(e.target.value))
-                }
-              />
-            </div>
-          </div>
-        </div>
-        <Outlet className=" top-20" />
-      </>
-    );
-  };
-
-  const BlogArticle = () => {
-    let { articleId } = useParams();
-    return <Article articleUrl={articleId} />;
   };
 
   return (
     <BrowserRouter>
       <Navbar />
       <Routes>
-        <Route path="/" element={<BodyLayout />}>
-          <Route index element={<Home />} />
-          <Route path="about-me" element={<AboutMeLayout />}>
-            <Route index element={<Navigate to="/about-me/hobbies" />} />
-            <Route path="hobbies" element={<Hobbies />} />
-            <Route path="work" element={<Work />} />
-            <Route path="images" element={<Images />} />
-          </Route>
-          <Route path="blog" element={<BlogLayout />}>
-            <Route index element={<BlogHome />} />
-            <Route path=":articleId" element={<BlogArticle />} />
-          </Route>
+        <Route index element={CorePageLayout(HomePage)} />
+        <Route path="/" element={CorePageLayout(PagesLayout)}>
+          <Route path="film" element={<FilmPage />} />
+          <Route path="occult" element={<OccultPage />} />
+          <Route path="web" element={<WebPage />} />
+          <Route path="me" element={<MePage />} />
         </Route>
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>

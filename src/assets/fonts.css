@@ -1,5 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Crete+Round:ital@0;1&family=Fugaz+One&display=swap");
-
+/* SKYRIM FONTS */
 @font-face {
   font-family: "Futura Condensed PT";
   src: url("./fonts/futura/FuturaCondensedPT-Medium.woff2") format("woff2"),
@@ -17,4 +16,22 @@
   font-weight: normal;
   font-style: normal;
   font-display: swap;
+}
+
+/* MY FAVORITE FONTS */
+@font-face {
+  font-family: "Chicken Scratch", "sans";
+  src: url("./fonts/Chicken_Scratch/ChickenScratch-Regular.otf") format("otf");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Victor Mono", "monospace";
+  src: url("./fonts/Victor_Mono/VictorMono-VariableFont_wght.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+  size-adjust: 80%;
 }

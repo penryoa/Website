@@ -4,7 +4,7 @@ const initialState = {
 
 const NavbarReducer = (state = initialState, action) => {
   switch (action.type) {
-    case "TOGGLE": {
+    case "MENU_TOGGLE": {
       return {
         open: !state.open
       };
