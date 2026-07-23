@@ -1,6 +1,5 @@
 module.exports = {
     "extends":[
-        "react-app",
         "plugin:jsk-a11y/recommended",
         "prettier",
         "prettier/react"

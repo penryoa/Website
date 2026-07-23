@@ -4,10 +4,19 @@ import { SparklesIcon, XIcon } from "@heroicons/react/outline";
 import { Link } from "react-router-dom";
 import FlowersVertical from "../assets/svgs/FlowersVertical";
 import { pages } from "../util/constants";
-import { DarkModeToggle, ThemeSelector } from "./ThemeHandlers";
+import { useDispatch, useSelector } from "react-redux";
+import { DarkModeToggle } from "./DarkModeToggle";
 
-// Customized from Headless UI
-export default function Navbar({ open, onClose }) {
+/**
+ * Customized from Headless UI, this nav bar is a full screen overlay and menu
+ * @author Addi Penry, Headless UI
+ */
+export default function Navbar() {
+  // Accessing the Redux store
+  const dispatch = useDispatch();
+  const { open } = useSelector((state) => state.navbar);
+  const onClose = () => dispatch({"type":"MENU_TOGGLE"});
+
   return (
     <Transition.Root show={open} as={Fragment}>
       <Dialog
@@ -50,7 +59,7 @@ export default function Navbar({ open, onClose }) {
                   <div className="absolute top-0 right-0 -mr-8 flex pt-4 pl-2 sm:-mr-10 sm:pl-4">
                     <button
                       type="button"
-                      className="rounded-md text-tBase-900 dark:text-tBase-100 hover:text-tBase-950 dark:hover:text-tBase-50 focus:outline-none"
+                      className="rounded-md text-purple-900 dark:text-red-100 hover:text-purple-950 dark:hover:text-red-50 focus:outline-none"
                       onClick={onClose}
                     >
                       <span className="sr-only">Close panel</span>
@@ -59,13 +68,13 @@ export default function Navbar({ open, onClose }) {
                   </div>
                 </Transition.Child>
                 {/* CUSTOM CODE STARTS HERE */}
-                <div className="bg-tBase-50 dark:bg-tBase-950 pt-6 h-screen px-1 font-heading select-none">
+                <div className="bg-purple-50 dark:bg-red-950 pt-6 h-screen px-1 font-heading select-none">
                   <div className="pb-3 flex justify-center items-center gap-3">
-                    <span className="text-2xl text-tAccent2-700 dark:text-tAccent2-300 flex items-baseline">
+                    <span className="text-2xl text-orange-700 dark:text-orange-300 flex items-baseline">
                       ~<SparklesIcon className="h-5 w-5" />
                     </span>
                     <a
-                      className="text-4xl text-tAccent1-500 hover:text-tAccent1-700 dark:hover:text-tAccent1-300 fa fa-github"
+                      className="text-4xl text-purple-500 hover:text-purple-700 dark:hover:text-purple-300 fa fa-github"
                       target="_blank"
                       rel="noreferrer noopener"
                       href="https://github.com/penryoa"
@@ -74,31 +83,28 @@ export default function Navbar({ open, onClose }) {
                     </a>
                     <h2>addi penry</h2>
                     <a
-                      className="text-2xl rounded-md px-1 bg-tAccent1-500 text-tBase-50 dark:text-tBase-950 hover:bg-tAccent1-700 dark:hover:bg-tAccent1-300 fa fa-linkedin"
+                      className="text-2xl rounded-md px-1 bg-purple-500 text-purple-50 dark:text-red-950 hover:bg-purple-700 dark:hover:bg-red-300 fa fa-linkedin"
                       target="_blank"
                       rel="noreferrer noopener"
                       href="https://www.linkedin.com/in/addi-penry/"
                     >
                       <span className="sr-only">LinkedIn</span>
                     </a>
-                    <span className="text-2xl text-tAccent2-700 dark:text-tAccent2-300 flex items-baseline">
+                    <span className="text-2xl text-orange-700 dark:text-orange-300 flex items-baseline">
                       <SparklesIcon className="h-5 w-5" />~
                     </span>
                   </div>
                   {pages.map((page, idx) => (
                     <Link
                       key={`navBarItem.${idx}`}
-                      className="block m-2 p-2 h-8 rounded-tl-md rounded-bl-md transition-all bg-gradient-to-r from-tBase-300 dark:from-tBase-700 to-transparent overflow-hidden whitespace-nowrap visited:text-inherit hover:text-tAccent3-800 dark:hover:text-tAccent3-200 active:text-tAccent3-pop"
+                      className="block m-2 p-2 h-8 rounded-tl-md rounded-bl-md transition-all bg-linear-to-r from-orange-300 dark:from-orange-700 to-transparent overflow-hidden whitespace-nowrap visited:text-inherit hover:text-fuchsia-800 dark:hover:text-fuchsia-200 active:text-fuchsia-pop"
                       to={page.to}
                       onClick={onClose}
                     >
                       {page.title}
                     </Link>
                   ))}
-                  <div className="flex flex-wrap gap-2 my-3 justify-evenly">
-                    <ThemeSelector />
-                    <DarkModeToggle />
-                  </div>
+                  <DarkModeToggle />
                   <span className="block">
                     <FlowersVertical />
                   </span>
