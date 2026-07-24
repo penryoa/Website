@@ -1,4 +1,6 @@
 node_modules/*
 build/*
+dist/*
+.wrangler/*
 package-lock.json
 src/assets/generated.css

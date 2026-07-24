@@ -43,7 +43,7 @@ export default function HomePage() {
             rel="noreferrer noopener"
             href="https://www.youtube.com/@onespicydragon"
             >
-            <img src="/public/images/youtube.png" className="h-16 w-16 dark:invert" />
+            <img src="./public/images/youtube.png" className="h-16 w-16 dark:invert" />
             <span className="sr-only">@onespicydragon</span>
             <p className="group-hover:underline text-lg">@onespicydragon</p>
           </a>
@@ -54,7 +54,7 @@ export default function HomePage() {
           <HyperlinkMenu isVert={true} />
         </div>
         <img
-          src="/public/images/temp_headshot.JPG"
+          src="./public/images/temp_headshot.jpg"
           alt="headshot"
           className="object-cover w-150 h-150 px-2 rounded-4xl"
         />

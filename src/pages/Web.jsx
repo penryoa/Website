@@ -15,8 +15,8 @@ export default function WebPage() {
       <p className="p-2 m-2 rounded-3xl bg-white/40">
         offerings for <b>website development</b>. 
         <ul>
-          <li>-> It's easy to make something on Wix and call it a day, as there's no real code involved and there's robust add-ons. If someone wanted lots of features in a shorter timeframe, that's something I'd offer.</li>
-          <li>-> But if someone just wants something simple and affordable to build an online presence, I could make a React website, get them a Cloudflare domain (with email rerouting included) and their site could be hosted there for a much smaller cost.</li>
+          <li>It's easy to make something on Wix and call it a day, as there's no real code involved and there's robust add-ons. If someone wanted lots of features in a shorter timeframe, that's something I'd offer.</li>
+          <li>... But if someone just wants something simple and affordable to build an online presence, I could make a React website, get them a Cloudflare domain (with email rerouting included) and their site could be hosted there for a much smaller cost.</li>
         </ul>
       </p>
       <p className="p-2 m-2 rounded-3xl bg-white/40">

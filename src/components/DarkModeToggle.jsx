@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Switch } from "@headlessui/react";
 import { MoonIcon } from "@heroicons/react/outline";
-import { themes } from "../util/constants";
 import { useDispatch, useSelector } from "react-redux";
 
 /**

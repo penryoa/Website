@@ -24,8 +24,6 @@ const App = () => {
   const CorePageLayout = (PageLayout) => {
     return (
       <div className="min-h-screen bg-linear-to-t from-red-50 to-purple-300 dark:from-black dark:to-red-900">
-        <div className="h-full w-full bg-[url(/public/images/paper.jpg)] opacity-25 bg-cover bg-repeat">
-        </div>
         <div className="max-w-7xl mx-auto relative py-4 h-full">
           <PageLayout />
         </div>
