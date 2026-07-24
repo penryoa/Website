@@ -1,16 +1,7 @@
-/** @type 
-{import('tailwindcss').Config}
-*/
+/** @type {import('tailwindcss').Config} */
 export default {
-  content: ["./src/**/*.{html,js}"],
+  content: ["./src/**/*.{html,js,jsx}", "./public/index.html"],
   darkMode: "class",
-  theme: {
-    extend: {
-      fontFamily: {
-        heading: ["Chicken Scratch", "sans"],
-        sans: ["Victor Mono", "monospace"],
-      },
-    },
-  },
+  theme: {},
   plugins: [],
 };

@@ -4,11 +4,16 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+@theme {
+  --font-victor: "Victor Mono", monospace;
+  --font-chicken: "Chicken Scratch", sans;
+}
+
 @layer base {
   body,
   html {
     margin: 0rem;
-    font-family: "Victor Mono";
+    font-family: var(--font-victor);
     color: var(--color-red-950);
     background-color: white;
 
@@ -23,7 +28,7 @@
   h1,
   h2,
   h3 {
-    font-family: "Chicken Scratch";
+    font-family: var(--font-chicken);
   }
   h1 {
     padding-top: calc(var(--spacing) * 6);
