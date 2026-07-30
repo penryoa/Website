@@ -56,7 +56,7 @@ export default function HomePage() {
           <HyperlinkMenu isVert={true} />
         </div>
         <img
-          src="images/temp_headshot.jpg"
+          src="images/temp_headshot.JPG"
           alt="headshot"
           className="object-cover w-150 h-150 px-2 rounded-4xl"
         />

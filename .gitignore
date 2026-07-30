@@ -1,7 +1,7 @@
-node_modules/*
+.wrangler/*
 build/*
 dist/*
-.wrangler/*
-package-lock.json
-src/assets/generated.css
+node_modules/*
 public/index.html
+src/assets/generated.css
+package-lock.json
