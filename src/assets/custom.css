@@ -1,19 +1,35 @@
 @import "tailwindcss";
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
-@import url("./fonts.css");
+
+@font-face {
+  font-family: "Chicken Scratch", sans-serif;
+  src: url("/fonts/Chicken_Scratch/ChickenScratch-Regular.otf") format("otf");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Victor Mono", monospace;
+  src: url("/fonts/Victor_Mono/VictorMono-VariableFont_wght.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+  size-adjust: 80%;
+}
 
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
   --font-victor: "Victor Mono", monospace;
-  --font-chicken: "Chicken Scratch", sans;
+  --font-chicken: "Chicken Scratch", sans-serif;
 }
 
 @layer base {
   body,
   html {
     margin: 0rem;
-    font-family: var(--font-victor);
+    font-family: "Victor Mono", monospace;
     color: var(--color-red-950);
     background-color: white;
 
@@ -28,7 +44,7 @@
   h1,
   h2,
   h3 {
-    font-family: var(--font-chicken);
+    font-family: "Chicken Scratch", sans-serif;
   }
   h1 {
     padding-top: calc(var(--spacing) * 6);
