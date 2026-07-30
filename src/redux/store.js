@@ -2,8 +2,8 @@ import { combineReducers } from "redux";
 import { configureStore } from "@reduxjs/toolkit";
 import thunk from "redux-thunk";
 
-import NavbarReducer from "./navbar.reducer";
-import DarkModeReducer from "./darkMode.reducer";
+import NavbarReducer from "./navbar.reducer.js";
+import DarkModeReducer from "./darkMode.reducer.js";
 
 const rootReducer = combineReducers({
   navbar: NavbarReducer,

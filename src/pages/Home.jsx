@@ -4,6 +4,7 @@ import { ArrowRightIcon, StarIcon, } from "@heroicons/react/solid";
 import { SquareTile } from "../components/Tiles";
 import { features, pages } from "../util/constants";
 import { DarkModeToggle } from "../components/DarkModeToggle";
+import { scrollToTop } from "./PageWrappers";
 
 
 /**
@@ -11,6 +12,7 @@ import { DarkModeToggle } from "../components/DarkModeToggle";
  * @author Addi Penry
 */
 export default function HomePage() {
+  scrollToTop();
 
   function HyperlinkMenu (isVert = false) {
     return (
@@ -43,7 +45,7 @@ export default function HomePage() {
             rel="noreferrer noopener"
             href="https://www.youtube.com/@onespicydragon"
             >
-            <img src="./public/images/youtube.png" className="h-16 w-16 dark:invert" />
+            <img src="images/youtube.png" className="h-16 w-16 dark:invert" />
             <span className="sr-only">@onespicydragon</span>
             <p className="group-hover:underline text-lg">@onespicydragon</p>
           </a>
@@ -54,15 +56,15 @@ export default function HomePage() {
           <HyperlinkMenu isVert={true} />
         </div>
         <img
-          src="./public/images/temp_headshot.jpg"
+          src="images/temp_headshot.jpg"
           alt="headshot"
           className="object-cover w-150 h-150 px-2 rounded-4xl"
         />
       </div>
 
-      <p className="m-4 p-6 text-2xl italic bg-white/30 dark:bg-black/30 rounded-lg border-2 border-purple-400 dark:border-black">
+      <div className="m-4 p-6 text-2xl italic bg-white/30 dark:bg-black/30 rounded-lg border-2 border-purple-400 dark:border-black">
         Hi! I’m Addi, a creative occultist with a software engineering degree. I take my hodgepodge of skills and help you express yourself online and within.
-      </p>
+      </div>
 
       <h1>services and projects</h1>
       <div className="flex justify-center flex-wrap">
@@ -80,7 +82,7 @@ export default function HomePage() {
       <div className="border-2 mx-4 p-4 border-dotted rounded-2xl grid grid-cols-2">
         <DarkModeToggle />
         <p className="text-sm place-self-end">
-          Last update: 2026 07 16
+          Last update: 2026 07 30
         </p>
       </div>
     </div>

@@ -78,19 +78,9 @@
     -webkit-text-stroke: .25px black;
   }
 
-  .border-default,
-  .p-default {
+  .border-default {
     border-top-right-radius: var(--radius-xl);
     border-bottom-left-radius: var(--radius-xl);
-  }
-  .p-default {
-    text-align: justify;
-    padding: calc(var(--spacing) * 5);
-    background-color: var(--color-red-300);
-    
-    @variant dark {
-      background-color: var(--color-red-700);
-    }
   }
 }
 

@@ -4,3 +4,4 @@ dist/*
 .wrangler/*
 package-lock.json
 src/assets/generated.css
+public/index.html
