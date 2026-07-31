@@ -10,9 +10,15 @@ export function scrollToTop () {
 	});
 };
 
-const NonHomePageWrapper = () => {
-	const dispatch = useDispatch();
-	return (
+export const OutletWithNavWrapper = () => {
+  const dispatch = useDispatch();
+  const {pathname} = useLocation();
+
+  useEffect(() => {
+    scrollToTop();
+  },[pathname])
+
+  return (
 		<div>
 			<button
 			className="fixed top-4 left-4 z-40"
@@ -31,12 +37,8 @@ const NonHomePageWrapper = () => {
 	);
 };
 
-export function InternalPageWrapper () {
-	return PageWrapper(NonHomePageWrapper);
-};
-
-export function PageWrapper (MyPage) {
-	scrollToTop();
+export function BasePageWrapper (MyPage) {
+  scrollToTop();
 	return (
 		<div className="min-h-screen bg-linear-to-t from-red-50 to-purple-300 dark:from-black dark:to-red-900 slashed-zero stacked-fractions">
 			<div className="max-w-7xl mx-auto relative py-4 h-full">

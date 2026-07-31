@@ -10,7 +10,7 @@ import HomePage from "./pages/Home";
 import FilmPage from "./pages/Film";
 import MePage from "./pages/Me";
 import OccultPage from "./pages/Occult";
-import { InternalPageWrapper, PageWrapper } from "./pages/PageWrappers";
+import { OutletWithNavWrapper, BasePageWrapper } from "./pages/PageWrappers";
 import WebPage from "./pages/Web";
 
 const App = () => {
@@ -18,8 +18,8 @@ const App = () => {
     <BrowserRouter>
       <Navbar />
       <Routes>
-        <Route index element={PageWrapper(HomePage)} />
-        <Route path="/" element={<InternalPageWrapper />}>
+        <Route index element={BasePageWrapper(HomePage)} />
+        <Route path="/" element={BasePageWrapper(OutletWithNavWrapper)}>
           <Route path="film" element={<FilmPage />} />
           <Route path="occult" element={<OccultPage />} />
           <Route path="web" element={<WebPage />} />
