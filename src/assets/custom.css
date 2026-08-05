@@ -3,7 +3,7 @@
 
 @font-face {
   font-family: "Chicken Scratch", sans-serif;
-  src: url("/fonts/Chicken_Scratch/ChickenScratch-Regular.otf") format("otf");
+  src: url("./fonts/Chicken_Scratch/ChickenScratch-Regular.otf") format("otf");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -11,7 +11,7 @@
 
 @font-face {
   font-family: "Victor Mono", monospace;
-  src: url("/fonts/Victor_Mono/VictorMono-VariableFont_wght.ttf") format("truetype");
+  src: url("./fonts/Victor_Mono/VictorMono-VariableFont_wght.ttf") format("truetype");
   font-weight: 500;
   font-style: normal;
   font-display: swap;

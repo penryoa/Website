@@ -1,0 +1,374 @@
+import Planet from "./classes/planet.tsx";
+import Zodiac from "./classes/zodiac.tsx";
+import WesternElement from "./classes/element.tsx";
+import Mode from "./classes/mode.tsx";
+import Bound from "./classes/bound.tsx";
+  
+// =================== PLANETS ===================
+const Sun = new Planet({
+  icon: "☉",
+  label: "Sun",
+  textColor: "text-yellow-700 dark:text-yellow-200",
+  bgColor: "bg-yellow-200 dark:bg-yellow-700",
+  description: "identity, ego, self",
+  proximity: "personal",
+  sect: "diurnal",
+  role: "light",
+  chaldeanOrder: 3,
+});
+const Moon = new Planet({
+  icon: "☾",
+  label: "Moon",
+  textColor: "text-teal-700 dark:text-teal-200",
+  bgColor: "bg-teal-200 dark:bg-teal-700",
+  description: "emotions, feelings, needs",
+  proximity: "personal",
+  sect: "diurnal",
+  role: "light",
+  chaldeanOrder: 6,
+});
+const Mercury = new Planet({
+  icon: "☿",
+  label: "Mercury",
+  textColor: "text-purple-700 dark:text-purple-200",
+  bgColor: "bg-purple-200 dark:bg-purple-700",
+  description: "communication, learning",
+  proximity: "personal",
+  sect: "diurnal",
+  role: "neutral",
+  chaldeanOrder: 5,
+});
+const Venus = new Planet({
+  icon: "♀",
+  label: "Venus",
+  textColor: "text-green-700 dark:text-green-200",
+  bgColor: "bg-green-200 dark:bg-green-700",
+  description: "beauty, love",
+  proximity: "personal",
+  sect: "diurnal",
+  role: "benefic",
+  chaldeanOrder: 4,
+});
+const Mars = new Planet({
+  icon: "♂",
+  label: "Mars",
+  textColor: "text-red-700 dark:text-red-200",
+  bgColor: "bg-red-200 dark:bg-red-700",
+  description: "raw drive, action",
+  proximity: "personal",
+  sect: "diurnal",
+  role: "malefic",
+  chaldeanOrder: 2,
+});
+const Jupiter = new Planet({
+  icon: "♃",
+  label: "Jupiter",
+  textColor: "text-orange-700 dark:text-orange-200",
+  bgColor: "bg-orange-200 dark:bg-orange-700",
+  description: "expansion, experience, luck",
+  proximity: "social",
+  sect: "diurnal",
+  role: "benefic",
+  chaldeanOrder: 1,
+});
+const Saturn = new Planet({
+  icon: "♄",
+  label: "Saturn",
+  textColor: "text-indigo-700 dark:text-indigo-200",
+  bgColor: "bg-indigo-200 dark:bg-indigo-700",
+  description: "establishing structure, long-term results",
+  proximity: "social",
+  sect: "diurnal",
+  role: "malefic",
+  chaldeanOrder: 0,
+});
+const Uranus = new Planet({
+  icon: "♅",
+  label: "Uranus",
+  textColor: "text-mauve-700 dark:text-mauve-200",
+  bgColor: "bg-mauve-200 dark:bg-mauve-700",
+  description: "chaos, sudden change",
+  proximity: "generational",
+});
+const Neptune = new Planet({
+  icon: "♆",
+  label: "Neptune",
+  textColor: "text-mauve-700 dark:text-mauve-200",
+  bgColor: "bg-mauve-200 dark:bg-mauve-700",
+  description: "containment, illusion, dreams",
+  proximity: "generational",
+});
+export const Pluto = new Planet({
+  icon: "⯓",
+  label: "Pluto",
+  textColor: "text-mauve-700 dark:text-mauve-200",
+  bgColor: "bg-mauve-200 dark:bg-mauve-700",
+  description: "forced change, power, death",
+  proximity: "generational",
+});
+
+/**
+ * Our 10 known planets in order from Sun to Pluto
+ * @type {Planet[]}
+*/
+export const planets = [ Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto ];
+
+/**
+ * Lists all the planets in Chaldean Order.
+ * 
+ * Note: Totally could calculate this by filtering out non-classical planets then sorting that array by chaldeanOrder. But I think this saves us a decent calculation since it never changes anyway.
+ * @type {Planet[]}
+ */
+export const planetsInChaldeanOrder = [ Saturn, Jupiter, Mars, Sun, Venus, Mercury, Moon ];
+
+// =================== ZODIAC SIGNS ===================
+const Aries = new Zodiac({
+  orderIdx: 0,
+  icon: "♈︎︎",
+  label: "Aries",
+  domicile: Mars,
+  detriment: Venus,
+  exaltation: Sun,
+  fall: Saturn,
+  bounds: [
+    new Bound({order: 0, orb: 6, ruler: Jupiter}),
+    new Bound({order: 1, orb: 6, ruler: Venus}),
+    new Bound({order: 2, orb: 8, ruler: Mercury}),
+    new Bound({order: 3, orb: 5, ruler: Mars}),
+    new Bound({order: 4, orb: 5, ruler: Saturn}),
+  ],
+});
+const Taurus = new Zodiac({
+  orderIdx: 1,
+  icon: "♉︎︎",
+  label: "Taurus",
+  domicile: Venus,
+  detriment: Mars,
+  exaltation: Moon,
+  bounds: [
+    new Bound({order: 0, orb: 8, ruler: Venus}),
+    new Bound({order: 1, orb: 6, ruler: Mercury}),
+    new Bound({order: 2, orb: 8, ruler: Jupiter}),
+    new Bound({order: 3, orb: 5, ruler: Saturn}),
+    new Bound({order: 4, orb: 3, ruler: Mars}),
+  ],
+});
+const Gemini = new Zodiac({
+  orderIdx: 2,
+  icon: "♊︎︎",
+  label: "Gemini",
+  domicile: Mercury,
+  detriment: Jupiter,
+  bounds: [
+    new Bound({order: 0, orb: 6, ruler: Mercury}),
+    new Bound({order: 1, orb: 6, ruler: Jupiter}),
+    new Bound({order: 2, orb: 5, ruler: Venus}),
+    new Bound({order: 3, orb: 7, ruler: Mars}),
+    new Bound({order: 4, orb: 6, ruler: Saturn}),
+  ],
+});
+const Cancer = new Zodiac({
+  orderIdx: 3,
+  icon: "♋︎︎",
+  label: "Cancer",
+  domicile: Moon,
+  detriment: Saturn,
+  exaltation: Jupiter,
+  fall: Mars,
+  bounds: [
+    new Bound({order: 0, orb: 7, ruler: Mars}),
+    new Bound({order: 1, orb: 6, ruler: Venus}),
+    new Bound({order: 2, orb: 6, ruler: Mercury}),
+    new Bound({order: 3, orb: 7, ruler: Jupiter}),
+    new Bound({order: 4, orb: 4, ruler: Saturn}),
+  ],
+});
+const Leo = new Zodiac({
+  orderIdx: 4,
+  icon: "♌︎︎",
+  label: "Leo",
+  domicile: Sun,
+  detriment: Saturn,
+  bounds: [
+    new Bound({order: 0, orb: 6, ruler: Jupiter}),
+    new Bound({order: 1, orb: 5, ruler: Venus}),
+    new Bound({order: 2, orb: 7, ruler: Saturn}),
+    new Bound({order: 3, orb: 6, ruler: Mercury}),
+    new Bound({order: 4, orb: 6, ruler: Mars}),
+  ],
+});
+const Virgo = new Zodiac({
+  orderIdx: 5,
+  icon: "♍︎︎",
+  label: "Virgo",
+  domicile: Mercury,
+  detriment: Jupiter,
+  exaltation: Mercury,
+  fall: Venus,
+  bounds: [
+    new Bound({order: 0, orb: 7, ruler: Mercury}),
+    new Bound({order: 1, orb: 10, ruler: Venus}),
+    new Bound({order: 2, orb: 4, ruler: Jupiter}),
+    new Bound({order: 3, orb: 7, ruler: Mars}),
+    new Bound({order: 4, orb: 2, ruler: Saturn}),
+  ],
+});
+const Libra = new Zodiac({
+  orderIdx: 6,
+  icon: "♎︎︎",
+  label: "Libra",
+  domicile: Venus,
+  detriment: Mars,
+  exaltation: Saturn,
+  fall: Sun,
+  bounds: [
+    new Bound({order: 0, orb: 6, ruler: Saturn}),
+    new Bound({order: 1, orb: 8, ruler: Mercury}),
+    new Bound({order: 2, orb: 7, ruler: Jupiter}),
+    new Bound({order: 3, orb: 7, ruler: Venus}),
+    new Bound({order: 4, orb: 2, ruler: Mars}),
+  ],
+});
+const Scorpio = new Zodiac({
+  orderIdx: 7,
+  icon: "♏︎︎",
+  label: "Scorpio",
+  domicile: Mars,
+  detriment: Venus,
+  fall: Moon,
+  bounds: [
+    new Bound({order: 0, orb: 7, ruler: Mars}),
+    new Bound({order: 1, orb: 4, ruler: Venus}),
+    new Bound({order: 2, orb: 8, ruler: Mercury}),
+    new Bound({order: 3, orb: 5, ruler: Jupiter}),
+    new Bound({order: 4, orb: 6, ruler: Saturn}),
+  ],
+});
+const Sagittarius = new Zodiac({
+  orderIdx: 8,
+  icon: "♐︎︎",
+  label: "Sagittarius",
+  domicile: Jupiter,
+  detriment: Mercury,
+  bounds: [
+    new Bound({order: 0, orb: 12, ruler: Jupiter}),
+    new Bound({order: 1, orb: 5, ruler: Venus}),
+    new Bound({order: 2, orb: 4, ruler: Mercury}),
+    new Bound({order: 3, orb: 5, ruler: Saturn}),
+    new Bound({order: 4, orb: 4, ruler: Mars}),
+  ],
+});
+const Capricorn = new Zodiac({
+  orderIdx: 9,
+  icon: "♑︎︎",
+  label: "Capricorn",
+  domicile: Saturn,
+  detriment: Moon,
+  exaltation: Mars,
+  fall: Jupiter,
+  bounds: [
+    new Bound({order: 0, orb: 7, ruler: Mercury}),
+    new Bound({order: 1, orb: 7, ruler: Jupiter}),
+    new Bound({order: 2, orb: 8, ruler: Venus}),
+    new Bound({order: 3, orb: 4, ruler: Saturn}),
+    new Bound({order: 4, orb: 4, ruler: Mars}),
+  ],
+});
+const Aquarius = new Zodiac({
+  orderIdx: 10,
+  icon: "♒︎︎",
+  label: "Aquarius",
+  domicile: Saturn,
+  detriment: Sun,
+  bounds: [
+    new Bound({order: 0, orb: 7, ruler: Mercury}),
+    new Bound({order: 1, orb: 6, ruler: Venus}),
+    new Bound({order: 2, orb: 7, ruler: Jupiter}),
+    new Bound({order: 3, orb: 5, ruler: Mars}),
+    new Bound({order: 4, orb: 5, ruler: Saturn}),
+  ],
+});
+const Pisces = new Zodiac({
+  orderIdx: 11,
+  icon: "♓︎︎",
+  label: "Pisces",
+  domicile: Jupiter,
+  detriment: Mercury,
+  exaltation: Venus,
+  bounds: [
+    new Bound({order: 0, orb: 12, ruler: Venus}),
+    new Bound({order: 1, orb: 4, ruler: Jupiter}),
+    new Bound({order: 2, orb: 3, ruler: Mercury}),
+    new Bound({order: 3, orb: 9, ruler: Mars}),
+    new Bound({order: 4, orb: 2, ruler: Saturn}),
+  ],
+});
+
+/**
+ * The Western 12 Zodiac signs.
+ * 
+ * 14 century BCE: Egyptians establish and use decans
+ * 
+ * 1 millenium BCE: Babylonians divide ecliptic into 12 zodiacal signs
+ * 
+ * Note: the Eastern 12 Zodiac signs (Chinese Zodiac) are similar in that they both largely represent animals and ascribe personality traits.
+ * @type {Zodiac[]}
+ */
+export const westernZodiacSigns = [Aries, Taurus, Gemini, Cancer, Leo, Virgo, Libra, Scorpio, Sagittarius, Capricorn, Aquarius, Pisces];
+
+// =================== ELEMENTAL TRIPLICITY ===================
+const Fire = new WesternElement({
+  icon: "🜂",
+  label: "Fire",
+  orderIdx: 0,
+  dorotheanTriplicity: {"day": Sun, "night": Jupiter, "cooperating": Saturn}
+});
+const Earth = new WesternElement({
+  icon: "🜃",
+  label: "Earth",
+  orderIdx: 1,
+  dorotheanTriplicity: {"day": Venus, "night": Moon, "cooperating": Mars}
+});
+const Air = new WesternElement({
+  icon: "🜁",
+  label: "Air",
+  orderIdx: 2,
+  dorotheanTriplicity: {"day": Saturn, "night": Mercury, "cooperating": Jupiter}
+});
+const Water = new WesternElement({
+  icon: "🜄",
+  label: "Water",
+  orderIdx: 3,
+  dorotheanTriplicity: {"day": Venus, "night": Mars, "cooperating": Moon}
+});
+
+/**
+ * An ordered array of the 4 triplicities, or elements. 
+ * 
+ * Note: Eastern elements are different, removing air and adding in metal and wood, hence naming this "westernElements" and not just "elements".
+ * @type {WesternElement[]}
+ */
+export const westernElements = [ Fire, Earth, Air, Water ];
+
+// =================== MODALITY ===================
+const Cardinal = new Mode({
+  icon: "⟑",
+  label: "Cardinal",
+  orderIdx: 0
+});
+const Fixed = new Mode({
+  icon: "🝕",
+  label: "Fixed",
+  orderIdx: 1
+});
+const Mutable = new Mode({
+  icon: "🜳",
+  label: "Mutable",
+  orderIdx: 2
+});
+
+/**
+ * An ordered array of the 3 modalities, or modes
+ * @type {Mode[]}
+ */
+export const modes = [ Cardinal, Fixed, Mutable ];

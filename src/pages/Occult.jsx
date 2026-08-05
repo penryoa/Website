@@ -1,4 +1,5 @@
 import React from "react";
+import AstrologyCalculator from "../components/astrology/AstrologyCalculator";
 
 export default function OccultPage() {
   return (
@@ -17,6 +18,7 @@ export default function OccultPage() {
         <div className="p-2 m-2 rounded-3xl bg-white/40">
           offerings for <b>tarot readings</b>, though honestly, this is really not something that'd be an online thing for me. I'd want to bring this to events, or book online for in-person meetings. I'd include it for astrology readings, though.
         </div>
+        <AstrologyCalculator />
     </div>
   )
 };
