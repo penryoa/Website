@@ -73,16 +73,19 @@ export default class Zodiac implements AstroOrderedNoun {
    */
   public isPlanetInBound(planet: Planet, degree:number): boolean {
     let minDegree = 0;
+    let isInBound = false;
     this.bounds.sort((b1,b2) => b1.orderIdx - b2.orderIdx);
     console.log(this.bounds);
-    this.bounds.forEach((bound, idx) => {
-      console.log(idx, ": looking at bound ", bound);
-      if (planet == bound.ruler && degree > minDegree && degree < (minDegree + bound.orb)) {
-        return true;
+    this.bounds.every((bound, idx) => {
+      console.log("idx ",idx,", minDegree ",minDegree, ", degree ",degree,": looking at bound ", bound);
+      if (planet == bound.ruler && degree >= minDegree && degree < (minDegree + bound.orb)) {
+        isInBound = true;
+        return false;
       }
       minDegree+=bound.orb;
+      return true;
     });
-    return false;
+    return isInBound;
   };
 
   /**

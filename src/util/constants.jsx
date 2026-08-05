@@ -7,6 +7,8 @@ import {
   StarIcon,
 } from "@heroicons/react/solid";
 
+export const selectorClassName = "mx-2 px-2 bg-fuchsia-300 dark:bg-fuchsia-600 rounded-xl shadow-sm shadow-fuchsia-100 dark:shadow-fuchsia-400";
+
 // ===== NAVIGATION =====
 export const pages = [
   { to: "/home", title: "Home", isHome: true},

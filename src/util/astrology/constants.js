@@ -131,11 +131,11 @@ const Aries = new Zodiac({
   exaltation: Sun,
   fall: Saturn,
   bounds: [
-    new Bound({order: 0, orb: 6, ruler: Jupiter}),
-    new Bound({order: 1, orb: 6, ruler: Venus}),
-    new Bound({order: 2, orb: 8, ruler: Mercury}),
-    new Bound({order: 3, orb: 5, ruler: Mars}),
-    new Bound({order: 4, orb: 5, ruler: Saturn}),
+    new Bound({orderIdx: 0, orb: 6, ruler: Jupiter}),
+    new Bound({orderIdx: 1, orb: 6, ruler: Venus}),
+    new Bound({orderIdx: 2, orb: 8, ruler: Mercury}),
+    new Bound({orderIdx: 3, orb: 5, ruler: Mars}),
+    new Bound({orderIdx: 4, orb: 5, ruler: Saturn}),
   ],
 });
 const Taurus = new Zodiac({
@@ -146,11 +146,11 @@ const Taurus = new Zodiac({
   detriment: Mars,
   exaltation: Moon,
   bounds: [
-    new Bound({order: 0, orb: 8, ruler: Venus}),
-    new Bound({order: 1, orb: 6, ruler: Mercury}),
-    new Bound({order: 2, orb: 8, ruler: Jupiter}),
-    new Bound({order: 3, orb: 5, ruler: Saturn}),
-    new Bound({order: 4, orb: 3, ruler: Mars}),
+    new Bound({orderIdx: 0, orb: 8, ruler: Venus}),
+    new Bound({orderIdx: 1, orb: 6, ruler: Mercury}),
+    new Bound({orderIdx: 2, orb: 8, ruler: Jupiter}),
+    new Bound({orderIdx: 3, orb: 5, ruler: Saturn}),
+    new Bound({orderIdx: 4, orb: 3, ruler: Mars}),
   ],
 });
 const Gemini = new Zodiac({
@@ -160,11 +160,11 @@ const Gemini = new Zodiac({
   domicile: Mercury,
   detriment: Jupiter,
   bounds: [
-    new Bound({order: 0, orb: 6, ruler: Mercury}),
-    new Bound({order: 1, orb: 6, ruler: Jupiter}),
-    new Bound({order: 2, orb: 5, ruler: Venus}),
-    new Bound({order: 3, orb: 7, ruler: Mars}),
-    new Bound({order: 4, orb: 6, ruler: Saturn}),
+    new Bound({orderIdx: 0, orb: 6, ruler: Mercury}),
+    new Bound({orderIdx: 1, orb: 6, ruler: Jupiter}),
+    new Bound({orderIdx: 2, orb: 5, ruler: Venus}),
+    new Bound({orderIdx: 3, orb: 7, ruler: Mars}),
+    new Bound({orderIdx: 4, orb: 6, ruler: Saturn}),
   ],
 });
 const Cancer = new Zodiac({
@@ -176,11 +176,11 @@ const Cancer = new Zodiac({
   exaltation: Jupiter,
   fall: Mars,
   bounds: [
-    new Bound({order: 0, orb: 7, ruler: Mars}),
-    new Bound({order: 1, orb: 6, ruler: Venus}),
-    new Bound({order: 2, orb: 6, ruler: Mercury}),
-    new Bound({order: 3, orb: 7, ruler: Jupiter}),
-    new Bound({order: 4, orb: 4, ruler: Saturn}),
+    new Bound({orderIdx: 0, orb: 7, ruler: Mars}),
+    new Bound({orderIdx: 1, orb: 6, ruler: Venus}),
+    new Bound({orderIdx: 2, orb: 6, ruler: Mercury}),
+    new Bound({orderIdx: 3, orb: 7, ruler: Jupiter}),
+    new Bound({orderIdx: 4, orb: 4, ruler: Saturn}),
   ],
 });
 const Leo = new Zodiac({
@@ -190,11 +190,11 @@ const Leo = new Zodiac({
   domicile: Sun,
   detriment: Saturn,
   bounds: [
-    new Bound({order: 0, orb: 6, ruler: Jupiter}),
-    new Bound({order: 1, orb: 5, ruler: Venus}),
-    new Bound({order: 2, orb: 7, ruler: Saturn}),
-    new Bound({order: 3, orb: 6, ruler: Mercury}),
-    new Bound({order: 4, orb: 6, ruler: Mars}),
+    new Bound({orderIdx: 0, orb: 6, ruler: Jupiter}),
+    new Bound({orderIdx: 1, orb: 5, ruler: Venus}),
+    new Bound({orderIdx: 2, orb: 7, ruler: Saturn}),
+    new Bound({orderIdx: 3, orb: 6, ruler: Mercury}),
+    new Bound({orderIdx: 4, orb: 6, ruler: Mars}),
   ],
 });
 const Virgo = new Zodiac({
@@ -206,11 +206,11 @@ const Virgo = new Zodiac({
   exaltation: Mercury,
   fall: Venus,
   bounds: [
-    new Bound({order: 0, orb: 7, ruler: Mercury}),
-    new Bound({order: 1, orb: 10, ruler: Venus}),
-    new Bound({order: 2, orb: 4, ruler: Jupiter}),
-    new Bound({order: 3, orb: 7, ruler: Mars}),
-    new Bound({order: 4, orb: 2, ruler: Saturn}),
+    new Bound({orderIdx: 0, orb: 7, ruler: Mercury}),
+    new Bound({orderIdx: 1, orb: 10, ruler: Venus}),
+    new Bound({orderIdx: 2, orb: 4, ruler: Jupiter}),
+    new Bound({orderIdx: 3, orb: 7, ruler: Mars}),
+    new Bound({orderIdx: 4, orb: 2, ruler: Saturn}),
   ],
 });
 const Libra = new Zodiac({
@@ -222,11 +222,11 @@ const Libra = new Zodiac({
   exaltation: Saturn,
   fall: Sun,
   bounds: [
-    new Bound({order: 0, orb: 6, ruler: Saturn}),
-    new Bound({order: 1, orb: 8, ruler: Mercury}),
-    new Bound({order: 2, orb: 7, ruler: Jupiter}),
-    new Bound({order: 3, orb: 7, ruler: Venus}),
-    new Bound({order: 4, orb: 2, ruler: Mars}),
+    new Bound({orderIdx: 0, orb: 6, ruler: Saturn}),
+    new Bound({orderIdx: 1, orb: 8, ruler: Mercury}),
+    new Bound({orderIdx: 2, orb: 7, ruler: Jupiter}),
+    new Bound({orderIdx: 3, orb: 7, ruler: Venus}),
+    new Bound({orderIdx: 4, orb: 2, ruler: Mars}),
   ],
 });
 const Scorpio = new Zodiac({
@@ -237,11 +237,11 @@ const Scorpio = new Zodiac({
   detriment: Venus,
   fall: Moon,
   bounds: [
-    new Bound({order: 0, orb: 7, ruler: Mars}),
-    new Bound({order: 1, orb: 4, ruler: Venus}),
-    new Bound({order: 2, orb: 8, ruler: Mercury}),
-    new Bound({order: 3, orb: 5, ruler: Jupiter}),
-    new Bound({order: 4, orb: 6, ruler: Saturn}),
+    new Bound({orderIdx: 0, orb: 7, ruler: Mars}),
+    new Bound({orderIdx: 1, orb: 4, ruler: Venus}),
+    new Bound({orderIdx: 2, orb: 8, ruler: Mercury}),
+    new Bound({orderIdx: 3, orb: 5, ruler: Jupiter}),
+    new Bound({orderIdx: 4, orb: 6, ruler: Saturn}),
   ],
 });
 const Sagittarius = new Zodiac({
@@ -251,11 +251,11 @@ const Sagittarius = new Zodiac({
   domicile: Jupiter,
   detriment: Mercury,
   bounds: [
-    new Bound({order: 0, orb: 12, ruler: Jupiter}),
-    new Bound({order: 1, orb: 5, ruler: Venus}),
-    new Bound({order: 2, orb: 4, ruler: Mercury}),
-    new Bound({order: 3, orb: 5, ruler: Saturn}),
-    new Bound({order: 4, orb: 4, ruler: Mars}),
+    new Bound({orderIdx: 0, orb: 12, ruler: Jupiter}),
+    new Bound({orderIdx: 1, orb: 5, ruler: Venus}),
+    new Bound({orderIdx: 2, orb: 4, ruler: Mercury}),
+    new Bound({orderIdx: 3, orb: 5, ruler: Saturn}),
+    new Bound({orderIdx: 4, orb: 4, ruler: Mars}),
   ],
 });
 const Capricorn = new Zodiac({
@@ -267,11 +267,11 @@ const Capricorn = new Zodiac({
   exaltation: Mars,
   fall: Jupiter,
   bounds: [
-    new Bound({order: 0, orb: 7, ruler: Mercury}),
-    new Bound({order: 1, orb: 7, ruler: Jupiter}),
-    new Bound({order: 2, orb: 8, ruler: Venus}),
-    new Bound({order: 3, orb: 4, ruler: Saturn}),
-    new Bound({order: 4, orb: 4, ruler: Mars}),
+    new Bound({orderIdx: 0, orb: 7, ruler: Mercury}),
+    new Bound({orderIdx: 1, orb: 7, ruler: Jupiter}),
+    new Bound({orderIdx: 2, orb: 8, ruler: Venus}),
+    new Bound({orderIdx: 3, orb: 4, ruler: Saturn}),
+    new Bound({orderIdx: 4, orb: 4, ruler: Mars}),
   ],
 });
 const Aquarius = new Zodiac({
@@ -281,11 +281,11 @@ const Aquarius = new Zodiac({
   domicile: Saturn,
   detriment: Sun,
   bounds: [
-    new Bound({order: 0, orb: 7, ruler: Mercury}),
-    new Bound({order: 1, orb: 6, ruler: Venus}),
-    new Bound({order: 2, orb: 7, ruler: Jupiter}),
-    new Bound({order: 3, orb: 5, ruler: Mars}),
-    new Bound({order: 4, orb: 5, ruler: Saturn}),
+    new Bound({orderIdx: 0, orb: 7, ruler: Mercury}),
+    new Bound({orderIdx: 1, orb: 6, ruler: Venus}),
+    new Bound({orderIdx: 2, orb: 7, ruler: Jupiter}),
+    new Bound({orderIdx: 3, orb: 5, ruler: Mars}),
+    new Bound({orderIdx: 4, orb: 5, ruler: Saturn}),
   ],
 });
 const Pisces = new Zodiac({
@@ -296,11 +296,11 @@ const Pisces = new Zodiac({
   detriment: Mercury,
   exaltation: Venus,
   bounds: [
-    new Bound({order: 0, orb: 12, ruler: Venus}),
-    new Bound({order: 1, orb: 4, ruler: Jupiter}),
-    new Bound({order: 2, orb: 3, ruler: Mercury}),
-    new Bound({order: 3, orb: 9, ruler: Mars}),
-    new Bound({order: 4, orb: 2, ruler: Saturn}),
+    new Bound({orderIdx: 0, orb: 12, ruler: Venus}),
+    new Bound({orderIdx: 1, orb: 4, ruler: Jupiter}),
+    new Bound({orderIdx: 2, orb: 3, ruler: Mercury}),
+    new Bound({orderIdx: 3, orb: 9, ruler: Mars}),
+    new Bound({orderIdx: 4, orb: 2, ruler: Saturn}),
   ],
 });
 
@@ -372,3 +372,14 @@ const Mutable = new Mode({
  * @type {Mode[]}
  */
 export const modes = [ Cardinal, Fixed, Mutable ];
+
+// =================== DIGNITY ===================
+export const possibleConditions = {
+  "inDomicile": {},
+  "inDetriment": {},
+  "inExaltation": {},
+  "inFall": {},
+  "inTriplicity": {},
+  "inBound": {},
+  "inFace": {},
+};

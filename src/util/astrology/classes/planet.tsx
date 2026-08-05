@@ -26,7 +26,7 @@ export default class Planet implements AstroProperNoun {
 		this.proximity = args.proximity;
 		this.sect = args.sect || null;
 		this.role = args.role || null;
-		this.chaldeanOrder = args.chaldeanOrder || null;
+		this.chaldeanOrder = args.chaldeanOrder ?? null;
 	}
   
   // MEMBERS

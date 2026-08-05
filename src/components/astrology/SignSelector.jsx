@@ -9,7 +9,6 @@ import Zodiac from "../../util/astrology/classes/zodiac.tsx";
  * @param {string} signKey the {@link Zodiac} key to compare to
  */
 export default function SignSelector({myArr, arrKey, signKey}) {
-  console.log("got myArr ", myArr, "arrKey ", arrKey, " signKey ", signKey);
 	const [arrIdx, setArrIdx] = useState(0);
 	const [signs, setSigns] = useState(getMatchingSigns(arrIdx));
 	
