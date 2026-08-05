@@ -1,8 +1,10 @@
-import Planet from "./classes/planet.tsx";
-import Zodiac from "./classes/zodiac.tsx";
+import Bound from "./classes/bound.tsx";
 import WesternElement from "./classes/element.tsx";
 import Mode from "./classes/mode.tsx";
-import Bound from "./classes/bound.tsx";
+import Planet from "./classes/planet.tsx";
+import Proximity from "./classes/proximity.tsx"
+import Sect from "./classes/sect.tsx"
+import Zodiac from "./classes/zodiac.tsx";
   
 // =================== PLANETS ===================
 const Sun = new Planet({
@@ -23,7 +25,7 @@ const Moon = new Planet({
   bgColor: "bg-teal-200 dark:bg-teal-700",
   description: "emotions, feelings, needs",
   proximity: "personal",
-  sect: "diurnal",
+  sect: "nocturnal",
   role: "light",
   chaldeanOrder: 6,
 });
@@ -45,7 +47,7 @@ const Venus = new Planet({
   bgColor: "bg-green-200 dark:bg-green-700",
   description: "beauty, love",
   proximity: "personal",
-  sect: "diurnal",
+  sect: "nocturnal",
   role: "benefic",
   chaldeanOrder: 4,
 });
@@ -56,7 +58,7 @@ const Mars = new Planet({
   bgColor: "bg-red-200 dark:bg-red-700",
   description: "raw drive, action",
   proximity: "personal",
-  sect: "diurnal",
+  sect: "nocturnal",
   role: "malefic",
   chaldeanOrder: 2,
 });
@@ -120,6 +122,25 @@ export const planets = [ Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranu
  * @type {Planet[]}
  */
 export const planetsInChaldeanOrder = [ Saturn, Jupiter, Mars, Sun, Venus, Mercury, Moon ];
+
+/**
+ * The two sect teams
+ * @type {Sect[]}
+ */
+export const sects = [
+  new Sect({icon:"🌣", label: "Diurnal Team", sect: "diurnal"}),
+  new Sect({icon:"⏾", label: "Nocturnal Team", sect: "nocturnal"}),
+];
+
+/**
+ * The three proximity teams
+ * @type {Proximity[]}
+ */
+export const proximities = [
+  new Proximity({icon:"👤", label: "Personal Planets", proximity: "personal"}),
+  new Proximity({icon:"👥", label: "Social Planets", proximity: "social"}),
+  new Proximity({icon:"🏔", label: "Generational Planets", proximity: "generational"}),
+];
 
 // =================== ZODIAC SIGNS ===================
 const Aries = new Zodiac({
@@ -374,12 +395,16 @@ const Mutable = new Mode({
 export const modes = [ Cardinal, Fixed, Mutable ];
 
 // =================== DIGNITY ===================
-export const possibleConditions = {
-  "inDomicile": {},
-  "inDetriment": {},
-  "inExaltation": {},
-  "inFall": {},
-  "inTriplicity": {},
-  "inBound": {},
-  "inFace": {},
+/**
+ * @type {{conditionName: {pointMod:number,label:string}}}
+ */
+export const possibleDignityConditions = {
+  notClassical: { pointMod: 0, label: "Traditionally, only classical planets can have dignity." },
+  inDomicile: { pointMod: +5, label: "In Domicile" },
+  inDetriment: { pointMod: -5, label: "In Detriment" },
+  inExaltation: { pointMod: +4, label: "In Exaltation" },
+  inFall: { pointMod: +4, label: "In Fall" },
+  inTriplicity: { pointMod: +3, label: "In Triplicity" },
+  inBound: { pointMod: +2, label: "In Bound" },
+  inFace: { pointMod: +1, label: "In Face" },
 };

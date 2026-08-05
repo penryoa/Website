@@ -1,4 +1,3 @@
-import { westernElements } from "../constants";
 import Planet from "./planet";
 import Zodiac from "./zodiac";
 
@@ -23,7 +22,4 @@ export default class PlanetaryPlacement {
 	sign: Zodiac;
 	degree: number;
 	minute: number;
-
-	// FUNCTIONS
-	
 };

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { selectorClassName } from "../../util/constants";
-import { planets, westernElements, westernZodiacSigns } from "../../util/astrology/constants";
+import { planets, possibleDignityConditions, westernElements, westernZodiacSigns } from "../../util/astrology/constants";
 import Planet from "../../util/astrology/classes/planet.tsx";
 import Zodiac from "../../util/astrology/classes/zodiac.tsx";
 
@@ -9,58 +9,57 @@ import Zodiac from "../../util/astrology/classes/zodiac.tsx";
  * @param {Planet} planet
  * @param {Zodiac} sign
  * @param {number} degree
- * @returns { points: number; label: string; conditions: string[]; }
+ * @returns { points: number; label: string; conditions: {pointMod:number,label:string}[]; }
  */
 function getEssentialDignity(planet, sign, degree) {
   let points = 0;
+  let label = "No Dignity";
   let conditions = [];
-  let label = "Only classical planets can have dignity";
 
   if (planet.chaldeanOrder !== null) {
     // +5 points in domicile, -5 in detriment
     if (sign.domicile === planet) {
-      points += 5;
-      conditions.push("inDomicile");
+      conditions.push(possibleDignityConditions["inDomicile"]);
     } else if (sign.detriment === planet) {
-      points -= 5;
-      conditions.push("inDetriment");
+      conditions.push(possibleDignityConditions["inDetriment"]);
     }
     
     // +4 points in exaltation, -4 in fall
     if (sign.exaltation === planet) {
-      points += 4;
-      conditions.push("inExaltation");
+      conditions.push(possibleDignityConditions["inExaltation"]);
     } else if (sign.fall === planet) {
-      points -= 4;
-      conditions.push("inFall");
+      conditions.push(possibleDignityConditions["inFall"]);
     }
     
     // +3 in triplicity (Dorothean)
     const element = westernElements.find((elem) => elem.orderIdx == sign.triplicityOrderIdx);
-    console.log("our element is", element);
+    // console.log("our element is", element);
     if (Object.values(element.dorotheanTriplicity).includes(planet)) {
-      points += 3;
-      conditions.push("inTriplicity");
+      conditions.push(possibleDignityConditions["inTriplicity"]);
     }
     
     // +2 in term (Egyptian)
     if (sign.isPlanetInBound(planet, degree)) {
-      points += 1;
-      conditions.push("inBound");
+      conditions.push(possibleDignityConditions["inBound"]);
     }
     
     // +1 in face (Chaldean)
     if (planet.chaldeanOrder && sign.getDecans().includes(planet)) {
-      points += 1;
-      conditions.push("inFace");
+      conditions.push(possibleDignityConditions["inFace"]);
     }
+
+    conditions.forEach((c,cIdx) => {
+      points += c.pointMod;
+    });
     
-    label = "peregrine";
+    label = "Peregrine";
     if (points > 0) {
-      label = "dignified";
+      label = "Dignified";
     } else if (points < 0) {
-      label = "detrimented"
+      label = "Debilitated"
     }
+  } else {
+    conditions.push(possibleDignityConditions["notClassical"]);
   }
 
   return { "points": points, "label": label, "conditions": conditions };
@@ -163,7 +162,7 @@ export default function DignitySelector() {
       <div className="w-full bg-purple-300 rounded-xl p-2">
         <label>Score: {result.points}</label>
         <label className="pl-8">Status: {result.label}</label>
-        {result.conditions.map((condStr) => <p>{condStr}</p>)}
+        {result.conditions.map((cond) => <p>{cond.label} ({cond.pointMod})</p>)}
       </div>
     </div>
   );
