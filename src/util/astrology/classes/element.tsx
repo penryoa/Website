@@ -15,6 +15,7 @@ export default class WesternElement implements AstroOrderedNoun {
     this.icon = args.icon;
     this.label = args.label;
     this.typeLabel = "Element";
+    this.description = args.description || "";
     this.orderIdx = args.orderIdx;
     this.dorotheanTriplicity = args.dorotheanTriplicity;
   }
@@ -22,6 +23,7 @@ export default class WesternElement implements AstroOrderedNoun {
   // MEMBERS
   icon: string;
   label: string;
+  description;
   orderIdx;
   typeLabel;
   /**

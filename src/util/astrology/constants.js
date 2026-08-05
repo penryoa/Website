@@ -32,8 +32,8 @@ const Moon = new Planet({
 const Mercury = new Planet({
   icon: "☿",
   label: "Mercury",
-  textColor: "text-purple-700 dark:text-purple-200",
-  bgColor: "bg-purple-200 dark:bg-purple-700",
+  textColor: "text-violet-700 dark:text-violet-200",
+  bgColor: "bg-violet-200 dark:bg-violet-700",
   description: "communication, learning",
   proximity: "personal",
   sect: "diurnal",
@@ -66,7 +66,7 @@ const Jupiter = new Planet({
   icon: "♃",
   label: "Jupiter",
   textColor: "text-orange-700 dark:text-orange-200",
-  bgColor: "bg-orange-200 dark:bg-orange-700",
+  bgColor: "bg-orange-200 dark:bg-orange-600",
   description: "expansion, experience, luck",
   proximity: "social",
   sect: "diurnal",
@@ -128,8 +128,8 @@ export const planetsInChaldeanOrder = [ Saturn, Jupiter, Mars, Sun, Venus, Mercu
  * @type {Sect[]}
  */
 export const sects = [
-  new Sect({icon:"🌣", label: "Diurnal Team", sect: "diurnal"}),
-  new Sect({icon:"⏾", label: "Nocturnal Team", sect: "nocturnal"}),
+  new Sect({icon:"𖤓˚", label: "Diurnal Team", sect: "diurnal"}),
+  new Sect({icon:"⏾⋆", label: "Nocturnal Team", sect: "nocturnal"}),
 ];
 
 /**
@@ -137,9 +137,9 @@ export const sects = [
  * @type {Proximity[]}
  */
 export const proximities = [
-  new Proximity({icon:"👤", label: "Personal Planets", proximity: "personal"}),
-  new Proximity({icon:"👥", label: "Social Planets", proximity: "social"}),
-  new Proximity({icon:"🏔", label: "Generational Planets", proximity: "generational"}),
+  new Proximity({icon:"𖠋", label: "Personal Planets", proximity: "personal", description: "Being so close to the earth, these planets change signs quick and are thus more personal to you."}),
+  new Proximity({icon:"𖠋𖠋", label: "Social Planets", proximity: "social", description: "Kind of in between, these planets stay in one sign roughly 1.5-2 years. They're known as social planets because they cover how you and your peers were taught, how authority and rules impact them, and how they are rewarded."}),
+  new Proximity({icon:"𖠋𖠋𖠋", label: "Generational Planets", proximity: "generational", description: "These planets are the farthest out thus the slowest to go around the Sun. They're known as the generational planets because they essentially define generations by staying in one sign some 13 to 20 years, depending on the planet."}),
 ];
 
 // =================== ZODIAC SIGNS ===================

@@ -10,6 +10,8 @@ export interface AstroProperNoun {
 	label: string;
     /** The display label for the type as a whole */
     typeLabel: string;
+    /** A brief explanation of the significance */
+    description?: string;
     /**
      * Generates a cute little tag with the icon and label
      */

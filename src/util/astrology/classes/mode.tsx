@@ -10,6 +10,7 @@ export default class Mode implements AstroOrderedNoun {
     this.icon = args.icon;
     this.label = args.label;
     this.typeLabel = "Modality";
+    this.description = args.description || "";
     this.orderIdx = args.orderIdx;
   }
   
@@ -17,6 +18,7 @@ export default class Mode implements AstroOrderedNoun {
   icon;
   label;
   typeLabel;
+  description;
   orderIdx;
   
   // FUNCTIONS

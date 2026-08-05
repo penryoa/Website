@@ -12,6 +12,8 @@ import MePage from "./pages/Me";
 import OccultPage from "./pages/Occult";
 import { OutletWithNavWrapper, BasePageWrapper } from "./pages/PageWrappers";
 import WebPage from "./pages/Web";
+import AstrologyCalculator from "./pages/occult/AstrologyCalculator";
+import OccultLanding from "./pages/occult/OccultLanding";
 
 const App = () => {
   return (
@@ -21,7 +23,10 @@ const App = () => {
         <Route index element={BasePageWrapper(HomePage)} />
         <Route path="/" element={BasePageWrapper(OutletWithNavWrapper)}>
           <Route path="film" element={<FilmPage />} />
-          <Route path="occult" element={<OccultPage />} />
+          <Route path="occult" element={<OccultPage />}>
+            <Route index element={<OccultLanding />} />
+            <Route path="astrocalc" element={<AstrologyCalculator />} />
+          </Route>
           <Route path="web" element={<WebPage />} />
           <Route path="me" element={<MePage />} />
         </Route>

@@ -9,6 +9,7 @@ export default class Proximity implements AstroProperNoun {
 		this.icon = args.icon;
 		this.label = args.label;
 		this.typeLabel = "Proximity";
+		this.description = args.description || "";
 		this.proximity = args.proximity;
 	}
 
@@ -16,13 +17,14 @@ export default class Proximity implements AstroProperNoun {
 	icon;
 	label;
 	typeLabel;
+	description;
 	proximity;
 
-	// FUNCTIONS border-1
+	// FUNCTIONS
 	public DisplayTag() {
 		return (
-			<div className="m-1 px-1 border-[1] border-mauve-500 flex flex-row gap-2 rounded-md shadow-md shadow-mauve-300 dark:shadow-mauve-600">
-				<p className="font-bold">{this.icon}</p>
+			<div className="flex flex-row gap-2 rounded-md shadow-md shadow-mauve-300 dark:shadow-mauve-500 border border-dotted border-mauve-200 bg-mauve-100 dark:border-mauve-900 dark:bg-mauve-700">
+				<p>{this.icon}</p>
 				<p>{this.label}</p>
 			</div>
 		)

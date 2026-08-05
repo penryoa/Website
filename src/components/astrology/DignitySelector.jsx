@@ -105,10 +105,9 @@ export default function DignitySelector() {
   };
 
   /**
-   * Handles when a planet is selected
+   * Handles when a degree is entered
    */
   function checkDegree(e) {
-    // todo: show error
     let numNewDegree = Number(e.target.value);
     if (numNewDegree >= 0 && numNewDegree < 30) {
       setDegreeError(null);
@@ -155,11 +154,11 @@ export default function DignitySelector() {
 
       <label>
         Degree:
-        <input type="number" min={0} max={29} defaultValue={0} id="input-degree" name="i-degree" onChange={e => checkDegree(e)} className="rounded border-2 border-mauve-300 dark:border-mauve-700 bg-fuchsia-50 dark:bg-fuchsia-950" />
+        <input type="number" min={0} max={29} defaultValue={0} id="input-degree" name="i-degree" onChange={e => checkDegree(e)} className="rounded-md border pl-1 text-center border-mauve-300 dark:border-mauve-700 bg-fuchsia-50 dark:bg-fuchsia-950 focus:border-purple-400 focus:outline-0" />
         {degreeError}
       </label>
 
-      <div className="w-full bg-purple-300 rounded-xl p-2">
+      <div className="w-full mt-3 bg-purple-300/50 dark:bg-mauve-700 rounded-xl p-2">
         <label>Score: {result.points}</label>
         <label className="pl-8">Status: {result.label}</label>
         {result.conditions.map((cond) => <p>{cond.label} ({cond.pointMod})</p>)}

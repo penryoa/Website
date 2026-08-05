@@ -22,6 +22,7 @@ export default class Zodiac implements AstroOrderedNoun {
     this.icon = args.icon;
 		this.label = args.label;
     this.typeLabel = "Sign";
+    this.description = args.description || "";
     this.domicile = args.domicile;
     this.exaltation = args.exaltation || null;
     this.detriment = args.detriment;
@@ -36,6 +37,7 @@ export default class Zodiac implements AstroOrderedNoun {
   // MEMBERS
   icon;
   label;
+  description;
   typeLabel;
   orderIdx;
   /** A domicile placement has ownership and control; it's at home. In a metaphor: it gets to paint the walls, but also has to pay the bills. */

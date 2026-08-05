@@ -42,17 +42,19 @@ export default function AstroNounSelector({myArr, arrKey, signKey, planetKey}) {
 	return (
 		<label>
 			Select {myArr[0].typeLabel}:
-			<select className="mx-2 px-2 bg-fuchsia-300 dark:bg-fuchsia-600 rounded-xl shadow-sm shadow-fuchsia-100 dark:shadow-fuchsia-400" name={`selected-${signKey}`} onChange={e => handleSelect(e.target.value)}>
+			<select className="p-3 bg-fuchsia-300 dark:bg-purple-700 rounded-t-xl shadow-sm shadow-fuchsia-100 dark:shadow-fuchsia-400 w-full" name={`selected-${signKey}`} onChange={e => handleSelect(e.target.value)}>
 				{myArr.map((item, itemIdx) => (
           <option key={`selected-${signKey}-${item.icon}`} value={itemIdx} className="selection:bg-orange-200 dark:selection:bg-orange-700">
-            {item.label}
+            {item.icon} {item.label}
           </option>
 				))}
         <option key={`selected-${signKey}-All`} value={-1} className="">All</option>
 			</select>
-			<div>{arrIdx >= 0 ? myArr[arrIdx].DisplayTag() : <></>}</div>
-			<div className="mt-2 flex flex-row flex-wrap">
-				{nouns.map((n) => n.DisplayTag())}
+			<div className="p-2 rounded-b-xl border border-fuchsia-300 dark:purple-700 border-t-0">
+				<div className="flex flex-row flex-wrap gap-1">
+					{nouns.map((n) => n.DisplayTag())}
+				</div>
+				<p>{arrIdx >= 0 && myArr[arrIdx].description}</p>
 			</div>
 		</label>
 	);
