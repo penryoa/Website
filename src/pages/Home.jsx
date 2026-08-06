@@ -4,7 +4,7 @@ import { ArrowRightIcon, StarIcon, } from "@heroicons/react/solid";
 import { SquareTile } from "../components/Tiles";
 import { features, pages } from "../util/constants";
 import { DarkModeToggle } from "../components/DarkModeToggle";
-import { scrollToTop } from "./PageWrappers";
+import { scrollToTop } from "../util/helpers";
 
 
 /**
