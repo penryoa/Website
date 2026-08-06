@@ -29,7 +29,7 @@
   body,
   html {
     margin: 0rem;
-    font-family: "Victor Mono", monospace;
+    font-family: var(--font-victor);
     color: var(--color-red-950);
     background-color: white;
 
@@ -44,7 +44,7 @@
   h1,
   h2,
   h3 {
-    font-family: "Chicken Scratch", sans-serif;
+    font-family: var(--font-chicken);
   }
   h1 {
     padding-top: calc(var(--spacing) * 6);
