@@ -2,6 +2,7 @@ import { AstroOrderedNoun } from "./interfaces";
 import Planet from "./planet";
 
 type WesternElementArgs = AstroOrderedNoun & {
+  borderColor: string;
   dorotheanTriplicity: {"day":Planet, "night":Planet, "cooperating":Planet};
 };
 
@@ -16,6 +17,7 @@ export default class WesternElement implements AstroOrderedNoun {
     this.label = args.label;
     this.typeLabel = "Element";
     this.description = args.description || "";
+    this.borderColor = args.borderColor;
     this.orderIdx = args.orderIdx;
     this.dorotheanTriplicity = args.dorotheanTriplicity;
   }
@@ -26,6 +28,7 @@ export default class WesternElement implements AstroOrderedNoun {
   description;
   orderIdx;
   typeLabel;
+  borderColor;
   /**
    * The logic: If you take the elemental triplicities, we're almost there. But a diurnal planet can't be part of a team on a nocturnal yin element. Thus, we make some swaps.
    * 
@@ -39,9 +42,8 @@ export default class WesternElement implements AstroOrderedNoun {
   // FUNCTIONS
   DisplayTag() {
     return (
-      <div className="m-1 px-1 flex flex-row gap-2 rounded-md border-2 border-dotted border-mauve-500 dark:border-mauve-300">
-        <p className="text-mauve-500 dark:text-mauve-300">{this.icon}</p>
-        <p>{this.label}</p>
+      <div className={`m-1 px-1 rounded-md border border-mauve-500 dark:border-mauve-300 ${this.borderColor}`}>
+        {this.icon} {this.label}
       </div>
     )
   };

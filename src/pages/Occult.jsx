@@ -22,7 +22,7 @@ export default function OccultPage() {
             </Link>
           )}
         </div>
-        <div className="border border-mauve-400 border-t-0 rounded-b-md dark:border-red-800 p-3 bg-mauve-100/25">
+        <div className="border border-mauve-400 border-t-0 rounded-b-md dark:border-red-800 p-3 bg-mauve-100/85 dark:bg-mauve-900/85">
           <Outlet/>
         </div>
       </div>

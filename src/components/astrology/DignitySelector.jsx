@@ -11,7 +11,7 @@ import Zodiac from "../../util/astrology/classes/zodiac.tsx";
  * @param {number} degree
  * @returns { points: number; label: string; conditions: {pointMod:number,label:string}[]; }
  */
-function getEssentialDignity(planet, sign, degree) {
+export function getEssentialDignity(planet, sign, degree) {
   let points = 0;
   let label = "No Dignity";
   let conditions = [];
@@ -32,9 +32,8 @@ function getEssentialDignity(planet, sign, degree) {
     }
     
     // +3 in triplicity (Dorothean)
-    const element = westernElements.find((elem) => elem.orderIdx == sign.triplicityOrderIdx);
     // console.log("our element is", element);
-    if (Object.values(element.dorotheanTriplicity).includes(planet)) {
+    if (Object.values(sign.getTripLords())?.includes(planet)) {
       conditions.push(possibleDignityConditions["inTriplicity"]);
     }
     
@@ -44,9 +43,14 @@ function getEssentialDignity(planet, sign, degree) {
     }
     
     // +1 in face (Chaldean)
-    if (planet.chaldeanOrder && sign.getDecans().includes(planet)) {
-      conditions.push(possibleDignityConditions["inFace"]);
-    }
+    sign.getDecans().every((decan,dIdx) => {
+      let decanMin = 0 + dIdx * 10;
+      if (decan == planet && degree >= decanMin && degree < decanMin + 10) {
+        conditions.push(possibleDignityConditions["inFace"]);
+        return false;
+      }
+      return true;
+    })
 
     conditions.forEach((c,cIdx) => {
       points += c.pointMod;
@@ -66,13 +70,25 @@ function getEssentialDignity(planet, sign, degree) {
 };
 
 /**
- * This is placed outside of DignitySelector so it won't ever re-render.
+ * This is placed outside of DignitySelector so it won't re-render when the component updates.
  */
 const firstResult = getEssentialDignity(
   planets[0],
   westernZodiacSigns[0],
   0
 );
+
+/**
+ * Small helper function to display the score and status
+ */
+function ScoreDisplay ({name,val}) {
+  return (
+    <div className="w-full sm:w-1/2 rounded-sm border border-purple-400 dark:border-mauve-500 text-center">
+      <p className="font-smallcaps rounded-t-sm bg-purple-300/85 dark:bg-pink-800">{name}</p>
+      <p className="text-xl rounded-b-sm bg-mauve-100 dark:bg-mauve-600">{val}</p>
+    </div>
+  );
+}
 
 /**
  * Takes either triplicities or modalities and renders the signs
@@ -130,6 +146,7 @@ export default function DignitySelector() {
 
   return (
     <div>
+      {/* THE SELECTORS */}
       <label>
         Planet:
         <select className={selectorClassName} name="selector-planet" onChange={e => selectPlanet(e.target.value)}>
@@ -158,10 +175,26 @@ export default function DignitySelector() {
         {degreeError}
       </label>
 
+      {/* THE RESULTS */}
       <div className="w-full mt-3 bg-purple-300/50 dark:bg-mauve-700 rounded-xl p-2">
-        <label>Score: {result.points}</label>
-        <label className="pl-8">Status: {result.label}</label>
-        {result.conditions.map((cond) => <p>{cond.label} ({cond.pointMod})</p>)}
+        <span className="w-full inline-flex items-baseline justify-center text-lg">
+          {planet.DisplayTag()} in {sign.DisplayTag()} at {degree}°
+        </span>
+        <div className="w-full inline-flex gap-2 my-3">
+          <ScoreDisplay name="Score" val={result.points} />
+          <ScoreDisplay name="Status" val={result.label} />
+        </div>
+
+        <p className="font-bold">Conditions:</p>
+        {result.conditions.length > 0 ? result.conditions.map((cond) => <p>({cond.pointMod > 0 && "+"}{cond.pointMod}) {cond.label}</p>) : <p>None</p>}
+
+        <p className="font-bold mt-4">Triplicity, Bounds, and Terms:</p>
+        <div className="inline-flex items-baseline">
+          Triplicity Rulers:
+          {Object.values(sign.getTripLords()).map((lord) => lord.DisplayTag())}
+        </div>
+        <p className="mt-2">Bounds (top) and Decans (bottom):</p>
+        {sign.BoundsDecansDisplayBar(degree)}
       </div>
     </div>
   );

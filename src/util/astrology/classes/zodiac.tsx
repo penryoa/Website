@@ -1,7 +1,10 @@
-import { planetsInChaldeanOrder } from "../constants";
+import { JSX } from "react";
+import { modes, planetsInChaldeanOrder, westernElements } from "../constants";
 import Bound from "./bound";
 import { AstroOrderedNoun } from "./interfaces";
 import Planet from "./planet";
+import { ArrowUpIcon } from "@heroicons/react/solid";
+import WesternElement from "./element";
 
 type ZodiacArgs = AstroOrderedNoun & {
   domicile: Planet;
@@ -67,19 +70,49 @@ export default class Zodiac implements AstroOrderedNoun {
 		)
 	};
 
+  public BoundsDecansDisplayBar(degree=null) {
+    return (
+      <>
+        <div className="w-full border border-mauve-500 dark:border-mauve-200">
+          <div className="w-full flex flex-row">
+            {this.bounds.map((bound) => (
+              <div className={`w-${bound.orb}/30 ${bound.ruler.bgColor} text-center`}>
+                {bound.ruler.icon} <p className="hidden xl:inline">{bound.ruler.label}</p>
+              </div>
+            ))}
+          </div>
+          <hr/>
+          <div className="w-full flex flex-row">
+            {this.getDecans().map((decan) => (
+              <div className={`w-1/3 ${decan.bgColor} text-center`}>
+                {decan.icon} <p className="hidden md:inline">{decan.label}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+        {degree != null && (
+          <div className="w-full mb-6">
+            <div className={`relative w-${Number(degree)}/30`}>
+              <div className="absolute right-0 -mr-2">
+                <ArrowUpIcon className="h-4 w-4" />
+              </div>
+            </div>
+          </div>
+        )}
+      </>
+    );
+  };
+
   /**
    * Determines if a given planet at a given degree is in bound in this sign
    * @param {Planet} planet 
    * @param {number} degree 
-   * @returns {boolean}
    */
   public isPlanetInBound(planet: Planet, degree:number): boolean {
     let minDegree = 0;
     let isInBound = false;
     this.bounds.sort((b1,b2) => b1.orderIdx - b2.orderIdx);
-    console.log(this.bounds);
     this.bounds.every((bound, idx) => {
-      console.log("idx ",idx,", minDegree ",minDegree, ", degree ",degree,": looking at bound ", bound);
       if (planet == bound.ruler && degree >= minDegree && degree < (minDegree + bound.orb)) {
         isInBound = true;
         return false;
@@ -92,13 +125,31 @@ export default class Zodiac implements AstroOrderedNoun {
 
   /**
    * Determines the Chaldean Decans
-   * @returns {Planet[]}
    */
   public getDecans(): Planet[] {
-    const decans = new Array(3);
+    let decans = [];
     for (let i = 0; i < 3; i++) {
       decans.push(planetsInChaldeanOrder[(this.decanStart + i) % 7]);
     }
     return decans;
-  }
+  };
+
+  /** Gets the corresponding element */
+  public getElement(): WesternElement | undefined {
+    return westernElements.find((elem) => elem.orderIdx == this.triplicityOrderIdx);
+  };
+
+  /**
+   * Gets the corresponding element's Dorothean triplicity lords
+   */
+  public getTripLords() {
+    return this.getElement()?.dorotheanTriplicity || undefined;
+  };
+
+  /**
+   * Gets the corresponding modality
+   */
+  public getMode() {
+    return modes.find((mode) => mode.orderIdx == this.modalityOrderIdx);
+  };
 };

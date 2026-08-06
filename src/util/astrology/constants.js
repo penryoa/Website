@@ -33,7 +33,7 @@ const Mercury = new Planet({
   icon: "☿",
   label: "Mercury",
   textColor: "text-violet-700 dark:text-violet-200",
-  bgColor: "bg-violet-200 dark:bg-violet-700",
+  bgColor: "bg-violet-300 dark:bg-violet-700",
   description: "communication, learning",
   proximity: "personal",
   sect: "diurnal",
@@ -342,24 +342,28 @@ const Fire = new WesternElement({
   icon: "🜂",
   label: "Fire",
   orderIdx: 0,
+  description: "Fire elements are known for their fervor, energy, and sparking interest in things. Fire rapidly grows; a fiery personality has that flamboyant tendency to add their own spin, be loud, and engage with everything around them.",
   dorotheanTriplicity: {"day": Sun, "night": Jupiter, "cooperating": Saturn}
 });
 const Earth = new WesternElement({
   icon: "🜃",
   label: "Earth",
   orderIdx: 1,
+  description: "Earth elements are on the slower, more predictable and stable side. They are guided by practical matters; physical comfort and security take priority.",
   dorotheanTriplicity: {"day": Venus, "night": Moon, "cooperating": Mars}
 });
 const Air = new WesternElement({
   icon: "🜁",
   label: "Air",
   orderIdx: 2,
+  description: "Air elements foster communication, thought, and clever innovation, whether that be in the realm of wordplay or technology. They lean on the cerebral side, as being able to communicate and process information are their main motivators.",
   dorotheanTriplicity: {"day": Saturn, "night": Mercury, "cooperating": Jupiter}
 });
 const Water = new WesternElement({
   icon: "🜄",
   label: "Water",
   orderIdx: 3,
+  description: "Water elements precede words; they are mute in that way. It's all about the visuals, the creativity, the emotionality. Water elements will seek out emotional clarity and security, wisdom, and truth above all else.",
   dorotheanTriplicity: {"day": Venus, "night": Mars, "cooperating": Moon}
 });
 
@@ -375,17 +379,20 @@ export const westernElements = [ Fire, Earth, Air, Water ];
 const Cardinal = new Mode({
   icon: "⟑",
   label: "Cardinal",
-  orderIdx: 0
+  orderIdx: 0,
+  description: "A cardinal modality represents the beginning of something, or the personality trait to start things and take initiative. Cardinal modalities may not finish everything they start, but they unabashedly get in there and stir things up. They lead, anticipating who or what needs to be addressed next to further their goals.",
 });
 const Fixed = new Mode({
   icon: "🝕",
   label: "Fixed",
-  orderIdx: 1
+  orderIdx: 1,
+  description: "A fixed modality is, as you can imagine, fixed right in the middle. They don't like to be uprooted and don't act hastily. There's a stubbornness that comes with being fixed, but a steadfast commitment to something of quality is their speciality.",
 });
 const Mutable = new Mode({
   icon: "🜳",
   label: "Mutable",
-  orderIdx: 2
+  orderIdx: 2,
+  description: "Mutable modality marks the end of something. It is amazing at taking feedback, responding to change, and reacting to unpredictable circumstances. They may align with going-with-the-flow or overplanning, but either way, they are looking to their environment for signals to alter course and are ready to handle whatever comes their way.",
 });
 
 /**
@@ -403,7 +410,7 @@ export const possibleDignityConditions = {
   inDomicile: { pointMod: +5, label: "In Domicile" },
   inDetriment: { pointMod: -5, label: "In Detriment" },
   inExaltation: { pointMod: +4, label: "In Exaltation" },
-  inFall: { pointMod: +4, label: "In Fall" },
+  inFall: { pointMod: -4, label: "In Fall" },
   inTriplicity: { pointMod: +3, label: "In Triplicity" },
   inBound: { pointMod: +2, label: "In Bound" },
   inFace: { pointMod: +1, label: "In Face" },
