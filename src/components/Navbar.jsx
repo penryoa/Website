@@ -68,7 +68,7 @@ export default function Navbar() {
                   </div>
                 </Transition.Child>
                 {/* CUSTOM CODE STARTS HERE */}
-                <div className="bg-purple-50 dark:bg-red-950 pt-6 h-screen px-1 font-heading select-none">
+                <div className="bg-purple-50 dark:bg-red-950 pt-6 h-screen px-1 font-heading select-none transition-colors duration-600 ease-in-out">
                   <div className="pb-3 flex justify-center items-center gap-3">
                     <span className="text-2xl text-orange-700 dark:text-orange-300 flex items-baseline">
                       ~<SparklesIcon className="h-5 w-5" />
@@ -99,7 +99,7 @@ export default function Navbar() {
                   {pages.map((page, idx) => (
                     <Link
                       key={`navBarItem.${idx}`}
-                      className="block m-2 p-2 h-8 rounded-tl-md rounded-bl-md transition-all bg-linear-to-r from-orange-300 dark:from-orange-700 to-transparent overflow-hidden whitespace-nowrap visited:text-inherit hover:text-fuchsia-800 dark:hover:text-fuchsia-200 active:text-fuchsia-pop"
+                      className="block m-2 p-2 h-8 rounded-tl-md rounded-bl-md transition-all bg-linear-to-r from-orange-300 dark:from-orange-700 to-transparent overflow-hidden whitespace-nowrap visited:text-inherit hover:text-fuchsia-800 dark:hover:text-fuchsia-200 active:text-fuchsia-500"
                       to={page.to}
                       onClick={onClose}
                     >

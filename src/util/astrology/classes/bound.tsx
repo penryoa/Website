@@ -1,4 +1,4 @@
-import { AstroOrdered } from "./interfaces";
+import { AstroOrdered } from "../astroInterfaces";
 import Planet from "./planet";
 
 type BoundArgs = AstroOrdered & {

@@ -257,6 +257,7 @@ const Scorpio = new Zodiac({
   domicile: Mars,
   detriment: Venus,
   fall: Moon,
+  modernDomicile: Pluto,
   bounds: [
     new Bound({orderIdx: 0, orb: 7, ruler: Mars}),
     new Bound({orderIdx: 1, orb: 4, ruler: Venus}),
@@ -301,6 +302,7 @@ const Aquarius = new Zodiac({
   label: "Aquarius",
   domicile: Saturn,
   detriment: Sun,
+  modernDomicile: Uranus,
   bounds: [
     new Bound({orderIdx: 0, orb: 7, ruler: Mercury}),
     new Bound({orderIdx: 1, orb: 6, ruler: Venus}),
@@ -316,6 +318,7 @@ const Pisces = new Zodiac({
   domicile: Jupiter,
   detriment: Mercury,
   exaltation: Venus,
+  modernDomicile: Neptune,
   bounds: [
     new Bound({orderIdx: 0, orb: 12, ruler: Venus}),
     new Bound({orderIdx: 1, orb: 4, ruler: Jupiter}),

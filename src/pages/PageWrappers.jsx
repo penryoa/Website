@@ -16,7 +16,7 @@ export const OutletWithNavWrapper = () => {
 
   useEffect(() => {
     scrollToTop();
-  },[pathname])
+  },[pathname]);
 
   return (
 		<div>
@@ -40,7 +40,7 @@ export const OutletWithNavWrapper = () => {
 export function BasePageWrapper (MyPage) {
   scrollToTop();
 	return (
-		<div className="min-h-screen bg-linear-to-t from-red-50 to-purple-300 dark:from-black dark:to-red-900 slashed-zero stacked-fractions">
+		<div className="min-h-screen bg-linear-to-t from-red-50 to-purple-300 dark:from-black dark:to-red-900 slashed-zero stacked-fractions transition-colors duration-600 ease-in-out">
 			<div className="max-w-7xl mx-auto relative py-4 h-full">
 				<MyPage />
 			</div>

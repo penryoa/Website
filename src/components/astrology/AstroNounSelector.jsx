@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { planets, westernZodiacSigns } from "../../util/astrology/constants.js";
-import { AstroProperNoun } from "../../util/astrology/classes/interfaces.tsx";
 import Zodiac from "../../util/astrology/classes/zodiac.tsx";
+import AstroProperNounClass from "../../util/astrology/astroInterfaces.tsx";
 
 /**
- * Lets you display a filtered {@link AstroProperNoun} list
- * @param {AstroProperNoun[]} myArr the subdividing list
+ * Lets you display a filtered {@link AstroProperNounClass} list
+ * @param {AstroProperNounClass[]} myArr the subdividing list
  * @param {string} arrKey the myArr key to compare to
  * @param {string} [signKey] the {@link Zodiac} key to compare to
  * @param {string} [planetKey] the {@link Planet} key to compare to

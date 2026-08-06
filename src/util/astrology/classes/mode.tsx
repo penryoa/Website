@@ -1,4 +1,4 @@
-import { AstroOrderedNoun } from "./interfaces";
+import { AstroOrderedNoun } from "../astroInterfaces";
 
 /**
  * The structure of the 3 modes
@@ -24,7 +24,7 @@ export default class Mode implements AstroOrderedNoun {
   // FUNCTIONS
   DisplayTag() {
     return (
-      <div className="m-1 flex flex-row gap-2 rounded-md border-2 border-dotted border-amber-900 dark:border-white">
+      <div className="m-1 p-0.5 flex flex-row gap-2 rounded-md border border-dotted border-amber-900 dark:border-white">
         <p className="text-mauve-500 dark:text-mauve-300">{this.icon}</p>
         <p>{this.label}</p>
       </div>

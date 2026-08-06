@@ -1,4 +1,4 @@
-import { AstroOrderedNoun } from "./interfaces";
+import { AstroOrderedNoun } from "../astroInterfaces";
 import Planet from "./planet";
 
 type WesternElementArgs = AstroOrderedNoun & {

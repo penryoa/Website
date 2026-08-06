@@ -25,6 +25,9 @@ function DisplayAllInfo(sign) {
         <PropertyDisplay label="Element" display={sign.getElement()?.DisplayTag()} />
         <PropertyDisplay label="Modality" display={sign.getMode()?.DisplayTag()} />
         <PropertyDisplay label="Domicile" display={sign.domicile.DisplayTag()} />
+        {sign.modernDomicile && 
+          <PropertyDisplay label="Modern Ruler" display={sign.modernDomicile?.DisplayTag()} />
+        }
         {sign.exaltation && 
           <PropertyDisplay label="Exalted" display={sign.exaltation?.DisplayTag()} />
         }
@@ -42,7 +45,7 @@ function DisplayAllInfo(sign) {
         <p className="font-bold pt-3">Triplicity Lords:</p>
         {Object.values(sign.getTripLords()).map((lord) => lord.DisplayTag())}
       </div>
-      <p>I use Chaldean triplicity rulers, but have no particular loyalty. It just seemed like a popular schema.</p>
+      <p>I use Dorothean triplicity rulers, but have no particular loyalty. It just seemed like a reliable popular schema.</p>
     </>
   );
 };

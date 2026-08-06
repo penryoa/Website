@@ -1,7 +1,6 @@
-import { JSX } from "react";
 import { modes, planetsInChaldeanOrder, westernElements } from "../constants";
 import Bound from "./bound";
-import { AstroOrderedNoun } from "./interfaces";
+import { AstroOrderedNoun } from "../astroInterfaces";
 import Planet from "./planet";
 import { ArrowUpIcon } from "@heroicons/react/solid";
 import WesternElement from "./element";
@@ -11,6 +10,7 @@ type ZodiacArgs = AstroOrderedNoun & {
   exaltation: Planet | null;
   detriment: Planet;
   fall: Planet | null;
+  modernDomicile: Planet | null;
   bounds: Bound[];
 };
 
@@ -30,6 +30,7 @@ export default class Zodiac implements AstroOrderedNoun {
     this.exaltation = args.exaltation || null;
     this.detriment = args.detriment;
     this.fall = args.fall || null;
+    this.modernDomicile = args.modernDomicile || null;
     this.bounds = args.bounds;
     /* Calculate triplicity, modality, and house from given zodiac order */
     this.triplicityOrderIdx = args.orderIdx % 4; // Corresponds to WesternElement.orderIdx
@@ -51,6 +52,8 @@ export default class Zodiac implements AstroOrderedNoun {
   detriment;
   /** Nearly 1-1 relationship with exaltation (opposites) */
   fall;
+  /** Uranus, Neptune, and Pluto were discovered much later and in modern times are at the very least associated with an sign, if not considered a ruler */
+  modernDomicile;
   /** The Egyptian bounds for the given Zodiac. These are messy, for sure, but stand the trial of time it seems. */
   bounds;
   /** The calculated index of the elemental triplicity */

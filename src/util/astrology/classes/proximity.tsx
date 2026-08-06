@@ -1,4 +1,4 @@
-import { AstroProperNoun } from "./interfaces";
+import { AstroProperNoun } from "../astroInterfaces";
 
 type ProximityArgs = AstroProperNoun & {
 	proximity: string;
