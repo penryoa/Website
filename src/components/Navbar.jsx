@@ -77,7 +77,7 @@ export default function Navbar() {
                       className="items-baseline"
                       target="_blank"
                       rel="noreferrer noopener"
-                      href="https://github.com/penryoa"
+                      href="https://github.com/penryoa/Website"
                       >
                       <img src="/images/github.png"  className="h-8 w-8 dark:invert dark:hover:invert-75 invert-0 hover:invert-25" loading="eager" />
                       <span className="sr-only">GitHub</span>

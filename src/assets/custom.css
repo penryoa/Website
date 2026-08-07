@@ -2,27 +2,48 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
 
 @font-face {
-  font-family: "Chicken Scratch", sans-serif;
-  src: url("./fonts/Chicken_Scratch/ChickenScratch-Regular.otf");
+  font-family: "Chicken Scratch";
   font-weight: normal;
   font-style: normal;
   font-display: swap;
+  src: url("fonts/Chicken_Scratch/ChickenScratch-Regular.otf");
 }
 
 @font-face {
-  font-family: "Victor Mono", monospace;
-  src: url("./fonts/Victor_Mono/VictorMono-VariableFont_wght.ttf");
+  font-family: "Victor Mono";
   font-weight: 300 500 700;
   font-style: normal;
   font-display: swap;
   size-adjust: 80%;
+  src: url("fonts/Victor_Mono/VictorMono-VariableFont_wght.ttf");
+}
+
+@font-face {
+  font-family: "Futura";
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+  src: url("fonts/futura/FuturaCondensedPT-Medium.woff");
+}
+
+@font-face {
+  font-family: "Viner";
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+  src: url("fonts//viner/VinerHandITC.woff");
 }
 
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
+  /* The GFOAT - greatest font of all time */
   --font-victor: "Victor Mono", monospace;
+  /* My own handwriting as a font */
   --font-chicken: "Chicken Scratch", sans-serif;
+  /* Skyrim fonts below */
+  --font-futura: "Futura", sans-serif;
+  --font-viner: "Viner", sans-serif;
 }
 
 @layer base {
