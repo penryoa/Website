@@ -101,7 +101,7 @@ const Neptune = new Planet({
   proximity: "generational",
 });
 export const Pluto = new Planet({
-  icon: "⯓",
+  icon: "♇",
   label: "Pluto",
   textColor: "text-mauve-700 dark:text-mauve-200",
   bgColor: "bg-mauve-200 dark:bg-mauve-700",
