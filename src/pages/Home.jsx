@@ -4,7 +4,7 @@ import { ArrowRightIcon, StarIcon, } from "@heroicons/react/solid";
 import { SquareTile } from "../components/Tiles";
 import { features, pages } from "../util/constants";
 import { DarkModeToggle } from "../components/DarkModeToggle";
-import { scrollToTop } from "./PageWrappers";
+import { scrollToTop } from "../util/helpers";
 
 
 /**
@@ -45,7 +45,7 @@ export default function HomePage() {
             rel="noreferrer noopener"
             href="https://www.youtube.com/@onespicydragon"
             >
-            <img src="images/youtube.png" className="h-16 w-16 dark:invert" />
+            <img src="/images/youtube.png" className="h-16 w-16 dark:invert" />
             <span className="sr-only">@onespicydragon</span>
             <p className="group-hover:underline text-lg">@onespicydragon</p>
           </a>
@@ -56,7 +56,7 @@ export default function HomePage() {
           <HyperlinkMenu isVert={true} />
         </div>
         <img
-          src="images/temp_headshot.JPG"
+          src="/images/temp_headshot.JPG"
           alt="headshot"
           className="object-cover w-150 h-150 px-2 rounded-4xl"
         />

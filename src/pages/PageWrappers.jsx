@@ -1,23 +1,17 @@
 import React, { useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Outlet, useLocation } from "react-router-dom";
 import { ArrowUpIcon, SparklesIcon } from "@heroicons/react/solid";
-
-export function scrollToTop () {
-	window.scrollTo({
-		top: 0,
-		behavior: "smooth",
-	});
-};
+import { scrollToTop } from "../util/helpers";
 
 export const OutletWithNavWrapper = () => {
-  const dispatch = useDispatch();
-  const {pathname} = useLocation();
-
-  useEffect(() => {
-    scrollToTop();
-  },[pathname]);
-
+	const dispatch = useDispatch();
+	const {pathname} = useLocation();
+	
+	useEffect(() => {
+		scrollToTop();
+	},[pathname]);
+	
   return (
 		<div>
 			<button
@@ -38,7 +32,15 @@ export const OutletWithNavWrapper = () => {
 };
 
 export function BasePageWrapper (MyPage) {
-  scrollToTop();
+	scrollToTop();
+	const { darkModeEnabled } = useSelector((state) => state.darkMode);
+	
+  useEffect(() => {
+		document
+			.getElementById("mainHTML")
+			.setAttribute("class", darkModeEnabled ? "dark" : "light");
+  }, [darkModeEnabled]);
+
 	return (
 		<div className="min-h-screen bg-linear-to-t from-red-50 to-purple-300 dark:from-black dark:to-red-900 slashed-zero stacked-fractions transition-colors duration-600 ease-in-out">
 			<div className="max-w-7xl mx-auto relative py-4 h-full">
