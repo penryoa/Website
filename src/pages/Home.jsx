@@ -79,9 +79,10 @@ export default function HomePage() {
 
       <div className="border-2 mx-4 p-4 border-dotted rounded-2xl grid grid-cols-2">
         <DarkModeToggle />
-        <p className="text-sm place-self-end">
-          Last update: 2026 08 07
-        </p>
+        <div className="text-sm place-self-end">
+          <p>Last update:</p>
+          <p className="italic">2026 08 07</p>
+        </div>
       </div>
     </div>
   );
