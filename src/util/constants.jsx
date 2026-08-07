@@ -9,10 +9,14 @@ import {
 
 // ===== ENV VARIABLES =====
 // Note: to bring it in here, we need the prefix "REACT_APP". Then, in the vite.config.js, I also bring in these env variables.
-export const BASE = process.env.REACT_APP_BASE
+export const BASE = process.env.REACT_APP_BASE;
 
 // ===== TAILWIND CLASS NAMES =====
-export const selectorClassName = "mx-2 px-2 bg-orange-200 dark:bg-amber-600 rounded-xl shadow-sm shadow-fuchsia-800/50 dark:shadow-fuchsia-200/50";
+export const selectColorClassName = "p-1.5 bg-orange-200 dark:bg-amber-600 rounded-xl shadow-sm shadow-fuchsia-800/50 dark:shadow-fuchsia-200/50";
+
+export const selectFocusClassName = "focus:outline-2 focus:outline-pink-600 dark:focus:outline-pink-400 focus:border focus:border-orange-500 dark:focus:border-orange-200";
+
+export const selectClassName = `${selectColorClassName} ${selectFocusClassName}`;
 
 // ===== NAVIGATION =====
 export const pages = [

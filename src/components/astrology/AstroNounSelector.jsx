@@ -2,15 +2,18 @@ import React, { useState } from "react";
 import { planets, westernZodiacSigns } from "../../util/astrology/constants.js";
 import Zodiac from "../../util/astrology/classes/zodiac.tsx";
 import AstroProperNounClass from "../../util/astrology/astroInterfaces.tsx";
+import { selectFocusClassName } from "../../util/constants.jsx";
 
 /**
  * Lets you display a filtered {@link AstroProperNounClass} list
- * @param {AstroProperNounClass[]} myArr the subdividing list
- * @param {string} arrKey the myArr key to compare to
- * @param {string} [signKey] the {@link Zodiac} key to compare to
- * @param {string} [planetKey] the {@link Planet} key to compare to
+ * @param {Object} params
+ * @param {AstroProperNounClass[]} params.myArr the subdividing list
+ * @param {string} params.arrKey the myArr key to compare to
+ * @param {string | undefined} [params.signKey] the {@link Zodiac} key to compare to
+ * @param {string | undefined} [params.planetKey] the {@link Planet} key to compare to
+ * @param {function | undefined} [params.DisplayOverwrite] the {@link AstroProperNounClass} display function to use
  */
-export default function AstroNounSelector({myArr, arrKey, signKey, planetKey}) {
+export default function AstroNounSelector({myArr, arrKey, signKey, planetKey, DisplayOverwrite}) {
   if (!signKey && !planetKey) {
     throw new Error("Must use either signKey or planetKey");
   }
@@ -42,8 +45,8 @@ export default function AstroNounSelector({myArr, arrKey, signKey, planetKey}) {
 
 	return (
 		<label>
-			Select {myArr[0].typeLabel}:
-			<select className="p-3 bg-fuchsia-300 dark:bg-purple-700 rounded-t-xl w-full" name={`selected-${signKey}`} onChange={e => handleSelect(e.target.value)}>
+			Filter by {myArr[0].typeLabel}:
+			<select className={`p-3 bg-fuchsia-300 dark:bg-purple-700 rounded-t-xl w-full ${selectFocusClassName}`} name={`selected-${signKey}`} onChange={e => handleSelect(e.target.value)}>
 				{myArr.map((item, itemIdx) => (
           <option key={`selected-${signKey}-${item.icon}`} value={itemIdx}>
             {item.icon} {item.label}
@@ -53,7 +56,7 @@ export default function AstroNounSelector({myArr, arrKey, signKey, planetKey}) {
 			</select>
 			<div className="p-2 rounded-b-xl border border-fuchsia-300 dark:border-purple-700 border-t-0">
 				<div className="flex flex-row flex-wrap gap-1">
-					{nouns.map((n) => n.DisplayTag())}
+					{nouns.map((n) => DisplayOverwrite ? DisplayOverwrite(n) : n.DisplayTag())}
 				</div>
 				<p>{arrIdx >= 0 && myArr[arrIdx].description}</p>
 			</div>

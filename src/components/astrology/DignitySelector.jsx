@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { selectorClassName } from "../../util/constants";
+import { selectClassName, selectFocusClassName } from "../../util/constants";
 import { planets, possibleDignityConditions, westernElements, westernZodiacSigns } from "../../util/astrology/constants";
 import Planet from "../../util/astrology/classes/planet.tsx";
 import Zodiac from "../../util/astrology/classes/zodiac.tsx";
@@ -32,7 +32,6 @@ export function getEssentialDignity(planet, sign, degree) {
     }
     
     // +3 in triplicity (Dorothean)
-    // console.log("our element is", element);
     if (Object.values(sign.getTripLords())?.includes(planet)) {
       conditions.push(possibleDignityConditions["inTriplicity"]);
     }
@@ -50,7 +49,7 @@ export function getEssentialDignity(planet, sign, degree) {
         return false;
       }
       return true;
-    })
+    });
 
     conditions.forEach((c,cIdx) => {
       points += c.pointMod;
@@ -64,6 +63,9 @@ export function getEssentialDignity(planet, sign, degree) {
     }
   } else {
     conditions.push(possibleDignityConditions["notClassical"]);
+    if (sign.modernDomicile === planet) {
+      conditions.push(possibleDignityConditions["inModernDomicile"]);
+    }
   }
 
   return { "points": points, "label": label, "conditions": conditions };
@@ -147,36 +149,38 @@ export default function DignitySelector() {
   return (
     <div>
       {/* THE SELECTORS */}
-      <label>
-        Planet:
-        <select className={selectorClassName} name="selector-planet" onChange={e => selectPlanet(e.target.value)}>
-          {planets.map((iPlanet, iPlanetIdx) => (
-            <option key={`option-planet-${iPlanet.icon}`} value={iPlanetIdx}>
-              {iPlanet.label}
-            </option>
-          ))}
-        </select>
-      </label>
+      <div className="flex flex-col md:flex-row md:flex-wrap items-center md:items-baseline w-full bg-pink-400/20 dark:bg-violet-800/50 p-2 rounded-t-md border-b border-pink-300 dark:border-purple-500">
+        <label className="md:pr-4 w-full sm:w-1/2 md:w-auto flex flex-col md:flex-row md:items-baseline gap-2 text-center">
+          Planet:
+          <select className={selectClassName} name="selector-planet" onChange={e => selectPlanet(e.target.value)}>
+            {planets.map((iPlanet, iPlanetIdx) => (
+              <option key={`option-planet-${iPlanet.icon}`} value={iPlanetIdx}>
+                {iPlanet.label}
+              </option>
+            ))}
+          </select>
+        </label>
 
-      <label>
-        Sign:
-        <select className={selectorClassName} name="selector-sign" onChange={e => selectSign(e.target.value)}>
-          {westernZodiacSigns.map((iSign, iSignIdx) => (
-            <option key={`option-sign-${iSign.icon}`} value={iSignIdx}>
-              {iSign.label}
-            </option>
-          ))}
-        </select>
-      </label>
+        <label className="pt-4 md:pr-4 md:pt-0 w-full sm:w-1/2 md:w-auto flex flex-col md:flex-row md:items-baseline gap-2 text-center">
+          Sign:
+          <select className={selectClassName} name="selector-sign" onChange={e => selectSign(e.target.value)}>
+            {westernZodiacSigns.map((iSign, iSignIdx) => (
+              <option key={`option-sign-${iSign.icon}`} value={iSignIdx}>
+                {iSign.label}
+              </option>
+            ))}
+          </select>
+        </label>
 
-      <label>
-        Degree:
-        <input type="number" min={0} max={29} defaultValue={0} id="input-degree" name="i-degree" onChange={e => checkDegree(e)} className="rounded-md border pl-1 text-center border-mauve-300 dark:border-mauve-700 bg-fuchsia-50 dark:bg-fuchsia-950 focus:border-purple-400 focus:outline-0" />
-        {degreeError}
-      </label>
+        <label className="pt-4 pb-1 md:pl-1 md:py-0 w-full sm:w-1/2 md:w-auto flex flex-col md:flex-row md:items-baseline gap-2 text-center">
+          Degree:
+          <input type="number" min={0} max={29} defaultValue={0} id="input-degree" name="i-degree" onChange={e => checkDegree(e)} className={`rounded-md border md:pl-3 text-center border-mauve-300 dark:border-mauve-700 bg-fuchsia-50 dark:bg-fuchsia-900 ${selectFocusClassName}`} />
+        </label>
+        <p className="text-red-500 md:pl-1 md:inline">{degreeError}</p>
+      </div>
 
       {/* THE RESULTS */}
-      <div className="w-full mt-3 bg-purple-300/50 dark:bg-mauve-700 rounded-xl p-2">
+      <div className="w-full bg-purple-300/50 dark:bg-violet-400/30 rounded-b-md p-2">
         <span className="w-full inline-flex items-baseline justify-center text-lg">
           {planet.DisplayTag()} in {sign.DisplayTag()} at {degree}°
         </span>
@@ -189,7 +193,7 @@ export default function DignitySelector() {
         {result.conditions.length > 0 ? result.conditions.map((cond) => <p>({cond.pointMod > 0 && "+"}{cond.pointMod}) {cond.label}</p>) : <p>None</p>}
 
         <p className="font-bold mt-4">Triplicity, Bounds, and Terms:</p>
-        <div className="inline-flex items-baseline">
+        <div className="inline-flex items-baseline flex-wrap">
           Triplicity Rulers:
           {Object.values(sign.getTripLords()).map((lord) => lord.DisplayTag())}
         </div>

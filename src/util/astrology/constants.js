@@ -101,7 +101,7 @@ const Neptune = new Planet({
   proximity: "generational",
 });
 export const Pluto = new Planet({
-  icon: "⯓",
+  icon: "♇",
   label: "Pluto",
   textColor: "text-mauve-700 dark:text-mauve-200",
   bgColor: "bg-mauve-200 dark:bg-mauve-700",
@@ -417,4 +417,5 @@ export const possibleDignityConditions = {
   inTriplicity: { pointMod: +3, label: "In Triplicity" },
   inBound: { pointMod: +2, label: "In Bound" },
   inFace: { pointMod: +1, label: "In Face" },
+  inModernDomicile: { pointMod: 0, label: "In Modern Domicile"},
 };
