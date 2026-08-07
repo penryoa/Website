@@ -3,7 +3,7 @@ import { Dialog, Transition } from "@headlessui/react";
 import { SparklesIcon, XIcon } from "@heroicons/react/outline";
 import { Link } from "react-router-dom";
 import FlowersVertical from "../assets/svgs/FlowersVertical";
-import { pages } from "../util/constants";
+import { BASE, pages } from "../util/constants";
 import { useDispatch, useSelector } from "react-redux";
 import { DarkModeToggle } from "./DarkModeToggle";
 
@@ -79,7 +79,7 @@ export default function Navbar() {
                       rel="noreferrer noopener"
                       href="https://github.com/penryoa"
                       >
-                      <img src="images/github.png" className="h-8 w-8 dark:invert dark:hover:invert-75 invert-0 hover:invert-25" />
+                      <img src={`${BASE}images/github.png`} className="h-8 w-8 dark:invert dark:hover:invert-75 invert-0 hover:invert-25" />
                       <span className="sr-only">GitHub</span>
                     </a>
                     <h2>addi penry</h2>
@@ -89,7 +89,7 @@ export default function Navbar() {
                       rel="noreferrer noopener"
                       href="https://www.linkedin.com/in/addi-penry/"
                       >
-                      <img src="images/linkedin.png" className="h-8 w-8 dark:invert dark:hover:invert-75 invert-0 hover:invert-25" />
+                      <img src={`${BASE}images/linkedin.png`}  className="h-8 w-8 dark:invert dark:hover:invert-75 invert-0 hover:invert-25" />
                       <span className="sr-only">LinkedIn</span>
                     </a>
                     <span className="text-2xl text-orange-700 dark:text-orange-300 flex items-baseline">

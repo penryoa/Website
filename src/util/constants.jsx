@@ -7,6 +7,11 @@ import {
   StarIcon,
 } from "@heroicons/react/solid";
 
+// ===== ENV VARIABLES =====
+// Note: to bring it in here, we need the prefix "REACT_APP". Then, in the vite.config.js, I also bring in these env variables.
+export const BASE = process.env.REACT_APP_BASE
+
+// ===== TAILWIND CLASS NAMES =====
 export const selectorClassName = "mx-2 px-2 bg-orange-200 dark:bg-amber-600 rounded-xl shadow-sm shadow-fuchsia-800/50 dark:shadow-fuchsia-200/50";
 
 // ===== NAVIGATION =====
