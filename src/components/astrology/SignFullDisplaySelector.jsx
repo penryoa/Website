@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { westernZodiacSigns } from "../../util/astrology/constants";
 import Zodiac from "../../util/astrology/classes/zodiac.tsx";
+import { selectFocusClassName } from "../../util/constants.jsx";
 
 /**
  * The individual property display
@@ -41,7 +42,7 @@ function DisplayAllInfo(sign) {
       <p>I personally use Egyptian bounds (top) and Chaldean decans (bottom). It seems to be the most used definitions? But I dance around with using elemental decans instead.</p>
       {sign.BoundsDecansDisplayBar()}
 
-      <div className="inline-flex items-baseline">
+      <div className="inline-flex items-baseline flex-wrap">
         <p className="font-bold pt-3">Triplicity Lords:</p>
         {Object.values(sign.getTripLords()).map((lord) => lord.DisplayTag())}
       </div>
@@ -59,7 +60,7 @@ export default function SignFullDisplaySelector () {
 
   return (
     <div className="w-full rounded-lg border border-orange-300 dark:border-orange-900">
-      <select className="rounded-t-lg w-full p-3 bg-orange-200 dark:bg-orange-900" onChange={e => handleSelect(e.target.value)}>
+      <select className={`rounded-t-lg w-full p-3 bg-orange-200 dark:bg-orange-900 ${selectFocusClassName}`} onChange={e => handleSelect(e.target.value)}>
         {westernZodiacSigns.map((sign, signIdx) => <option className="bg-mauve-200 dark:bg-mauve-600" value={signIdx}>{sign.icon} {sign.label}</option>)}
       </select>
       <div className="p-2">

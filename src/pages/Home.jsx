@@ -12,8 +12,6 @@ import { scrollToTop } from "../util/helpers";
  * @author Addi Penry
 */
 export default function HomePage() {
-  scrollToTop();
-
   function HyperlinkMenu (isVert = false) {
     return (
       <div className={`w-full flex gap-6 items-center ${isVert.isVert ? "flex-col lg:items-start" : "justify-center flex-col sm:flex-row px-6 md:px-28 lg:px-12"}`}>
@@ -82,7 +80,7 @@ export default function HomePage() {
       <div className="border-2 mx-4 p-4 border-dotted rounded-2xl grid grid-cols-2">
         <DarkModeToggle />
         <p className="text-sm place-self-end">
-          Last update: 2026 07 30
+          Last update: 2026 08 07
         </p>
       </div>
     </div>

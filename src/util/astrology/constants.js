@@ -417,4 +417,5 @@ export const possibleDignityConditions = {
   inTriplicity: { pointMod: +3, label: "In Triplicity" },
   inBound: { pointMod: +2, label: "In Bound" },
   inFace: { pointMod: +1, label: "In Face" },
+  inModernDomicile: { pointMod: 0, label: "In Modern Domicile"},
 };

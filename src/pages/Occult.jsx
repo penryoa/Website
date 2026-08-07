@@ -1,5 +1,6 @@
 import React from "react";
 import { Link, Outlet, useLocation } from "react-router-dom";
+import { selectFocusClassName } from "../util/constants";
 
 export const occultPages = [
   { to: "/occult", title: "Overview" },
@@ -9,14 +10,14 @@ export const occultPages = [
 export default function OccultPage() {
   let location = useLocation();
   return (
-    <div className="px-4">
+    <div className="px-1">
       <h1>The Occult</h1>
       <div className="m-2">
         <div className="flex flex-row w-full">
           {occultPages.map((page,idx) =>
             <Link
               key={`occult-links-${idx}`}
-              className={`p-3 hover:bg-purple-300 dark:hover:bg-red-700 basis-1/2 border border-mauve-400 rounded-t-md dark:border-red-800 ${location.pathname == page.to ? "bg-purple-200 dark:bg-pink-900 border-b-0" : "bg-mauve-200 dark:bg-mauve-600"}`}
+              className={`p-3 hover:bg-purple-300 dark:hover:bg-red-700 basis-1/2 border border-mauve-400 rounded-t-md dark:border-red-800 ${location.pathname == page.to ? "bg-purple-200 dark:bg-pink-900 border-b-0" : "bg-mauve-200 dark:bg-mauve-600"} ${selectFocusClassName}`}
               to={page.to}
             >
               {page.title}
