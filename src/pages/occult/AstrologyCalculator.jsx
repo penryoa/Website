@@ -25,22 +25,22 @@ function SectDisplayOverwrite(planet) {
 export default function AstrologyCalculator() {
   return (
     <div>
-        <h2>Dignitity Calculator</h2>
+        <h2>Dignity Calculator</h2>
         <p className="underline">What is dignity?</p>
         <div className="border-l border-mauve-400 dark:border-mauve-600 pl-2 mb-4">
           <p>An individual planet's placement in a sign and degree will determine how naturally it can perform its best self, its most benefic functions. This is called <i>dignity</i>. That is to say, even if it is a malefic (Mars or Saturn), being dignified brings out its more constructive than destructive side.</p>
           <ul className="pl-4">
-            <li className="inline-flex gap-2 items-start">
-              <ThumbUpIcon className="w-5 h-5" />
-              Dignified (score greater than 0) = easy/feels right at home
+            <li>
+              <ThumbUpIcon className="inline w-5 h-5" />
+              <p className="inline pl-2">Dignified (score greater than 0) = easy/feels right at home</p>
             </li>
-            <li className="inline-flex gap-2 items-start">
-              <MinusCircleIcon className="w-5 h-5" />
-              Peregrine (score equals 0) = neutral/feeling out of place
+            <li>
+              <MinusCircleIcon className="inline w-5 h-5" />
+              <p className="inline pl-2">Peregrine (score equals 0) = neutral/feeling out of place</p>
             </li>
-            <li className="inline-flex gap-2 items-start">
-              <ThumbDownIcon className="w-5 h-5" />
-              Debilitated (score less than 0) = it's an uphill battle
+            <li>
+              <ThumbDownIcon className="inline w-5 h-5" />
+              <p className="inline pl-2">Debilitated (score less than 0) = it's an uphill battle</p>
             </li>
           </ul>
         </div>
