@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Outlet, useLocation } from "react-router-dom";
 import { ArrowUpIcon, SparklesIcon } from "@heroicons/react/solid";
-import { scrollToTop } from "../util/helpers";
 
 export const OutletWithNavWrapper = () => {
 	const dispatch = useDispatch();
