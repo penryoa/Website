@@ -9,7 +9,10 @@ export const OutletWithNavWrapper = () => {
 	const {pathname} = useLocation();
 	
 	useEffect(() => {
-		scrollToTop();
+		window.scrollTo({
+			top: 0,
+			behavior: "smooth",
+		});
 	},[pathname]);
 	
   return (
@@ -21,12 +24,6 @@ export const OutletWithNavWrapper = () => {
 				<SparklesIcon className="w-12 h-12 p-2 text-white rounded-full bg-red-500/70 hover:bg-purple-400/50 dark:hover:bg-purple-600/50" />
 			</button>
 			<Outlet />
-			<button
-			className="fixed left-1/2 bottom-4 z-40 bg-purple-500/40 group hover:bg-purple-700/40 dark:hover:bg-purple-300/40 rounded-full"
-			onClick={scrollToTop}
-			>
-				<ArrowUpIcon className="h-8 w-8 text-orange-300 dark:text-orange-700 group-hover:text-orange-500 p-1" />
-			</button>
 		</div>
 	);
 };
@@ -41,7 +38,10 @@ export function BasePageWrapper (MyPage) {
   }, [darkModeEnabled]);
 
 	useEffect(() => {
-		scrollToTop();
+		window.scrollTo({
+			top: 0,
+			behavior: "smooth",
+		});
 	}, []);
 	
 	return (
