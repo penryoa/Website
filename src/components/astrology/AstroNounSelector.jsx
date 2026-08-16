@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { planets, westernZodiacSigns } from "../../util/astrology/constants.js";
+import { planets, westernZodiacSigns } from "../../util/astrology/constants.jsx";
 import Zodiac from "../../util/astrology/classes/zodiac.tsx";
 import AstroProperNounClass from "../../util/astrology/astroInterfaces.tsx";
 import { selectFocusClassName } from "../../util/constants.jsx";

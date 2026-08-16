@@ -15,7 +15,7 @@ export interface AstroProperNoun {
   /**
    * Generates a cute little tag with the icon and label
    */
-  DisplayTag: () => JSX.Element
+  DisplayTag: () => JSX.Element;
 };
 
 /**

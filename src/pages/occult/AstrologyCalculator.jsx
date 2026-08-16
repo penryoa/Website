@@ -1,5 +1,5 @@
 import React from "react";
-import { modes, planets, proximities, sects, westernElements, westernZodiacSigns } from "../../util/astrology/constants.js";
+import { modes, planets, proximities, sects, westernElements, westernZodiacSigns } from "../../util/astrology/constants.jsx";
 import AstroNounSelector from "../../components/astrology/AstroNounSelector.jsx";
 import DignitySelector from "../../components/astrology/DignitySelector.jsx";
 import { MapIcon, MinusCircleIcon, StarIcon, ThumbDownIcon, ThumbUpIcon } from "@heroicons/react/solid";
@@ -16,7 +16,7 @@ function SectDisplayOverwrite(planet) {
     return planet.DisplayTag();
   }
   return (
-    <div className="p-1 rounded-md border border-mauve-300 inline-flex flex-wrap items-center">
+    <div className="px-1 pb-0.5 rounded-md border border-mauve-300 inline-flex flex-wrap items-center">
       {planet.DisplayTag()} {planet.role}
     </div>
   );
@@ -50,12 +50,12 @@ export default function AstrologyCalculator() {
         <p className="underline">How to divvy up the planets</p>
         <div className="border-l border-mauve-400 dark:border-mauve-600 pl-2 mb-4">
           Planets can be grouped by a number of things, but two big ones are sect and inner/outer planets, or as I call it, proximity.
-          <ul className="pl-4">
-            <li className="inline-flex gap-2 items-start">
+          <ul className="pl-4 *:inline-flex *:gap-2 *:items-start">
+            <li>
               <StarIcon className="w-6 h-6" />
               Sect: this determines the day and night teams. If you were born with the sun above the horizon (the AC/SC axis), you have a day chart led by the day team and vice versa!
             </li>
-            <li className="inline-flex gap-2 items-start">
+            <li>
               <MapIcon className="w-6 h-6" />
               Proximity: this determines how directly of an influence a planet has on you. It goes from Inner/Personal to Social to Outer/Generational.
             </li>

@@ -18,6 +18,9 @@ export const selectFocusClassName = "focus:outline-2 focus:outline-pink-600 dark
 
 export const selectClassName = `${selectColorClassName} ${selectFocusClassName}`;
 
+export const numberClassName = `${selectFocusClassName} rounded-md border md:pl-3 text-center border-mauve-300 dark:border-mauve-700 bg-fuchsia-50 dark:bg-fuchsia-900`;
+
+
 // ===== NAVIGATION =====
 export const pages = [
   { to: "/home", title: "Home", isHome: true},

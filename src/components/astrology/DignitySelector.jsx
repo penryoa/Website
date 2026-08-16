@@ -1,56 +1,21 @@
-import React, { useState } from "react";
-import { selectClassName, selectFocusClassName } from "../../util/constants";
-import { planets, possibleDignityConditions, westernElements, westernZodiacSigns } from "../../util/astrology/constants";
+import React, { useEffect, useState } from "react";
+import { numberClassName, selectClassName, selectFocusClassName } from "../../util/constants";
+import { planets, westernElements, westernZodiacSigns, BoundsWord, DecansWord, TripWord } from "../../util/astrology/constants";
 import Planet from "../../util/astrology/classes/planet.tsx";
 import Zodiac from "../../util/astrology/classes/zodiac.tsx";
+import PlanetaryPlacement from "../../util/astrology/classes/planetaryPlacement.tsx";
 
 /**
  * A planet in a sign will have a dignity you can calculate.
- * @param {Planet} planet
- * @param {Zodiac} sign
- * @param {number} degree
+ * @param {PlanetaryPlacement} placement
  * @returns { points: number; label: string; conditions: {pointMod:number,label:string}[]; }
  */
-export function getEssentialDignity(planet, sign, degree) {
+function getEssentialDignity(placement) {
   let points = 0;
   let label = "No Dignity";
-  let conditions = [];
-
-  if (planet.chaldeanOrder !== null) {
-    // +5 points in domicile, -5 in detriment
-    if (sign.domicile === planet) {
-      conditions.push(possibleDignityConditions["inDomicile"]);
-    } else if (sign.detriment === planet) {
-      conditions.push(possibleDignityConditions["inDetriment"]);
-    }
-    
-    // +4 points in exaltation, -4 in fall
-    if (sign.exaltation === planet) {
-      conditions.push(possibleDignityConditions["inExaltation"]);
-    } else if (sign.fall === planet) {
-      conditions.push(possibleDignityConditions["inFall"]);
-    }
-    
-    // +3 in triplicity (Dorothean)
-    if (Object.values(sign.getTripLords())?.includes(planet)) {
-      conditions.push(possibleDignityConditions["inTriplicity"]);
-    }
-    
-    // +2 in term (Egyptian)
-    if (sign.isPlanetInBound(planet, degree)) {
-      conditions.push(possibleDignityConditions["inBound"]);
-    }
-    
-    // +1 in face (Chaldean)
-    sign.getDecans().every((decan,dIdx) => {
-      let decanMin = 0 + dIdx * 10;
-      if (decan == planet && degree >= decanMin && degree < decanMin + 10) {
-        conditions.push(possibleDignityConditions["inFace"]);
-        return false;
-      }
-      return true;
-    });
-
+  let conditions = placement.getDignityConditions();
+  
+  if (placement.planet.isClassical()) {
     conditions.forEach((c,cIdx) => {
       points += c.pointMod;
     });
@@ -61,24 +26,22 @@ export function getEssentialDignity(planet, sign, degree) {
     } else if (points < 0) {
       label = "Debilitated"
     }
-  } else {
-    conditions.push(possibleDignityConditions["notClassical"]);
-    if (sign.modernDomicile === planet) {
-      conditions.push(possibleDignityConditions["inModernDomicile"]);
-    }
   }
 
   return { "points": points, "label": label, "conditions": conditions };
 };
 
+/** Our default setting: Sun, Aries, 0 degrees */
+const firstPlacement = new PlanetaryPlacement({
+  planet: planets[0],
+  sign: westernZodiacSigns[0],
+  degree: 0
+});
+
 /**
  * This is placed outside of DignitySelector so it won't re-render when the component updates.
  */
-const firstResult = getEssentialDignity(
-  planets[0],
-  westernZodiacSigns[0],
-  0
-);
+const firstResult = getEssentialDignity(firstPlacement);
 
 /**
  * Small helper function to display the score and status
@@ -96,20 +59,29 @@ function ScoreDisplay ({name,val}) {
  * Takes either triplicities or modalities and renders the signs
  */
 export default function DignitySelector() {
-  const [planet, setPlanet] = useState(planets[0]);
-  const [sign, setSign] = useState(westernZodiacSigns[0]);
-  const [degree, setDegree] = useState(0);
+  const [placement, setPlacement] = useState(firstPlacement);
   const [result, setResult] = useState(firstResult);
   const [degreeError, setDegreeError] = useState(null);
 
+  /**
+   * Sets the result when the placement is updated
+   */
+  useEffect(() => {
+    setResult(getEssentialDignity(placement));
+  }, [placement]);
+  
   /**
    * Handles when a planet is selected
    * @param {number} newPlanetIdx
    */
   function selectPlanet(newPlanetIdx) {
     let newPlanet = planets[Number(newPlanetIdx)];
-    setPlanet(newPlanet);
-    updateScore({p:newPlanet});
+    setPlacement(oldPlacement => new PlanetaryPlacement(
+      {
+        planet: newPlanet,
+        sign: oldPlacement.sign,
+        degree: oldPlacement.degree
+    }));
   };
 
   /**
@@ -118,8 +90,12 @@ export default function DignitySelector() {
    */
   function selectSign(newSignIdx) {
     let newSign = westernZodiacSigns[Number(newSignIdx)];
-    setSign(newSign);
-    updateScore({s:newSign});
+    setPlacement(oldPlacement => new PlanetaryPlacement(
+      {
+        planet: oldPlacement.planet,
+        sign: newSign,
+        degree: oldPlacement.degree
+    }));
   };
 
   /**
@@ -129,21 +105,16 @@ export default function DignitySelector() {
     let numNewDegree = Number(e.target.value);
     if (numNewDegree >= 0 && numNewDegree < 30) {
       setDegreeError(null);
-      setDegree(numNewDegree);
-      updateScore({d:numNewDegree});
+      setPlacement(oldPlacement => new PlanetaryPlacement(
+        {
+          planet: oldPlacement.planet,
+          sign: oldPlacement.sign,
+          degree: numNewDegree
+      }));
     } else {
       setDegreeError("Must be between 0-29 degrees");
-      e.target.value = degree;
+      e.target.value = placement.degree;
     }
-  };
-
-  function updateScore(args) {
-    setResult(
-      getEssentialDignity(
-        args.p || planet,
-        args.s || sign,
-        args.d || degree
-    ));
   };
 
   return (
@@ -174,7 +145,7 @@ export default function DignitySelector() {
 
         <label className="pt-4 pb-1 md:pl-1 md:py-0 w-full sm:w-1/2 md:w-auto flex flex-col md:flex-row md:items-baseline gap-2 text-center">
           Degree:
-          <input type="number" min={0} max={29} defaultValue={0} id="input-degree" name="i-degree" onChange={e => checkDegree(e)} className={`rounded-md border md:pl-3 text-center border-mauve-300 dark:border-mauve-700 bg-fuchsia-50 dark:bg-fuchsia-900 ${selectFocusClassName}`} />
+          <input type="number" min={0} max={29} defaultValue={0} id="input-degree" name="i-degree" onChange={e => checkDegree(e)} className={numberClassName} />
         </label>
         <p className="text-red-500 md:pl-1 md:inline">{degreeError}</p>
       </div>
@@ -182,7 +153,7 @@ export default function DignitySelector() {
       {/* THE RESULTS */}
       <div className="w-full bg-purple-300/50 dark:bg-violet-400/30 rounded-b-md p-2">
         <span className="w-full inline-flex items-baseline justify-center text-lg">
-          {planet.DisplayTag()} in {sign.DisplayTag()} at {degree}°
+          {placement.planet.DisplayTag()} in {placement.sign.DisplayTag()} at {placement.degree}°
         </span>
         <div className="w-full inline-flex gap-2 my-3">
           <ScoreDisplay name="Score" val={result.points} />
@@ -190,15 +161,24 @@ export default function DignitySelector() {
         </div>
 
         <p className="font-bold">Conditions:</p>
-        {result.conditions.length > 0 ? result.conditions.map((cond) => <p>({cond.pointMod > 0 && "+"}{cond.pointMod}) {cond.label}</p>) : <p>None</p>}
+          {result.conditions.length > 0 ? (
+            <ul role="list" className="list-disc ml-4 marker:text-pink-700 dark:marker:text-orange-300">
+              {result.conditions.map((cond) => (
+                 cond.pointMod === 0 ? (<li>{cond.label}</li>)
+                 : (<li>(Score {cond.pointMod > 0 && "+"}{cond.pointMod}) {cond.label}</li>)
+              ))}
+            </ul>
+          ) : <p>None</p>}
 
-        <p className="font-bold mt-4">Triplicity, Bounds, and Terms:</p>
+        <div className="font-bold mt-8">
+          <TripWord />, <BoundsWord />, and <DecansWord />:
+        </div>
         <div className="inline-flex items-baseline flex-wrap">
           Triplicity Rulers:
-          {Object.values(sign.getTripLords()).map((lord) => lord.DisplayTag())}
+          {Object.values(placement.sign.getTripLords()).map((lord) => lord.DisplayTag())}
         </div>
-        <p className="mt-2">Bounds (top) and Decans (bottom):</p>
-        {sign.BoundsDecansDisplayBar(degree)}
+        <p className="mt-2">Bounds (top) and Decan (bottom):</p>
+        {placement.sign.BoundsDecansDisplayBar(placement.degree)}
       </div>
     </div>
   );

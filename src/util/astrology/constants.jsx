@@ -1,7 +1,9 @@
+import ExplainerLabel from "../../components/astrology/ExplainerIcon.jsx";
 import Bound from "./classes/bound.tsx";
 import WesternElement from "./classes/element.tsx";
 import Mode from "./classes/mode.tsx";
 import Planet from "./classes/planet.tsx";
+import PlanetaryPlacement from "./classes/planetaryPlacement.tsx";
 import Proximity from "./classes/proximity.tsx"
 import Sect from "./classes/sect.tsx"
 import Zodiac from "./classes/zodiac.tsx";
@@ -384,18 +386,21 @@ const Cardinal = new Mode({
   label: "Cardinal",
   orderIdx: 0,
   description: "A cardinal modality represents the beginning of something, or the personality trait to start things and take initiative. Cardinal modalities may not finish everything they start, but they unabashedly get in there and stir things up. They lead, anticipating who or what needs to be addressed next to further their goals.",
+  criticalDegrees: [0,13,26],
 });
 const Fixed = new Mode({
   icon: "🝕",
   label: "Fixed",
   orderIdx: 1,
   description: "A fixed modality is, as you can imagine, fixed right in the middle. They don't like to be uprooted and don't act hastily. There's a stubbornness that comes with being fixed, but a steadfast commitment to something of quality is their speciality.",
+  criticalDegrees: [18,19,21,22],
 });
 const Mutable = new Mode({
   icon: "🜳",
   label: "Mutable",
   orderIdx: 2,
   description: "Mutable modality marks the end of something. It is amazing at taking feedback, responding to change, and reacting to unpredictable circumstances. They may align with going-with-the-flow or overplanning, but either way, they are looking to their environment for signals to alter course and are ready to handle whatever comes their way.",
+  criticalDegrees: [4,17],
 });
 
 /**
@@ -404,18 +409,38 @@ const Mutable = new Mode({
  */
 export const modes = [ Cardinal, Fixed, Mutable ];
 
-// =================== DIGNITY ===================
-/**
- * @type {{conditionName: {pointMod:number,label:string}}}
- */
-export const possibleDignityConditions = {
-  notClassical: { pointMod: 0, label: "Traditionally, only classical planets can have dignity." },
-  inDomicile: { pointMod: +5, label: "In Domicile" },
-  inDetriment: { pointMod: -5, label: "In Detriment" },
-  inExaltation: { pointMod: +4, label: "In Exaltation" },
-  inFall: { pointMod: -4, label: "In Fall" },
-  inTriplicity: { pointMod: +3, label: "In Triplicity" },
-  inBound: { pointMod: +2, label: "In Bound" },
-  inFace: { pointMod: +1, label: "In Face" },
-  inModernDomicile: { pointMod: 0, label: "In Modern Domicile"},
+// =================== WORD DEFINITIONS ===================
+/** The term "Triplicity Lords" with a definition */
+export const TripWord = () => {
+  return (
+      <ExplainerLabel label="Triplicity Lords" description="The Dorothean planetary subrulers, determined by sect & element." />
+  );
+};
+
+/** The term "Bounds" with a definition */
+export const BoundsWord = () => {
+  return (
+      <ExplainerLabel label="Bounds" description="AKA terms.The uneven splitting of the sign into 5. MEANING - conceptually, you can imagine a sign as a house being split into 5, where Mercury, Venus, Mars, Jupiter, and Saturn each get a room of their own that changes in size by the sign. They don't own the house, but they at least have their own space. It's a mild help." />
+  );
+};
+
+/** The term "Decans" with a definition */
+export const DecansWord = () => {
+  return (
+      <ExplainerLabel label="Decans" description="Also called face. The sign evenly split into 3 and assigned a planet by the Chaldean order. MEANING - A planet in face shows a little quirk. Since it's only worth 1 point dignity-wise, it's not giving a lot of functionality, but it's certainly a little talent or skill that helps a bit." />
+  );
+};
+
+/** The term "D9" with a definition */
+export const D9Word = () => {
+  return (
+      <ExplainerLabel label="D9" description="(Vedic Astrology, Whole Sign) Takes the zodiac and divides each sign by 9. This is the Navamsha (lit. 9 unit). It's considered the most important division, the soul division, where D1/lagna/birth chart as is marks what's given to you and D9 is how it develops in life. It's often used in the context of love, though it speaks to larger things." />
+  );
+};
+
+/** The term "D12" with a definition */
+export const D12Word = () => {
+  return (
+      <ExplainerLabel label="D12" description="(Vedic Astrology, Whole Sign) Takes the zodiac and divides each sign by 12. This is the Dwadasamsa (lit. 12 unit), or dwat. In horary, it's the matter at hand. In natal, it's lineage and parents." />
+  );
 };

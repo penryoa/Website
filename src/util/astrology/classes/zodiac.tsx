@@ -1,4 +1,4 @@
-import { modes, planetsInChaldeanOrder, westernElements } from "../constants";
+import { modes, planetsInChaldeanOrder, westernElements, westernZodiacSigns } from "../constants";
 import Bound from "./bound";
 import { AstroOrderedNoun } from "../astroInterfaces";
 import Planet from "./planet";
@@ -73,7 +73,12 @@ export default class Zodiac implements AstroOrderedNoun {
 		)
 	};
 
-  public BoundsDecansDisplayBar(degree=null) {
+  /**
+   * Makes a bar with the bounds and decans for the given sign.
+   * @param {number} [degree] a specific degree to point to 
+   * @returns {React.JSX.Element}
+   */
+  public BoundsDecansDisplayBar(degree=null):React.JSX.Element {
     return (
       <>
         <div className="w-full border border-mauve-500 dark:border-mauve-200">
@@ -110,12 +115,13 @@ export default class Zodiac implements AstroOrderedNoun {
    * Determines if a given planet at a given degree is in bound in this sign
    * @param {Planet} planet 
    * @param {number} degree 
+   * @returns {boolean} whether or not a planet is in bound
    */
   public isPlanetInBound(planet: Planet, degree:number): boolean {
     let minDegree = 0;
     let isInBound = false;
     this.bounds.sort((b1,b2) => b1.orderIdx - b2.orderIdx);
-    this.bounds.every((bound, idx) => {
+    this.bounds.every((bound) => {
       if (planet == bound.ruler && degree >= minDegree && degree < (minDegree + bound.orb)) {
         isInBound = true;
         return false;
@@ -128,6 +134,7 @@ export default class Zodiac implements AstroOrderedNoun {
 
   /**
    * Determines the Chaldean Decans
+   * @returns {Planet[]} the planets in Chaldean order starting from this sign
    */
   public getDecans(): Planet[] {
     let decans = [];
@@ -137,22 +144,33 @@ export default class Zodiac implements AstroOrderedNoun {
     return decans;
   };
 
-  /** Gets the corresponding element */
-  public getElement(): WesternElement | undefined {
-    return westernElements.find((elem) => elem.orderIdx == this.triplicityOrderIdx);
+  /** Gets the corresponding element or just the default Cardinal */
+  public getElement(): WesternElement {
+    return westernElements.find((elem) => elem.orderIdx == this.triplicityOrderIdx) || westernElements[0];
   };
 
   /**
    * Gets the corresponding element's Dorothean triplicity lords
    */
   public getTripLords() {
-    return this.getElement()?.dorotheanTriplicity || undefined;
+    return this.getElement().dorotheanTriplicity || undefined;
   };
 
-  /**
-   * Gets the corresponding modality
+  /** 
+   * Instead of getting all planets in triplicity, determines
+   * if a planet is in that triplicity.
    */
-  public getMode() {
-    return modes.find((mode) => mode.orderIdx == this.modalityOrderIdx);
+  public isPlanetInTriplicity(planet:Planet) {
+    return Object.values(this.getElement()?.dorotheanTriplicity || {}).includes(planet);
   };
+
+  /** Gets the corresponding modality */
+  public getMode() {
+    return modes.find((mode) => mode.orderIdx == this.modalityOrderIdx) || modes[0];
+  };
+
+  /** Finds the next sign X away from this sign */
+  public nextXSign(x:number) {
+    return westernZodiacSigns.find(sign => sign.orderIdx === ((this.orderIdx + x) % 12)) || this;
+  }
 };

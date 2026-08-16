@@ -12,16 +12,6 @@ type WesternElementArgs = AstroOrderedNoun & {
  * @type {class}
  */
 export default class WesternElement implements AstroOrderedNoun {
-  constructor(args:WesternElementArgs) {
-    this.icon = args.icon;
-    this.label = args.label;
-    this.typeLabel = "Element";
-    this.description = args.description || "";
-    this.borderColor = args.borderColor;
-    this.orderIdx = args.orderIdx;
-    this.dorotheanTriplicity = args.dorotheanTriplicity;
-  }
-
   // MEMBERS
   icon: string;
   label: string;
@@ -37,8 +27,19 @@ export default class WesternElement implements AstroOrderedNoun {
    * Air (yang, diurnal): ♊︎ ♎︎ ♒︎︎ | ☿ ♀ ♄ | ♀ is nocturnal; use other benefic, ♃.
    * Water (yin, nocturnal): ♋︎ ♏︎ ♓︎︎ | ☾ ♂ ♃ | ♃ is diurnal; use other benefic, ♀.
    */
-  dorotheanTriplicity: {"day":Planet, "night":Planet, "cooperating":Planet};
+  dorotheanTriplicity;
   
+  // CONSTRUCTOR
+  constructor(args:WesternElementArgs) {
+    this.icon = args.icon;
+    this.label = args.label;
+    this.typeLabel = "Element";
+    this.description = args.description || "";
+    this.borderColor = args.borderColor;
+    this.orderIdx = args.orderIdx;
+    this.dorotheanTriplicity = args.dorotheanTriplicity;
+  }
+
   // FUNCTIONS
   DisplayTag() {
     return (

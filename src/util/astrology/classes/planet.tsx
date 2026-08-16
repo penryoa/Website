@@ -51,10 +51,14 @@ export default class Planet implements AstroProperNoun {
 	// FUNCTIONS
   public DisplayTag() {
 		return (
-			<div className={`m-1 px-1 flex flex-row gap-2 rounded-md shadow-md shadow-mauve-300 dark:shadow-mauve-500 ${this.bgColor}`}>
+			<div className={`m-1 px-1 flex flex-row gap-2 rounded-md shadow-md shadow-mauve-300 dark:shadow-mauve-600 ${this.bgColor}`}>
 				<p className={this.textColor}>{this.icon}</p>
 				<p>{this.label}</p>
 			</div>
 		)
+	};
+
+	public isClassical () {
+		return this.chaldeanOrder !== null;
 	};
 };
