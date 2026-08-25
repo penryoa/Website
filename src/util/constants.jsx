@@ -52,7 +52,7 @@ export const features = [
     content: (
       <p>
         I am part traditional medieval astrologer, part modern Western astrologer. I change my tools depending on technique used.<br />
-        I do all kind of astrological readings, as well as tarot. I just personally find it a helpful tool for reflection. And I ghost hunt for fun.
+        I do all kind of astrological readings, as well as tarot. I just personally find it a helpful tool for reflection.
       </p>
     ),
     title: (

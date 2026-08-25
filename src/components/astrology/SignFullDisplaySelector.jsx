@@ -109,7 +109,7 @@ export default function SignFullDisplaySelector () {
             }
             <PropertyDisplay label="Detriment" display={zdms.sign.detriment.DisplayTag()} />
             {zdms.sign.fall && 
-              <PropertyDisplay label="Exalted" display={zdms.sign.fall?.DisplayTag()} />
+              <PropertyDisplay label="Fall" display={zdms.sign.fall?.DisplayTag()} />
             }
           </div>
 
